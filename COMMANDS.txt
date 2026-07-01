@@ -1,0 +1,84 @@
+================================================================================
+                        COPY & PASTE THESE COMMANDS
+================================================================================
+
+IMPORTANT: Open 2 separate terminal windows!
+
+================================================================================
+TERMINAL 1 - BACKEND
+================================================================================
+
+cd NEETP\backend
+npm run dev
+
+Expected output:
+  ✅ MongoDB Connected
+  Server running on port 5000
+
+================================================================================
+TERMINAL 2 - FRONTEND
+================================================================================
+
+cd NEETP\frontend
+npm start
+
+Expected output:
+  Compiled successfully!
+  Local:            http://localhost:3000
+  (Browser opens automatically)
+
+================================================================================
+TEST ACCOUNT
+================================================================================
+
+Email:    test@example.com
+Password: test123456
+Class:    12
+
+================================================================================
+WHAT TO TRY
+================================================================================
+
+1. Register with above credentials
+2. Login
+3. Click "Start Test"
+4. Select "Full Mock Test"
+5. Click "Generate Test"
+6. Click "Start Exam"
+7. Answer a few questions
+8. Submit test
+9. View results!
+
+================================================================================
+IF SOMETHING GOES WRONG
+================================================================================
+
+Backend won't start:
+  - Check MongoDB is running (Windows Services)
+  - Check port 5000 is free
+  - Run: npm install
+
+Frontend won't start:
+  - Press Ctrl+C to stop
+  - Run: npm install
+  - Run: npm start
+
+Clear cache and reinstall:
+  cd NEETP/frontend
+  del package-lock.json
+  Remove-Item -Recurse -Force node_modules
+  npm install
+  npm start
+
+================================================================================
+DOCUMENTATION FILES
+================================================================================
+
+Read in this order:
+  1. RUN_NOW.md ................. Start here!
+  2. QUICK_START.md ............ Setup guide
+  3. QUICK_REFERENCE.md ....... Common fixes
+  4. SETUP_GUIDE.md ........... Detailed setup
+  5. docs/API.md .............. API reference
+
+================================================================================
