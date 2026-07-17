@@ -44,7 +44,10 @@ exports.generateTest = async (req, res) => {
     let questionIds = [];
 
     if (testType === 'full_mock') {
-      const mockTest = await TestGenerator.generateFullMockTest();
+      const mockTest = await TestGenerator.generateFullMockTest({
+        subject: req.body.subject,
+        chapters: req.body.chapters
+      });
       questionIds = mockTest.questions;
     } else if (testType === 'chapter_test') {
       questionIds = await TestGenerator.generateChapterTest(subject, chapter, parsedCount, difficulty);

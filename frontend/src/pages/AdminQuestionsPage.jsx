@@ -466,6 +466,12 @@ const AdminQuestionsPage = () => {
   const [creatingManual, setCreatingManual] = useState(false);
   const [pasteText, setPasteText] = useState('');
 
+  // ── selective clearing ──
+  const [showClearModal, setShowClearModal] = useState(false);
+  const [clearFilters, setClearFilters] = useState({
+    subject: '', chapter: '', topic: '', status: 'all'
+  });
+
   // ── stats ──
   const [stats, setStats] = useState(null);
 
@@ -734,19 +740,53 @@ const AdminQuestionsPage = () => {
     loadTree(); loadStats(); loadQuestions(1);
   };
 
-  const handleClearAll = async () => {
-    const confirmed = window.confirm(
-      '⚠️ DELETE ALL QUESTIONS from the database?\n\nThis will permanently remove every question and all test attempts. Type OK to confirm.'
-    );
+  const handleClearAll = () => {
+    setShowClearModal(true);
+  };
+
+  const handleReviewDb = async () => {
+    if (!window.confirm('Run AI review on selected database questions? This will update subject, chapter, topic, difficulty, correct answers, and explanations where needed.')) return;
+    const tid = toast.loading('Reviewing database questions…');
+    try {
+      const payload = {
+        subject: clearFilters.subject || undefined,
+        chapter: clearFilters.chapter || undefined,
+        topic: clearFilters.topic || undefined,
+        status: clearFilters.status || undefined,
+        limit: 200,
+        batchSize: 20
+      };
+      const res = await questionsAPI.reviewQuestions(payload);
+      toast.success(res.message || 'Database review completed.', { id: tid, duration: 8000 });
+      setShowClearModal(false);
+      loadStats(); loadTree(); loadQuestions(1);
+    } catch (err) {
+      toast.error(err.message || 'Database review failed.', { id: tid });
+    }
+  };
+
+  const executeClear = async () => {
+    const isFullClear = !clearFilters.subject && !clearFilters.chapter && !clearFilters.topic && clearFilters.status === 'all';
+    
+    let confirmMsg = '⚠️ Delete questions matching the selected filters? This cannot be undone.';
+    if (isFullClear) {
+      confirmMsg = '⚠️ DELETE ALL QUESTIONS from the database?\n\nThis will permanently remove every question and all test attempts. Type OK to confirm.';
+    }
+    
+    const confirmed = window.confirm(confirmMsg);
     if (!confirmed) return;
+
     const tid = toast.loading('Clearing database…');
     try {
-      const res = await questionsAPI.clearAllQuestions();
-      toast.success(res.message || 'All questions deleted.', { id: tid });
+      const res = await questionsAPI.clearAllQuestions(clearFilters);
+      toast.success(res.message || 'Questions cleared successfully.', { id: tid });
+      setShowClearModal(false);
       setQuestions([]); setDrafts([]);
       setTree({}); setStats(null);
-      loadStats();
-    } catch (err) { toast.error(err.message || 'Clear failed.', { id: tid }); }
+      loadStats(); loadTree(); loadQuestions(1);
+    } catch (err) { 
+      toast.error(err.message || 'Clear failed.', { id: tid }); 
+    }
   };
 
 
@@ -1393,8 +1433,106 @@ const AdminQuestionsPage = () => {
             </form>
           </div>
         )}
-      </div>
+
+        {showClearModal && (
+          <div style={{
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.75)', display: 'flex',
+          alignItems: 'center', justifyContent: 'center', zIndex: 9999
+        }}>
+          <div style={{
+            background: '#181824', padding: '28px', borderRadius: '12px',
+            width: '450px', border: '1px solid #33334d', boxShadow: '0 12px 40px rgba(0,0,0,0.6)',
+            color: '#fff', display: 'flex', flexDirection: 'column', gap: '18px',
+            fontFamily: 'system-ui, sans-serif'
+          }}>
+            <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '8px', color: '#ff4d4d', fontSize: '18px' }}>
+              <AlertTriangle size={20} /> Selective Clear Database
+            </h3>
+            <p style={{ margin: 0, fontSize: '13px', color: '#a0a0b0', lineHeight: 1.5 }}>
+              Choose filter criteria to selectively delete questions. Warning: matching questions will be permanently deleted!
+            </p>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ fontSize: '12px', color: '#9090a0', fontWeight: 'bold' }}>Subject</span>
+                <select 
+                  value={clearFilters.subject} 
+                  onChange={e => setClearFilters(f => ({ ...f, subject: e.target.value }))}
+                  style={{ background: '#222232', border: '1px solid #3d3d52', color: '#fff', padding: '10px', borderRadius: '6px', outline: 'none' }}
+                >
+                  <option value="">All Subjects</option>
+                  <option value="physics">Physics</option>
+                  <option value="chemistry">Chemistry</option>
+                  <option value="biology">Biology</option>
+                  <option value="botany">Botany</option>
+                  <option value="zoology">Zoology</option>
+                </select>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ fontSize: '12px', color: '#9090a0', fontWeight: 'bold' }}>Chapter Name</span>
+                <input 
+                  type="text" 
+                  value={clearFilters.chapter} 
+                  placeholder="e.g. Current Electricity"
+                  onChange={e => setClearFilters(f => ({ ...f, chapter: e.target.value }))}
+                  style={{ background: '#222232', border: '1px solid #3d3d52', color: '#fff', padding: '10px', borderRadius: '6px', outline: 'none' }}
+                />
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ fontSize: '12px', color: '#9090a0', fontWeight: 'bold' }}>Topic Name</span>
+                <input 
+                  type="text" 
+                  value={clearFilters.topic} 
+                  placeholder="e.g. Ohm's Law"
+                  onChange={e => setClearFilters(f => ({ ...f, topic: e.target.value }))}
+                  style={{ background: '#222232', border: '1px solid #3d3d52', color: '#fff', padding: '10px', borderRadius: '6px', outline: 'none' }}
+                />
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ fontSize: '12px', color: '#9090a0', fontWeight: 'bold' }}>Question Status</span>
+                <select 
+                  value={clearFilters.status} 
+                  onChange={e => setClearFilters(f => ({ ...f, status: e.target.value }))}
+                  style={{ background: '#222232', border: '1px solid #3d3d52', color: '#fff', padding: '10px', borderRadius: '6px', outline: 'none' }}
+                >
+                  <option value="all">All (Drafts & Published)</option>
+                  <option value="draft">Drafts Only</option>
+                  <option value="published">Published Only</option>
+                </select>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px', marginTop: '8px' }}>
+              <button 
+                onClick={() => setShowClearModal(false)}
+                style={{ background: 'transparent', border: '1px solid #444460', color: '#ccc', padding: '10px 20px', borderRadius: '6px', cursor: 'pointer', transition: 'all 0.2s' }}
+                onMouseOver={e => e.target.style.color = '#fff'}
+                onMouseOut={e => e.target.style.color = '#ccc'}
+              >
+                Cancel
+              </button>
+              <button 
+                onClick={handleReviewDb}
+                style={{ background: '#0f766e', border: 'none', color: '#fff', padding: '10px 20px', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(15,118,110,0.3)' }}
+              >
+                Review DB
+              </button>
+              <button 
+                onClick={executeClear}
+                style={{ background: '#ff4d4d', border: 'none', color: '#fff', padding: '10px 20px', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(255,77,77,0.3)' }}
+              >
+                Clear Database
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
+  </div>
   );
 };
 

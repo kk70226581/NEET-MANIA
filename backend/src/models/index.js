@@ -4,5 +4,6 @@ module.exports = {
   Question: require('./Question'),
   Test: require('./Test'),
   TestAttempt: require('./TestAttempt'),
-  MistakeNotebook: require('./MistakeNotebook')
+  MistakeNotebook: require('./MistakeNotebook'),
+  MentorConversation: require('./MentorConversation')
 };

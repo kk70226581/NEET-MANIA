@@ -1,16 +1,17 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { ArrowRight, BookOpen, Clock3, FileQuestion, FlaskConical, History, Layers3, Target } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock3, FileQuestion, FlaskConical, History, Layers3, Target, Timer, Sparkles, AlertCircle, Play } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { motion } from 'framer-motion';
 import AppShell from '../components/AppShell';
 import { questionsAPI, testsAPI } from '../services/api';
 
 const testTypes = [
-  { value: 'chapter_test', title: 'Chapter test', note: 'Master one chapter', icon: BookOpen, accent: 'cyan' },
-  { value: 'topic_test', title: 'Topic drill', note: 'Target one concept', icon: Layers3, accent: 'green' },
-  { value: 'subject_test', title: 'Subject test', note: 'Build subject stamina', icon: FlaskConical, accent: 'pink' },
-  { value: 'pyq_test', title: 'PYQ test', note: 'Practise the real pattern', icon: History, accent: 'yellow' },
-  { value: 'full_mock', title: 'Full mock', note: '180 questions · 180 minutes', icon: Target, accent: 'red' },
+  { value: 'chapter_test', title: 'Chapter test', note: 'Master one chapter', icon: BookOpen, accent: 'text-blue-500 bg-blue-100', border: 'border-blue-500' },
+  { value: 'topic_test', title: 'Topic drill', note: 'Target one concept', icon: Layers3, accent: 'text-emerald-500 bg-emerald-100', border: 'border-emerald-500' },
+  { value: 'subject_test', title: 'Subject test', note: 'Build subject stamina', icon: FlaskConical, accent: 'text-purple-500 bg-purple-100', border: 'border-purple-500' },
+  { value: 'pyq_test', title: 'PYQ test', note: 'Practise real pattern', icon: History, accent: 'text-orange-500 bg-orange-100', border: 'border-orange-500' },
+  { value: 'full_mock', title: 'Full mock', note: '180 Qs · 180 mins', icon: Target, accent: 'text-red-500 bg-red-100', border: 'border-red-500' },
 ];
 
 const TestsPage = () => {
@@ -18,6 +19,10 @@ const TestsPage = () => {
   const [metadata, setMetadata] = useState([]);
   const [config, setConfig] = useState({ testType: 'chapter_test', subject: 'biology', chapter: '', topic: '', difficulty: '', questionCount: 30 });
   const [creating, setCreating] = useState(false);
+  const [mockMode, setMockMode] = useState('standard');
+  const [selectedChapters, setSelectedChapters] = useState([]);
+
+  const daysToExam = Math.max(0, Math.ceil((new Date('2027-05-02') - new Date()) / 86400000));
 
   useEffect(() => {
     questionsAPI.getMetadata().then((response) => {
@@ -30,16 +35,41 @@ const TestsPage = () => {
   const subjects = useMemo(() => [...new Set(metadata.map((row) => row._id.subject).filter(Boolean))], [metadata]);
   const chapters = useMemo(() => [...new Set(metadata.filter((row) => row._id.subject === config.subject).map((row) => row._id.chapter).filter(Boolean))], [metadata, config.subject]);
   const topics = useMemo(() => [...new Set(metadata.filter((row) => row._id.subject === config.subject && (!config.chapter || row._id.chapter === config.chapter)).map((row) => row._id.topic).filter(Boolean))], [metadata, config.subject, config.chapter]);
-  const update = (name, value) => setConfig((current) => ({ ...current, [name]: value, ...(name === 'subject' ? { chapter: '', topic: '' } : {}), ...(name === 'chapter' ? { topic: '' } : {}) }));
+  
+  const update = (name, value) => {
+    setConfig((current) => ({ 
+      ...current, 
+      [name]: value, 
+      ...(name === 'subject' ? { chapter: '', topic: '' } : {}), 
+      ...(name === 'chapter' ? { topic: '' } : {}) 
+    }));
+    if (name === 'subject') {
+      setSelectedChapters([]);
+    }
+  };
+
+  const handleChapterToggle = (ch) => {
+    setSelectedChapters((prev) => 
+      prev.includes(ch) ? prev.filter((item) => item !== ch) : [...prev, ch]
+    );
+  };
 
   const generate = async () => {
     if (['chapter_test', 'topic_test'].includes(config.testType) && !config.chapter) return toast.error('Choose a chapter first.');
     if (config.testType === 'topic_test' && !config.topic) return toast.error('Choose a topic first.');
+    if (config.testType === 'full_mock' && mockMode === 'custom' && selectedChapters.length === 0) return toast.error('Select at least one chapter for the custom mock test.');
+    
     setCreating(true);
     try {
       const payload = { ...config, questionCount: Number(config.questionCount) };
       if (config.testType === 'full_mock') {
-        delete payload.subject; delete payload.chapter; delete payload.topic; delete payload.difficulty; delete payload.questionCount;
+        if (mockMode === 'standard') {
+          delete payload.subject; delete payload.chapter; delete payload.topic; delete payload.difficulty; delete payload.questionCount;
+        } else {
+          payload.subject = config.subject;
+          payload.chapters = selectedChapters;
+          delete payload.chapter; delete payload.topic; delete payload.difficulty; delete payload.questionCount;
+        }
       }
       const response = await testsAPI.generateTest(payload);
       navigate(`/exam/${response.data.testId}`);
@@ -51,35 +81,233 @@ const TestsPage = () => {
   };
 
   return (
-    <AppShell eyebrow="Exam practice" title="Tests">
-      <section className="product-hero">
-        <div><span className="product-badge"><FileQuestion size={15} /> NEET test centre</span><h2>Practise with a purpose. Perform under pressure.</h2><p>Choose a focused drill or enter full exam mode. Every paper is generated from the verified question bank.</p></div>
-        <button className="hero-outline-button" onClick={() => navigate('/attempts')}>Past attempts <ArrowRight size={16} /></button>
-      </section>
+    <AppShell>
+      <div className="max-w-[1400px] mx-auto p-4 md:p-8 space-y-8 pb-20">
+        
+        {/* HERO SECTION */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="relative rounded-[2rem] p-8 md:p-12 overflow-hidden shadow-float bg-blue-600"
+        >
+          {/* Animated Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-emerald-500 to-indigo-800 opacity-90" />
+          <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-white/10 to-transparent" />
+          
+          {/* Decorative Orbs */}
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/20 blur-3xl rounded-full" />
+          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-emerald-400/20 blur-3xl rounded-full" />
 
-      <section className="test-catalogue">
-        {testTypes.map(({ value, title, note, icon: Icon, accent }) => (
-          <button className={`catalogue-card accent-${accent} ${config.testType === value ? 'is-active' : ''}`} key={value} onClick={() => update('testType', value)}>
-            <span><Icon size={21} /></span><strong>{title}</strong><small>{note}</small>
-          </button>
-        ))}
-      </section>
+          <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm font-bold mb-6">
+                <Sparkles size={16} /> Daily Motivation: "Success is the sum of small efforts, repeated day in and day out."
+              </div>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+                Mock Tests & Practice
+              </h1>
+              <p className="text-emerald-50 text-lg md:text-xl font-medium mb-8 max-w-lg leading-relaxed">
+                Choose a focused drill or enter full exam mode. Every paper is generated from our verified NEET question bank.
+              </p>
+              
+              <div className="flex flex-wrap gap-4">
+                <button onClick={() => navigate('/attempts')} className="group flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold rounded-2xl hover:bg-white/30 transition-all shadow-lg hover:shadow-xl hover:scale-105">
+                  <History size={20} />
+                  View Past Attempts
+                </button>
+              </div>
+            </div>
 
-      <section className="chalk-card professional-builder">
-        <div className="builder-heading"><div><p className="student-eyebrow">Paper configuration</p><h2>Build your test</h2><span>Only available combinations from your question bank are shown.</span></div><div><Clock3 size={20} /><strong>{config.testType === 'full_mock' ? '180 min' : 'Timed test'}</strong></div></div>
-        {config.testType === 'full_mock' ? (
-          <div className="mock-summary"><Target size={28} /><div><strong>Full NEET mock</strong><span>45 Physics · 45 Chemistry · 90 Biology · +4/−1 marking</span></div></div>
-        ) : (
-          <div className="professional-fields">
-            <label><span>Subject</span><select value={config.subject} onChange={(event) => update('subject', event.target.value)}>{(subjects.length ? subjects : ['biology', 'physics', 'chemistry']).map((item) => <option value={item} key={item}>{item}</option>)}</select></label>
-            {['chapter_test', 'topic_test'].includes(config.testType) && <label><span>Chapter</span><select value={config.chapter} onChange={(event) => update('chapter', event.target.value)}><option value="">Select chapter</option>{chapters.map((item) => <option key={item}>{item}</option>)}</select></label>}
-            {config.testType === 'topic_test' && <label><span>Topic</span><select value={config.topic} onChange={(event) => update('topic', event.target.value)}><option value="">Select topic</option>{topics.map((item) => <option key={item}>{item}</option>)}</select></label>}
-            {!['pyq_test'].includes(config.testType) && <label><span>Difficulty</span><select value={config.difficulty} onChange={(event) => update('difficulty', event.target.value)}><option value="">Balanced mix</option><option value="easy">Easy</option><option value="medium">Medium</option><option value="hard">Hard</option></select></label>}
-            <label><span>Questions</span><select value={config.questionCount} onChange={(event) => update('questionCount', event.target.value)}><option value="15">15 questions</option><option value="30">30 questions</option><option value="45">45 questions</option><option value="60">60 questions</option><option value="90">90 questions</option></select></label>
+            {/* Countdown Ring */}
+            <div className="shrink-0 relative w-48 h-48 flex flex-col items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2rem] shadow-2xl">
+              <Timer size={32} className="text-white mb-2 opacity-80" />
+              <div className="text-6xl font-black text-white tracking-tighter">{daysToExam}</div>
+              <div className="text-sm font-bold text-emerald-100 uppercase tracking-widest mt-1">Days to NEET</div>
+            </div>
           </div>
-        )}
-        <div className="builder-launch"><p>Questions are randomized and answers auto-save during the exam.</p><button onClick={generate} disabled={creating}>{creating ? 'Preparing paper…' : 'Start test'} <ArrowRight size={17} /></button></div>
-      </section>
+        </motion.div>
+
+        {/* TEST TYPES CATALOGUE */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {testTypes.map(({ value, title, note, icon: Icon, accent, border }) => (
+            <button 
+              key={value} 
+              onClick={() => update('testType', value)}
+              className={`flex flex-col items-center justify-center text-center p-6 rounded-[2rem] transition-all duration-300 border-2 ${
+                config.testType === value 
+                  ? `${border} bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] scale-105 z-10` 
+                  : 'border-transparent bg-white/50 hover:bg-white hover:border-slate-200 hover:shadow-sm'
+              }`}
+            >
+              <div className={`w-14 h-14 rounded-2xl mb-4 flex items-center justify-center transition-colors ${
+                config.testType === value ? accent : 'bg-slate-100 text-slate-400'
+              }`}>
+                <Icon size={28} />
+              </div>
+              <h3 className={`font-extrabold mb-1 ${config.testType === value ? 'text-slate-800' : 'text-slate-600'}`}>{title}</h3>
+              <p className="text-xs text-slate-500 font-medium">{note}</p>
+            </button>
+          ))}
+        </div>
+
+        {/* PAPER CONFIGURATION BUILDER */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="glass-card p-8 md:p-10 rounded-[2rem]"
+        >
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10 pb-6 border-b border-slate-100">
+            <div>
+              <p className="text-sm font-bold text-primary uppercase tracking-wider mb-2">Paper Configuration</p>
+              <h2 className="text-3xl font-extrabold text-slate-800 mb-2">Build your test</h2>
+              <span className="text-slate-500 font-medium flex items-center gap-2">
+                <AlertCircle size={16} /> Only available combinations from your question bank are shown.
+              </span>
+            </div>
+            <div className="flex items-center gap-3 px-5 py-3 bg-slate-50 text-slate-700 rounded-2xl border border-slate-200 shadow-sm font-bold">
+              <Clock3 size={24} className="text-primary" />
+              <span className="text-lg">{config.testType === 'full_mock' ? '180 min' : 'Timed test'}</span>
+            </div>
+          </div>
+
+          {config.testType === 'full_mock' ? (
+            <div className="flex flex-col gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <button 
+                  className={`flex flex-col p-6 rounded-2xl transition-all duration-300 border-2 text-left ${
+                    mockMode === 'standard' ? 'border-primary bg-primary/5 shadow-md' : 'border-slate-200 bg-white hover:border-primary/50'
+                  }`}
+                  onClick={() => setMockMode('standard')}
+                >
+                  <strong className="text-lg text-slate-800 mb-1">Standard Full Syllabus</strong>
+                  <span className="text-slate-500 font-medium">45 Physics, 45 Chemistry, 90 Biology</span>
+                </button>
+                <button 
+                  className={`flex flex-col p-6 rounded-2xl transition-all duration-300 border-2 text-left ${
+                    mockMode === 'custom' ? 'border-primary bg-primary/5 shadow-md' : 'border-slate-200 bg-white hover:border-primary/50'
+                  }`}
+                  onClick={() => setMockMode('custom')}
+                >
+                  <strong className="text-lg text-slate-800 mb-1">Custom Chapters Syllabus</strong>
+                  <span className="text-slate-500 font-medium">180 questions from selected chapters</span>
+                </button>
+              </div>
+
+              {mockMode === 'standard' ? (
+                <div className="flex items-center gap-5 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-indigo-100">
+                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-indigo-600 shadow-sm shrink-0">
+                    <Target size={32} />
+                  </div>
+                  <div>
+                    <strong className="block text-xl text-indigo-900 mb-1">Full NEET Mock Pattern</strong>
+                    <span className="text-indigo-700 font-medium">45 Physics · 45 Chemistry · 90 Biology · +4/−1 marking scheme</span>
+                  </div>
+                </div>
+              ) : (
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-6">
+                  <div className="flex flex-col gap-2">
+                    <label className="text-sm font-bold text-slate-700">Select Subject</label>
+                    <select 
+                      value={config.subject} 
+                      onChange={(event) => update('subject', event.target.value)} 
+                      className="p-3.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium text-slate-700 transition-all shadow-sm"
+                    >
+                      {(subjects.length ? subjects : ['biology', 'physics', 'chemistry']).map((item) => <option value={item} key={item} className="capitalize">{item}</option>)}
+                    </select>
+                  </div>
+
+                  <div className="flex flex-col gap-3">
+                    <label className="text-sm font-bold text-slate-700">Select Chapters <span className="text-slate-400 font-normal">(Multi-select)</span></label>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[300px] overflow-y-auto p-4 bg-white border border-slate-200 rounded-xl shadow-inner">
+                      {chapters.map((ch) => (
+                        <label key={ch} className="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer border border-transparent hover:border-slate-200 transition-colors">
+                          <input 
+                            type="checkbox" 
+                            checked={selectedChapters.includes(ch)} 
+                            onChange={() => handleChapterToggle(ch)}
+                            className="mt-1 w-4 h-4 text-primary rounded border-slate-300 focus:ring-primary"
+                          />
+                          <span className="text-sm font-medium text-slate-700 leading-tight">{ch}</span>
+                        </label>
+                      ))}
+                      {chapters.length === 0 && <div className="col-span-full p-4 text-center text-slate-500 font-medium">No chapters available. Please select another subject or add more questions.</div>}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex flex-col gap-2">
+                <label className="text-sm font-bold text-slate-700">Subject</label>
+                <select value={config.subject} onChange={(e) => update('subject', e.target.value)} className="p-3.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium text-slate-700 shadow-sm capitalize">
+                  {(subjects.length ? subjects : ['biology', 'physics', 'chemistry']).map((item) => <option value={item} key={item} className="capitalize">{item}</option>)}
+                </select>
+              </div>
+              
+              {['chapter_test', 'topic_test'].includes(config.testType) && (
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-bold text-slate-700">Chapter</label>
+                  <select value={config.chapter} onChange={(e) => update('chapter', e.target.value)} className="p-3.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium text-slate-700 shadow-sm">
+                    <option value="">Select chapter</option>
+                    {chapters.map((item) => <option key={item}>{item}</option>)}
+                  </select>
+                </div>
+              )}
+              
+              {config.testType === 'topic_test' && (
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-bold text-slate-700">Topic</label>
+                  <select value={config.topic} onChange={(e) => update('topic', e.target.value)} className="p-3.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium text-slate-700 shadow-sm">
+                    <option value="">Select topic</option>
+                    {topics.map((item) => <option key={item}>{item}</option>)}
+                  </select>
+                </div>
+              )}
+              
+              {!['pyq_test'].includes(config.testType) && (
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-bold text-slate-700">Difficulty</label>
+                  <select value={config.difficulty} onChange={(e) => update('difficulty', e.target.value)} className="p-3.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium text-slate-700 shadow-sm">
+                    <option value="">Balanced mix</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                  </select>
+                </div>
+              )}
+              
+              <div className="flex flex-col gap-2">
+                <label className="text-sm font-bold text-slate-700">Questions</label>
+                <select value={config.questionCount} onChange={(e) => update('questionCount', e.target.value)} className="p-3.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium text-slate-700 shadow-sm">
+                  <option value="15">15 questions</option>
+                  <option value="30">30 questions</option>
+                  <option value="45">45 questions</option>
+                  <option value="60">60 questions</option>
+                  <option value="90">90 questions</option>
+                </select>
+              </div>
+            </div>
+          )}
+
+          <div className="mt-10 pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
+            <p className="text-slate-500 font-medium flex items-center gap-2">
+              <Sparkles size={18} className="text-primary" /> Questions are randomized and answers auto-save during the exam.
+            </p>
+            <button 
+              onClick={generate} 
+              disabled={creating}
+              className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-bold text-lg rounded-2xl hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            >
+              {creating ? (
+                <>Preparing paper <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin ml-2" /></>
+              ) : (
+                <><Play size={20} className="fill-white" /> Start Exam</>
+              )}
+            </button>
+          </div>
+        </motion.div>
+      </div>
     </AppShell>
   );
 };

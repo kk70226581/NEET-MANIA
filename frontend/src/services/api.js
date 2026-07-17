@@ -63,6 +63,8 @@ export const questionsAPI = {
   getAdminQuestions: (params) => api.get('/questions/admin/review', { params }),
   classifyQuestions: (data) => api.post('/questions/classify', data),
   clearAllQuestions: (params) => api.delete('/questions/admin/clear-all', { params }),
+  importPatternQuestions: (data) => api.post('/questions/import-pattern', data),
+  reviewQuestions: (data) => api.post('/questions/review-db', data),
   generateQuestions: (data) => api.post('/questions/generate', data)
 };
 
@@ -81,6 +83,13 @@ export const testsAPI = {
 export const mistakesAPI = {
   getMistakes: (params) => api.get('/mistakes', { params }),
   updateMistake: (id, data) => api.patch(`/mistakes/${id}`, data)
+};
+
+export const mentorAPI = {
+  getConversations: () => api.get('/mentor/conversations'),
+  createConversation: () => api.post('/mentor/conversations'),
+  getConversation: (conversationId) => api.get(`/mentor/conversations/${conversationId}`),
+  chat: (conversationId, message) => api.post('/mentor/chat', { conversationId, message })
 };
 
 export default api;

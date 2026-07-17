@@ -13,6 +13,8 @@ const {
   publishQuestion,
   uploadPDF,
   uploadImage,
+  importPatternQuestions,
+  reviewQuestions,
   classifyQuestions,
   getQuestionStats,
   getQuestionMetadata,
@@ -69,6 +71,8 @@ router.delete('/admin/clear-all', authenticate, isAdmin, clearAllQuestions);
 router.post('/generate', authenticate, isAdmin, generateQuestions);
 router.post('/generate-stream', authenticate, isAdmin, generateQuestionsStream);
 router.post('/upload-pdf', authenticate, isAdmin, pdfUpload.single('pdf'), uploadPDF);
+router.post('/import-pattern', authenticate, isAdmin, importPatternQuestions);
+router.post('/review-db', authenticate, isAdmin, reviewQuestions);
 router.post('/upload-image', authenticate, isAdmin, imageUpload.single('image'), uploadImage);
 router.post('/classify', authenticate, isAdmin, classifyQuestions);
 router.post('/', authenticate, isAdmin, createQuestion);

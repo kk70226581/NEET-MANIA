@@ -1,6 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
+const { execFile } = require('child_process');
+const { promisify } = require('util');
+const execFileAsync = promisify(execFile);
 
 // Load environment variables
 const dotenvPath = fs.existsSync(path.join(process.cwd(), '.env'))
@@ -12,17 +15,98 @@ require('dotenv').config({ path: dotenvPath });
 
 const connectDB = require('../config/database');
 const Question = require('../models/Question');
-const PDFExtractor = require('../services/pdfExtractor');
-const { getGeminiText } = require('../services/geminiClient');
 const { PHYSICS_CHAPTERS, CHEMISTRY_CHAPTERS, BIOLOGY_CHAPTERS } = require('../config/constants');
 
-const PATTERN_DIR = path.join(__dirname, '..', '..', 'PATTERN');
+const PATTERN_DIR = path.join(__dirname, '..', '..', '..', 'PATTERN');
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
+const PDF_RENDERER_PATH = process.env.PDF_RENDERER_PATH || 'pdftoppm';
 
-// Helper to determine subject from text or filename
-function detectSubject(filename, sampleText) {
+// Resilient JSON parser that repairs common AI output syntax errors
+function robustParseJSON(text) {
+  let cleaned = text.trim();
+  
+  // Strip markdown code fences if present
+  if (cleaned.startsWith('```')) {
+    cleaned = cleaned.replace(/^```(?:json)?/i, '').replace(/```$/, '').trim();
+  }
+
+  // Handle trailing commas before closing brackets
+  cleaned = cleaned.replace(/,\s*([\]}])/g, '$1');
+
+  // Attempt standard parse first
+  try {
+    return JSON.parse(cleaned);
+  } catch (e) {
+    // If it fails, try a regex-based search for JSON array
+    const arrayMatch = cleaned.match(/\[\s*\{[\s\S]*\}\s*\]/);
+    if (arrayMatch) {
+      try {
+        return JSON.parse(arrayMatch[0].replace(/,\s*([\]}])/g, '$1'));
+      } catch (e2) {
+        // Fallback: replace common characters that break parse
+        try {
+          const repaired = arrayMatch[0]
+            .replace(/[\u0000-\u001F]+/g, '') // remove control chars
+            .replace(/\\(?!["\\\/bfnrtu])/g, '\\\\'); // escape single backslashes
+          return JSON.parse(repaired);
+        } catch (e3) {
+          throw new Error(`Failed to parse repaired JSON: ${e3.message}`);
+        }
+      }
+    }
+    throw e;
+  }
+}
+
+// Call Gemini directly supporting inline image/pdf base64 data
+async function callGeminiDirect({ prompt, imageBase64, mimeType }) {
+  if (!GEMINI_API_KEY) {
+    throw new Error('GEMINI_API_KEY is not configured in .env');
+  }
+
+  const parts = [];
+  if (imageBase64 && mimeType) {
+    parts.push({
+      inlineData: {
+        mimeType: mimeType,
+        data: imageBase64
+      }
+    });
+  }
+  parts.push({ text: prompt });
+
+  const requestBody = {
+    contents: [{ role: 'user', parts }],
+    generationConfig: {
+      temperature: 0.1,
+      maxOutputTokens: 8000,
+      responseMimeType: 'application/json'
+    }
+  };
+
+  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
+
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(requestBody)
+  });
+
+  const payload = await response.json();
+  if (!response.ok) {
+    throw new Error(payload.error?.message || `Gemini API error status ${response.status}`);
+  }
+
+  return payload.candidates?.[0]?.content?.parts
+    ?.map(part => part.text || '')
+    .join('')
+    .trim() || '';
+}
+
+// Helper to determine subject
+function detectSubject(filename) {
   const name = filename.toLowerCase();
-  const text = sampleText.toLowerCase();
-
   if (name.includes('biology') || name.includes('botany') || name.includes('zoology') || name.includes('bio')) {
     return 'biology';
   }
@@ -32,23 +116,11 @@ function detectSubject(filename, sampleText) {
   if (name.includes('physics') || name.includes('phy')) {
     return 'physics';
   }
-
-  // Fallback to text matching
-  if (text.includes('photosynthesis') || text.includes('cell') || text.includes('organism') || text.includes('genetics')) {
-    return 'biology';
-  }
-  if (text.includes('organic chemistry') || text.includes('mole concept') || text.includes('chemical bonding')) {
-    return 'chemistry';
-  }
-  if (text.includes('motion') || text.includes('mechanics') || text.includes('current electricity') || text.includes('optics')) {
-    return 'physics';
-  }
-
   return 'biology'; // default
 }
 
 async function runIngestion() {
-  console.log('⚡ Starting automatic PDF question ingestion...');
+  console.log('⚡ Starting robust PDF question ingestion...');
   await connectDB();
 
   if (!fs.existsSync(PATTERN_DIR)) {
@@ -65,91 +137,71 @@ async function runIngestion() {
     console.log(`📖 Processing file: ${file}`);
     console.log(`========================================`);
 
+    const subject = detectSubject(file);
+    console.log(`🧬 Subject set to: ${subject}`);
+
+    // Create a temporary folder to render scanned PDF pages to images if needed
+    const tempDir = fs.mkdtempSync(path.join(require('os').tmpdir(), 'ingest-ocr-'));
+    const outputPrefix = path.join(tempDir, 'page');
+
     try {
-      const fileMock = {
-        path: filePath,
-        originalname: file,
-        mimetype: 'application/pdf'
-      };
+      console.log(`Rendering PDF pages to images using pdftoppm...`);
+      // We render the first 15 pages of each document to keep it fast and stay within token/rate limits
+      await execFileAsync(PDF_RENDERER_PATH, [
+        '-png',
+        '-r', '150',
+        '-f', '1',
+        '-l', '15',
+        filePath,
+        outputPrefix
+      ], { windowsHide: true, maxBuffer: 50 * 1024 * 1024 });
 
-      // Extract raw text first to analyze subject and do page split
-      let text = '';
-      try {
-        text = await PDFExtractor.extractSelectablePdfText(fileMock);
-      } catch (err) {
-        console.warn(`⚠️ Selectable text extraction failed: ${err.message}. Retrying with general parse.`);
-        const pdfParse = require('pdf-parse');
-        const data = await pdfParse(fs.readFileSync(filePath));
-        text = data.text || '';
-      }
+      const pageImages = fs.readdirSync(tempDir)
+        .filter(f => f.endsWith('.png'))
+        .sort((a, b) => Number(a.match(/\d+/)?.[0] || 0) - Number(b.match(/\d+/)?.[0] || 0))
+        .map(f => path.join(tempDir, f));
 
-      if (!text || text.trim().length < 100) {
-        console.warn(`⚠️ Warning: Insufficient text extracted from ${file}. Skipping or requires OCR.`);
-        continue;
-      }
+      console.log(`Rendered ${pageImages.length} pages to process.`);
 
-      const subject = detectSubject(file, text.slice(0, 5000));
-      console.log(`🧬 Detected Subject: ${subject}`);
+      let totalInserted = 0;
 
-      // We will slice the text into pages or sections to parse with Gemini
-      let pages = text.split('\f');
-      if (pages.length <= 1) {
-        pages = text.split(/Page\s+\d+/i);
-      }
-      pages = pages.map(p => p.trim()).filter(p => p.length > 100);
-
-      console.log(`Extracted ${pages.length} pages/sections.`);
-
-      // Group pages to avoid too many small requests
-      const chunkCount = Math.min(pages.length, 30); // process up to 30 pages/chunks per file to avoid token blowups
-      const pagesToProcess = pages.slice(0, chunkCount);
-
-      let totalInsertedForFile = 0;
-
-      for (let i = 0; i < pagesToProcess.length; i++) {
-        console.log(`  Processing page/chunk ${i + 1}/${pagesToProcess.length}...`);
-        const pageText = pagesToProcess[i];
+      for (let i = 0; i < pageImages.length; i++) {
+        const imagePath = pageImages[i];
+        console.log(`  Parsing Page ${i + 1}/${pageImages.length}...`);
 
         try {
-          const prompt = `You are a NEET/JEE question compiler. Parse the following text and extract all multiple-choice questions (MCQs).
-          
-For each question, extract:
-- questionText: The full question statement (if it references a diagram, write description of diagram in brackets)
-- options: A, B, C, D text
+          const base64Data = fs.readFileSync(imagePath).toString('base64');
+
+          const prompt = `Analyze this page image containing chemistry, physics, or biology questions.
+Extract ALL multiple-choice questions (MCQs) present on this page.
+For each question, return:
+- questionText: Full question statement (preserve math/formatting, clean up any scanner artifacts)
+- options: A, B, C, D (each containing option text)
 - correctAnswer: A, B, C, or D
-- explanation: Detailed conceptual answer explanation
+- explanation: Detailed step-by-step conceptual explanation
 - chapter: NCERT chapter name
 - topic: specific topic name
 - difficulty: easy, medium, or hard
-- source: 'ncert' (if it is a direct fact question), 'pyq' (if it mentions years like 2018, 2020 or NEET/AIPMT), 'coaching' (if it is advanced coaching style), 'custom' (for others)
-- sourceDetails: { year: numeric year if mentioned, examType: 'neet', 'aipmt', 'jee_main' if mentioned }
+- source: 'ncert', 'pyq' (for NEET/AIPMT previous years), 'coaching', 'custom'
 
-Text to parse:
-${pageText}
-
-Available chapters to choose from:
+Choose the chapter ONLY from this list:
 ${subject === 'physics' ? PHYSICS_CHAPTERS.join(', ') : subject === 'chemistry' ? CHEMISTRY_CHAPTERS.join(', ') : BIOLOGY_CHAPTERS.join(', ')}
 
-Return ONLY a valid JSON array of questions. No markdown, no triple backticks.`;
+Return a valid JSON array of questions. Ensure no trailing commas or incomplete JSON blocks.`;
 
-          const aiResponse = await getGeminiText({
-            systemInstruction: 'You are an expert NEET question parser. Return a JSON array only.',
+          const responseText = await callGeminiDirect({
             prompt,
-            maxOutputTokens: 8000,
-            temperature: 0.1,
-            responseMimeType: 'application/json'
+            imageBase64: base64Data,
+            mimeType: 'image/png'
           });
 
-          const questions = PDFExtractor.parseJsonQuestions(aiResponse);
+          const questions = robustParseJSON(responseText);
           if (Array.isArray(questions) && questions.length > 0) {
-            // Normalize and enrich
             const normalized = questions.map(q => {
               const options = {};
               ['A', 'B', 'C', 'D'].forEach(k => {
                 options[k] = { text: q.options?.[k]?.text || q.options?.[k] || `Option ${k}` };
               });
-
-              const isPYQ = q.source === 'pyq' || !!q.sourceDetails?.year;
 
               return {
                 questionText: q.questionText || 'Question text missing',
@@ -163,37 +215,38 @@ Return ONLY a valid JSON array of questions. No markdown, no triple backticks.`;
                 difficulty: ['easy', 'medium', 'hard'].includes(q.difficulty) ? q.difficulty : 'medium',
                 source: q.source || 'custom',
                 sourceDetails: {
-                  year: q.sourceDetails?.year || undefined,
-                  examType: q.sourceDetails?.examType || (isPYQ ? 'neet' : undefined),
-                  testName: file
+                  testName: file,
+                  examType: 'neet'
                 },
                 pyq: {
-                  isPYQ,
-                  reference: isPYQ ? `NEET/AIPMT ${q.sourceDetails?.year || ''}`.trim() : undefined
+                  isPYQ: q.source === 'pyq',
+                  reference: q.source === 'pyq' ? 'NEET Previous Year' : undefined
                 },
                 inSyllabus: true,
-                isPublished: true, // auto-publish directly as requested
+                isPublished: true,
                 isVerified: true,
-                verifiedAt: new Date(),
-                tags: [subject, q.chapter || 'Unclassified', q.topic || '', q.source || 'custom'].filter(Boolean)
+                verifiedAt: new Date()
               };
             });
 
             const inserted = await Question.insertMany(normalized);
-            totalInsertedForFile += inserted.length;
-            console.log(`  ✅ Successfully saved ${inserted.length} questions from chunk ${i + 1}.`);
+            totalInserted += inserted.length;
+            console.log(`    ✅ Saved ${inserted.length} questions from Page ${i + 1}.`);
           }
         } catch (e) {
-          console.error(`  ❌ Error processing chunk ${i + 1}: ${e.message}`);
+          console.error(`    ❌ Error processing Page ${i + 1}: ${e.message}`);
         }
 
-        // Delay to avoid rate limit
+        // Delay to avoid rate limits
         await new Promise(r => setTimeout(r, 2000));
       }
 
-      console.log(`🎉 Finished file: ${file}. Total questions inserted: ${totalInsertedForFile}`);
+      console.log(`🎉 Completed file: ${file}. Total questions added: ${totalInserted}`);
     } catch (err) {
-      console.error(`❌ Critical error processing file ${file}: ${err.message}`);
+      console.error(`❌ Error rendering/processing file ${file}: ${err.message}`);
+    } finally {
+      // Clean up temp images
+      fs.rmSync(tempDir, { recursive: true, force: true });
     }
   }
 

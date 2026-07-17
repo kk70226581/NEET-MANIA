@@ -304,18 +304,18 @@ const ExamPage = () => {
 
   if (loading) {
     return (
-      <div className="nta-loading-screen">
-        <div className="nta-loading-card">
-          <div className="loader" />
-          <strong>Preparing your examination</strong>
-          <span>Loading the paper and restoring saved responses…</span>
+      <div className="flex flex-col items-center justify-center h-screen bg-blue-50">
+        <div className="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center max-w-md w-full text-center border-t-4 border-blue-600">
+          <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mb-6" />
+          <h2 className="text-2xl font-bold text-slate-800 mb-2">Preparing your examination</h2>
+          <p className="text-slate-500 font-medium">Loading the paper and restoring saved responses…</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="nta-exam-page">
+    <div className={`flex flex-col h-screen bg-gray-50 font-sans ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}>
       <ExamHeader
         timeRemaining={timeRemaining}
         totalQuestions={questions.length}
@@ -326,75 +326,96 @@ const ExamPage = () => {
       />
 
       {subjectSections.length > 1 && (
-        <nav className="nta-subject-tabs" aria-label="Exam sections">
-          <span>Sections</span>
-          {subjectSections.map((section) => (
-            <button
-              type="button"
-              key={section.subject}
-              onClick={() => dispatch(setCurrentQuestion(section.startIndex))}
-              className={currentQuestion?.subject === section.subject ? 'is-active' : ''}
-            >
-              {section.subject.charAt(0).toUpperCase() + section.subject.slice(1)}
-            </button>
-          ))}
-        </nav>
+        <div className="flex bg-blue-600 text-white shadow-sm overflow-x-auto select-none shrink-0">
+          {subjectSections.map((section, idx) => {
+            const isActive = exam.currentQuestionIndex >= section.startIndex && 
+                            (idx === subjectSections.length - 1 || exam.currentQuestionIndex < subjectSections[idx + 1].startIndex);
+            return (
+              <button
+                key={section.subject}
+                className={`px-6 py-2 text-sm font-bold border-r border-blue-500 uppercase tracking-wider transition-colors ${isActive ? 'bg-white text-blue-700 shadow-inner' : 'hover:bg-blue-700'}`}
+                onClick={() => dispatch(setCurrentQuestion(section.startIndex))}
+              >
+                {section.subject}
+              </button>
+            );
+          })}
+        </div>
       )}
 
-      <div className="nta-exam-workspace">
-        <main className="nta-question-workspace">
-          {currentQuestion && (
-            <QuestionDisplay
-              question={currentQuestion}
-              questionIndex={exam.currentQuestionIndex}
-              totalQuestions={questions.length}
-              savedResponse={exam.responses[currentQuestion._id]}
-              onSave={handleSaveResponse}
-              onClear={handleClearResponse}
-              onNext={handleNext}
-              onPrevious={handlePrevious}
-              isFirst={exam.currentQuestionIndex === 0}
-              isLast={exam.currentQuestionIndex === questions.length - 1}
-            />
-          )}
+      <div className="flex flex-1 overflow-hidden">
+        <main className="flex-1 flex flex-col min-w-0 border-r border-gray-300">
+          <QuestionDisplay
+            question={currentQuestion}
+            questionIndex={exam.currentQuestionIndex}
+            totalQuestions={questions.length}
+            savedResponse={exam.responses[String(currentQuestion._id)]}
+            onSave={handleSaveResponse}
+            onClear={handleClearResponse}
+            onNext={handleNext}
+            onPrevious={handlePrevious}
+            isFirst={exam.currentQuestionIndex === 0}
+            isLast={exam.currentQuestionIndex === questions.length - 1}
+          />
         </main>
 
-        <aside className="nta-palette-workspace">
+        <aside className="w-80 flex-shrink-0 bg-white hidden md:block border-l border-gray-300 shadow-sm">
           <QuestionPalette
             questions={questions}
             currentIndex={exam.currentQuestionIndex}
             responses={exam.responses}
             markedForReview={exam.markedForReview}
             visitedQuestions={visitedQuestions}
-            onSelectQuestion={(index) => dispatch(setCurrentQuestion(index))}
+            onSelectQuestion={(idx) => dispatch(setCurrentQuestion(idx))}
           />
         </aside>
       </div>
 
       {showSubmitConfirm && (
-        <div className="nta-modal-backdrop">
-          <div className="nta-submit-modal" role="dialog" aria-modal="true" aria-labelledby="submit-title">
-            <div className="nta-submit-modal-heading">
-              <h2 id="submit-title">Submit Examination?</h2>
-              <span>Please review your attempt summary</span>
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+          <div className="bg-white rounded-xl shadow-2xl max-w-md w-full overflow-hidden">
+            <div className="bg-blue-600 text-white px-6 py-4">
+              <h2 className="text-xl font-bold">Submit Assessment?</h2>
             </div>
-            <div className="nta-submit-summary">
-              <div><strong>{answeredCount}</strong><span>Answered</span></div>
-              <div><strong>{notAnsweredCount}</strong><span>Not Answered</span></div>
-              <div><strong>{markedCount}</strong><span>Marked</span></div>
-            </div>
-            <p>After submission, responses cannot be changed.</p>
-            <div className="nta-submit-modal-actions">
-              <button type="button" onClick={() => setShowSubmitConfirm(false)}>Return to Test</button>
-              <button
-                type="button"
-                onClick={() => {
-                  setShowSubmitConfirm(false);
-                  performSubmit();
-                }}
-              >
-                Confirm & Submit
-              </button>
+            <div className="p-6">
+              <p className="text-gray-700 mb-4">Please review your attempt summary before final submission.</p>
+              
+              <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                <div className="bg-green-50 p-3 rounded border border-green-100 flex flex-col items-center">
+                  <span className="text-2xl font-bold text-green-700">{answeredCount}</span>
+                  <span className="text-green-800 font-semibold text-center">Answered</span>
+                </div>
+                <div className="bg-red-50 p-3 rounded border border-red-100 flex flex-col items-center">
+                  <span className="text-2xl font-bold text-red-700">{notAnsweredCount}</span>
+                  <span className="text-red-800 font-semibold text-center">Not Answered</span>
+                </div>
+                <div className="bg-purple-50 p-3 rounded border border-purple-100 flex flex-col items-center col-span-2">
+                  <span className="text-2xl font-bold text-purple-700">{markedCount}</span>
+                  <span className="text-purple-800 font-semibold text-center">Marked for Review</span>
+                </div>
+              </div>
+
+              <div className="flex gap-3 justify-end">
+                <button
+                  type="button"
+                  className="px-5 py-2 text-gray-700 font-semibold border border-gray-300 rounded hover:bg-gray-100 transition-colors"
+                  onClick={() => setShowSubmitConfirm(false)}
+                  disabled={isSubmittingRef.current}
+                >
+                  Return to Test
+                </button>
+                <button
+                  type="button"
+                  className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded shadow-md transition-colors flex items-center gap-2"
+                  onClick={() => {
+                    setShowSubmitConfirm(false);
+                    performSubmit();
+                  }}
+                  disabled={isSubmittingRef.current}
+                >
+                  {isSubmittingRef.current ? 'Submitting...' : 'Yes, Submit Now'}
+                </button>
+              </div>
             </div>
           </div>
         </div>

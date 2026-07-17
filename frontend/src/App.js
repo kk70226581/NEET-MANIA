@@ -18,12 +18,15 @@ import TestsPage from './pages/TestsPage';
 import PerformancePage from './pages/PerformancePage';
 import StudyPlanPage from './pages/StudyPlanPage';
 import SettingsPage from './pages/SettingsPage';
+import LeaderboardPage from './pages/LeaderboardPage';
+import MentorPage from './pages/MentorPage';
 import { authAPI } from './services/api';
 import { setUser } from './store/slices/userSlice';
 
 // Components
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminRoute from './components/AdminRoute';
+import FloatingChat from './components/FloatingChat';
 
 function App() {
   const { isAuthenticated } = useSelector(state => state.user);
@@ -59,6 +62,8 @@ function App() {
           <Route path="/tests" element={<TestsPage />} />
           <Route path="/performance" element={<PerformancePage />} />
           <Route path="/study-plan" element={<StudyPlanPage />} />
+          <Route path="/leaderboard" element={<LeaderboardPage />} />
+          <Route path="/mentor" element={<MentorPage />} />
           <Route path="/settings" element={<SettingsPage />} />
         </Route>
         <Route element={<AdminRoute />}>
@@ -66,6 +71,7 @@ function App() {
         </Route>
         <Route path="*" element={<Navigate to={isAuthenticated ? '/dashboard' : '/'} replace />} />
       </Routes>
+      {isAuthenticated && <FloatingChat />}
     </Router>
   );
 }

@@ -44,6 +44,7 @@ app.use('/api/questions', require('./routes/questions'));
 app.use('/api/ai-questions', require('./routes/aiQuestions'));
 app.use('/api/tests', require('./routes/tests'));
 app.use('/api/mistakes', require('./routes/mistakes'));
+app.use('/api/mentor', require('./routes/mentor'));
 
 // Health check
 app.get('/health', (req, res) => {
@@ -84,3 +85,4 @@ server.on('error', (error) => {
 });
 
 module.exports = app;
+// Trigger restart

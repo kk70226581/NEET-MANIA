@@ -8,7 +8,8 @@
     "start": "node src/server.js",
     "test": "jest",
     "seed": "node src/scripts/seedDatabase.js",
-    "import-pdf": "node src/scripts/importPdf.js"
+    "import-pdf": "node src/scripts/importPdf.js",
+    "import-patterns": "node src/scripts/importPattern.js"
   },
   "keywords": [
     "NEET",

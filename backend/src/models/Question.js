@@ -288,6 +288,7 @@ const QuestionSchema = new mongoose.Schema({
 });
 
 // Indexes for faster queries
+QuestionSchema.index({ questionText: 1 }, { unique: true });
 QuestionSchema.index({ subject: 1, chapter: 1, difficulty: 1 });
 QuestionSchema.index({ subject: 1, topic: 1 });
 QuestionSchema.index({ isPublished: 1, subject: 1 });

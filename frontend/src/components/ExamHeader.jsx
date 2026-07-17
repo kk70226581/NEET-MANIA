@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock3, Maximize2, Send } from 'lucide-react';
+import { Clock, Maximize, AlertCircle } from 'lucide-react';
 
 const ExamHeader = ({
   timeRemaining,
@@ -17,32 +17,43 @@ const ExamHeader = ({
     .join(':');
 
   return (
-    <header className="nta-header">
-      <div className="nta-header-main">
-        <div className="nta-exam-identity">
-          <div className="nta-logo-mark">S</div>
-          <div>
-            <strong>NEET (UG) Mock Examination</strong>
-            <span>{totalQuestions} Questions | +4 correct | -1 incorrect</span>
+    <header className="bg-[#1a4b8c] text-white flex justify-between items-center px-4 py-2 shadow-md z-10 relative">
+      <div className="flex items-center gap-4">
+        <div className="text-xl font-black tracking-wider uppercase text-yellow-400">Solnut NEET</div>
+        <div className="hidden sm:block">
+          <div className="text-sm font-bold">NEET (UG) CBT Mock Test</div>
+          <div className="text-xs text-blue-200">{totalQuestions} Questions | +4 for correct, -1 for incorrect</div>
+        </div>
+      </div>
+      
+      <div className="flex items-center gap-6">
+        <div className="flex flex-col items-end">
+          <span className="text-xs font-semibold text-blue-200">Time Left</span>
+          <div className={`flex items-center gap-2 font-bold font-mono text-xl tracking-wider ${isCriticalTime ? 'text-red-400 animate-pulse' : isLowTime ? 'text-orange-300' : 'text-white'}`}>
+            <Clock size={18} className={isCriticalTime ? 'animate-bounce' : ''} />
+            {formattedTime}
           </div>
         </div>
-        <div className="nta-header-actions">
-          <div className={`nta-timer ${isLowTime ? 'is-low' : ''} ${isCriticalTime ? 'is-critical' : ''}`}>
-            <Clock3 size={20} />
-            <div>
-              <span>Time Left</span>
-              <strong>{formattedTime}</strong>
-            </div>
-          </div>
-          {onFullscreen && (
-            <button type="button" className="nta-fullscreen-button" onClick={onFullscreen}>
-              <Maximize2 size={15} /> Fullscreen
-            </button>
-          )}
-          <button type="button" className="nta-submit-button" onClick={onSubmit}>
-            <Send size={16} /> Submit Test
+        
+        {onFullscreen && (
+          <button 
+            type="button" 
+            className="flex flex-col items-center justify-center p-1 hover:text-yellow-300 transition-colors" 
+            onClick={onFullscreen}
+            title="Toggle Fullscreen"
+          >
+            <Maximize size={18} />
+            <span className="text-[10px] uppercase font-bold mt-1">Screen</span>
           </button>
-        </div>
+        )}
+        
+        <button 
+          type="button" 
+          className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm px-4 py-2 rounded shadow-sm flex items-center gap-2 transition-colors border border-red-800" 
+          onClick={onSubmit}
+        >
+          <AlertCircle size={16} /> Submit
+        </button>
       </div>
     </header>
   );

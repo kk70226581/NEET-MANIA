@@ -446,3 +446,51 @@
     transform: none;
   }
 }
+
+/* Public auth refresh */
+.auth-page:not(.admin-auth-page) {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(115deg, #fffaf4 0%, #fffaf4 52%, #fff3e6 100%);
+}
+
+.auth-page:not(.admin-auth-page)::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 84px;
+  right: 5vw;
+  width: min(43vw, 610px);
+  height: calc(100vh - 150px);
+  min-height: 560px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(20, 16, 11, 0.04), rgba(20, 16, 11, 0.28)), url('../assets/neet-doctor-hero.png') center / cover;
+  box-shadow: 0 24px 70px rgba(20, 16, 11, 0.16);
+}
+
+.auth-page:not(.admin-auth-page)::after {
+  content: 'Your medical dream starts with today’s revision.';
+  position: absolute;
+  z-index: 1;
+  right: calc(5vw + 28px);
+  bottom: 54px;
+  width: min(36vw, 460px);
+  color: white;
+  font-family: 'Kalam', cursive;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.2;
+}
+
+.auth-header, .auth-main, .auth-footer { position: relative; z-index: 2; }
+.auth-page:not(.admin-auth-page) .auth-header { padding-left: max(28px, calc((100vw - 1180px) / 2)); padding-right: max(28px, calc((100vw - 1180px) / 2)); }
+.auth-page:not(.admin-auth-page) .auth-main { justify-content: flex-start; padding-left: max(28px, calc((100vw - 1080px) / 2)); }
+.auth-page:not(.admin-auth-page) .auth-card { border-radius: 20px; box-shadow: 0 22px 60px rgba(20, 16, 11, 0.13); backdrop-filter: blur(12px); }
+.auth-page:not(.admin-auth-page) .auth-card-perf { border-radius: 20px 20px 0 0; }
+.auth-page:not(.admin-auth-page) .auth-card-body::before { content: 'NEET PREP • NCERT FIRST • YOUR OWN PACE'; display: inline-block; margin-bottom: 12px; padding: 5px 9px; border-radius: 999px; background: #fff3e6; color: #c2410c; font-size: 0.64rem; font-weight: 800; letter-spacing: 0.06em; }
+.auth-page:not(.admin-auth-page) .auth-input, .auth-page:not(.admin-auth-page) .auth-select { border-radius: 11px; }
+.auth-page:not(.admin-auth-page) .auth-btn-primary { border-radius: 12px; box-shadow: 0 8px 18px rgba(249,115,22,.22); }
+
+@media (max-width: 900px) {
+  .auth-page:not(.admin-auth-page)::before, .auth-page:not(.admin-auth-page)::after { display: none; }
+  .auth-page:not(.admin-auth-page) .auth-main { justify-content: center; padding-left: 24px; }
+}
