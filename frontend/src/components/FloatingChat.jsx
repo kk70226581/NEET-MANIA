@@ -3,11 +3,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Bot, BrainCircuit, MessageCircle, Send, X } from 'lucide-react';
 import { mentorAPI } from '../services/api';
 
-const CHAT_KEY = 'solnut-active-mentor-chat';
+const welcomeMessage = { sender: 'ai', text: 'Hey! Main tumhara NEET Bhaiya hoon 😊\n\nAaj kis topic ko easy banate hain?', createdAt: new Date().toISOString() };
 
 const FloatingChat = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([welcomeMessage]);
   const [conversationId, setConversationId] = useState(null);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -17,29 +17,8 @@ const FloatingChat = () => {
     const response = await mentorAPI.createConversation();
     const conversation = response.conversation;
     setConversationId(conversation._id);
-    setMessages(conversation.messages || []);
-    localStorage.setItem(CHAT_KEY, conversation._id);
     return conversation._id;
   };
-
-  useEffect(() => {
-    const loadConversation = async () => {
-      try {
-        const savedId = localStorage.getItem(CHAT_KEY);
-        if (savedId) {
-          const response = await mentorAPI.getConversation(savedId);
-          setConversationId(response.conversation._id);
-          setMessages(response.conversation.messages || []);
-        } else {
-          await startConversation();
-        }
-      } catch (error) {
-        localStorage.removeItem(CHAT_KEY);
-        try { await startConversation(); } catch (createError) { console.error('Could not start mentor chat', createError); }
-      }
-    };
-    loadConversation();
-  }, []);
 
   useEffect(() => { if (isOpen) messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages, isLoading, isOpen]);
 

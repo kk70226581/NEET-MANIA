@@ -1,319 +1,89 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Activity, ArrowRight, Atom, BarChart3, BookOpen, BrainCircuit, Check, ChevronDown, Dna, Download, FlaskConical, HeartPulse, Menu, Play, Sparkles, Target, Trophy, Users, X, Zap } from 'lucide-react';
 import './Home.css';
 
-const Home = () => {
+const features = [
+  [BookOpen, 'Chapter Wise Tests', 'Master one concept at a time with targeted practice and clear solutions.', 'blue'],
+  [Target, 'Full Mock Exams', 'Build real exam temperament with NEET-pattern mock tests.', 'emerald'],
+  [BrainCircuit, 'AI Performance Analysis', 'See exactly where marks are being lost and what to revise next.', 'violet'],
+  [Trophy, 'Leaderboard', 'Track your position and stay motivated alongside fellow aspirants.', 'amber'],
+  [Activity, 'Progress Tracking', 'Watch your accuracy, speed, and consistency improve over time.', 'cyan'],
+  [BookOpen, 'Previous Year Questions', 'Learn recurring concepts from 25+ years of NEET questions.', 'rose']
+];
+const categories = [
+  ['Biology', '4,200+ questions', Dna, 'from-emerald-500 to-teal-500'],
+  ['Physics', '2,100+ questions', Atom, 'from-blue-500 to-indigo-500'],
+  ['Chemistry', '2,400+ questions', FlaskConical, 'from-violet-500 to-purple-500'],
+  ['Full Syllabus', '180-question mocks', HeartPulse, 'from-rose-500 to-pink-500'],
+  ['Previous Year Papers', '25+ years covered', Trophy, 'from-amber-400 to-orange-500']
+];
+const benefits = ['NEET Exam Pattern', 'Instant Results', 'Detailed Solutions', 'Weak Topic Detection', 'Time Analysis', 'Rank Prediction'];
+const reviews = [
+  ['Priya N.', 'NEET Rank 1,842', 'The analysis showed me exactly which chapters were holding my score back.'],
+  ['Rohan K.', 'NEET Rank 3,105', 'The full mocks feel realistic, and checking mistakes is finally easy.'],
+  ['Ayesha S.', 'NEET Rank 2,426', 'I use chapter tests after every revision. It keeps me confident.']
+];
+const faqs = [
+  ['How do mock tests work?', 'Choose a test, solve it with a real-exam timer, then get score, solutions, and a complete performance report instantly.'],
+  ['How are ranks calculated?', 'Ranks are estimated from your score, accuracy and the performance of students taking similar tests.'],
+  ['Are solutions available?', 'Yes. Every question includes an explanation so you learn the concept behind the answer.'],
+  ['Can I take chapter-wise tests?', 'Absolutely. Pick any Biology, Physics or Chemistry chapter and start practising in minutes.']
+];
+// Framer Motion 4 (used by this project) does not support whileInView reliably.
+// Use the compatible animate API so the homepage content is always visible.
+const rise = { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5 } };
+
+export default function Home() {
   const navigate = useNavigate();
-  const [liveCount, setLiveCount] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState(0);
+  const [review, setReview] = useState(0);
+  useEffect(() => { const timer = setInterval(() => setReview((value) => (value + 1) % reviews.length), 4500); return () => clearInterval(timer); }, []);
+  const start = () => navigate('/register');
+  const login = () => navigate('/login');
 
-  useEffect(() => {
-    // Count-up animation
-    const target = 1284;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  return <div className="medical-home min-h-screen overflow-x-hidden bg-white text-slate-900 dark:bg-slate-950 dark:text-white">
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 lg:px-8" aria-label="Primary navigation">
+        <a href="#home" className="flex items-center gap-2.5 font-extrabold tracking-tight"><span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-blue-600 to-emerald-500 text-white shadow-lg shadow-blue-600/25"><HeartPulse size={21}/></span><span className="text-xl">Medical <span className="text-blue-600">Mania</span></span></a>
+        <div className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex dark:text-slate-300">{['Home', 'Mock Tests', 'PYQs', 'Leaderboard', 'Performance', 'Pricing', 'About'].map((item) => <a key={item} href={item === 'Home' ? '#home' : `#${item.toLowerCase().replace(' ', '-')}`} className="transition hover:text-blue-600">{item}</a>)}</div>
+        <div className="hidden items-center gap-3 lg:flex"><button onClick={login} className="rounded-xl px-4 py-2 text-sm font-bold text-slate-700 transition hover:bg-slate-100 dark:text-white dark:hover:bg-slate-800">Login</button><button onClick={start} className="rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-blue-600/25 transition hover:-translate-y-0.5 hover:bg-blue-700">Register</button></div>
+        <button onClick={() => setMenuOpen(!menuOpen)} className="grid h-10 w-10 place-items-center rounded-xl lg:hidden" aria-label="Toggle navigation">{menuOpen ? <X/> : <Menu/>}</button>
+      </nav>
+      {menuOpen && <div className="border-t border-slate-100 bg-white px-5 py-4 dark:border-slate-800 dark:bg-slate-950 lg:hidden"><div className="grid gap-3 text-sm font-semibold">{['Mock Tests', 'PYQs', 'Leaderboard', 'Performance', 'Pricing', 'About'].map((item) => <a onClick={() => setMenuOpen(false)} href={`#${item.toLowerCase().replace(' ', '-')}`} key={item}>{item}</a>)}<button onClick={start} className="mt-2 rounded-xl bg-blue-600 py-3 text-white">Start free</button></div></div>}
+    </header>
 
-    if (reduced) {
-      setLiveCount(target);
-    } else {
-      let current = 0;
-      const step = Math.max(1, Math.floor(target / 40));
-      const interval = setInterval(() => {
-        current += step;
-        if (current >= target) {
-          current = target;
-          clearInterval(interval);
-        }
-        setLiveCount(current);
-      }, 25);
-
-      return () => clearInterval(interval);
-    }
-  }, []);
-
-  useEffect(() => {
-    // Scroll reveal animation
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (!reduced && 'IntersectionObserver' in window) {
-      const obs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add('is-in');
-              obs.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-
-      document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
-
-      return () => obs.disconnect();
-    } else {
-      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-in'));
-    }
-  }, []);
-
-  return (
-    <>
-      <svg className="grain" width="100%" height="100%">
-        <filter id="noiseFilter">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.9"
-            numOctaves="2"
-            stitchTiles="stitch"
-            result="noise"
-          />
-          <feColorMatrix
-            in="noise"
-            type="matrix"
-            values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.9 0"
-          />
-        </filter>
-      </svg>
-
-      <svg width="0" height="0" style={{ position: 'absolute' }}>
-        <filter id="chalkRough" x="-20%" y="-20%" width="140%" height="140%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.025 0.06" numOctaves="2" seed="4" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
-        </filter>
-      </svg>
-
-      <header className="site">
-        <div className="nav-row">
-          <div className="logo">
-            Solnut
-            <svg viewBox="0 0 78 10">
-              <path
-                d="M2 6 Q 20 1, 40 6 T 76 5"
-                stroke="var(--yellow)"
-                strokeWidth="2.4"
-                fill="none"
-                strokeLinecap="round"
-                filter="url(#chalkRough)"
-              />
-            </svg>
-          </div>
-          <button
-            className="menu-btn"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            ☰
-          </button>
-          <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
-            <a href="#pipeline">Question Bank</a>
-            <a href="#subjects">Subjects</a>
-            <a href="#quality">How it works</a>
-            <a href="#tutor">AI Tutor</a>
-          </nav>
-          <div className="nav-actions">
-            <button className="nav-login" onClick={() => navigate('/admin/login')}>
-              Admin login
-            </button>
-            <button className="nav-cta" onClick={() => navigate('/login')}>
-              Student login
-            </button>
-          </div>
+    <main id="home">
+      <section className="relative isolate overflow-hidden"><div className="medical-grid absolute inset-0 -z-10 opacity-60"/><div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_20%,rgba(37,99,235,.12),transparent_30%),radial-gradient(circle_at_86%_15%,rgba(16,185,129,.14),transparent_25%)]"/>
+        <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-9 px-5 pb-16 pt-16 lg:px-8 lg:pb-24 lg:pt-20">
+          <motion.div {...rise} className="col-span-12 lg:col-span-6"><span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3.5 py-2 text-xs font-extrabold text-blue-700 dark:border-blue-900 dark:bg-blue-950/60"><Sparkles size={14}/> Smarter preparation for NEET aspirants</span><h1 className="mt-6 max-w-2xl text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">Crack NEET with <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">Smart Mock Tests</span></h1><p className="mt-6 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-300">Practice chapter-wise tests, full mock exams, previous year papers, AI-powered performance analysis, and detailed solutions.</p><div className="mt-8 flex flex-wrap gap-3"><button onClick={start} className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3.5 font-bold text-white shadow-xl shadow-blue-600/25 transition hover:-translate-y-1 hover:bg-blue-700">Start Free Test <ArrowRight size={18}/></button><a href="#mock-tests" className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white/80 px-5 py-3.5 font-bold shadow-sm backdrop-blur transition hover:border-blue-300 hover:bg-blue-50 dark:border-slate-700 dark:bg-slate-900">Explore Mock Tests <Play size={17}/></a></div><div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-600 dark:text-slate-300">{['Real NEET pattern', 'Detailed solutions', 'Free to start'].map((item) => <span className="flex items-center gap-2" key={item}><Check className="text-emerald-500" size={17}/>{item}</span>)}</div></motion.div>
+          <motion.div {...rise} transition={{duration:.6,delay:.1}} className="col-span-12 lg:col-span-6"><div className="relative mx-auto max-w-2xl"><img src="/images/medtest-hero-v2.png" alt="Student solving a NEET online test with floating medical science icons" className="w-full rounded-[28px] border border-white shadow-2xl shadow-blue-900/15"/><motion.div animate={{y:[0,-8,0]}} transition={{repeat:Infinity,duration:3}} className="absolute -bottom-4 left-4 rounded-2xl border border-white/80 bg-white/85 p-3 shadow-xl backdrop-blur dark:border-slate-700 dark:bg-slate-900/85"><div className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-xl bg-emerald-100 text-emerald-600"><BarChart3 size={20}/></span><div><small className="block text-slate-500">Weekly accuracy</small><b>84% <span className="text-xs text-emerald-500">+8%</span></b></div></div></motion.div><motion.div animate={{y:[0,8,0]}} transition={{repeat:Infinity,duration:3.4}} className="absolute right-4 top-6 rounded-2xl border border-white/80 bg-white/85 px-3 py-2 text-xs font-extrabold text-blue-600 shadow-xl backdrop-blur dark:border-slate-700 dark:bg-slate-900/85">🔥 12 day streak</motion.div></div></motion.div>
         </div>
-      </header>
+      </section>
 
-      <main>
-        {/* HERO */}
-        <section className="hero">
-          <div className="wrap hero-grid">
-            <div>
-              <span className="eyebrow">NEET 2027 · Biology · Physics · Chemistry</span>
-              <h1>
-                Revise like the boards are <span className="em">already watching.</span>
-              </h1>
-              <p className="lede">
-                40,000+ NCERT-mapped questions, scored for quality instead of just stacked by quantity. Every PYQ,
-                every chapter, sorted into one dashboard.
-              </p>
-              <div className="cta-row">
-                <button className="btn-primary" onClick={() => navigate('/login')}>
-                  Student login
-                </button>
-                <button className="btn-admin" onClick={() => navigate('/admin/login')}>
-                  Admin login
-                </button>
-                <a href="#subjects" className="btn-outline">
-                  See the question bank →
-                </a>
-              </div>
-              <div className="live-tick">
-                <span className="dot"></span>
-                <span className="mono">{liveCount.toLocaleString()}</span>
-                <span>students revising right now</span>
-              </div>
-            </div>
+      <section className="border-y border-slate-100 bg-slate-50/80 py-8 dark:border-slate-800 dark:bg-slate-900/50"><div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 px-5 md:grid-cols-4 lg:px-8">{[['150,000+', 'Students', Users], ['10,000+', 'Questions', BookOpen], ['500+', 'Mock Tests', Target], ['95%', 'Success Rate', Trophy]].map(([number,label,Icon],i) => <motion.div {...rise} transition={{duration:.35,delay:i*.08}} className="rounded-2xl border border-white bg-white/70 p-5 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/70" key={label}><Icon className="mb-3 text-blue-600" size={21}/><b className="block text-2xl font-extrabold">{number}</b><span className="text-sm text-slate-500">{label}</span></motion.div>)}</div></section>
 
-            <div className="hero-art reveal">
-              <svg viewBox="0 0 360 320" aria-hidden="true">
-                <g filter="url(#chalkRough)" fill="none" stroke="var(--chalk)" strokeWidth="2" strokeLinecap="round">
-                  <circle cx="150" cy="150" r="34" stroke="var(--cyan)" strokeWidth="2.4" />
-                  <path d="M124 128 Q 96 104, 78 92" />
-                  <path d="M120 150 Q 86 150, 64 146" />
-                  <path d="M126 174 Q 98 196, 82 212" />
-                  <path d="M150 184 Q 150 220, 150 246" />
-                  <path d="M184 150 Q 230 150, 260 150" stroke="var(--yellow)" strokeWidth="2.6" />
-                  <path d="M260 150 L 286 134" />
-                  <path d="M260 150 L 288 152" />
-                  <path d="M260 150 L 284 170" />
-                  <ellipse cx="240" cy="150" rx="22" ry="9" stroke="var(--chalk-dim)" strokeWidth="1.4" />
-                </g>
-                <g className="leader-label">
-                  <text x="40" y="84">dendrites</text>
-                  <text x="150" y="270">axon terminal →</text>
-                  <text x="194" y="118">myelin sheath</text>
-                </g>
-              </svg>
-            </div>
-          </div>
-        </section>
+      <section id="mock-tests" className="mx-auto max-w-7xl px-5 py-20 lg:px-8"><motion.div {...rise} className="mx-auto max-w-2xl text-center"><span className="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-600">Everything you need</span><h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Practice smarter, not just harder.</h2><p className="mt-4 text-slate-600 dark:text-slate-300">Focused tools for every stage of your preparation.</p></motion.div><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{features.map(([Icon,title,copy,color],i) => <motion.article {...rise} transition={{duration:.4,delay:i*.05}} whileHover={{y:-7}} className="group rounded-2xl border border-slate-200/80 bg-white/70 p-6 shadow-sm backdrop-blur transition hover:shadow-xl hover:shadow-blue-900/5 dark:border-slate-800 dark:bg-slate-900/70" key={title}><span className={`feature-icon ${color}`}><Icon size={23}/></span><h3 className="mt-5 text-lg font-bold">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{copy}</p><span className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-blue-600 transition group-hover:gap-2">Explore <ArrowRight size={15}/></span></motion.article>)}</div></section>
 
-        {/* STATS */}
-        <section className="stats">
-          <div className="wrap stats-grid">
-            <div className="stat reveal">
-              <b>40,000+</b>
-              <span>questions, NCERT-mapped</span>
-            </div>
-            <div className="stat reveal">
-              <b>25 yrs</b>
-              <span>of PYQs covered</span>
-            </div>
-            <div className="stat reveal">
-              <b>3</b>
-              <span>subjects, 1 dashboard</span>
-            </div>
-            <div className="stat reveal">
-              <b>50%</b>
-              <span>of NEET marks are Biology — weighted accordingly</span>
-            </div>
-          </div>
-        </section>
+      <section id="pyqs" className="bg-slate-50 py-20 dark:bg-slate-900/60"><div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="flex flex-wrap items-end justify-between gap-5"><div><span className="text-xs font-extrabold uppercase tracking-[.18em] text-blue-600">Choose your practice</span><h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">A test for every revision day.</h2></div><button onClick={start} className="font-bold text-blue-600">View all tests <ArrowRight className="inline" size={16}/></button></div><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">{categories.map(([title,count,Icon,gradient]) => <motion.article whileHover={{y:-6}} className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-slate-800" key={title}><span className={`grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br ${gradient} text-white shadow-lg`}><Icon size={27}/></span><h3 className="mt-5 font-bold">{title}</h3><p className="mt-1 text-sm text-slate-500">{count}</p><button onClick={start} className="mt-5 rounded-lg bg-slate-100 px-3 py-2 text-xs font-bold transition hover:bg-blue-600 hover:text-white dark:bg-slate-900">Start practice</button></motion.article>)}</div></div></section>
 
-        <section id="pipeline">
-          <div className="wrap">
-            <div className="section-head reveal">
-              <span className="tag">From source to score</span>
-              <h2>A question-first platform, built for serious practice.</h2>
-              <p>Every PDF is converted into structured, reviewed questions before it reaches the test centre.</p>
-            </div>
-            <div className="pipeline">
-              {[
-                ['01', 'Curate', 'Import PYQs, chapter tests, mocks, and original questions.'],
-                ['02', 'Verify', 'Review answers, explanations, diagrams, tags, and difficulty.'],
-                ['03', 'Practise', 'Generate focused papers and solve them in realistic CBT mode.'],
-                ['04', 'Improve', 'Turn results and mistakes into the next revision plan.'],
-              ].map(([number, title, copy], index) => (
-                <div className="pipe-step reveal" key={number}>
-                  <div className="pipe-num">{number}</div>
-                  <h3>{title}</h3>
-                  <p>{copy}</p>
-                  {index < 3 && <span className="pipe-connector" />}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      <section id="performance" className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-10 px-5 py-20 lg:px-8"><motion.div {...rise} className="col-span-12 lg:col-span-5"><span className="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-600">Why Medical Mania</span><h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">See the story behind every score.</h2><p className="mt-5 leading-7 text-slate-600 dark:text-slate-300">A score tells you where you are. Your analysis tells you exactly what to do next.</p><div className="mt-7 grid gap-3 sm:grid-cols-2">{benefits.map((item) => <div className="flex items-center gap-2 text-sm font-bold" key={item}><span className="grid h-6 w-6 place-items-center rounded-full bg-emerald-100 text-emerald-600"><Check size={14}/></span>{item}</div>)}</div></motion.div>
+        <motion.div {...rise} className="col-span-12 lg:col-span-7 rounded-[28px] border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-emerald-50 p-4 shadow-xl shadow-blue-900/5 dark:border-slate-800 dark:from-slate-900 dark:via-slate-900 dark:to-emerald-950/30"><div className="rounded-2xl bg-white p-5 shadow-sm dark:bg-slate-950"><div className="flex items-center justify-between"><div><b>Performance overview</b><small className="mt-1 block text-slate-500">Last 30 days</small></div><span className="rounded-lg bg-emerald-50 px-2 py-1 text-xs font-bold text-emerald-600">↑ 12.4%</span></div><div className="mt-6 grid gap-4 sm:grid-cols-3">{[['Accuracy','78%','w-[78%]','blue'],['Est. rank','1,248','w-[68%]','emerald'],['Study streak','12 days','w-[86%]','amber']].map(([label,value,width,tone]) => <div className="rounded-xl bg-slate-50 p-4 dark:bg-slate-900" key={label}><small className="text-slate-500">{label}</small><b className="mt-2 block text-2xl">{value}</b><div className="mt-4 h-2 rounded-full bg-slate-200 dark:bg-slate-700"><i className={`block h-full rounded-full ${width} bar-${tone}`}/></div></div>)}</div><div className="mt-5 grid gap-4 md:grid-cols-[1.35fr_.8fr]"><div className="rounded-xl border border-slate-100 p-4 dark:border-slate-800"><b className="text-sm">Accuracy trend</b><div className="mt-7 flex h-28 items-end gap-2">{[38,52,45,68,60,78,76,88,84].map((height,index) => <i className="flex-1 rounded-t bg-gradient-to-t from-blue-600 to-blue-300" style={{height:`${height}%`}} key={index}/>)}</div></div><div className="rounded-xl border border-slate-100 p-4 dark:border-slate-800"><b className="text-sm">Weak topics</b>{['Ray Optics','Ionic Equilibrium','Plant Kingdom'].map((topic) => <p className="mt-3 flex justify-between text-xs" key={topic}><span>{topic}</span><span className="text-rose-500">Revise</span></p>)}</div></div></div></motion.div>
+      </section>
 
-        <hr className="rule" />
+      <section id="leaderboard" className="bg-gradient-to-br from-blue-700 to-indigo-800 py-20 text-white"><div className="mx-auto max-w-7xl px-5 lg:px-8"><motion.div {...rise} className="text-center"><span className="text-xs font-extrabold uppercase tracking-[.18em] text-blue-200">Leaderboard</span><h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">Small steps. Serious competition.</h2></motion.div><div className="mx-auto mt-12 grid max-w-4xl items-end gap-5 md:grid-cols-3">{[['#2','Aarav Mehta','692','96%','🥈','md:order-1'],['#1','Ananya Sharma','705','98%','🥇','md:order-2'],['#3','Riya Verma','685','95%','🥉','md:order-3']].map(([rank,name,score,accuracy,medal,order]) => <motion.div {...rise} className={`${order} rounded-2xl border border-white/15 bg-white/10 p-6 text-center backdrop-blur ${rank === '#1' ? 'md:pb-10' : ''}`} key={name}><span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-white/15 text-3xl">{medal}</span><h3 className="mt-4 font-bold">{name}</h3><p className="mt-1 text-sm text-blue-200">{rank} rank</p><div className="mt-5 flex justify-around border-t border-white/15 pt-4 text-sm"><span><b className="block text-lg">{score}</b>Score</span><span><b className="block text-lg">{accuracy}</b>Accuracy</span></div></motion.div>)}</div></div></section>
 
-        <section id="subjects">
-          <div className="wrap">
-            <div className="section-head reveal">
-              <span className="tag">One syllabus, three disciplines</span>
-              <h2>Practice that respects how each NEET subject behaves.</h2>
-              <p>Build chapter tests, topic drills, subject papers, PYQ sprints, or a complete 180-question mock.</p>
-            </div>
-            <div className="subject-grid">
-              {[
-                ['Biology', 'NCERT-first practice across Botany and Zoology, including statement and diagram questions.', '90 questions in full mocks', 'var(--green)'],
-                ['Physics', 'Conceptual and numerical questions with timing data to expose calculation bottlenecks.', '45 questions in full mocks', 'var(--cyan)'],
-                ['Chemistry', 'Balanced Physical, Organic, and Inorganic Chemistry with source and difficulty filters.', '45 questions in full mocks', 'var(--pink)'],
-              ].map(([title, copy, meta, color]) => (
-                <article className="card reveal" key={title}>
-                  <svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="23" fill="none" stroke={color} strokeWidth="2" /><path d="M18 31h24M30 19v24" stroke={color} strokeWidth="2" strokeLinecap="round" /></svg>
-                  <h3>{title}</h3>
-                  <p>{copy}</p>
-                  <a href="/register">{meta} →</a>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8"><motion.div {...rise} className="rounded-[30px] bg-slate-50 p-7 dark:bg-slate-900 sm:p-12"><div className="grid items-center gap-10 lg:grid-cols-2"><div><span className="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-600">Medical Mania app</span><h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">Your preparation travels with you.</h2><div className="mt-7 grid gap-4">{[['Practice Anywhere','Tests that fit into every break.',Play],['Offline Tests','Download and revise without the internet.',Download],['Instant Analysis','Know what to fix as soon as you finish.',Zap]].map(([title,copy,Icon]) => <div className="flex gap-3" key={title}><span className="grid h-10 w-10 place-items-center rounded-xl bg-white text-blue-600 shadow-sm dark:bg-slate-800"><Icon size={19}/></span><p><b className="block text-sm">{title}</b><small className="text-slate-500">{copy}</small></p></div>)}</div><div className="mt-8 flex flex-wrap gap-3"><button className="rounded-xl bg-slate-900 px-4 py-3 text-sm font-bold text-white dark:bg-white dark:text-slate-900">Download on App Store</button><button className="rounded-xl bg-slate-900 px-4 py-3 text-sm font-bold text-white dark:bg-white dark:text-slate-900">Get it on Google Play</button></div></div><div className="mx-auto w-56 rounded-[32px] border-[9px] border-slate-900 bg-white p-4 shadow-2xl dark:border-slate-700"><div className="mx-auto h-1.5 w-20 rounded-full bg-slate-900 dark:bg-slate-700"/><p className="mt-6 text-sm font-extrabold text-slate-900">Good morning, Rohan 👋</p><div className="mt-5 rounded-2xl bg-blue-600 p-4 text-white"><small className="opacity-80">Today’s progress</small><b className="mt-1 block text-2xl">3 / 5</b><small>tasks completed</small></div><div className="mt-4 space-y-2">{['Biology revision','Full mock test','Review mistakes'].map((item,i) => <p className="flex items-center gap-2 rounded-lg bg-slate-50 p-2 text-xs text-slate-600" key={item}><i className={`h-2 w-2 rounded-full ${i === 0 ? 'bg-emerald-500' : 'bg-slate-300'}`}/>{item}</p>)}</div></div></div></motion.div></section>
 
-        <section id="quality">
-          <div className="wrap quality-grid">
-            <div className="donut-wrap reveal">
-              <svg viewBox="0 0 220 220" width="220" aria-label="Balanced question quality">
-                <circle cx="110" cy="110" r="76" fill="none" stroke="var(--chalk-faint)" strokeWidth="26" />
-                <circle cx="110" cy="110" r="76" fill="none" stroke="var(--yellow)" strokeWidth="26" strokeDasharray="210 478" transform="rotate(-90 110 110)" />
-                <circle cx="110" cy="110" r="76" fill="none" stroke="var(--cyan)" strokeWidth="26" strokeDasharray="145 478" strokeDashoffset="-210" transform="rotate(-90 110 110)" />
-                <circle cx="110" cy="110" r="76" fill="none" stroke="var(--green)" strokeWidth="26" strokeDasharray="123 478" strokeDashoffset="-355" transform="rotate(-90 110 110)" />
-                <text x="110" y="105" textAnchor="middle" fill="var(--chalk)" fontSize="24" fontWeight="700">Quality</text>
-                <text x="110" y="128" textAnchor="middle" fill="var(--chalk-dim)" fontSize="12">before quantity</text>
-              </svg>
-            </div>
-            <div className="reveal">
-              <div className="section-head">
-                <span className="tag">Better paper selection</span>
-                <h2>Not every question deserves equal weight.</h2>
-                <p>Solnut combines teacher review, NCERT relevance, source quality, concept importance, and student performance data.</p>
-              </div>
-              <div className="legend">
-                <div className="legend-item"><span className="swatch" style={{ background: 'var(--yellow)' }} /> NCERT and PYQ relevance <b>44%</b></div>
-                <div className="legend-item"><span className="swatch" style={{ background: 'var(--cyan)' }} /> Concept and difficulty balance <b>30%</b></div>
-                <div className="legend-item"><span className="swatch" style={{ background: 'var(--green)' }} /> Verified student performance <b>26%</b></div>
-              </div>
-            </div>
-          </div>
-        </section>
+      <section className="bg-slate-50 py-20 dark:bg-slate-900/60"><div className="mx-auto max-w-7xl px-5 lg:px-8"><motion.div {...rise} className="text-center"><span className="text-xs font-extrabold uppercase tracking-[.18em] text-blue-600">Loved by aspirants</span><h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">A little confidence goes a long way.</h2></motion.div><motion.figure {...rise} key={reviews[review][0]} initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} className="mx-auto mt-10 max-w-2xl rounded-2xl bg-white p-8 text-center shadow-sm ring-1 ring-slate-200/60 dark:bg-slate-950 dark:ring-slate-800"><div className="text-xl text-amber-400">★★★★★</div><blockquote className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">“{reviews[review][2]}”</blockquote><figcaption className="mt-6 flex items-center justify-center gap-3"><span className="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-blue-500 to-emerald-400 font-bold text-white">{reviews[review][0][0]}</span><span className="text-left"><b className="block text-sm">{reviews[review][0]}</b><small className="text-slate-500">{reviews[review][1]}</small></span></figcaption><div className="mt-6 flex justify-center gap-2">{reviews.map((_,i) => <button onClick={() => setReview(i)} aria-label={`Show testimonial ${i+1}`} className={`h-2 rounded-full transition ${i === review ? 'w-6 bg-blue-600' : 'w-2 bg-slate-300'}`} key={i}/>)}</div></motion.figure></div></section>
 
-        <hr className="rule" />
+      <section id="about" className="mx-auto max-w-3xl px-5 py-20"><motion.div {...rise} className="text-center"><span className="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-600">Questions, answered</span><h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">You focus on preparation.</h2></motion.div><div className="mt-10 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white px-5 dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-900">{faqs.map(([question,answer],index) => <div key={question}><button onClick={() => setOpenFaq(openFaq === index ? -1 : index)} className="flex w-full items-center justify-between py-5 text-left font-bold"><span>{question}</span><ChevronDown className={`transition ${openFaq === index ? 'rotate-180 text-blue-600' : ''}`} size={19}/></button>{openFaq === index && <p className="pb-5 pr-8 text-sm leading-6 text-slate-600 dark:text-slate-300">{answer}</p>}</div>)}</div></section>
 
-        <section id="tutor">
-          <div className="wrap quality-grid">
-            <div className="section-head reveal">
-              <span className="tag">AI where it actually helps</span>
-              <h2>Explanation after practice—not AI theatre before it.</h2>
-              <p>The test engine, scoring, timer, and analytics are deterministic. AI helps explain doubts and turn real performance data into a useful recommendation.</p>
-            </div>
-            <div className="chat-card reveal">
-              <div className="bubble student"><span className="who">STUDENT</span>Why did I lose marks in Current Electricity?</div>
-              <div className="bubble ai"><span className="who">SOLNUT ANALYSIS</span>You missed 4 of 7 numerical questions and spent 84 seconds on average. Revise series-parallel resistance, then take a 15-question topic drill.</div>
-              <div className="bubble student"><span className="who">STUDENT</span>Show me what to do today.</div>
-              <div className="bubble ai"><span className="who">SOLNUT PLAN</span>35 min NCERT recall → 20 medium questions → mistake notebook → timed retest.</div>
-            </div>
-          </div>
-        </section>
+      <section className="mx-auto max-w-7xl px-5 pb-20 lg:px-8"><motion.div {...rise} className="relative overflow-hidden rounded-[30px] bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-500 px-7 py-14 text-center text-white shadow-2xl shadow-blue-600/25"><div className="absolute -right-10 -top-12 h-52 w-52 rounded-full bg-white/10"/><div className="absolute -bottom-16 -left-8 h-48 w-48 rounded-full bg-white/10"/><div className="relative"><h2 className="text-3xl font-extrabold sm:text-5xl">Ready to Boost Your NEET Score?</h2><p className="mx-auto mt-4 max-w-xl text-blue-100">Start practising with a clearer plan and more confidence.</p><div className="mt-8 flex flex-wrap justify-center gap-3"><button onClick={start} className="rounded-xl bg-white px-5 py-3.5 font-bold text-blue-700 transition hover:-translate-y-1">Start Free Test</button><button onClick={start} className="rounded-xl border border-white/40 bg-white/10 px-5 py-3.5 font-bold backdrop-blur transition hover:bg-white/20">Create Account</button></div></div></motion.div></section>
+    </main>
 
-        <section className="footer-cta">
-          <div className="wrap reveal">
-            <h2>Your next mock should teach you something.</h2>
-            <button className="btn-primary" onClick={() => navigate('/register')}>Create your free account</button>
-            <p className="small">Verified question bank · Real CBT practice · Personal mistake notebook</p>
-          </div>
-        </section>
-      </main>
-
-      <footer className="site">
-        <div className="wrap foot-row">
-          <span>© 2026 Solnut</span>
-          <div className="foot-links">
-            <a href="#quality">Why Solnut</a>
-            <a href="#pipeline">Question Bank</a>
-            <a href="#tutor">AI analysis</a>
-          </div>
-        </div>
-      </footer>
-    </>
-  );
-};
-
-export default Home;
+    <footer className="border-t border-slate-200 bg-slate-50 py-12 dark:border-slate-800 dark:bg-slate-950"><div className="mx-auto grid max-w-7xl gap-10 px-5 sm:grid-cols-2 lg:grid-cols-4 lg:px-8"><div><div className="flex items-center gap-2 font-extrabold"><span className="grid h-8 w-8 place-items-center rounded-lg bg-blue-600 text-white"><HeartPulse size={17}/></span>Medical Mania</div><p className="mt-4 max-w-xs text-sm leading-6 text-slate-500">Focused NEET practice for future doctors.</p></div><div><b className="text-sm">Platform</b><div className="mt-4 grid gap-2 text-sm text-slate-500"><a href="#mock-tests">Mock Tests</a><a href="#leaderboard">Leaderboard</a><a href="#performance">Performance</a></div></div><div><b className="text-sm">Company</b><div className="mt-4 grid gap-2 text-sm text-slate-500"><a href="#about">About</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#contact">Contact</a></div></div><div><b className="text-sm">Get study tips</b><p className="mt-3 text-sm text-slate-500">A short useful revision note every week.</p><form className="mt-4 flex gap-2" onSubmit={(event) => event.preventDefault()}><label className="sr-only" htmlFor="newsletter">Email address</label><input id="newsletter" type="email" placeholder="you@email.com" className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900"/><button className="rounded-lg bg-blue-600 px-3 text-white" aria-label="Subscribe"><ArrowRight size={17}/></button></form></div></div><div className="mx-auto mt-10 flex max-w-7xl justify-between border-t border-slate-200 px-5 pt-6 text-xs text-slate-500 dark:border-slate-800 lg:px-8"><span>© 2026 Medical Mania. All rights reserved.</span><span>Made for NEET aspirants</span></div></footer>
+  </div>;
+}
