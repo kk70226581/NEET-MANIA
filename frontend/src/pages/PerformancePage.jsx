@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
-  BarChart3, 
   CheckCircle2, 
   ClipboardList, 
   Target, 
@@ -16,8 +15,8 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer,
-  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
-  BarChart, Bar, Legend
+  Radar, RadarChart, PolarGrid, PolarAngleAxis,
+  BarChart, Bar
 } from 'recharts';
 import AppShell from '../components/AppShell';
 import { testsAPI } from '../services/api';

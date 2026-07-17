@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
@@ -10,15 +10,11 @@ import {
   TrendingUp,
   BrainCircuit,
   Trophy,
-  Zap,
   Calendar,
   Clock,
-  ArrowRight,
   Sparkles,
   ChevronRight,
   Flame,
-  Award,
-  BookOpen
 } from 'lucide-react';
 import AppShell from '../components/AppShell';
 

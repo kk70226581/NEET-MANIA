@@ -119,7 +119,7 @@ const QuestionDisplay = ({
   isLast,
 }) => {
   const [selectedOption, setSelectedOption] = useState(savedResponse?.selectedOption ?? null);
-  const [marked, setMarked] = useState(savedResponse?.markedForReview || false);
+  const [, setMarked] = useState(savedResponse?.markedForReview || false);
 
   useEffect(() => {
     setSelectedOption(savedResponse?.selectedOption ?? null);

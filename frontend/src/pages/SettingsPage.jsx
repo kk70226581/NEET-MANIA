@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Bell, Lock, Save, Settings, ShieldCheck, User, Sparkles, AlertCircle } from 'lucide-react';
+import { Bell, Lock, Save, Settings, ShieldCheck, User, AlertCircle } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';

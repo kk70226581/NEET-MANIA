@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Medal, Crown, Flame, Zap, ArrowUp, Star } from 'lucide-react';
+import { Trophy, Medal, Crown, Flame, Zap, ArrowUp } from 'lucide-react';
 import AppShell from '../components/AppShell';
 
 const LeaderboardPage = () => {

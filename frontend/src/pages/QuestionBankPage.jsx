@@ -1,12 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   Search,
-  Filter,
   Bookmark,
-  ChevronDown,
   Clock,
-  Sparkles,
   Beaker,
   Dna,
   Zap,
@@ -95,7 +92,6 @@ const QuestionBankPage = () => {
       .finally(() => setLoading(false));
   }, [filters]);
 
-  const subjects = useMemo(() => [...new Set(metadata.map(r => r._id.subject).filter(Boolean))], [metadata]);
   const chapters = useMemo(() => [...new Set(metadata.filter(r => !filters.subject || r._id.subject === filters.subject).map(r => r._id.chapter).filter(Boolean))], [metadata, filters.subject]);
 
   const updateFilter = (name, value) => {

@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   BarChart3,
-  BookMarked,
   BookOpen,
   CalendarCheck2,
   ClipboardList,

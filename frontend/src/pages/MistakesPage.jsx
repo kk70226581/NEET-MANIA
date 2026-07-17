@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  BookMarked, 
   CheckCircle2, 
-  RefreshCw, 
   Target, 
   XCircle,
   BrainCircuit,
   MessageSquare,
   AlertOctagon,
-  Search,
-  Sparkles,
-  ChevronRight
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import AppShell from '../components/AppShell';
@@ -108,15 +103,15 @@ const MistakesPage = () => {
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState('pending');
 
-  const load = () => {
+  const load = React.useCallback(() => {
     setLoading(true);
     mistakesAPI.getMistakes({ status: status === 'all' ? undefined : status })
       .then((res) => setMistakes(res.data || []))
-      .catch((err) => toast.error('Failed to load notebook'))
+      .catch(() => toast.error('Failed to load notebook'))
       .finally(() => setLoading(false));
-  };
+  }, [status]);
 
-  useEffect(() => { load(); }, [status]);
+  useEffect(() => { load(); }, [load]);
 
   const markRevised = async (id) => {
     try {

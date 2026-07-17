@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { ArrowRight, BookOpen, Clock3, FileQuestion, FlaskConical, History, Layers3, Target, Timer, Sparkles, AlertCircle, Play } from 'lucide-react';
+import { BookOpen, Clock3, FlaskConical, History, Layers3, Target, Timer, Sparkles, AlertCircle, Play } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
