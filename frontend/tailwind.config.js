@@ -7,6 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        background: '#f8fafc',
+        sidebar: '#0f172a',
         primary: '#2563eb',
         secondary: '#64748b',
         success: '#16a34a',
@@ -16,6 +18,10 @@ module.exports = {
       fontFamily: {
         sans: ['Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
         mono: ['Courier New', 'monospace'],
+      },
+      boxShadow: {
+        soft: '0 8px 30px rgba(15, 23, 42, 0.08)',
+        float: '0 18px 40px rgba(15, 23, 42, 0.14)'
       },
     },
   },
