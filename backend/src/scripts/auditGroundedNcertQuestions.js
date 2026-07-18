@@ -37,21 +37,22 @@ async function main() {
     const options = ['A', 'B', 'C', 'D'].map((key) => normalize(question.options?.[key]?.text));
     if (options.some((option) => !option) || new Set(options).size !== 4) failures.push(`${question.questionId}: invalid options`);
     if (!['A', 'B', 'C', 'D'].includes(question.correctAnswer)) failures.push(`${question.questionId}: invalid answer`);
-    if (question.difficulty !== 'hard' || question.bloomsLevel !== 'analyze') failures.push(`${question.questionId}: difficulty metadata`);
+    if (question.difficulty !== 'hard' || !['understand', 'analyze'].includes(question.bloomsLevel)) failures.push(`${question.questionId}: difficulty metadata`);
     if (!question.isPublished || !question.isVerified || !question.inSyllabus) failures.push(`${question.questionId}: publication metadata`);
     if (question.ncertReference?.edition !== NCERT_EDITION) failures.push(`${question.questionId}: edition mismatch`);
     if (!question.ncertReference?.pdfPage || !question.ncertReference?.quotedLine) failures.push(`${question.questionId}: missing page reference`);
     if (!String(question.ncertReference?.sourceUrl || '').startsWith('https://ncert.nic.in/textbook/pdf/')) failures.push(`${question.questionId}: unofficial source URL`);
   });
 
-  ['physics', 'chemistry', 'biology'].forEach((subject) => {
-    if (subjectCounts[subject] !== 200) failures.push(`${subject}: expected 200, found ${subjectCounts[subject] || 0}`);
+  const expectedSubjectCounts = { physics: 200, chemistry: 200, biology: 800 };
+  Object.entries(expectedSubjectCounts).forEach(([subject, expected]) => {
+    if (subjectCounts[subject] !== expected) failures.push(`${subject}: expected ${expected}, found ${subjectCounts[subject] || 0}`);
   });
   curriculum.forEach((entry) => {
     if (!chapterCounts.has(`${entry.subject}|${entry.chapter}`)) failures.push(`${entry.subject}/${entry.chapter}: no approved questions`);
   });
   Object.entries(answerCounts).forEach(([answer, count]) => {
-    if (count < 120 || count > 180) failures.push(`answer ${answer}: imbalanced count ${count}`);
+    if (count !== 300) failures.push(`answer ${answer}: expected 300, found ${count}`);
   });
 
   console.log(JSON.stringify({

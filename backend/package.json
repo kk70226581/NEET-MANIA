@@ -12,7 +12,9 @@
     "import-patterns": "node src/scripts/importPattern.js",
     "generate:ncert": "node src/scripts/generateGroundedNcertQuestions.js --apply",
     "audit:ncert": "node src/scripts/auditGroundedNcertQuestions.js",
-    "rebalance:ncert": "node src/scripts/rebalanceNcertAnswers.js --apply"
+    "rebalance:ncert": "node src/scripts/rebalanceNcertAnswers.js --apply",
+    "generate:biology:codex": "node src/scripts/generateCodexBiologyQuestions.js --apply",
+    "audit:biology:codex": "node src/scripts/auditCodexBiologyQuestions.js"
   },
   "keywords": [
     "NEET",
