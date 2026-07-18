@@ -1,43 +1,68 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { BrainCircuit, Clock3, FlaskConical, HeartPulse, History, MessageSquare, Microscope, Plus, Send, Sparkles, Stethoscope, X } from 'lucide-react';
+import { useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
+import {
+  Atom,
+  BookOpenCheck,
+  BrainCircuit,
+  Check,
+  Copy,
+  Dna,
+  FlaskConical,
+  Lightbulb,
+  Plus,
+  Send,
+  Sparkles,
+  Stethoscope,
+  Zap,
+} from 'lucide-react';
 import AppShell from '../components/AppShell';
 import { mentorAPI } from '../services/api';
-import { useSelector } from 'react-redux';
 
-const welcome = (name) => ({ sender: 'ai', text: `Hey ${name}! Main tumhara NEET Bhaiya hoon 😊\n\nAaj kis topic ko easy banate hain? Bina tension doubt bhejo — Biology, Physics ya Chemistry.`, createdAt: new Date().toISOString() });
+const suggestions = [
+  { icon: BrainCircuit, title: 'Explain a concept', prompt: 'Explain mitosis simply with an easy NEET example.', tone: 'bg-blue-50 text-blue-600 border-blue-100' },
+  { icon: BookOpenCheck, title: 'Plan my revision', prompt: 'Make a focused NEET revision plan for today.', tone: 'bg-emerald-50 text-emerald-600 border-emerald-100' },
+  { icon: Lightbulb, title: 'Analyse a mistake', prompt: 'Help me understand why my answer was wrong.', tone: 'bg-amber-50 text-amber-600 border-amber-100' },
+];
+
+const subjectPrompts = [
+  { label: 'Biology', icon: Dna, prompt: 'Help me revise an important Biology concept for NEET.' },
+  { label: 'Physics', icon: Atom, prompt: 'Teach me a difficult Physics concept step by step.' },
+  { label: 'Chemistry', icon: FlaskConical, prompt: 'Give me a quick Chemistry concept revision.' },
+];
 
 const MentorPage = () => {
-  const studentName = useSelector((state) => state.user.user?.firstName) || 'yaar';
-  const intro = welcome(studentName);
-  const [conversations, setConversations] = useState([]);
+  const studentName = useSelector((state) => state.user.user?.firstName) || 'Aspirant';
   const [conversationId, setConversationId] = useState(null);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [historyOpen, setHistoryOpen] = useState(false);
+  const [copiedMessage, setCopiedMessage] = useState(null);
   const endRef = useRef(null);
+  const inputRef = useRef(null);
 
-  const loadHistory = async () => {
-    try { const response = await mentorAPI.getConversations(); setConversations(response.conversations || []); } catch (error) { console.error('Could not load mentor history', error); }
-  };
-  useEffect(() => { loadHistory(); }, []);
   useEffect(() => { endRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages, isLoading]);
+  useEffect(() => {
+    if (!inputRef.current) return;
+    inputRef.current.style.height = 'auto';
+    inputRef.current.style.height = `${Math.min(inputRef.current.scrollHeight, 128)}px`;
+  }, [input]);
 
-  const newChat = () => { setConversationId(null); setMessages([]); setInput(''); setHistoryOpen(false); };
-  const openConversation = async (id) => {
-    try {
-      const response = await mentorAPI.getConversation(id);
-      setConversationId(response.conversation._id);
-      setMessages(response.conversation.messages || []);
-      setHistoryOpen(false);
-    } catch (error) { console.error('Could not open mentor chat', error); }
+  const newChat = () => {
+    setConversationId(null);
+    setMessages([]);
+    setInput('');
+    setTimeout(() => inputRef.current?.focus(), 100);
   };
-  const send = async () => {
-    const text = input.trim();
+
+  const sendMessage = async (suggestedText) => {
+    const text = (typeof suggestedText === 'string' ? suggestedText : input).trim();
     if (!text || isLoading) return;
+
     setMessages((current) => [...current, { sender: 'user', text, createdAt: new Date().toISOString() }]);
-    setInput(''); setIsLoading(true);
+    setInput('');
+    setIsLoading(true);
+
     try {
       let activeId = conversationId;
       if (!activeId) {
@@ -47,37 +72,105 @@ const MentorPage = () => {
       }
       const response = await mentorAPI.chat(activeId, text);
       setMessages((current) => [...current, response.message]);
-      setConversations((current) => [{ ...response.conversation }, ...current.filter((item) => item._id !== activeId)]);
     } catch (error) {
-      setMessages((current) => [...current, { sender: 'ai', text: 'Connection thoda slow hai 😅 Ek baar phir bhejo, main yahin hoon.', createdAt: new Date().toISOString() }]);
-    } finally { setIsLoading(false); }
+      setMessages((current) => [...current, {
+        sender: 'ai',
+        text: 'The connection dropped for a moment. Please send that doubt once more - I am right here.',
+        createdAt: new Date().toISOString(),
+        failed: true,
+      }]);
+    } finally {
+      setIsLoading(false);
+    }
   };
-  const formatDate = (value) => value ? new Date(value).toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) : '';
 
-  return <AppShell eyebrow="Your personal doubt space" title="NEET Bhaiya">
-    <div className="mentor-force-light relative flex h-[calc(100vh-140px)] min-h-[600px] flex-col overflow-hidden rounded-[26px] border border-slate-200 bg-white text-slate-900 shadow-sm" style={{ backgroundColor: '#ffffff', color: '#0f172a' }}>
-      <header className="flex items-center justify-between border-b border-indigo-100 bg-gradient-to-r from-indigo-700 via-violet-700 to-fuchsia-700 px-5 py-4 text-white sm:px-6">
-        <div className="flex items-center gap-3"><div className="relative grid h-11 w-11 place-items-center rounded-2xl bg-white/15 ring-1 ring-white/20"><BrainCircuit size={23}/><span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-indigo-700 bg-emerald-400"/></div><div><h2 className="font-bold">NEET Bhaiya</h2><p className="mt-0.5 flex items-center gap-1 text-xs text-indigo-100"><Sparkles size={12}/> Calm help for your toughest doubts</p></div></div>
-        <div className="flex items-center gap-2"><button onClick={() => setHistoryOpen(true)} className="inline-flex items-center gap-2 rounded-xl bg-white/10 px-3 py-2 text-xs font-bold transition hover:bg-white/20"><History size={16}/> <span className="hidden sm:inline">History</span></button><button onClick={newChat} className="inline-flex items-center gap-2 rounded-xl bg-white px-3 py-2 text-xs font-bold text-indigo-700 transition hover:bg-indigo-50"><Plus size={16}/> <span className="hidden sm:inline">New chat</span></button></div>
-      </header>
+  const copyMessage = async (text, index) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedMessage(index);
+      setTimeout(() => setCopiedMessage(null), 1600);
+    } catch (error) {
+      console.error('Could not copy message', error);
+    }
+  };
 
-      <div className="flex flex-wrap items-center gap-2 border-b border-slate-100 bg-slate-50 px-5 py-3 dark:border-slate-800 dark:bg-slate-900/70"><span className="mr-1 text-xs font-bold uppercase tracking-wider text-slate-400">Try asking</span>{['Explain mitosis simply', 'Help me revise today', 'Why was my answer wrong?'].map((prompt) => <button key={prompt} onClick={() => setInput(prompt)} className="rounded-full border border-indigo-100 bg-white px-3 py-1.5 text-xs font-semibold text-indigo-700 transition hover:border-indigo-300 hover:bg-indigo-50 dark:border-indigo-900 dark:bg-slate-950 dark:text-indigo-300">{prompt}</button>)}</div>
+  const formatTime = (value) => value ? new Date(value).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '';
 
-      <div className="mentor-scroll flex-1 overflow-y-auto bg-[radial-gradient(circle_at_50%_0%,rgba(238,242,255,.9),transparent_40%)] p-5 sm:p-7" style={{ backgroundColor: '#f8fafc' }}>
-        <div className="mx-auto max-w-3xl space-y-5">{!conversationId && messages.length === 0 && <div className="mx-auto flex max-w-xl flex-col items-center px-4 py-8 text-center"><div className="relative mb-6 grid h-24 w-24 place-items-center rounded-[28px] bg-gradient-to-br from-blue-600 to-emerald-500 text-white shadow-xl shadow-blue-600/20"><Stethoscope size={42}/><span className="absolute -right-4 -top-2 grid h-10 w-10 place-items-center rounded-2xl bg-white text-rose-500 shadow-lg"><HeartPulse size={20}/></span><span className="absolute -bottom-3 -left-5 grid h-10 w-10 place-items-center rounded-2xl bg-white text-emerald-500 shadow-lg"><Microscope size={20}/></span></div><h3 className="text-2xl font-extrabold text-slate-900">Hi {studentName}, what are we learning today?</h3><p className="mt-3 max-w-md whitespace-pre-line text-sm leading-6 text-slate-500">{intro.text}</p><div className="mt-6 grid w-full gap-3 sm:grid-cols-2"><button onClick={() => setInput('Explain this concept in a simple way')} className="rounded-2xl border border-blue-100 bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300"><BrainCircuit className="mb-2 text-blue-600" size={19}/><b className="block text-sm">Explain a concept</b><span className="mt-1 block text-xs text-slate-500">Simple, step-by-step help</span></button><button onClick={() => setInput('Help me make a revision plan for today')} className="rounded-2xl border border-emerald-100 bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300"><FlaskConical className="mb-2 text-emerald-600" size={19}/><b className="block text-sm">Plan today’s revision</b><span className="mt-1 block text-xs text-slate-500">A focused study plan</span></button></div></div>}{messages.map((item, index) => {
-          const user = item.sender === 'user';
-          return <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .25 }} key={`${item.createdAt || 'message'}-${index}`} className={`flex gap-2.5 ${user ? 'justify-end' : 'justify-start'}`}>
-            {!user && <span className="mt-1 grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 text-white shadow-sm"><BrainCircuit size={16}/></span>}
-            <div className={`flex max-w-[82%] flex-col ${user ? 'items-end' : 'items-start'}`}><div className={`rounded-2xl px-4 py-3 text-[15px] leading-7 shadow-sm ${user ? 'rounded-br-md bg-indigo-600 text-white' : 'rounded-bl-md border border-slate-200 bg-white text-slate-700'}`}><p className="whitespace-pre-wrap">{item.text}</p></div><span className="mt-1 px-1 text-[11px] font-medium text-slate-400">{user ? 'You' : 'Bhaiya'}</span></div>
-          </motion.div>;
-        })}{isLoading && <div className="flex gap-2.5"><span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 text-white"><BrainCircuit size={16}/></span><div className="flex items-center gap-1.5 rounded-2xl rounded-bl-md border border-slate-100 bg-white px-4 py-3 shadow-sm dark:border-slate-800 dark:bg-slate-900"><i className="h-1.5 w-1.5 animate-bounce rounded-full bg-indigo-400"/><i className="h-1.5 w-1.5 animate-bounce rounded-full bg-indigo-400 [animation-delay:120ms]"/><i className="h-1.5 w-1.5 animate-bounce rounded-full bg-indigo-400 [animation-delay:240ms]"/></div></div>}<div ref={endRef}/></div>
+  return (
+    <AppShell>
+      <div className="h-[calc(100vh-80px)] bg-[radial-gradient(circle_at_15%_10%,rgba(219,234,254,.85),transparent_30%),linear-gradient(135deg,#f8fafc,#eef2ff)] p-2 sm:p-4 lg:p-5">
+        <section className="relative mx-auto flex h-full max-w-[1280px] overflow-hidden rounded-2xl border border-white/80 bg-white shadow-2xl shadow-slate-900/10 sm:rounded-[28px]">
+          <div className="flex min-w-0 flex-1 flex-col">
+            <header className="flex h-[78px] shrink-0 items-center justify-between border-b border-slate-200/80 bg-white/90 px-4 backdrop-blur-xl sm:px-7">
+              <div className="flex min-w-0 items-center gap-3">
+                <div className="relative grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 text-white shadow-lg shadow-blue-500/20"><Stethoscope size={24} /><span className="absolute -bottom-0.5 -right-0.5 h-3.5 w-3.5 rounded-full border-[3px] border-white bg-emerald-400" /></div>
+                <div className="min-w-0"><h1 className="truncate text-base font-black text-slate-900 sm:text-lg">NEET Bhaiya</h1><p className="mt-0.5 flex items-center gap-1.5 truncate text-xs font-medium text-slate-500"><Sparkles size={12} className="text-blue-500" /> Focused help for every NEET doubt</p></div>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="hidden items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-bold text-emerald-700 sm:flex"><span className="h-2 w-2 rounded-full bg-emerald-500" /> Online</div>
+                <button type="button" onClick={newChat} className="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-3 py-2.5 text-xs font-extrabold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"><Plus size={16} /><span className="hidden sm:inline">New chat</span></button>
+              </div>
+            </header>
+
+            {messages.length > 0 && (
+              <div className="flex shrink-0 items-center gap-2 overflow-x-auto border-b border-slate-100 bg-white px-4 py-2.5 no-scrollbar sm:px-6">
+                <span className="shrink-0 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Ask next</span>
+                {subjectPrompts.map(({ label, icon: Icon, prompt }) => <button type="button" key={label} disabled={isLoading} onClick={() => sendMessage(prompt)} className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-bold text-slate-600 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 disabled:opacity-50"><Icon size={13} />{label}</button>)}
+              </div>
+            )}
+
+            <main className="relative flex-1 overflow-y-auto bg-slate-50/80 no-scrollbar">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(219,234,254,.75),transparent_38%),radial-gradient(circle_at_85%_80%,rgba(237,233,254,.55),transparent_30%)]" />
+              <div className="relative mx-auto flex min-h-full max-w-4xl flex-col px-4 py-6 sm:px-7">
+                {messages.length === 0 ? (
+                  <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} className="m-auto w-full max-w-2xl py-5 text-center">
+                    <div className="relative mx-auto grid h-20 w-20 place-items-center rounded-[24px] bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 text-white shadow-2xl shadow-blue-500/25"><BrainCircuit size={36} /><motion.span animate={{ rotate: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 3 }} className="absolute -right-3 -top-2 grid h-9 w-9 place-items-center rounded-xl border border-slate-100 bg-white text-amber-500 shadow-lg"><Zap size={17} /></motion.span></div>
+                    <span className="mt-5 inline-block text-xs font-extrabold uppercase tracking-[0.18em] text-blue-600">Your personal doubt space</span>
+                    <h2 className="mt-2 text-2xl font-black tracking-tight text-slate-900 sm:text-3xl">What are we learning today, {studentName}?</h2>
+                    <p className="mx-auto mt-3 max-w-lg text-sm font-medium leading-6 text-slate-500">Ask a question, revise a chapter, or untangle a difficult concept. I will explain it step by step in clear Hinglish.</p>
+                    <div className="mt-7 grid gap-3 text-left sm:grid-cols-3">
+                      {suggestions.map(({ icon: Icon, title, prompt, tone }) => (
+                        <motion.button whileHover={{ y: -4 }} type="button" key={title} onClick={() => sendMessage(prompt)} className={`group rounded-2xl border p-4 transition-shadow hover:shadow-lg ${tone}`}>
+                          <Icon size={20} /><strong className="mt-5 block text-sm text-slate-800">{title}</strong><span className="mt-1 block text-xs leading-5 text-slate-500">{prompt}</span><span className="mt-4 inline-flex items-center gap-1 text-[11px] font-bold text-current">Ask now <Send size={11} /></span>
+                        </motion.button>
+                      ))}
+                    </div>
+                  </motion.div>
+                ) : (
+                  <div className="my-auto space-y-6 py-2">
+                    {messages.map((item, index) => {
+                      const isUser = item.sender === 'user';
+                      return (
+                        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.24 }} key={`${item.createdAt || 'message'}-${index}`} className={`group flex gap-3 ${isUser ? 'justify-end' : 'justify-start'}`}>
+                          {!isUser && <span className="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-md"><BrainCircuit size={17} /></span>}
+                          <div className={`flex max-w-[86%] flex-col sm:max-w-[76%] ${isUser ? 'items-end' : 'items-start'}`}>
+                            <div className={`relative rounded-2xl px-4 py-3.5 text-sm font-medium leading-7 shadow-sm sm:text-[15px] ${isUser ? 'rounded-br-md bg-blue-600 text-white shadow-blue-500/10' : item.failed ? 'rounded-bl-md border border-red-200 bg-red-50 text-red-700' : 'rounded-bl-md border border-slate-200 bg-white text-slate-700'}`}><p className="whitespace-pre-wrap">{item.text}</p></div>
+                            <div className="mt-1.5 flex items-center gap-2 px-1 text-[10px] font-semibold text-slate-400"><span>{isUser ? 'You' : 'NEET Bhaiya'} · {formatTime(item.createdAt)}</span>{!isUser && !item.failed && <button type="button" onClick={() => copyMessage(item.text, index)} className="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 opacity-0 transition hover:bg-slate-200 group-hover:opacity-100 focus:opacity-100">{copiedMessage === index ? <><Check size={11} /> Copied</> : <><Copy size={11} /> Copy</>}</button>}</div>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                    {isLoading && <div className="flex gap-3"><span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white"><BrainCircuit size={17} /></span><div className="rounded-2xl rounded-bl-md border border-slate-200 bg-white px-4 py-3 shadow-sm"><div className="flex items-center gap-1.5"><i className="h-2 w-2 animate-bounce rounded-full bg-blue-400" /><i className="h-2 w-2 animate-bounce rounded-full bg-blue-400 [animation-delay:120ms]" /><i className="h-2 w-2 animate-bounce rounded-full bg-blue-400 [animation-delay:240ms]" /></div><span className="mt-2 block text-[10px] font-semibold text-slate-400">Bhaiya is thinking...</span></div></div>}
+                    <div ref={endRef} />
+                  </div>
+                )}
+              </div>
+            </main>
+
+            <footer className="shrink-0 border-t border-slate-200 bg-white px-3 py-3 sm:px-6 sm:py-4">
+              <div className="mx-auto max-w-4xl">
+                <div className="flex items-end gap-2 rounded-2xl border border-slate-200 bg-slate-50 p-2 pl-4 shadow-sm transition focus-within:border-blue-300 focus-within:bg-white focus-within:ring-4 focus-within:ring-blue-100">
+                  <textarea ref={inputRef} value={input} maxLength={3000} disabled={isLoading} onChange={(event) => setInput(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); sendMessage(); } }} placeholder={`Ask a NEET doubt, ${studentName}...`} rows={1} className="max-h-32 min-h-[44px] flex-1 resize-none bg-transparent py-3 text-sm font-medium leading-6 text-slate-700 outline-none placeholder:text-slate-400 disabled:opacity-60" />
+                  <button type="button" onClick={() => sendMessage()} disabled={!input.trim() || isLoading} aria-label="Send message" className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-blue-600 text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 hover:bg-blue-700 disabled:translate-y-0 disabled:opacity-35"><Send size={18} /></button>
+                </div>
+                <div className="mt-2 flex items-center justify-between px-1 text-[10px] font-medium text-slate-400"><span>Enter to send · Shift + Enter for a new line</span><span>{input.length}/3000</span></div>
+              </div>
+            </footer>
+          </div>
+        </section>
       </div>
-
-      <div className="border-t border-slate-100 bg-white p-4"><div className="mx-auto flex max-w-3xl items-end gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-2 pl-4 transition focus-within:border-indigo-300 focus-within:bg-white focus-within:ring-4 focus-within:ring-indigo-100"><textarea value={input} onChange={(event) => setInput(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); send(); } }} placeholder={`Ask anything, ${studentName}...`} rows={1} className="min-h-[44px] flex-1 resize-none bg-transparent py-3 text-sm text-slate-700 outline-none placeholder:text-slate-400"/><button onClick={send} disabled={!input.trim() || isLoading} aria-label="Send message" className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-indigo-600 text-white shadow-md transition hover:bg-indigo-700 disabled:opacity-40"><Send size={18}/></button></div><p className="mt-2 text-center text-xs text-slate-400">Press Enter to send · Shift + Enter for a new line</p></div>
-
-      <AnimatePresence>{historyOpen && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 z-20 flex justify-end bg-slate-950/25 backdrop-blur-[2px]"><motion.aside initial={{ x: 340 }} animate={{ x: 0 }} exit={{ x: 340 }} transition={{ type: 'tween', duration: .25 }} className="flex h-full w-full max-w-sm flex-col border-l border-slate-200 bg-white shadow-2xl dark:border-slate-800 dark:bg-slate-950"><div className="flex items-center justify-between border-b border-slate-100 p-5 dark:border-slate-800"><div><h3 className="font-bold">Chat history</h3><p className="mt-1 text-xs text-slate-500">Open any saved conversation</p></div><button onClick={() => setHistoryOpen(false)} className="rounded-xl p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-900" aria-label="Close history"><X size={19}/></button></div><button onClick={newChat} className="mx-5 mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-3 text-sm font-bold text-white"><Plus size={17}/> Start a new chat</button><div className="mt-5 flex-1 overflow-y-auto px-3 pb-5">{conversations.length ? conversations.map((item) => <button key={item._id} onClick={() => openConversation(item._id)} className={`mb-1 w-full rounded-xl p-3 text-left transition ${item._id === conversationId ? 'bg-indigo-50 ring-1 ring-indigo-100 dark:bg-indigo-950/40' : 'hover:bg-slate-50 dark:hover:bg-slate-900'}`}><span className="flex items-center gap-2"><MessageSquare size={15} className="text-indigo-500"/><b className="line-clamp-1 text-sm">{item.title}</b></span><span className="mt-2 block line-clamp-2 text-xs leading-5 text-slate-500">{item.preview || 'Conversation saved'}</span><span className="mt-2 flex items-center gap-1 text-[11px] text-slate-400"><Clock3 size={12}/>{formatDate(item.updatedAt)}</span></button>) : <div className="px-6 py-16 text-center"><History className="mx-auto text-slate-300" size={30}/><p className="mt-3 text-sm font-semibold">No saved chats yet</p><p className="mt-1 text-xs leading-5 text-slate-500">Your conversations appear here after you send your first doubt.</p></div>}</div></motion.aside></motion.div>}</AnimatePresence>
-    </div>
-  </AppShell>;
+    </AppShell>
+  );
 };
 
 export default MentorPage;

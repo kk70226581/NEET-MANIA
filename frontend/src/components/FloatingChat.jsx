@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Bot, BrainCircuit, MessageCircle, Send, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import { mentorAPI } from '../services/api';
 
 const welcomeMessage = { sender: 'ai', text: 'Hey! Main tumhara NEET Bhaiya hoon 😊\n\nAaj kis topic ko easy banate hain?', createdAt: new Date().toISOString() };
 
 const FloatingChat = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([welcomeMessage]);
   const [conversationId, setConversationId] = useState(null);
@@ -42,6 +44,8 @@ const FloatingChat = () => {
       setMessages((current) => [...current, { sender: 'ai', text: 'Network thoda slow hai, chote 😅 Ek baar phir bhej do — main yahin hoon.', createdAt: new Date().toISOString() }]);
     } finally { setIsLoading(false); }
   };
+
+  if (location.pathname === '/mentor') return null;
 
   return (
     <>
