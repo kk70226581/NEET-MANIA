@@ -1,5 +1,7 @@
 # Solnut NEET CBT Platform
 
+See [PYQ_SYSTEM_GUIDE.md](PYQ_SYSTEM_GUIDE.md) for the 10-year PYQ explorer, trends, practice, performance, and admin verification module.
+
 A complete Computer-Based Test (CBT) platform for NEET preparation with AI-powered analysis, adaptive learning, and real exam experience.
 
 ## 🎯 Features

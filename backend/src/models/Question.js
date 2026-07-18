@@ -192,6 +192,40 @@ const QuestionSchema = new mongoose.Schema({
     isPYQ: { type: Boolean, default: false, index: true },
     reference: String
   },
+  pyqDetails: {
+    examName: String,
+    examDate: Date,
+    phase: String,
+    paperCode: String,
+    originalOrder: Number,
+    classLevel: { type: String, enum: ['11', '12'] },
+    unit: String,
+    shortSolution: String,
+    fastestMethod: String,
+    conceptExplanation: String,
+    optionExplanations: {
+      A: String,
+      B: String,
+      C: String,
+      D: String
+    },
+    formulaConcept: String,
+    ncertBased: { type: Boolean, default: false, index: true },
+    repeatedConcept: { type: Boolean, default: false, index: true },
+    repetitionCount: { type: Number, default: 1, min: 1 },
+    marks: { type: Number, default: 4 },
+    negativeMarks: { type: Number, default: 1 },
+    legalStatus: { type: String, enum: ['user_provided', 'licensed', 'original_sample', 'pending'], default: 'pending' },
+    verification: {
+      questionText: { type: Boolean, default: false },
+      answer: { type: Boolean, default: false },
+      explanation: { type: Boolean, default: false },
+      classification: { type: Boolean, default: false },
+      examYear: { type: Boolean, default: false },
+      verifiedAt: Date,
+      verifiedByName: String
+    }
+  },
   images: [{
     url: String,
     publicId: String,
@@ -285,6 +319,14 @@ const QuestionSchema = new mongoose.Schema({
       ref: 'Question'
     }
   ],
+  contentVersion: { type: Number, default: 1 },
+  versionHistory: [{
+    version: Number,
+    changedAt: { type: Date, default: Date.now },
+    changedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    changeSummary: String,
+    snapshot: mongoose.Schema.Types.Mixed
+  }],
 
   // Timestamps
   createdAt: {
@@ -308,6 +350,8 @@ QuestionSchema.index({ subject: 1, chapter: 1, difficulty: 1 });
 QuestionSchema.index({ subject: 1, topic: 1 });
 QuestionSchema.index({ isPublished: 1, subject: 1 });
 QuestionSchema.index({ source: 1, 'sourceDetails.year': 1 });
+QuestionSchema.index({ 'pyq.isPYQ': 1, 'sourceDetails.year': -1, subject: 1, chapter: 1 });
+QuestionSchema.index({ 'pyqDetails.classLevel': 1, 'pyqDetails.unit': 1, topic: 1 });
 
 // Calculate accuracy percentage
 QuestionSchema.methods.calculateAccuracy = function() {

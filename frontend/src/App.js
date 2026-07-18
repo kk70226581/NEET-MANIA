@@ -20,6 +20,8 @@ import StudyPlanPage from './pages/StudyPlanPage';
 import SettingsPage from './pages/SettingsPage';
 import LeaderboardPage from './pages/LeaderboardPage';
 import MentorPage from './pages/MentorPage';
+import PyqHubPage from './pages/PyqHubPage';
+import PyqAdminPage from './pages/PyqAdminPage';
 import { authAPI } from './services/api';
 import { setUser } from './store/slices/userSlice';
 
@@ -65,9 +67,14 @@ function App() {
           <Route path="/leaderboard" element={<LeaderboardPage />} />
           <Route path="/mentor" element={<MentorPage />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/pyq" element={<PyqHubPage view="explorer" />} />
+          <Route path="/pyq/trends" element={<PyqHubPage view="trends" />} />
+          <Route path="/pyq/papers" element={<PyqHubPage view="papers" />} />
+          <Route path="/pyq/performance" element={<PyqHubPage view="performance" />} />
         </Route>
         <Route element={<AdminRoute />}>
           <Route path="/admin/questions" element={<AdminQuestionsPage />} />
+          <Route path="/admin/pyq" element={<PyqAdminPage />} />
         </Route>
         <Route path="*" element={<Navigate to={isAuthenticated ? '/dashboard' : '/'} replace />} />
       </Routes>

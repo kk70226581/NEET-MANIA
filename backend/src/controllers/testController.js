@@ -565,6 +565,27 @@ exports.submitTest = async (req, res) => {
       }
     }
 
+    if (attempt.test.source === 'pyq') {
+      const PyqInteraction = require('../models/PyqInteraction');
+      const PyqAnalyticsSnapshot = require('../models/PyqAnalyticsSnapshot');
+      const answeredResponses = attempt.responses.filter(
+        (response) => response.selectedOption && questionMap[response.questionId.toString()]?.pyq?.isPYQ
+      );
+      await Promise.all(answeredResponses.map(async (response) => {
+        let interaction = await PyqInteraction.findOne({ user: req.userId, question: response.questionId });
+        if (!interaction) interaction = new PyqInteraction({ user: req.userId, question: response.questionId });
+        if (!interaction.attempts.length) interaction.firstAttemptCorrect = response.isCorrect;
+        else if (response.isCorrect) interaction.retryCorrect = true;
+        interaction.attempts.push({ selectedOption: response.selectedOption, isCorrect: response.isCorrect, timeSpent: response.timeSpent || 0, attemptedAt: new Date() });
+        interaction.lastSelectedOption = response.selectedOption;
+        interaction.lastCorrect = response.isCorrect;
+        interaction.lastTimeSpent = response.timeSpent || 0;
+        interaction.updatedAt = new Date();
+        await interaction.save();
+      }));
+      await PyqAnalyticsSnapshot.deleteMany({});
+    }
+
     res.status(200).json({
       success: true,
       message: 'Test submitted successfully',

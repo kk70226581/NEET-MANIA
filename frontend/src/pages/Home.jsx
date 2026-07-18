@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Activity, ArrowRight, Atom, BarChart3, BookOpen, BrainCircuit, Check, Dna, FlaskConical, HeartPulse, Menu, Sparkles, Target, Trophy, Users, X, Bot } from 'lucide-react';
+import { Activity, ArrowRight, Atom, BarChart3, BookOpen, BrainCircuit, Check, Dna, FlaskConical, HeartPulse, Menu, Sparkles, Target, TrendingUp, Trophy, Users, X, Bot } from 'lucide-react';
 import neetDoctorHero from '../assets/neet-doctor-hero.png';
 
 const features = [
@@ -209,6 +209,26 @@ export default function Home() {
                 <p className="mt-2 text-sm leading-6 text-slate-600">{copy}</p>
               </motion.article>
             ))}
+          </div>
+        </section>
+
+        {/* PYQ Intelligence */}
+        <section className="border-y border-slate-200 bg-gradient-to-b from-indigo-50 to-white py-16 lg:py-24">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:px-8">
+            <motion.div {...rise}>
+              <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-3.5 py-2 text-xs font-extrabold text-indigo-700"><TrendingUp size={14}/> PYQ Intelligence Lab</span>
+              <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">Analyze 10 Years of NEET PYQs</h2>
+              <p className="mt-4 max-w-xl leading-7 text-slate-600">See chapter-wise trends, topic frequency, year heatmaps, and a transparent preparation-priority score—then practice the exact areas where your accuracy needs work.</p>
+              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                {['10+ years analyzed','Chapter-wise trends','Topic-wise frequency','Smart preparation priority'].map((item)=><span key={item} className="flex items-center gap-2 rounded-xl border border-indigo-100 bg-white px-3 py-3 text-sm font-bold text-slate-700"><Check size={16} className="text-emerald-500"/>{item}</span>)}
+              </div>
+              <div className="mt-8 flex flex-wrap gap-3"><button onClick={()=>navigate('/pyq/trends')} className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 font-bold text-white shadow-lg shadow-indigo-200">Explore PYQ Trends <ArrowRight size={17}/></button><button onClick={()=>navigate('/pyq')} className="rounded-xl border border-slate-200 bg-white px-5 py-3 font-bold text-slate-700">Practice PYQs</button></div>
+            </motion.div>
+            <motion.div {...rise} transition={{delay:.12}} className="rounded-3xl border border-indigo-100 bg-white p-5 shadow-2xl shadow-indigo-900/10">
+              <div className="flex items-center justify-between"><div><p className="text-xs font-extrabold uppercase tracking-wider text-indigo-600">Chapter heatmap preview</p><h3 className="mt-1 font-extrabold">Historical question frequency</h3></div><BarChart3 className="text-indigo-600"/></div>
+              <div className="mt-6 overflow-hidden rounded-2xl bg-slate-50 p-4"><div className="grid grid-cols-[1.4fr_repeat(6,1fr)] gap-1 text-[10px] font-bold text-slate-400"><span>Chapter</span>{['20','21','22','23','24','25'].map((year)=><span className="text-center" key={year}>{year}</span>)}{[['Human Physiology',[2,3,4,3,5,4]],['Genetics',[1,2,3,4,4,5]],['Ecology',[3,2,4,3,3,4]],['Current Electricity',[1,3,2,4,3,5]],['Chemical Bonding',[2,2,3,3,4,4]]].flatMap(([chapter,values])=>[<span key={`${chapter}-name`} className="truncate py-2 text-xs text-slate-600">{chapter}</span>,...values.map((value,index)=><span key={`${chapter}-${index}`} className="grid h-8 place-items-center rounded-md font-black text-indigo-950" style={{backgroundColor:`rgba(99,102,241,${.12+value*.15})`}}>{value}</span>)])}</div></div>
+              <div className="mt-5 rounded-xl border border-amber-100 bg-amber-50 p-3 text-xs leading-5 text-amber-800">Historical patterns guide preparation; they never guarantee future questions or chapter weightage.</div>
+            </motion.div>
           </div>
         </section>
 

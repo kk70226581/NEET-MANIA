@@ -20,6 +20,8 @@ import {
   Search,
   Settings,
   Trophy,
+  TrendingUp,
+  ShieldCheck,
   User,
   X,
   Zap,
@@ -29,6 +31,7 @@ import { logout } from '../store/slices/userSlice';
 const primaryNavItems = [
   { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard, hint: 'Your daily overview' },
   { to: '/question-bank', label: 'Question Bank', icon: BookOpen, hint: 'Browse NEET questions' },
+  { to: '/pyq', label: 'PYQ Intelligence', icon: TrendingUp, hint: 'Explore 10-year trends and practice' },
   { to: '/tests', label: 'Mock Tests', icon: ClipboardList, hint: 'Build a practice test' },
   { to: '/performance', label: 'Performance', icon: BarChart3, hint: 'Review your analytics' },
   { to: '/mistakes', label: 'Mistake Notebook', icon: BrainCircuit, hint: 'Revise weak concepts' },
@@ -68,7 +71,7 @@ const AppShell = ({ children, hideSearch = false }) => {
 
   const allNavItems = useMemo(() => {
     const adminItem = user?.role === 'admin'
-      ? [{ to: '/admin/questions', label: 'Question Import', icon: FileUp, hint: 'Review and publish questions' }]
+      ? [{ to: '/admin/questions', label: 'Question Import', icon: FileUp, hint: 'Review and publish questions' }, { to: '/admin/pyq', label: 'PYQ Quality', icon: ShieldCheck, hint: 'Validate imports and reports' }]
       : [];
     return [...primaryNavItems, ...utilityItems, ...adminItem];
   }, [user?.role]);
@@ -80,6 +83,7 @@ const AppShell = ({ children, hideSearch = false }) => {
   }, [allNavItems, searchQuery]);
 
   const activePage = allNavItems.find(({ to }) => location.pathname === to)
+    || (location.pathname.startsWith('/pyq') ? { label: 'PYQ Intelligence' } : null)
     || (location.pathname.startsWith('/exam/') ? { label: 'Live Exam' } : null)
     || (location.pathname.startsWith('/results/') ? { label: 'Test Results' } : null);
 
@@ -176,9 +180,14 @@ const AppShell = ({ children, hideSearch = false }) => {
               </NavLink>
             ))}
             {user?.role === 'admin' && (
-              <NavLink to="/admin/questions" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
-                <FileUp size={19} /> Question Import
-              </NavLink>
+              <>
+                <NavLink to="/admin/questions" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
+                  <FileUp size={19} /> Question Import
+                </NavLink>
+                <NavLink to="/admin/pyq" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
+                  <ShieldCheck size={19} /> PYQ Quality
+                </NavLink>
+              </>
             )}
           </nav>
 

@@ -14,6 +14,7 @@ async function main() {
   await mongoose.connect(process.env.MONGODB_URI);
   const questions = await Question.find({
     syllabusVersion: NEET_SYLLABUS_VERSION,
+    source: 'ncert',
     'qualityAudit.status': 'approved'
   }).lean();
 

@@ -45,6 +45,7 @@ app.use('/api/ai-questions', require('./routes/aiQuestions'));
 app.use('/api/tests', require('./routes/tests'));
 app.use('/api/mistakes', require('./routes/mistakes'));
 app.use('/api/mentor', require('./routes/mentor'));
+app.use('/api/pyq', require('./routes/pyq'));
 
 // Health check
 app.get('/health', (req, res) => {

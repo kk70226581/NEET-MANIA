@@ -153,14 +153,43 @@ exports.updateQuestion = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Question ID is required' });
     }
 
-    const q = await Question.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true, runValidators: true }
-    );
-
-    if (!q) {
+    const existing = await Question.findById(req.params.id);
+    if (!existing) {
       return res.status(404).json({ success: false, message: 'Question not found' });
+    }
+
+    const snapshot = {
+      questionText: existing.questionText,
+      options: existing.options,
+      correctAnswer: existing.correctAnswer,
+      explanation: existing.explanation,
+      subject: existing.subject,
+      chapter: existing.chapter,
+      topic: existing.topic,
+      subtopic: existing.subtopic,
+      difficulty: existing.difficulty,
+      ncertReference: existing.ncertReference,
+      pyqDetails: existing.pyqDetails,
+      isPublished: existing.isPublished,
+      isVerified: existing.isVerified
+    };
+    const q = await Question.findByIdAndUpdate(req.params.id, {
+      $set: req.body,
+      $inc: { contentVersion: 1 },
+      $push: {
+        versionHistory: {
+          version: existing.contentVersion || 1,
+          changedAt: new Date(),
+          changedBy: req.userId,
+          changeSummary: String(req.body.changeSummary || 'Question content updated').slice(0, 300),
+          snapshot
+        }
+      }
+    }, { new: true, runValidators: true });
+
+    if (existing.pyq?.isPYQ) {
+      const PyqAnalyticsSnapshot = require('../models/PyqAnalyticsSnapshot');
+      await PyqAnalyticsSnapshot.deleteMany({});
     }
 
     res.status(200).json({ success: true, data: q });
@@ -192,20 +221,33 @@ exports.publishQuestion = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Question ID is required' });
     }
 
-    const q = await Question.findByIdAndUpdate(
-      req.params.id,
-      {
-        isPublished: true,
-        isVerified: true,
-        verifiedBy: req.userId,
-        verifiedAt: new Date()
-      },
-      { new: true }
-    );
-
-    if (!q) {
+    const existing = await Question.findById(req.params.id);
+    if (!existing) {
       return res.status(404).json({ success: false, message: 'Question not found' });
     }
+    if (existing.pyq?.isPYQ) {
+      const verification = existing.pyqDetails?.verification;
+      const checks = ['questionText', 'answer', 'explanation', 'classification', 'examYear'];
+      const legal = ['user_provided', 'licensed', 'original_sample'].includes(existing.pyqDetails?.legalStatus);
+      const complete = checks.every((key) => verification?.[key]) && existing.explanation?.text && existing.pyqDetails?.shortSolution;
+      if (!legal || !complete) {
+        return res.status(422).json({
+          success: false,
+          message: 'PYQ publication blocked: verify question, answer, solution, classification, year, and legal provenance first.'
+        });
+      }
+    }
+    existing.isPublished = true;
+    existing.isVerified = true;
+    existing.verifiedBy = req.userId;
+    existing.review.status = 'approved';
+    existing.review.reviewedAt = new Date();
+    await existing.save();
+    if (existing.pyq?.isPYQ) {
+      const PyqAnalyticsSnapshot = require('../models/PyqAnalyticsSnapshot');
+      await PyqAnalyticsSnapshot.deleteMany({});
+    }
+    const q = existing;
 
     res.status(200).json({ success: true, data: q });
   } catch (error) {

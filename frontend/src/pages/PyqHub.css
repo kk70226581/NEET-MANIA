@@ -1,0 +1,48 @@
+.pyq-dark {
+  background: #020617;
+  color: #e2e8f0;
+}
+
+.pyq-dark .bg-white,
+.pyq-dark .bg-white\/95 {
+  background-color: #0f172a !important;
+}
+
+.pyq-dark .bg-slate-50,
+.pyq-dark .bg-slate-100 {
+  background-color: #1e293b !important;
+}
+
+.pyq-dark .text-slate-900,
+.pyq-dark .text-slate-800,
+.pyq-dark .text-slate-700,
+.pyq-dark .text-slate-600 {
+  color: #e2e8f0 !important;
+}
+
+.pyq-dark .text-slate-500,
+.pyq-dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+.pyq-dark .border-slate-200,
+.pyq-dark .border-slate-300,
+.pyq-dark .border-slate-100 {
+  border-color: #334155 !important;
+}
+
+.pyq-dark input,
+.pyq-dark select,
+.pyq-dark textarea {
+  background-color: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+.pyq-dark .recharts-cartesian-grid line {
+  stroke: #334155;
+}
+
+.pyq-dark .recharts-text {
+  fill: #94a3b8;
+}

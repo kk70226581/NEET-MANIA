@@ -99,4 +99,26 @@ export const mentorAPI = {
   chat: (conversationId, message) => api.post('/mentor/chat', { conversationId, message })
 };
 
+export const pyqAPI = {
+  getMetadata: () => api.get('/pyq/metadata'),
+  explore: (params) => api.get('/pyq/explore', { params }),
+  getQuestion: (id) => api.get(`/pyq/questions/${id}`),
+  submitAttempt: (id, data) => api.post(`/pyq/questions/${id}/attempt`, data),
+  setBookmark: (id, bookmarked) => api.put(`/pyq/questions/${id}/bookmark`, { bookmarked }),
+  saveNote: (id, note) => api.put(`/pyq/questions/${id}/note`, { note }),
+  report: (id, data) => api.post(`/pyq/questions/${id}/report`, data),
+  getTrends: (params) => api.get('/pyq/trends', { params }),
+  getPapers: () => api.get('/pyq/papers'),
+  getPerformance: () => api.get('/pyq/performance'),
+  createTest: (data) => api.post('/pyq/tests', data),
+  getCurriculum: () => api.get('/pyq/curriculum'),
+  validateImport: (questions) => api.post('/pyq/admin/validate-import', { questions }),
+  importQuestions: (questions) => api.post('/pyq/admin/import', { questions }),
+  getAdminQueue: () => api.get('/pyq/admin/queue'),
+  verifyQuestion: (id, legalStatus) => api.put(`/pyq/admin/questions/${id}/verify`, { legalStatus }),
+  publishQuestion: (id) => api.put(`/pyq/admin/questions/${id}/publish`),
+  getReports: () => api.get('/pyq/admin/reports'),
+  resolveReport: (interactionId, reportId, status) => api.put(`/pyq/admin/reports/${interactionId}/${reportId}`, { status })
+};
+
 export default api;

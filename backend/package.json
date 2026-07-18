@@ -14,7 +14,9 @@
     "audit:ncert": "node src/scripts/auditGroundedNcertQuestions.js",
     "rebalance:ncert": "node src/scripts/rebalanceNcertAnswers.js --apply",
     "generate:biology:codex": "node src/scripts/generateCodexBiologyQuestions.js --apply",
-    "audit:biology:codex": "node src/scripts/auditCodexBiologyQuestions.js"
+    "audit:biology:codex": "node src/scripts/auditCodexBiologyQuestions.js",
+    "seed:pyq:samples": "node src/scripts/seedPyqSamples.js --apply",
+    "audit:pyq": "node src/scripts/auditPyqSystem.js"
   },
   "keywords": [
     "NEET",

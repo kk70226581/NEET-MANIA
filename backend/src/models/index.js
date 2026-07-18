@@ -5,5 +5,7 @@ module.exports = {
   Test: require('./Test'),
   TestAttempt: require('./TestAttempt'),
   MistakeNotebook: require('./MistakeNotebook'),
-  MentorConversation: require('./MentorConversation')
+  MentorConversation: require('./MentorConversation'),
+  PyqInteraction: require('./PyqInteraction'),
+  PyqAnalyticsSnapshot: require('./PyqAnalyticsSnapshot')
 };
