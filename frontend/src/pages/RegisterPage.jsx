@@ -4,7 +4,9 @@ import { useDispatch } from 'react-redux';
 import { setUser, setToken } from '../store/slices/userSlice';
 import { authAPI } from '../services/api';
 import toast from 'react-hot-toast';
-import './Auth.css';
+import { Eye, EyeOff, BrainCircuit, Loader2, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import neetDoctorHero from '../assets/neet-doctor-hero.png';
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -25,13 +27,9 @@ const RegisterPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-
-    if (name === 'confirmPassword' && value && formData.password !== value) {
-      setPasswordError("Passwords don't match yet.");
-    } else {
-      setPasswordError('');
-    }
+    const next = { ...formData, [name]: value };
+    setFormData(next);
+    setPasswordError(next.confirmPassword && next.password !== next.confirmPassword ? "Passwords don't match." : '');
   };
 
   const handleSubmit = async (e) => {
@@ -60,210 +58,196 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="auth-page">
-      <svg className="grain" width="100%" height="100%">
-        <filter id="noiseFilter">
-          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="noise" />
-          <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.9 0" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-      </svg>
+    <div className="min-h-screen bg-slate-50 flex font-sans">
 
-      <svg width="0" height="0" style={{ position: 'absolute' }}>
-        <filter id="chalkRough" x="-20%" y="-20%" width="140%" height="140%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.025 0.06" numOctaves="2" seed="4" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
-        </filter>
-      </svg>
+      {/* Left Form Section */}
+      <div className="flex-1 flex flex-col justify-center px-4 py-12 sm:px-6 lg:px-20 xl:px-24 overflow-y-auto">
+        <div className="mx-auto w-full max-w-sm">
 
-      <header className="auth-header">
-        <div className="auth-logo">
-          Solnut
-          <svg viewBox="0 0 70 10">
-            <path
-              d="M2 6 Q 18 1, 36 6 T 68 5"
-              stroke="var(--yellow)"
-              strokeWidth="2.2"
-              fill="none"
-              strokeLinecap="round"
-              filter="url(#chalkRough)"
-            />
-          </svg>
-        </div>
-        <Link to="/" className="auth-back-link">
-          ← Back to home
-        </Link>
-      </header>
+          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-10 text-center">
+            <Link to="/" className="inline-flex items-center justify-center gap-2 mb-6 group">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-lg transition-transform group-hover:scale-105">
+                <BrainCircuit size={24} />
+              </div>
+              <span className="text-3xl font-extrabold tracking-tight text-slate-900">Medical Mania</span>
+            </Link>
+            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">Create your account</h2>
+            <p className="mt-2 text-sm text-slate-600">
+              Already have an account?{' '}
+              <Link to="/login" className="font-bold text-indigo-600 hover:text-indigo-500 transition-colors">
+                Sign in
+              </Link>
+            </p>
+          </motion.div>
 
-      <main className="auth-main">
-        <div className="auth-card">
-          <div className="auth-card-perf">
-            <span className="auth-card-ticket">FORM NO. SLN-2027-04822</span>
-          </div>
-          <div className="auth-card-body">
-            <h1>
-              Start your prep.
-              <svg className="auth-card-underline" viewBox="0 0 108 10">
-                <path
-                  d="M2 6 Q 27 1, 54 6 T 106 5"
-                  stroke="var(--pink)"
-                  strokeWidth="2"
-                  fill="none"
-                  strokeLinecap="round"
-                  filter="url(#chalkRough)"
-                />
-              </svg>
-            </h1>
-            <p className="auth-lede">Free question bank, NCERT-mapped from day one.</p>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+            <form onSubmit={handleSubmit} className="space-y-5">
 
-            <form onSubmit={handleSubmit}>
-              <div className="auth-field">
-                <label htmlFor="firstName">Full name</label>
-                <div className="auth-two-col">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-bold text-slate-700 mb-1">
+                    First Name
+                  </label>
                   <input
                     type="text"
-                    id="firstName"
                     name="firstName"
-                    placeholder="First name"
-                    className="auth-input"
+                    required
                     value={formData.firstName}
                     onChange={handleChange}
-                    required
+                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition-all text-slate-900 font-medium shadow-sm placeholder:font-normal placeholder:text-slate-400"
+                    placeholder="First"
                   />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-slate-700 mb-1">
+                    Last Name
+                  </label>
                   <input
                     type="text"
-                    id="lastName"
                     name="lastName"
-                    placeholder="Last name"
-                    className="auth-input"
+                    required
                     value={formData.lastName}
                     onChange={handleChange}
-                    required
+                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition-all text-slate-900 font-medium shadow-sm placeholder:font-normal placeholder:text-slate-400"
+                    placeholder="Last"
                   />
                 </div>
               </div>
 
-              <div className="auth-field">
-                <label htmlFor="email">Email</label>
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-1">
+                  Email address
+                </label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
-                  placeholder="you@example.com"
-                  className="auth-input"
+                  required
                   value={formData.email}
                   onChange={handleChange}
-                  required
+                  className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition-all text-slate-900 font-medium shadow-sm placeholder:font-normal placeholder:text-slate-400"
+                  placeholder="you@example.com"
                 />
               </div>
 
-              <div className="auth-field">
-                <label htmlFor="phone">Phone (optional)</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="98765 43210"
-                  className="auth-input"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="auth-field">
-                <label htmlFor="class">Target year / Class</label>
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-1">
+                  Target Class
+                </label>
                 <select
-                  id="class"
                   name="class"
-                  className="auth-select"
                   value={formData.class}
                   onChange={handleChange}
+                  className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition-all text-slate-900 font-medium shadow-sm"
                 >
                   <option value="11">Class 11</option>
                   <option value="12">Class 12</option>
-                  <option value="drop">Drop year</option>
-                  <option value="just-exploring">Just exploring</option>
+                  <option value="drop">Dropper</option>
+                  <option value="just-exploring">Just Exploring</option>
                 </select>
               </div>
 
-              <div className="auth-field">
-                <label htmlFor="password">Password</label>
-                <div className="auth-input-wrap">
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-1">
+                  Password
+                </label>
+                <div className="relative">
                   <input
-                    type={showPassword ? 'text' : 'password'}
-                    id="password"
+                    type={showPassword ? "text" : "password"}
                     name="password"
-                    placeholder="••••••••"
-                    className="auth-input"
+                    required
+                    minLength="8"
+                    autoComplete="new-password"
                     value={formData.password}
                     onChange={handleChange}
-                    minLength="8"
-                    required
+                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition-all text-slate-900 font-medium shadow-sm placeholder:font-normal placeholder:text-slate-400"
+                    placeholder="At least 8 characters"
                   />
                   <button
                     type="button"
-                    className="auth-eye-btn"
                     onClick={() => setShowPassword(!showPassword)}
-                    aria-label="Show password"
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-indigo-600 transition-colors"
                   >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                      <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
-                      <circle cx="12" cy="12" r="3" />
-                    </svg>
+                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                   </button>
                 </div>
-                <p className="auth-hint">At least 8 characters.</p>
               </div>
 
-              <div className="auth-field">
-                <label htmlFor="confirm">Confirm password</label>
-                <div className="auth-input-wrap">
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-1">
+                  Confirm Password
+                </label>
+                <div className="relative">
                   <input
-                    type={showConfirm ? 'text' : 'password'}
-                    id="confirm"
+                    type={showConfirm ? "text" : "password"}
                     name="confirmPassword"
-                    placeholder="••••••••"
-                    className="auth-input"
+                    required
+                    minLength="8"
+                    autoComplete="new-password"
                     value={formData.confirmPassword}
                     onChange={handleChange}
-                    minLength="8"
-                    required
+                    className={`w-full px-4 py-3 bg-white border ${passwordError ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-slate-300 focus:ring-indigo-600 focus:border-indigo-600'} rounded-xl focus:ring-2 outline-none transition-all text-slate-900 font-medium shadow-sm placeholder:font-normal placeholder:text-slate-400`}
+                    placeholder="Repeat your password"
                   />
                   <button
                     type="button"
-                    className="auth-eye-btn"
                     onClick={() => setShowConfirm(!showConfirm)}
-                    aria-label="Show password"
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-indigo-600 transition-colors"
                   >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                      <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
-                      <circle cx="12" cy="12" r="3" />
-                    </svg>
+                    {showConfirm ? <EyeOff size={18} /> : <Eye size={18} />}
                   </button>
                 </div>
-                {passwordError && <p className={`auth-error ${passwordError ? 'show' : ''}`}>{passwordError}</p>}
+                {passwordError && (
+                  <p className="mt-1 text-sm text-red-500 font-medium">{passwordError}</p>
+                )}
               </div>
 
-              <label className="auth-terms">
-                <input type="checkbox" required />
-                <span>
-                  I confirm that the details above are correct.
-                </span>
-              </label>
-
-              <button type="submit" className="auth-btn-primary" disabled={loading}>
-                {loading ? 'Creating account...' : 'Create account'}
+              <button
+                type="submit"
+                disabled={loading || passwordError !== ''}
+                className="w-full flex items-center justify-center gap-2 py-3.5 px-4 border border-transparent rounded-xl shadow-lg shadow-indigo-600/20 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 transition-all disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 mt-4"
+              >
+                {loading ? (
+                  <Loader2 className="animate-spin" size={20} />
+                ) : (
+                  <>Create Account <ArrowRight size={18} /></>
+                )}
               </button>
             </form>
-
-            <p className="auth-switch-line">
-              Already revising with us? <Link to="/login">Log in →</Link>
-            </p>
-          </div>
+          </motion.div>
         </div>
-      </main>
+      </div>
 
-      <footer className="auth-footer">© 2026 Solnut</footer>
+      {/* Right Graphic Section (Hidden on Mobile) */}
+      <div className="hidden lg:block lg:flex-1 relative overflow-hidden bg-slate-900">
+        <img
+          src={neetDoctorHero}
+          alt="NEET aspirant preparing for a medical career"
+          className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/90 to-purple-900/90" />
+
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center text-white z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="max-w-md backdrop-blur-sm bg-white/10 p-8 rounded-3xl border border-white/20 shadow-2xl"
+          >
+            <div className="mb-6 flex justify-center">
+              <span className="p-3 bg-white/20 rounded-2xl">
+                <BrainCircuit size={40} className="text-indigo-200" />
+              </span>
+            </div>
+            <h3 className="text-2xl font-bold mb-4 leading-tight">
+              "Every single hour you study brings you one step closer to your white coat."
+            </h3>
+            <p className="text-indigo-200 font-medium">
+              Join thousands of NEET aspirants practising smarter.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
     </div>
   );
 };

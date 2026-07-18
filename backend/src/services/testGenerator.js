@@ -1,5 +1,5 @@
 const Question = require('../models/Question');
-const { TEST_CONFIG } = require('../config/constants');
+const { MARKING_SCHEME, TEST_CONFIG } = require('../config/constants');
 
 // Chapter weightage mapping (1-10) based on NEET pattern
 const CHAPTER_WEIGHTAGES = {
