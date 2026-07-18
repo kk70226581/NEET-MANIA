@@ -1,6 +1,13 @@
 const Question = require('../models/Question');
 const { MARKING_SCHEME, TEST_CONFIG } = require('../config/constants');
 
+const VERIFIED_QUESTION_FILTER = {
+  isPublished: true,
+  inSyllabus: true,
+  syllabusVersion: 'NEET-UG-2026',
+  'qualityAudit.status': 'approved'
+};
+
 // Chapter weightage mapping (1-10) based on NEET pattern
 const CHAPTER_WEIGHTAGES = {
   // Physics
@@ -191,7 +198,7 @@ class TestGenerator {
     
     // Create query excluding already selected questions for this subject
     const query = {
-      isPublished: true,
+      ...VERIFIED_QUESTION_FILTER,
       subject: subject === 'biology' ? { $in: ['biology', 'botany', 'zoology'] } : subject,
       chapter: new RegExp(chapter, 'i'),
       _id: { $nin: globalSubjectQues }
@@ -351,7 +358,7 @@ class TestGenerator {
         if (selectedQuestions.length < targetCount) {
           const remaining = targetCount - selectedQuestions.length;
           const query = {
-            isPublished: true,
+            ...VERIFIED_QUESTION_FILTER,
             subject: subject === 'biology' ? { $in: ['biology', 'botany', 'zoology'] } : subject,
             _id: { $nin: selectedQuestions }
           };
@@ -419,12 +426,14 @@ class TestGenerator {
    * Build MongoDB query from filters
    */
   static buildQuery(filters) {
-    const query = {};
+    const query = { ...VERIFIED_QUESTION_FILTER };
 
     if (filters.subject) {
-      query.subject = Array.isArray(filters.subject)
-        ? { $in: filters.subject }
-        : filters.subject;
+      query.subject = filters.subject === 'biology'
+        ? { $in: ['biology', 'botany', 'zoology'] }
+        : Array.isArray(filters.subject)
+          ? { $in: filters.subject }
+          : filters.subject;
     }
     
     // Support either single chapter or array of chapters

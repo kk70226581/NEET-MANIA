@@ -612,6 +612,29 @@ exports.getResults = async (req, res) => {
       ? `Prioritize ${attempt.weakAreas.slice(0, 3).join(', ')}. Review each incorrect concept, then take a focused chapter test.`
       : 'Review every incorrect answer, note the concept behind it, and take a focused test next.';
 
+    const incorrectResponses = attempt.responses.filter((response) => response.selectedOption && !response.isCorrect);
+    const incorrectQuestions = await Question.find({
+      _id: { $in: incorrectResponses.map((response) => response.questionId) }
+    }).select('questionText options correctAnswer explanation subject chapter topic ncertReference').lean();
+    const questionById = new Map(incorrectQuestions.map((question) => [String(question._id), question]));
+    const questionReview = incorrectResponses.map((response) => {
+      const question = questionById.get(String(response.questionId));
+      if (!question) return null;
+      return {
+        questionId: question._id,
+        questionText: question.questionText,
+        subject: question.subject,
+        chapter: question.chapter,
+        topic: question.topic,
+        selectedOption: response.selectedOption,
+        selectedAnswer: question.options?.[response.selectedOption]?.text || '',
+        correctOption: question.correctAnswer,
+        correctAnswer: question.options?.[question.correctAnswer]?.text || '',
+        explanation: question.explanation?.text || '',
+        ncertReference: question.ncertReference || null
+      };
+    }).filter(Boolean);
+
     res.status(200).json({
       success: true,
       data: {
@@ -623,13 +646,15 @@ exports.getResults = async (req, res) => {
         questionsCorrect: attempt.analysis.totalQuestionsCorrect,
         questionsWrong: attempt.analysis.totalQuestionsWrong,
         questionsSkipped: attempt.analysis.totalQuestionsSkipped,
+        totalQuestions: attempt.responses.length,
         averageTimePerQuestion: attempt.analysis.averageTimePerQuestion.toFixed(2),
         rankPrediction: attempt.rankPrediction,
         negativeMarks: attempt.analysis.negativeMarksCount,
         subjectAnalysis: attempt.subjectAnalysis,
         chapterAnalysis: attempt.chapterAnalysis,
         weakAreas: attempt.weakAreas,
-        strongAreas: attempt.strongAreas
+        strongAreas: attempt.strongAreas,
+        questionReview
       }
     });
 

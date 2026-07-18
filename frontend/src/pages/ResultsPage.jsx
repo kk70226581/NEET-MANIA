@@ -250,6 +250,51 @@ const ResultsPage = () => {
             </div>
           </section>
         )}
+
+        {result.questionReview?.length > 0 && (
+          <section className="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 md:p-8">
+            <div className="mb-8">
+              <span className="text-xs font-bold uppercase tracking-widest text-rose-500 mb-1 block">Incorrect Answer Review</span>
+              <h3 className="text-2xl font-bold text-slate-800">Fix each mistake from the source</h3>
+              <p className="text-slate-500 mt-2">Every available citation points to the NCERT edition used to verify the question.</p>
+            </div>
+
+            <div className="space-y-5">
+              {result.questionReview.map((item, index) => {
+                const reference = item.ncertReference;
+                const pageLabel = reference?.page || reference?.pdfPage;
+                return (
+                  <article key={item.questionId} className="rounded-2xl border border-slate-200 p-5 md:p-6 bg-slate-50/70">
+                    <div className="flex flex-wrap items-center gap-2 mb-3 text-xs font-bold uppercase tracking-wide">
+                      <span className="px-2.5 py-1 rounded-full bg-rose-100 text-rose-700">Question {index + 1}</span>
+                      <span className="text-slate-500 capitalize">{item.subject} · {item.chapter}</span>
+                    </div>
+                    <h4 className="font-bold text-slate-800 leading-relaxed mb-4">{item.questionText}</h4>
+                    <div className="grid md:grid-cols-2 gap-3 mb-4">
+                      <div className="rounded-xl bg-rose-50 border border-rose-100 p-3 text-sm text-rose-800">
+                        <strong>Your answer ({item.selectedOption}):</strong> {item.selectedAnswer}
+                      </div>
+                      <div className="rounded-xl bg-emerald-50 border border-emerald-100 p-3 text-sm text-emerald-800">
+                        <strong>Correct ({item.correctOption}):</strong> {item.correctAnswer}
+                      </div>
+                    </div>
+                    {item.explanation && <p className="text-slate-600 leading-relaxed mb-4">{item.explanation}</p>}
+                    {reference?.chapter && (
+                      <div className="flex flex-wrap items-center gap-2 rounded-xl bg-indigo-50 border border-indigo-100 px-4 py-3 text-sm text-indigo-800">
+                        <BookOpen size={17} />
+                        <strong>NCERT Class {reference.class}</strong>
+                        <span>· {reference.chapter}</span>
+                        {pageLabel && <span>· PDF page {pageLabel}</span>}
+                        {reference.edition && <span>· {reference.edition}</span>}
+                        {reference.sourceUrl && <a href={reference.sourceUrl} target="_blank" rel="noreferrer" className="font-bold underline ml-auto">Open source</a>}
+                      </div>
+                    )}
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+        )}
       </div>
     </AppShell>
   );

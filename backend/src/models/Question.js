@@ -154,9 +154,24 @@ const QuestionSchema = new mongoose.Schema({
   commonMistake: String,
   ncertReference: {
     class: String,
+    book: String,
     chapter: String,
     topic: String,
-    page: String
+    page: String,
+    pdfPage: Number,
+    edition: String,
+    sourceUrl: String,
+    quotedLine: String
+  },
+  syllabusVersion: String,
+  qualityAudit: {
+    status: { type: String, enum: ['pending', 'approved', 'rejected'], default: 'pending' },
+    factualScore: Number,
+    conceptualScore: Number,
+    ambiguityScore: Number,
+    notes: [String],
+    auditedAt: Date,
+    auditedBy: String
   },
   
   // AI & Generation Metadata

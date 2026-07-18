@@ -13,7 +13,16 @@ describe('TestGenerator', () => {
       subject: { $in: ['biology', 'botany'] },
       difficulty: 'medium',
       source: { $in: ['pyq', 'custom'] },
-      isPublished: true
+      isPublished: true,
+      inSyllabus: true,
+      syllabusVersion: 'NEET-UG-2026',
+      'qualityAudit.status': 'approved'
+    });
+  });
+
+  test('includes legacy botany and zoology labels for Biology requests', () => {
+    expect(TestGenerator.buildQuery({ subject: 'biology' }).subject).toEqual({
+      $in: ['biology', 'botany', 'zoology']
     });
   });
 

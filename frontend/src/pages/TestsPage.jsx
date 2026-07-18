@@ -17,7 +17,7 @@ const testTypes = [
 const TestsPage = () => {
   const navigate = useNavigate();
   const [metadata, setMetadata] = useState([]);
-  const [config, setConfig] = useState({ testType: 'chapter_test', subject: 'biology', chapter: '', topic: '', difficulty: '', questionCount: 30 });
+  const [config, setConfig] = useState({ testType: 'chapter_test', classLevel: '11', subject: 'biology', chapter: '', topic: '', difficulty: '', questionCount: 5 });
   const [creating, setCreating] = useState(false);
   const [mockMode, setMockMode] = useState('standard');
   const [selectedChapters, setSelectedChapters] = useState([]);
@@ -28,22 +28,39 @@ const TestsPage = () => {
     questionsAPI.getMetadata().then((response) => {
       const rows = response.data || [];
       setMetadata(rows);
-      if (rows[0]?._id.subject) setConfig((current) => ({ ...current, subject: rows[0]._id.subject }));
+      if (rows[0]?._id.subject) setConfig((current) => ({
+        ...current,
+        subject: rows[0]._id.subject,
+        classLevel: rows[0]._id.classLevel || current.classLevel
+      }));
     }).catch(() => {});
   }, []);
 
   const subjects = useMemo(() => [...new Set(metadata.map((row) => row._id.subject).filter(Boolean))], [metadata]);
-  const chapters = useMemo(() => [...new Set(metadata.filter((row) => row._id.subject === config.subject).map((row) => row._id.chapter).filter(Boolean))], [metadata, config.subject]);
-  const topics = useMemo(() => [...new Set(metadata.filter((row) => row._id.subject === config.subject && (!config.chapter || row._id.chapter === config.chapter)).map((row) => row._id.topic).filter(Boolean))], [metadata, config.subject, config.chapter]);
+  const chapters = useMemo(() => [...new Set(metadata.filter((row) => row._id.subject === config.subject && row._id.classLevel === config.classLevel).map((row) => row._id.chapter).filter(Boolean))], [metadata, config.subject, config.classLevel]);
+  const topics = useMemo(() => [...new Set(metadata.filter((row) => row._id.subject === config.subject && row._id.classLevel === config.classLevel && (!config.chapter || row._id.chapter === config.chapter)).map((row) => row._id.topic).filter(Boolean))], [metadata, config.subject, config.classLevel, config.chapter]);
+  const availableQuestionCount = useMemo(() => metadata
+    .filter((row) => row._id.subject === config.subject
+      && row._id.classLevel === config.classLevel
+      && (!config.chapter || row._id.chapter === config.chapter)
+      && (!config.difficulty || row._id.difficulty === config.difficulty))
+    .reduce((total, row) => total + (row.count || 0), 0), [metadata, config.subject, config.classLevel, config.chapter, config.difficulty]);
+  const questionOptions = useMemo(() => {
+    const choices = ['chapter_test', 'topic_test'].includes(config.testType)
+      ? [5, 10, 15, 30]
+      : [15, 30, 45, 60, 90];
+    return choices.filter((count) => !config.chapter || count <= availableQuestionCount);
+  }, [config.testType, config.chapter, availableQuestionCount]);
   
   const update = (name, value) => {
     setConfig((current) => ({ 
       ...current, 
       [name]: value, 
-      ...(name === 'subject' ? { chapter: '', topic: '' } : {}), 
+      ...(name === 'testType' ? { questionCount: ['chapter_test', 'topic_test'].includes(value) ? 5 : 30 } : {}),
+      ...(['classLevel', 'subject'].includes(name) ? { chapter: '', topic: '' } : {}),
       ...(name === 'chapter' ? { topic: '' } : {}) 
     }));
-    if (name === 'subject') {
+    if (['classLevel', 'subject'].includes(name)) {
       setSelectedChapters([]);
     }
   };
@@ -64,7 +81,7 @@ const TestsPage = () => {
       const payload = { ...config, questionCount: Number(config.questionCount) };
       if (config.testType === 'full_mock') {
         if (mockMode === 'standard') {
-          delete payload.subject; delete payload.chapter; delete payload.topic; delete payload.difficulty; delete payload.questionCount;
+          delete payload.classLevel; delete payload.subject; delete payload.chapter; delete payload.topic; delete payload.difficulty; delete payload.questionCount;
         } else {
           payload.subject = config.subject;
           payload.chapters = selectedChapters;
@@ -206,6 +223,13 @@ const TestsPage = () => {
               ) : (
                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-6">
                   <div className="flex flex-col gap-2">
+                    <label className="text-sm font-bold text-slate-700">Select Class</label>
+                    <select value={config.classLevel} onChange={(event) => update('classLevel', event.target.value)} className="p-3.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium text-slate-700 shadow-sm">
+                      <option value="11">Class 11</option>
+                      <option value="12">Class 12</option>
+                    </select>
+                  </div>
+                  <div className="flex flex-col gap-2">
                     <label className="text-sm font-bold text-slate-700">Select Subject</label>
                     <select 
                       value={config.subject} 
@@ -238,6 +262,13 @@ const TestsPage = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex flex-col gap-2">
+                <label className="text-sm font-bold text-slate-700">Class</label>
+                <select value={config.classLevel} onChange={(e) => update('classLevel', e.target.value)} className="p-3.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium text-slate-700 shadow-sm">
+                  <option value="11">Class 11</option>
+                  <option value="12">Class 12</option>
+                </select>
+              </div>
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-bold text-slate-700">Subject</label>
                 <select value={config.subject} onChange={(e) => update('subject', e.target.value)} className="p-3.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium text-slate-700 shadow-sm capitalize">
@@ -278,13 +309,9 @@ const TestsPage = () => {
               )}
               
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-bold text-slate-700">Questions</label>
+                <label className="text-sm font-bold text-slate-700">Questions {config.chapter && <span className="font-medium text-slate-400">· {availableQuestionCount} approved available</span>}</label>
                 <select value={config.questionCount} onChange={(e) => update('questionCount', e.target.value)} className="p-3.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium text-slate-700 shadow-sm">
-                  <option value="15">15 questions</option>
-                  <option value="30">30 questions</option>
-                  <option value="45">45 questions</option>
-                  <option value="60">60 questions</option>
-                  <option value="90">90 questions</option>
+                  {questionOptions.map((count) => <option value={count} key={count}>{count} questions</option>)}
                 </select>
               </div>
             </div>

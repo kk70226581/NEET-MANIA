@@ -9,6 +9,7 @@ const PatternImporter = require('../services/patternImporter');
 const { getGeminiText } = require('../services/geminiClient');
 const cloudinary = require('cloudinary').v2;
 const path = require('path');
+const { findCurriculumEntry, normalizeSubject } = require('../config/ncertCurriculum');
 
 const QUESTION_SUBJECTS = ['physics', 'chemistry', 'biology', 'botany', 'zoology'];
 
@@ -423,12 +424,18 @@ exports.getQuestionStats = async (req, res) => {
 exports.getQuestionMetadata = async (req, res) => {
   try {
     const rows = await Question.aggregate([
-      { $match: { isPublished: true } },
+      { $match: {
+        isPublished: true,
+        inSyllabus: true,
+        syllabusVersion: 'NEET-UG-2026',
+        'qualityAudit.status': 'approved'
+      } },
       {
         $group: {
           _id: {
             subject: '$subject',
             chapter: '$chapter',
+            topic: '$topic',
             difficulty: '$difficulty'
           },
           count: { $sum: 1 }
@@ -436,7 +443,34 @@ exports.getQuestionMetadata = async (req, res) => {
       }
     ]);
 
-    res.status(200).json({ success: true, data: rows });
+    const merged = new Map();
+    rows.forEach((row) => {
+      const entry = findCurriculumEntry(row._id.subject, row._id.chapter);
+      if (!entry) return;
+
+      const subject = normalizeSubject(row._id.subject);
+      const key = [subject, entry.classLevel, entry.chapter, row._id.topic || '', row._id.difficulty || ''].join('|');
+      const current = merged.get(key) || {
+        _id: {
+          subject,
+          classLevel: entry.classLevel,
+          chapter: entry.chapter,
+          topic: row._id.topic || '',
+          difficulty: row._id.difficulty
+        },
+        count: 0
+      };
+      current.count += row.count;
+      merged.set(key, current);
+    });
+
+    const metadata = [...merged.values()].sort((a, b) =>
+      a._id.subject.localeCompare(b._id.subject) ||
+      a._id.classLevel.localeCompare(b._id.classLevel) ||
+      a._id.chapter.localeCompare(b._id.chapter)
+    );
+
+    res.status(200).json({ success: true, data: metadata });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }

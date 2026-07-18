@@ -9,7 +9,10 @@
     "test": "jest",
     "seed": "node src/scripts/seedDatabase.js",
     "import-pdf": "node src/scripts/importPdf.js",
-    "import-patterns": "node src/scripts/importPattern.js"
+    "import-patterns": "node src/scripts/importPattern.js",
+    "generate:ncert": "node src/scripts/generateGroundedNcertQuestions.js --apply",
+    "audit:ncert": "node src/scripts/auditGroundedNcertQuestions.js",
+    "rebalance:ncert": "node src/scripts/rebalanceNcertAnswers.js --apply"
   },
   "keywords": [
     "NEET",
