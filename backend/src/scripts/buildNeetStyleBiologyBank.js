@@ -93,27 +93,34 @@ function baseDocument(entry, item, citations, generator, questionText, options, 
   };
 }
 
-function rewrittenDocument(entry, item, concepts, citations, variant, globalIndex) {
+function rewrittenDocument(entry, item, concepts, citationByEntity, variant, globalIndex) {
   const answer = ANSWERS[globalIndex % 4];
   const itemIndex = concepts.indexOf(item);
-  const peers = [1, 3, 5, 7].map((offset) => concepts[(itemIndex + offset) % concepts.length]);
+  const selected = [0, 1, 3, 5].map((offset) => concepts[(itemIndex + offset) % concepts.length]);
+  const citations = selected.map((concept) => citationByEntity.get(concept.entity));
   if (variant === 0) {
-    const correct = `${item.entity} — ${item.fact}`;
-    const distractors = peers.slice(0, 3).map((peer, index) => `${peer.entity} — ${peers[(index + 1) % peers.length].fact}`);
-    const questionText = `While revising ${item.topic || entry.chapter}, a student checks four concept–feature pairs. Which pair is correctly matched?` +
-      `\nFocus concept: ${item.entity}`;
+    const correct = `${selected[0].entity} — ${selected[0].fact}`;
+    const distractors = selected.slice(1).map((peer, index) => `${peer.entity} — ${selected[(index + 2) % selected.length].fact}`);
+    const questionText = `Match the concepts with their features in ${entry.chapter}. Which option contains the only correctly matched pair?`;
     const document = baseDocument(entry, item, citations, REWRITE_AUDITOR, questionText, placeAt(correct, distractors, answer), answer, 'mcq');
     document.explanation.text = `${item.entity} is correctly matched with “${item.fact}”. Each distractor cross-pairs two different concepts from the same chapter.`;
-    document.learningObjective = `Recognise the defining NCERT feature of ${item.entity}.`;
+    document.learningObjective = `Discriminate among four same-chapter NCERT concept–feature relationships.`;
     document.commonMistake = 'Selecting a familiar but cross-matched same-chapter feature.';
+    document.tags.push('multi-concept-pair');
     return document;
   }
 
-  const questionText = `Which statement concerning ${item.entity} is consistent with the NCERT account of ${item.topic || entry.chapter}?`;
-  const document = baseDocument(entry, item, citations, REWRITE_AUDITOR, questionText, placeAt(item.fact, peers.map((peer) => peer.fact), answer), answer, 'mcq');
-  document.explanation.text = `The correct statement is that ${item.entity} is ${item.fact}. The remaining statements describe other concepts from this chapter.`;
-  document.learningObjective = `Differentiate ${item.entity} from closely related chapter concepts.`;
-  document.commonMistake = 'Attributing the defining property of a related concept to the named concept.';
+  const correctCount = ANSWERS.indexOf(answer) + 1;
+  const statements = selected.map((concept, index) => {
+    const fact = index < correctCount ? concept.fact : selected[(index + 1) % selected.length].fact;
+    return `${['I', 'II', 'III', 'IV'][index]}. ${concept.entity}: ${fact}`;
+  });
+  const questionText = `Consider the following concept–feature statements from ${entry.chapter}:\n${statements.join('\n')}\nHow many statements are correctly matched?`;
+  const document = baseDocument(entry, item, citations, REWRITE_AUDITOR, questionText, optionMap(['Only one', 'Only two', 'Only three', 'All four']), answer, 'statement_based');
+  document.explanation.text = `${correctCount} statement(s) are correctly matched. The remaining statement(s) use features belonging to another listed concept.`;
+  document.learningObjective = `Evaluate four linked NCERT claims from ${entry.chapter}.`;
+  document.commonMistake = 'Counting familiar words instead of verifying every concept–feature association.';
+  document.tags.push('multi-statement', 'count-correct');
   return document;
 }
 
@@ -225,6 +232,7 @@ async function main() {
     if (chapterQuestions.length !== concepts.length * 2) throw new Error(`${entry.chapter}: expected ${concepts.length * 2} old questions, found ${chapterQuestions.length}`);
     const used = new Set();
     const citationByEntity = new Map();
+    const targetsByEntity = new Map();
 
     concepts.forEach((item) => {
       const statement = chapterQuestions.find((question) => !used.has(String(question._id)) && (
@@ -238,12 +246,18 @@ async function main() {
       const sourceQuestion = statement || identification;
       if (!sourceQuestion?.ncertReference?.sourceUrl) throw new Error(`${entry.chapter} / ${item.entity}: grounded source not found`);
       citationByEntity.set(item.entity, sourceQuestion.ncertReference);
+      targetsByEntity.set(item.entity, [identification, statement]);
       [identification, statement].forEach((target, variant) => {
         if (!target) throw new Error(`${entry.chapter} / ${item.entity}: old variant ${variant} not found`);
         used.add(String(target._id));
-        const replacement = rewrittenDocument(entry, item, concepts, [sourceQuestion.ncertReference], variant, rewriteIndex);
+      });
+    });
+
+    concepts.forEach((item) => {
+      targetsByEntity.get(item.entity).forEach((target, variant) => {
+        const replacement = rewrittenDocument(entry, item, concepts, citationByEntity, variant, rewriteIndex);
         replacement.questionId = target.questionId;
-        replacement.explanation.text += ` Source: official NCERT Biology Class ${entry.classLevel}, PDF page ${sourceQuestion.ncertReference.pdfPage}.`;
+        replacement.explanation.text += ` Sources: official NCERT Biology Class ${entry.classLevel} chapter references recorded with this question.`;
         rewrites.push({ target, replacement });
         rewriteIndex += 1;
       });
@@ -301,10 +315,8 @@ async function main() {
   if (missingHard.length) await Question.insertMany(missingHard, { ordered: true });
   const storedHard = await Question.countDocuments({ 'qualityAudit.auditedBy': HARD_GENERATOR, isPublished: true });
   const weakRemaining = await Question.countDocuments({
-    $or: [
-      { questionText: /A student connects this NCERT feature/i },
-      { questionText: /In the NCERT chapter .+ which statement about/i }
-    ]
+    'qualityAudit.auditedBy': REWRITE_AUDITOR,
+    $or: [{ questionText: /Focus concept:/i }, { questionText: /Which statement concerning/i }]
   });
   console.log(JSON.stringify({
     rewrittenMatched: rewriteResult.matchedCount,

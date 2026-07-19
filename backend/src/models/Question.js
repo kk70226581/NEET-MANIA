@@ -235,6 +235,15 @@ const QuestionSchema = new mongoose.Schema({
       examYear: { type: Boolean, default: false },
       verifiedAt: Date,
       verifiedByName: String
+    },
+    sourceDocument: {
+      fileName: String,
+      sha256: String,
+      questionNumber: Number,
+      extractionMethod: String,
+      answerKeySource: String,
+      officialAnswerKeyUrl: String,
+      verifiedTextHash: String
     }
   },
   images: [{

@@ -195,6 +195,8 @@ const ExamPage = () => {
   // ---------- Tab-switch detection (mirrors proctored CBT behavior) ----------
   useEffect(() => {
     if (exam.testState !== 'in_progress') return undefined;
+    const coarsePointer = window.matchMedia?.('(pointer: coarse)').matches;
+    if (coarsePointer || window.innerWidth < 768) return undefined;
     const handleVisibilityChange = () => {
       if (document.hidden) {
         toast.error('Switching tabs during the exam is not recommended.', { icon: '⚠️', id: 'tab-switch' });
@@ -212,7 +214,8 @@ const ExamPage = () => {
   }, []);
 
   useEffect(() => {
-    if (!loading && exam.testState === 'in_progress' && document.documentElement.requestFullscreen) {
+    const coarsePointer = window.matchMedia?.('(pointer: coarse)').matches;
+    if (!coarsePointer && window.innerWidth >= 768 && !loading && exam.testState === 'in_progress' && document.documentElement.requestFullscreen) {
       // Browsers often block this without a user gesture; the banner below is the fallback.
       document.documentElement.requestFullscreen().catch(() => {});
     }
@@ -333,7 +336,7 @@ const ExamPage = () => {
             return (
               <button
                 key={section.subject}
-                className={`px-6 py-2 text-sm font-bold border-r border-blue-500 uppercase tracking-wider transition-colors ${isActive ? 'bg-white text-blue-700 shadow-inner' : 'hover:bg-blue-700'}`}
+                className={`min-w-fit flex-1 border-r border-blue-500 px-3 py-2 text-xs font-bold uppercase tracking-wide transition-colors sm:flex-none sm:px-6 sm:text-sm sm:tracking-wider ${isActive ? 'bg-white text-blue-700 shadow-inner' : 'hover:bg-blue-700'}`}
                 onClick={() => dispatch(setCurrentQuestion(section.startIndex))}
               >
                 {section.subject}

@@ -18,7 +18,9 @@
     "audit:biology:codex": "node src/scripts/auditCodexBiologyQuestions.js",
     "audit:questions": "node src/scripts/auditQuestionQuality.js",
     "seed:pyq:samples": "node src/scripts/seedPyqSamples.js --apply",
-    "audit:pyq": "node src/scripts/auditPyqSystem.js"
+    "audit:pyq": "node src/scripts/auditPyqSystem.js",
+    "import:pyq:verified": "node src/scripts/importVerifiedUserPyqs.js --apply",
+    "quarantine:physics": "node src/scripts/quarantineWeakPhysics.js --apply"
   },
   "keywords": [
     "NEET",

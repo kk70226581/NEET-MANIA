@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Pages
@@ -30,6 +30,12 @@ import { setUser } from './store/slices/userSlice';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminRoute from './components/AdminRoute';
 import FloatingChat from './components/FloatingChat';
+
+function ContextualFloatingChat({ isAuthenticated }) {
+  const { pathname } = useLocation();
+  if (!isAuthenticated || pathname.startsWith('/exam/')) return null;
+  return <FloatingChat />;
+}
 
 function App() {
   const { isAuthenticated } = useSelector(state => state.user);
@@ -80,7 +86,7 @@ function App() {
         </Route>
         <Route path="*" element={<Navigate to={isAuthenticated ? '/dashboard' : '/'} replace />} />
       </Routes>
-      {isAuthenticated && <FloatingChat />}
+      <ContextualFloatingChat isAuthenticated={isAuthenticated} />
     </Router>
   );
 }
