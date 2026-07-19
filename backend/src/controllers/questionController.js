@@ -100,7 +100,12 @@ exports.getQuestions = async (req, res) => {
     }
 
     const [questions, total] = await Promise.all([
-      Question.find(query).skip(skip).limit(safeLimit),
+      // Put source-traceable PYQs first. This avoids an older generated batch
+      // dominating the first page when a learner opens the Question Bank.
+      Question.find(query)
+        .sort({ 'pyq.isPYQ': -1, 'sourceDetails.year': -1, qualityScore: -1, _id: -1 })
+        .skip(skip)
+        .limit(safeLimit),
       Question.countDocuments(query)
     ]);
 

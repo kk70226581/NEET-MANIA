@@ -33,7 +33,7 @@ const QuestionCard = ({ question, index }) => (
           {question.difficulty ? question.difficulty.toUpperCase() : 'HARD'}
         </span>
         <span className="px-2.5 py-1 text-xs font-bold rounded-lg bg-slate-100 text-slate-600 border border-slate-200">
-          PYQ 2023
+          {question.pyq?.isPYQ ? `PYQ ${question.sourceDetails?.year || ''}`.trim() : 'Practice'}
         </span>
       </div>
       <button className="text-slate-300 hover:text-primary transition-colors p-1">

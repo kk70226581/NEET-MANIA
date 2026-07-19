@@ -21,7 +21,8 @@
     "audit:pyq": "node src/scripts/auditPyqSystem.js",
     "import:pyq:verified": "node src/scripts/importVerifiedUserPyqs.js --apply",
     "quarantine:physics": "node src/scripts/quarantineWeakPhysics.js --apply",
-    "build:physics:numericals": "node src/scripts/buildPhysicsNumericalBank.js --apply"
+    "build:physics:numericals": "node src/scripts/buildPhysicsNumericalBank.js --apply",
+    "quarantine:repetitive-physics": "node src/scripts/quarantineRepetitivePhysicsNumericals.js --apply"
   },
   "keywords": [
     "NEET",
