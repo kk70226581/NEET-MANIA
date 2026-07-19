@@ -22,6 +22,7 @@ import LeaderboardPage from './pages/LeaderboardPage';
 import MentorPage from './pages/MentorPage';
 import PyqHubPage from './pages/PyqHubPage';
 import PyqAdminPage from './pages/PyqAdminPage';
+import ForgettingCurvePage from './pages/ForgettingCurvePage';
 import { authAPI } from './services/api';
 import { setUser } from './store/slices/userSlice';
 
@@ -71,6 +72,7 @@ function App() {
           <Route path="/pyq/trends" element={<PyqHubPage view="trends" />} />
           <Route path="/pyq/papers" element={<PyqHubPage view="papers" />} />
           <Route path="/pyq/performance" element={<PyqHubPage view="performance" />} />
+          <Route path="/memory-challenge" element={<ForgettingCurvePage />} />
         </Route>
         <Route element={<AdminRoute />}>
           <Route path="/admin/questions" element={<AdminQuestionsPage />} />

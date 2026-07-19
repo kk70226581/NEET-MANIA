@@ -121,4 +121,10 @@ export const pyqAPI = {
   resolveReport: (interactionId, reportId, status) => api.put(`/pyq/admin/reports/${interactionId}/${reportId}`, { status })
 };
 
+export const retentionAPI = {
+  getDue: () => api.get('/retention'),
+  start: (chapter) => api.post('/retention/start', chapter ? { chapter } : {}),
+  submit: (challengeId, answers) => api.post('/retention/submit', { challengeId, answers })
+};
+
 export default api;

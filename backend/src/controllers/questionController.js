@@ -81,7 +81,13 @@ exports.getQuestions = async (req, res) => {
     const { subject, chapter, topic, difficulty, source, search, page = 1, limit = 20 } = req.query;
     const safeLimit = Math.min(100, Math.max(1, Number(limit) || 20));
     const skip = (Math.max(1, Number(page) || 1) - 1) * safeLimit;
-    const query = { isPublished: true };
+    const query = {
+      isPublished: true,
+      isVerified: true,
+      inSyllabus: true,
+      syllabusVersion: 'NEET-UG-2026',
+      'qualityAudit.status': 'approved'
+    };
     
     if (subject) query.subject = subject;
     if (chapter) query.chapter = chapter;

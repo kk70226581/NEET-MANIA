@@ -5,7 +5,7 @@ import {
   AlertTriangle, ArrowRight, BarChart3, Bookmark, BookmarkCheck, BookOpen, BrainCircuit,
   CalendarDays, CheckCircle2, ChevronLeft, ChevronRight, Clock3, Filter, Flag, Flame,
   Layers3, LineChart as LineIcon, Loader2, LockKeyhole, Play, RotateCcw, Search, Send,
-  Sparkles, Target, TrendingUp, Trophy, X, Zap, Moon, Sun
+  Sparkles, Target, TrendingUp, Trophy, X, Zap, Moon, Sun, ShieldCheck
 } from 'lucide-react';
 import {
   Bar, BarChart, CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip,
@@ -50,6 +50,22 @@ const HubHeader = ({ view, navigate, onBuild, dark, setDark }) => (
         <div className="flex gap-2"><button onClick={()=>setDark(!dark)} aria-label="Toggle PYQ dark mode" className="grid h-11 w-11 place-items-center rounded-xl border border-white/15 bg-white/10 text-white">{dark?<Sun size={18}/>:<Moon size={18}/>}</button><button onClick={onBuild} className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-extrabold text-slate-950 shadow-lg transition hover:-translate-y-0.5"><Play size={17}/> Build PYQ test</button></div>
       </div>
     </section>
+    {view === 'trends' && (
+      <section className="mt-5 rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+        <div className="flex items-start gap-3">
+          <ShieldCheck className="mt-0.5 shrink-0 text-emerald-600" size={21}/>
+          <div>
+            <p className="font-black text-emerald-950">Verified records only</p>
+            <p className="mt-1 text-sm leading-6 text-emerald-900">Historical charts exclude original samples and records without proven legal provenance. If verified papers are not imported yet, the dashboard stays empty instead of inventing chapter statistics.</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <a href="https://neet.nta.nic.in/documents/" target="_blank" rel="noreferrer" className="rounded-full bg-white px-3 py-1.5 text-xs font-bold text-emerald-800">NTA NEET documents</a>
+              <a href="https://nta.ac.in/NoticeBoardArchive" target="_blank" rel="noreferrer" className="rounded-full bg-white px-3 py-1.5 text-xs font-bold text-emerald-800">NTA answer-key archive</a>
+              <a href="https://www.nmc.org.in/neet/neet-ug/finalcoresyllabus_neet-ug/" target="_blank" rel="noreferrer" className="rounded-full bg-white px-3 py-1.5 text-xs font-bold text-emerald-800">NMC official syllabus</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
     <nav className="mt-5 flex gap-2 overflow-x-auto rounded-2xl border border-slate-200 bg-white p-2 shadow-sm no-scrollbar">
       {tabs.map(([key, path, label, Icon]) => <button key={key} onClick={() => navigate(path)} className={`flex shrink-0 items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold transition ${view === key ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200' : 'text-slate-500 hover:bg-slate-100 hover:text-slate-900'}`}><Icon size={17}/>{label}</button>)}
     </nav>

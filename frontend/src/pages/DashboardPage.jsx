@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
+  AlarmClock,
   BookOpen,
   BrainCircuit,
   ChevronRight,
@@ -115,6 +116,7 @@ const DashboardPage = () => {
   const quickActions = [
     { title: 'Build a mock test', copy: 'Choose chapters, difficulty, and length.', icon: Play, to: '/tests', tone: 'bg-blue-600 text-white' },
     { title: 'Review mistakes', copy: 'Turn wrong answers into revision wins.', icon: RotateCcw, to: '/mistakes', tone: 'bg-purple-50 text-purple-700' },
+    { title: 'Memory challenge', copy: 'Five questions before a concept fades.', icon: AlarmClock, to: '/memory-challenge', tone: 'bg-amber-50 text-amber-700' },
     { title: 'Ask AI Mentor', copy: 'Get a step-by-step explanation in Hinglish.', icon: BrainCircuit, to: '/mentor', tone: 'bg-emerald-50 text-emerald-700' },
   ];
 
@@ -176,7 +178,7 @@ const DashboardPage = () => {
         <section className="grid gap-7 xl:grid-cols-5">
           <motion.article variants={itemVariants} initial="hidden" animate="show" className="glass-card p-6 sm:p-8 xl:col-span-3">
             <div className="mb-6 flex items-center justify-between"><div><span className="text-xs font-bold uppercase tracking-[0.16em] text-blue-600">Quick start</span><h2 className="mt-1 text-xl font-black text-slate-800">What would you like to do?</h2></div></div>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
               {quickActions.map(({ title, copy, icon: Icon, to, tone }) => (
                 <motion.button whileHover={{ y: -4 }} type="button" key={title} onClick={() => navigate(to)} className={`rounded-2xl p-5 text-left transition-shadow hover:shadow-lg ${tone}`}>
                   <Icon size={23} /><strong className="mt-6 block text-sm">{title}</strong><span className="mt-1 block text-xs leading-5 opacity-75">{copy}</span><ArrowRight className="mt-4" size={17} />

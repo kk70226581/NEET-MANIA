@@ -3,6 +3,11 @@ const Question = require('../models/Question');
 const PyqAnalyticsSnapshot = require('../models/PyqAnalyticsSnapshot');
 
 const DISCLAIMER = 'Historical trends are provided for preparation guidance only. They do not guarantee the questions or weightage of future NEET examinations.';
+const OFFICIAL_SOURCES = [
+  { label: 'NTA NEET document archive', url: 'https://neet.nta.nic.in/documents/', purpose: 'Official bulletins, notices, keys, and published examination documents' },
+  { label: 'NTA notice-board archive', url: 'https://nta.ac.in/NoticeBoardArchive', purpose: 'Official historical notices and final answer-key publications' },
+  { label: 'NMC NEET-UG syllabus', url: 'https://www.nmc.org.in/neet/neet-ug/finalcoresyllabus_neet-ug/', purpose: 'Current official syllabus alignment' }
+];
 const difficultyValue = { easy: 1, medium: 2, hard: 3 };
 
 const yearsConsecutive = (years) => {
@@ -84,16 +89,22 @@ function summarise(items, key, allYears) {
 }
 
 async function calculateTrends(filters = {}) {
+  const legalStatuses = filters.includeSamples ? ['user_provided', 'licensed', 'original_sample'] : ['user_provided', 'licensed'];
   const match = {
     'pyq.isPYQ': true,
     isPublished: true,
     isVerified: true,
-    'pyqDetails.legalStatus': { $in: ['user_provided', 'licensed', 'original_sample'] }
+    'pyqDetails.legalStatus': { $in: legalStatuses }
   };
   if (filters.subject) match.subject = filters.subject === 'biology' ? { $in: ['biology', 'botany', 'zoology'] } : filters.subject;
   if (filters.classLevel) match['pyqDetails.classLevel'] = String(filters.classLevel);
   if (filters.questionType) match.type = filters.questionType;
-  const questions = await Question.find(match).select('subject chapter topic difficulty type sourceDetails.year pyqDetails statistics estimatedTime').lean();
+  const [questions, verifiedRecordCount, sampleRecordCount, pendingProvenanceCount] = await Promise.all([
+    Question.find(match).select('subject chapter topic difficulty type sourceDetails.year pyqDetails statistics estimatedTime').lean(),
+    Question.countDocuments({ 'pyq.isPYQ': true, isPublished: true, isVerified: true, 'pyqDetails.legalStatus': { $in: ['user_provided', 'licensed'] } }),
+    Question.countDocuments({ 'pyq.isPYQ': true, isPublished: true, isVerified: true, 'pyqDetails.legalStatus': 'original_sample' }),
+    Question.countDocuments({ 'pyq.isPYQ': true, isPublished: true, $or: [{ 'pyqDetails.legalStatus': 'pending' }, { 'pyqDetails.legalStatus': { $exists: false } }] })
+  ]);
   const years = [...new Set(questions.map((question) => question.sourceDetails?.year).filter(Boolean))].sort((a, b) => a - b);
   const chapterAnalysis = summarise(questions, 'chapter', years);
   const topicAnalysis = summarise(questions, 'topic', years);
@@ -108,7 +119,20 @@ async function calculateTrends(filters = {}) {
     classYear[year][question.pyqDetails?.classLevel] = (classYear[year][question.pyqDetails?.classLevel] || 0) + 1;
   });
   return {
-    disclaimer: DISCLAIMER,
+    disclaimer: verifiedRecordCount
+      ? DISCLAIMER
+      : `${DISCLAIMER} No legally verified imported PYQ records are available yet, so chapter-frequency claims are intentionally withheld instead of being fabricated.`,
+    dataset: {
+      mode: filters.includeSamples ? 'verified_plus_original_samples' : 'verified_only',
+      verifiedRecordCount,
+      sampleRecordCount,
+      pendingProvenanceCount,
+      isHistoricalAnalysisAvailable: verifiedRecordCount > 0,
+      message: verifiedRecordCount
+        ? `Calculated from ${verifiedRecordCount} user-provided or licensed, verified records.`
+        : 'Import and verify official/user-owned papers to unlock genuine chapter-wise historical analytics. Original practice samples are excluded from real trends.'
+    },
+    sources: OFFICIAL_SOURCES,
     generatedAt: new Date(),
     years,
     totals: {
@@ -138,4 +162,4 @@ async function getTrends(filters = {}, refresh = false) {
   return { ...payload, cached: false };
 }
 
-module.exports = { DISCLAIMER, calculateTrends, getTrends, priorityLabel };
+module.exports = { DISCLAIMER, OFFICIAL_SOURCES, calculateTrends, getTrends, priorityLabel };

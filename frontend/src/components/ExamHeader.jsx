@@ -17,18 +17,18 @@ const ExamHeader = ({
     .join(':');
 
   return (
-    <header className="bg-[#1a4b8c] text-white flex justify-between items-center px-4 py-2 shadow-md z-10 relative">
+    <header className="relative z-10 flex items-center justify-between bg-slate-950 px-4 py-3 text-white shadow-xl sm:px-6">
       <div className="flex items-center gap-4">
-        <div className="text-xl font-black tracking-wider uppercase text-yellow-400">Solnut NEET</div>
+        <div className="text-xl font-black tracking-tight text-white">Medical <span className="text-cyan-300">Mania</span></div>
         <div className="hidden sm:block">
           <div className="text-sm font-bold">NEET (UG) CBT Mock Test</div>
-          <div className="text-xs text-blue-200">{totalQuestions} Questions | +4 for correct, -1 for incorrect</div>
+          <div className="text-xs text-slate-400">{totalQuestions} Questions · +4 correct · −1 incorrect</div>
         </div>
       </div>
       
       <div className="flex items-center gap-6">
         <div className="flex flex-col items-end">
-          <span className="text-xs font-semibold text-blue-200">Time Left</span>
+          <span className="text-xs font-semibold text-slate-400">Time left</span>
           <div className={`flex items-center gap-2 font-bold font-mono text-xl tracking-wider ${isCriticalTime ? 'text-red-400 animate-pulse' : isLowTime ? 'text-orange-300' : 'text-white'}`}>
             <Clock size={18} className={isCriticalTime ? 'animate-bounce' : ''} />
             {formattedTime}
@@ -49,7 +49,7 @@ const ExamHeader = ({
         
         <button 
           type="button" 
-          className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm px-4 py-2 rounded shadow-sm flex items-center gap-2 transition-colors border border-red-800" 
+          className="flex items-center gap-2 rounded-xl bg-rose-600 px-4 py-2.5 text-sm font-black text-white shadow-lg shadow-rose-950/30 transition hover:bg-rose-500"
           onClick={onSubmit}
         >
           <AlertCircle size={16} /> Submit

@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { User } from 'lucide-react';
 
 const QuestionPalette = ({
   questions,
@@ -8,6 +10,8 @@ const QuestionPalette = ({
   visitedQuestions = new Set(),
   onSelectQuestion,
 }) => {
+  const user = useSelector((state) => state.user.user);
+  const name = [user?.firstName, user?.lastName].filter(Boolean).join(' ') || 'NEET Aspirant';
   const getStatus = (question) => {
     const id = String(question._id);
     const response = responses[id];
@@ -42,15 +46,14 @@ const QuestionPalette = ({
   ];
 
   return (
-    <div className="flex flex-col h-full bg-blue-50/30 border-l border-blue-200">
-      {/* Candidate Details (Mocked NTA header) */}
-      <div className="flex items-center gap-3 p-3 bg-gray-100 border-b border-gray-300">
-        <div className="w-16 h-16 bg-white border border-gray-400 shadow-inner flex items-center justify-center text-gray-300">
-          Photo
+    <div className="flex h-full flex-col border-l border-slate-200 bg-slate-50">
+      <div className="flex items-center gap-3 border-b border-slate-200 bg-white p-4">
+        <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-200">
+          <User size={21}/>
         </div>
         <div>
-          <div className="font-bold text-sm text-gray-800">John Doe</div>
-          <div className="text-xs text-gray-600">NEET (UG) 2027</div>
+          <div className="text-sm font-black text-slate-800">{name}</div>
+          <div className="text-xs font-semibold text-slate-500">NEET (UG) aspirant</div>
         </div>
       </div>
 
@@ -69,12 +72,12 @@ const QuestionPalette = ({
       </div>
 
       {/* Palette Title */}
-      <div className="bg-blue-500 text-white font-bold text-sm py-2 px-3 shadow-sm">
-        Question Palette
+      <div className="bg-slate-900 px-4 py-3 text-sm font-black text-white">
+        Question navigator
       </div>
 
       {/* Palette Grid */}
-      <div className="flex-1 overflow-y-auto p-3 bg-[#e6f4ff]">
+      <div className="flex-1 overflow-y-auto bg-slate-50 p-4">
         <div className="grid grid-cols-5 gap-2 gap-y-3">
           {questions.map((question, index) => {
             const status = getStatus(question);

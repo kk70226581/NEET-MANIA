@@ -116,6 +116,8 @@ const QuestionDisplay = ({
   onSave,
   onClear,
   onNext,
+  onPrevious,
+  isFirst,
   isLast,
 }) => {
   const [selectedOption, setSelectedOption] = useState(savedResponse?.selectedOption ?? null);
@@ -151,15 +153,15 @@ const QuestionDisplay = ({
   const cleanQuestionText = question.questionText?.replace(/\[[a-f0-9]{8}\]$/i, '').trim() || '';
 
   return (
-    <div className="flex flex-col h-full bg-white font-sans text-slate-800">
-      {/* Question Header */}
-      <div className="flex justify-between items-center px-4 py-2 bg-blue-50 border-b border-blue-200 shadow-sm">
-        <span className="font-bold text-sm text-blue-900">Question No. {questionIndex + 1}</span>
+    <div className="flex h-full flex-col bg-slate-50 font-sans text-slate-800">
+      <div className="flex items-center justify-between border-b border-slate-200 bg-white px-5 py-3 shadow-sm">
+        <div><span className="text-xs font-bold uppercase tracking-[0.16em] text-blue-600">Live question</span><p className="mt-0.5 text-sm font-black text-slate-900">Question {questionIndex + 1} of {totalQuestions}</p></div>
+        <div className="h-2 w-28 overflow-hidden rounded-full bg-slate-100 sm:w-48"><div className="h-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 transition-all" style={{ width: `${((questionIndex + 1) / totalQuestions) * 100}%` }}/></div>
       </div>
 
       {/* Question Content Scrollable Area */}
-      <div className="flex-1 overflow-y-auto p-5 select-none">
-        <div className="mb-6">
+      <div className="flex-1 select-none overflow-y-auto p-4 sm:p-7">
+        <div className="mx-auto mb-6 w-full max-w-5xl rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
           <MatchTableParser text={cleanQuestionText} />
           
           {question.image?.url && (
@@ -178,13 +180,13 @@ const QuestionDisplay = ({
         </div>
 
         {/* Options */}
-        <div className="space-y-4 mt-6">
+        <div className="mx-auto mt-5 w-full max-w-5xl space-y-3">
           {Object.entries(question.options || {}).map(([key, option]) => {
             const isSelected = selectedOption === key;
             return (
               <label 
                 key={key}
-                className={`group flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 border-2 ${isSelected ? 'bg-indigo-50 border-indigo-500 shadow-sm' : 'bg-white border-slate-200 hover:border-indigo-300 hover:shadow-md'}`}
+                className={`group flex cursor-pointer items-center gap-4 rounded-2xl border p-4 transition-all duration-200 sm:p-5 ${isSelected ? 'border-indigo-500 bg-indigo-50 shadow-lg shadow-indigo-900/5 ring-2 ring-indigo-100' : 'border-slate-200 bg-white hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-lg'}`}
               >
                 <div className={`flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full font-bold text-lg transition-colors ${isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-indigo-100 group-hover:text-indigo-600'}`}>
                   {key}
@@ -210,29 +212,30 @@ const QuestionDisplay = ({
       </div>
 
       {/* Bottom Action Bar (NTA Exact Buttons) */}
-      <div className="bg-gray-100 border-t border-gray-300 p-3 flex flex-wrap gap-2 justify-between items-center text-sm font-semibold">
-        <div className="flex gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 bg-white/95 p-3 text-sm font-semibold shadow-[0_-8px_30px_rgba(15,23,42,0.05)] backdrop-blur">
+        <button disabled={isFirst} onClick={onPrevious} className="rounded-xl border border-slate-200 px-4 py-2.5 font-bold text-slate-600 disabled:opacity-30">Previous</button>
+        <div className="flex flex-wrap justify-end gap-2">
           <button 
             onClick={handleSaveAndNext}
-            className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white border border-green-700 rounded shadow-sm transition-colors"
+            className="rounded-xl bg-emerald-600 px-4 py-2.5 font-black text-white shadow-sm transition hover:bg-emerald-700"
           >
             Save & Next
           </button>
           <button 
             onClick={handleClearResponse}
-            className="px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-400 rounded shadow-sm transition-colors"
+            className="rounded-xl border border-slate-200 bg-white px-4 py-2.5 font-bold text-slate-600 transition hover:bg-slate-50"
           >
             Clear Response
           </button>
           <button 
             onClick={handleMarkAndNext}
-            className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white border border-orange-600 rounded shadow-sm transition-colors"
+            className="rounded-xl bg-amber-500 px-4 py-2.5 font-black text-white transition hover:bg-amber-600"
           >
             Save & Mark for Review
           </button>
           <button 
             onClick={() => { setMarked(true); onSave(question._id, selectedOption, true); if (!isLast) onNext(); }}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white border border-blue-700 rounded shadow-sm transition-colors"
+            className="rounded-xl bg-indigo-600 px-4 py-2.5 font-black text-white transition hover:bg-indigo-700"
           >
             Mark for Review & Next
           </button>

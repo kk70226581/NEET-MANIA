@@ -163,6 +163,17 @@ const QuestionSchema = new mongoose.Schema({
     sourceUrl: String,
     quotedLine: String
   },
+  ncertReferences: [{
+    class: String,
+    book: String,
+    chapter: String,
+    topic: String,
+    page: String,
+    pdfPage: Number,
+    edition: String,
+    sourceUrl: String,
+    quotedLine: String
+  }],
   syllabusVersion: String,
   qualityAudit: {
     status: { type: String, enum: ['pending', 'approved', 'rejected'], default: 'pending' },

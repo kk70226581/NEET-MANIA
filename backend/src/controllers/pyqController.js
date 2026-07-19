@@ -131,7 +131,7 @@ exports.reportQuestion = async (req, res) => {
 };
 
 exports.getTrends = async (req, res) => {
-  const filters = { subject: req.query.subject, classLevel: req.query.classLevel, questionType: req.query.questionType };
+  const filters = { subject: req.query.subject, classLevel: req.query.classLevel, questionType: req.query.questionType, includeSamples: bool(req.query.includeSamples) };
   Object.keys(filters).forEach((key) => !filters[key] && delete filters[key]);
   res.json({ success: true, data: await getTrends(filters, bool(req.query.refresh)) });
 };

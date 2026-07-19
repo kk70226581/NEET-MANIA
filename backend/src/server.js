@@ -23,9 +23,28 @@ connectDB();
 const app = express();
 
 // Middleware
+const configuredFrontendOrigins = (process.env.FRONTEND_URL || '')
+  .split(',')
+  .map((origin) => origin.trim().replace(/\/$/, ''))
+  .filter(Boolean);
+const allowedOrigins = new Set([
+  'https://medicalmania.site',
+  'https://www.medicalmania.site',
+  'https://neet-mania.vercel.app',
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+  ...configuredFrontendOrigins
+]);
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  credentials: true
+  origin(origin, callback) {
+    // Requests without an Origin header include health checks and server-to-server calls.
+    if (!origin || allowedOrigins.has(origin.replace(/\/$/, ''))) return callback(null, true);
+    return callback(new Error(`CORS blocked request from ${origin}`));
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json({ limit: '50mb' }));
@@ -46,6 +65,7 @@ app.use('/api/tests', require('./routes/tests'));
 app.use('/api/mistakes', require('./routes/mistakes'));
 app.use('/api/mentor', require('./routes/mentor'));
 app.use('/api/pyq', require('./routes/pyq'));
+app.use('/api/retention', require('./routes/retention'));
 
 // Health check
 app.get('/health', (req, res) => {
