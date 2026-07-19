@@ -95,7 +95,19 @@ const QuestionBankPage = () => {
   const chapters = useMemo(() => [...new Set(metadata.filter(r => !filters.subject || r._id.subject === filters.subject).map(r => r._id.chapter).filter(Boolean))], [metadata, filters.subject]);
 
   const updateFilter = (name, value) => {
-    setFilters(curr => ({ ...curr, [name]: value, page: 1, ...(name === 'subject' ? { chapter: '' } : {}) }));
+    setFilters((curr) => ({
+      ...curr,
+      [name]: value,
+      // Pagination must preserve the requested page. Previously, clicking
+      // Next called this helper but immediately reset the page back to 1.
+      ...(name === 'page' ? {} : { page: 1 }),
+      ...(name === 'subject' ? { chapter: '' } : {})
+    }));
+  };
+
+  const goToPage = (page) => {
+    const nextPage = Math.min(Math.max(1, page), pagination.pages);
+    if (nextPage !== pagination.page) updateFilter('page', nextPage);
   };
 
   const clearFilters = () => setFilters({ subject: '', chapter: '', difficulty: '', search: '', page: 1 });
@@ -202,15 +214,32 @@ const QuestionBankPage = () => {
           <div className="flex justify-center items-center gap-4 mt-12 mb-8">
             <button 
               disabled={pagination.page <= 1}
-              onClick={() => updateFilter('page', pagination.page - 1)}
+              onClick={() => goToPage(pagination.page - 1)}
+              aria-label="Previous page"
               className="p-3 bg-white border border-slate-200 rounded-xl shadow-sm text-slate-600 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors"
             >
               <ChevronLeft size={20} />
             </button>
+            {Array.from({ length: Math.min(5, pagination.pages) }, (_, index) => {
+              const first = Math.min(Math.max(1, pagination.page - 2), Math.max(1, pagination.pages - 4));
+              const page = first + index;
+              return (
+                <button
+                  key={page}
+                  onClick={() => goToPage(page)}
+                  aria-label={`Go to page ${page}`}
+                  aria-current={page === pagination.page ? 'page' : undefined}
+                  className={`min-w-10 rounded-xl border px-3 py-2.5 font-bold transition-colors ${page === pagination.page ? 'border-primary bg-primary text-white' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'}`}
+                >
+                  {page}
+                </button>
+              );
+            })}
             <span className="font-bold text-slate-700">Page {pagination.page} of {pagination.pages}</span>
             <button 
               disabled={pagination.page >= pagination.pages}
-              onClick={() => updateFilter('page', pagination.page + 1)}
+              onClick={() => goToPage(pagination.page + 1)}
+              aria-label="Next page"
               className="p-3 bg-white border border-slate-200 rounded-xl shadow-sm text-slate-600 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors"
             >
               <ChevronRight size={20} />
