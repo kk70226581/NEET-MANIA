@@ -1,0 +1,24 @@
+ANSW
+ECOS
+Q 1 2 3 4 5
+as cB bp 0B
+Q is
+as Bc bc oc
+Q 25
+as BB A BB
+0 35
+as cc A BD
+o 45
+as cA cB oc
+Q 55
+as A cB BB
+Q 65
+as A BB Bc
+Q 75
+as cB bp Bc
+Q 85
+as cbc BB
+Q os
+as Dc bp bp B
+e tot
+as A

@@ -1,0 +1,45 @@
+B) A = Natality + Mortality, B =
+Immigration + Emigration
+C) A = Birth rate + Death rate, B =
+Migration + Emigration
+D) A = Natality + Emigration, B = Mortality
++ Immigration
+50. A biologist studied the population of rates
+in a born. He found that average Natality
+was 260, average Mortality 250,
+Immigration 30 and emmigration 40. The
+net increase in population is- (Pg. 229, E)
+A) 10 B) 0
+C) 15 D) 20
+51. The formula for exponential population
+growth is (Pg. 229, E)
+A) dt/dN =rN B) dN/rN = dt
+C) rN/dN = dt D) dN/dt=rN
+52. Which of the following is not a factor that
+would limit the growth of population?
+(Pg. 229, E)
+A) Food shortage B) Immigration
+C) Disease D) Famine
+53. Birth rate = B, Death rate = D, Emigration
+= E and Immigration =I (Pg. 229, E)
+Population is | i B+I=D+E
+EE
+Populationis [ii |B+I<D+E
+Fil i
+c | Populationis [iii |[B+I>D+E
+HEE
+a b c
+A) iii ii i
+B) ii iii i
+C) i ii iii
+D) ii i iii
+54. Darwinian fitness is represented by
+(Pg. 230, E)
+A) Low r value B) High r value
+C) High k value D) Low k value
+55. What are Labelled phase A, B and C in
+given sigmoid growth curve? (Pg. 230, E)
+AY
+a
+LZ ==5
+A) A-Lag, B-Log, C-Stationary

@@ -1,0 +1,47 @@
+B) A-Stationary, B-Log, C-Lag
+C) A-Lag, B-Stationary, C-Log
+D) A-Stationary, B-Lag, C-Log
+56. Carrying capacity is denoted as
+(Pg. 230, E)
+A) r B) N
+C) K D) I
+57. Figure For calculation of the r value, which
+of the following is required? (Pg. 230, E)
+A) Birth rates B) Death rates
+C) Bothaandb D) None
+58. Which of the following equation is correct
+for Logistic growth? (Pg. 231, E)
+A) N= Nort
+B) dN/dt = IN
+C) dt/dN = IN (K-N/K)
+D) dN/dt = IN (K-N/K)
+59. refers to the no. of births during a
+given period in the population that are
+added to the initial density. (Pg. 231, E)
+A) Natality B) Mortality
+C) Immigration D) Survival
+60. Logistic curve is . (Pg. 231, E)
+A) L-shaped B) J-shaped
+C) Sigmoid curve D) None of these
+61. A plot of N in relation to time (t) results in
+sigmoid curve. This type of population
+growth is called- (Pg. 231, E)
+A) J shaped Curve
+B) U shaped Curve
+C) Verhulst-Pearl Logistic Growth
+D) Constant Growth
+62. Nt = Noert is the integral form of the
+exponential- growth equation
+Which of the following statement related to
+equation is not correct: (Pg. 231, E)
+A) N, = Population density after time t
+B) N,= Population density at time zero
+C) r = Intrinsic rate of Natural decrease
+D) e = The base of Natural logarithmics
+(2.71828)
+63. Which growth model is considered as more
+realistic one? (Pg. 230, E)
+A) Exponential growth
+B) Constant growth
+C) Logistic growth
+D) None of these

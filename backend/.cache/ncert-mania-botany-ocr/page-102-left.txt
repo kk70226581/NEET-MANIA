@@ -1,0 +1,24 @@
+ANS)
+RESPIRATI(
+Q o1 02 03 04 C
+Ans BC A c
+Q 11 12 13 14 1
+Ans D 8 D D ]
+Q 21 22 23 24 2
+Ans D D B A
+Q 31 32 33 34 3
+Ans A c B c
+Q 41 42 43 44 EB
+Ans B B c D )!
+Q 51 52 53 54 5
+Ans D D B A
+Q 61 62 63 64 €
+Ans B D c A
+71 72 73 74 7
+Ans c c A c ]
+Q 81 82 83 84 8
+Ans Cc *) c B |
+Q 91 92 93 94 S
+Ans ¢ c A A ]
+Q 101 102 103 104 1
+Ans D ¢ A (¢] f

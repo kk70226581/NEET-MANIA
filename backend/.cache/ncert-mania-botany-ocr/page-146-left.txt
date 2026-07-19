@@ -1,0 +1,32 @@
+Answ
+PRINCIPLE OF INF
+Q 01 02 03 04 05
+Ans D BA DD
+Q 15
+Ans D DD A AD
+Q 25
+Ans D A 2B BC
+Q 35
+Ans € A BD B
+Q 45
+Ans A 2D BD ¢
+Q 55
+Ans BB BB A
+Q 65
+Ans BC A BC
+Q 75
+Ans D DD DD DD
+Q 85
+Ans Cc A ccc
+Q 95
+Ans BB DC A
+Q 105
+Ans A A BB D
+Q 115
+Ans BC A Bc
+Q 125
+Ans A A BAC
+Q 135
+Ans A BC DB
+Q 145
+Ans A 2D A BC

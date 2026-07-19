@@ -1,0 +1,48 @@
+start codon and stop codon and codes
+for polypeptide.
+D) A transcriptional unit in rRNA is the
+sequence of RNA that is flanked by
+start codon (AUG) and stop codon and
+codes for polypeptide.
+143. UTR is/are-(Pg. 115, E)
+(i) Untranslated region of mRNA
+(ii) It present at both 5' end (start codon)
+and 3' end (before stop codon)
+(iii) They are required for efficient
+translation process
+(iv) It present at both 3' end (before start
+codon) and 3' end (after stop codon)
+A) i, ii, iii are correct
+B) i, ii, iii and iv are correct
+C) i, iii, iv are correct
+D) i, iii are correct
+144. Initiator tRNA binds with (Pg. 115, E)
+A) AUG codon of mRNA
+B) at initiation of protein synthesis
+C) ATG codon of dsDNA
+D) A and B both
+145. Choose the correct about elongation of
+translation- (Pg. 115, E)
+A) Complexes composed of an amino acid
+linked to tRNA, sequentially bind to
+appropriate codon in mRNA by forming
+complementary base pairs with the
+tRNA anticodon
+B) The ribosome moves from codon to
+codon along the mRNA in (3' — 5).
+C) Complexes composed of an amino acid
+linked to tRNA, sequentially bind to
+appropriate anticodon in mRNA by
+forming complementary base pair with
+tRNA codon.
+D) A and B both
+146. Termination of translation complex is done
+when- (Pg. 115, E)
+A) Release factor binds with stop codon
+(AUG)
+B) Release factor binds with UGA like
+codon
+C) Complete translation of DNA including
+UTR occurs in eukaryotes
+D) B and C both
+6.8 Regulation of Gene Expression

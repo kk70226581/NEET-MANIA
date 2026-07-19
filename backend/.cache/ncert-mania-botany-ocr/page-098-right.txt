@@ -1,0 +1,47 @@
+67. How many net ATP molecules are directly
+yielded from complete oxidation of one
+glucose (including ATP of TCA)?
+(Pg 232, E)
+A) 4 B) 2
+C)3 D) 8
+68. Which among the following is wrong?
+(Pg 232, E)
+(i) Glycolysis occurs in all living
+organism.
+(ii) TCA cycle and ETS only occurs in
+aerobes.
+(iii) Complete oxidation of pyruvate
+occurs by removal of all hydrogen
+atom in TCA cycle.
+A) (0) B) (i)
+C) (iii) D) None of the above
+14.4.2 Electron Transport System
+(ETS) and Oxidative
+Phosphorylation
+69. ETS occurs in which place? (Pg 232, E)
+A) Outer membrane of mitochondria
+B) Cytoplasm
+C) Inner membrane of mitochondria
+D) Matrix of mitochondria
+70. Energy stored in NADH + H* FADH:2 are
+released in ETS through .
+(Pg 232, E)
+A) Reduction of these molecules
+B) Oxidation of these molecules
+C) Hydrolysis of these molecules
+D) Both A & B
+71. ETS stands for (Pg 232, E)
+A) Electrical Transport System
+B) Electron Transmission System
+C) Electron Transport System
+D) None of the above
+72. When the electrons are passed onto Oz in
+ETS it leads to formation of what?
+(Pg 232, E)
+A) CO2 B) ATP
+C) H:0 D) NADH + H+
+73. Ubiquinone is located at .
+(Pg 233, E)
+A) inner membrane of mitochondria
+B) outer membrane of mitochondria
+C) inner membrane of nucleus

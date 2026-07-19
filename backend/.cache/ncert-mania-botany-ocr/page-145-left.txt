@@ -1,0 +1,11 @@
+A) Both assertion and reason are true and
+the reason is the correct explanation of
+assertion.
+B) Both assertion and reason are true but
+the reason is not the correct
+explanation of assertion.
+C) Assertion is true but reason is false.
+D) Both assertion and reason are false.
+149. Assertion: Klinefelter’s syndrome is caused
+due to the presence of an additional copy
+of X-chromosome.

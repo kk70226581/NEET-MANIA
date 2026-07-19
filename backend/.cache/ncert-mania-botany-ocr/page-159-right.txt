@@ -1,0 +1,42 @@
+A) Same operator and same repressor
+B) Same operator but specific repressor
+C) Specific operator but same repressor
+D) Specific operator and specific repressor
+6.8.1 The Lac operon
+154. Lac operon was studied first by-(Pg. 116,
+E)
+A) Francois Jacob
+B) Jacque Monod
+C) Geneticist and Biochemist
+D) None of these
+155. Lac operon is/are-(Pg. 116, E)
+A) Monocistronic structural gene is
+regulated by a common promoter &
+regulators genes.
+B) Polycistronic structural gene is
+regulated by a common promoter &
+regulatory genes.
+C) Consist of one regulatory gene,
+monocistronic structural gene having
+five gene along with promotor &
+operator.
+D) A and C both
+156. Regulatory gene of lac-operon is- (Pg. 116,
+E)
+A) p-gene B) i-gene
+C) o-gene D) z-gene
+157.1 in i-gene stand for-(Pg. 116, E)
+A) inducer
+B) inhibitor
+C) A and B both
+D) Inactive repressor
+158. Match Column-I & Column-II. (Pg. 116, E)
+(Gene) (Product)
+mRNA
+a b c d
+A) (i) @(@
+B) (iv) (i) @H) (0)
+on @ Gv
+D) (i) (Gv) (EH)
+159. The monomeric product of lactose is
+chiefly hydrolyzed by-(Pg. 116, E)

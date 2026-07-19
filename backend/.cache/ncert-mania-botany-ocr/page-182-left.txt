@@ -1,0 +1,24 @@
+ANS\
+ORGANISMS
+Q 1 2 3 4 :
+Ans BD DA I
+e 1 12 13 14 1
+Ans BB AB | (
+Q@ 21 22 23 24 2
+Ans DD A A
+Q@ 31 32 33 34 3
+Ans CA DB
+Q 4 42 43 44 4
+Ans BD BD
+Q 51 52 53 54 5
+Ans DB A BI
+Q 61 | 62 63 64 6
+Ans I
+Q 7
+Ans A BD C /
+Q 81 | 82 8 84 8
+Ans AC BD
+Q 91 92 93 94 9
+Ans A DC A]
+Q 101 102 103 104 1
+Ans | CD AC | 1

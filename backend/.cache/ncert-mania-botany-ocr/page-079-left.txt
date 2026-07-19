@@ -1,0 +1,22 @@
+A
+CELL CYCLE /
+Q 1 2 3 4 :
+Ans | BC | A C1
+Q 11 12 13 14 1
+Ans A D D C I
+Q 21 22 23 24 2
+Ans C D D c 4
+Q 31 32 33 34 3
+Ans c B D c I
+Q 41 42 43 44 E
+Ans D A B B |
+Q 51 52 53 54 5
+Ans A [& C B 4
+Q 61 62 63 64 6
+Ans A C D D I
+Q 71 72 73 74 7
+Ans go B D B ¢
+Q 1 82 83 84 8
+Ans D D B D I
+Q 91 92 93 94 9
+Ans A c B B I

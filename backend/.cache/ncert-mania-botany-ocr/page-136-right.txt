@@ -1,0 +1,44 @@
+[Bp] 1 [ 4 | 3 [ 2 |
+ol 2 5 [1 | a]
+56. ABO blood grouping is a good example of
+(Pg. 77, E)
+A) incomplete dominance
+B) mutation
+C) multiple alleles
+D) pleiotropy
+57. Sometimes a single gene product may
+produce more than one effect. This
+phenomenon is known as (Pg. 77, E)
+A) mosaicism B) pleiotropy
+C) multiple allelism D) polygeny
+58. Starch synthesis in pea seeds is an
+example of (Pg. 77, E)
+A) multiple allelism
+B) incomplete dominance
+C) co-dominance
+D) pleiotropy
+59. Pea seeds having Bb genotype produce
+starch grains of (Pg. 78, E)
+A) large size
+B) small size
+C) intermediate size
+D) they do not produce starch.
+60. Choose the incorrect statement from the
+following about pleiotropy. (Pg. 78, E)
+A) In pleiotropy, a single gene produces
+more than one effect.
+B) Starch synthesis in pea seeds is
+controlled by one gene.
+C) Pea seeds having BB genotypes,
+produce small starch grains.
+D) bb homozygotes of pea produce
+wrinkled seeds.
+61. Assertion: The law of dominance is used to
+explain the expression of only one of the
+parental characters in a monohybrid
+cross.
+Reason: It also explains the proportion of
+3: 1 obtained at F2 generation. (Pg. 78, H)
+A) Both assertion and reason are true and
+reason is the correct explanation of
+assertion.

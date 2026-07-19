@@ -1,0 +1,38 @@
+ANSWE
+CELL THE U
+Q 01 02 03 04 0
+Ans Cc CD c E
+Q 11 12 13 14 1
+Ans A c D A §
+Q 21 22 23 24 2
+Ans D c D B [
+Q 31 32 33 34 3
+Ans A B A c L
+Q 41 42 43 44 4
+Ans C D D D [
+Q 51 52 53 54 5
+Ans A fo D c L
+Q 61 62 63 64 6
+Ans A A A D C
+Q 71 72 73 74 7
+Ans D D c B E
+Q 81 82 83 84 8
+Ans A D (© c 2
+Q 91 92 93 94 9
+Ans c A c A :
+Q 101 102 103 104 16
+Ans D c D A [
+Q 111 112 113 114 11
+Ans D B c D A
+Q 121 122 123 124 13
+Ans [3] B D c [
+Q 131 132 133 134 13
+Ans A To c A L
+Q 141 142 143 144 14
+Ans D B B c [
+Q 151 152 153 154 18
+Ans c D c B 4
+Q 161 162 163 164 1€
+Ans D B D c E
+Q 171 172 173 174 17
+Ans B D c A C

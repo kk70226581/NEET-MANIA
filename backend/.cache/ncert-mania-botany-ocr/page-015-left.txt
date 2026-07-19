@@ -1,0 +1,35 @@
+Answ
+BIOLOGICAL CI
+Q 01 02 03 04 C
+Ans D D A D /
+Q 11 12 13 14 1
+Ans C nD B A |
+Q 21 22 23 24 2
+Ans Cc B A D |
+Q 31 32 a3 34 3
+Ans Cc Cc Cc B [
+Q 41 42 43 44 4
+Ans D A D D /
+Q 51 52 53 54 5
+Ans A A Cc Cc y
+Q 61 62 63 64 €
+Ans D A A B |
+Q 71 72 73 74 7
+Ans D D Cc Cc [
+Q 81 82 83 84 8
+Ans D C B D I
+Q 91 92 93 94 9
+Ans D B Cc B ]
+Q 101 102 103 104 I
+Ans Cc C A A [
+Q 111 112 113 114 1
+Ans A B B Cc 1
+Q 121 122 123 124 1
+Ans B A B Cc |
+Q 131 132 133 134 1
+Ans A B D D f
+Q 141 142 143 144 1
+Ans D A B B 1
+Q 151 152 153 154 1
+Ans D D B A [
+ue 92 question is not given.

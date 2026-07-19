@@ -1,0 +1,41 @@
+]
+(ow — ”
+7 > mRNA » protein
+[@ [ow] ]
+Paragraph 6.1.2
+Packaging of DNA Helix
+29. If length of E. coli DNA is 1.36 mm,
+calculate number of base pair in E. coli?
+Given — distance between consecutive base
+pairs is 0.34 x 10° m. — (Pg. 99, E)
+A) 4 x 106 B) 4 x 10°
+C) 4 x 10-6 D) 4 x 1012
+30. Assertion : In E. coli, DNA is scattered
+throughout the cell
+Reason : In E. coli, there is no defined
+nucleus (Pg. 99, M)
+A) Both Assertion & Reason are correct &
+Reason is correct explanation for
+Assertion
+B) Both Assertion & Reason are correct
+but Reason is not correct explanation
+for Assertion
+C) Assertion is correct and Reason is
+incorrect
+D) Reason is correct and Assertion is
+incorrect
+31. Histones are — (Pg. 99, E)
+A) Positive and acidic in eukaryotes
+B) Positive and acidic in prokaryotes
+C) Positive and basic in eukaryotes
+D) Positive and basic in prokaryotes
+32. Assertion - Histones are positively charged
+Reason — Histones are rich in basic amino
+acid residues lysine and arginine (Pg. 99,
+M)
+A) Assertion & Reason are correct and
+Reason is correct explanation for
+Assertion
+B) Assertion & Reason are correct and
+Reason is not the correct explanation
+for Assertion

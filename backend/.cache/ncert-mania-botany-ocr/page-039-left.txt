@@ -1,0 +1,32 @@
+ANSW
+MORPHOLOGY OF
+Q 01 02 03 04 [
+Ae | B | © | © | B |
+Q 11 12 13 14 :
+Ans c B D B
+Q 21 22 23 24 4
+Ans D B A A
+Q 31 32 33 34 :
+Ans A B [5] B
+Q a1 42 43 44 L
+Ans A D A D
+Q 51 52 53 54 :
+Ans A a A 7]
+Q 61 62 63 64 [
+Ans B D A B
+Q 71 72 73 74 1
+Ans A B A D
+Q 81 82 83 84 [
+Ans A A A B
+Q 91 92 93 94 [
+Ans B A A A
+Q 101 102 103 104 1
+Ans c B & B
+Q 111 112 113 114 1
+Ans A A Q 5]
+Q 121 122 123 124 1
+Ans A A iB B
+Q 131 132 133 134 1
+Ans B A c D |
+Q 141 142 143 144 1
+Ans A B A B

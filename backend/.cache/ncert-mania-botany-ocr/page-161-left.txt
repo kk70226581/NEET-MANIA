@@ -1,0 +1,50 @@
+A) Fungi B) Nematode
+C) Bacteria D) Virus
+177. Caenorhabditis elegans is-(Pg. 119, E)
+A) Free living , non-pathogenic
+B) Parasitic , pathogenic
+C) Free living , pathogenic
+D) Parasitic , non-pathogenic
+178. Methods / approaches of HGP include-
+(Pg. 119, E)
+A) Excess sequence tags
+B) Expressed sequence tags
+C) Exercise sequence tags
+D) Exerted sequence tags
+179. Sequence annotations refer to- (Pg. 119,
+E)
+A) Identifying all genes expressed as RNA
+and then sequencing then
+B) Sequencing the whole set of genome
+and then assigning different regions
+with functions
+C) Identifying and sequencing the
+genome simultaneously
+D) More than one option is correct
+180. For sequencing, the DNA is- (Pg. 119, E)
+A) Partially extracted from cell
+B) Totally isolated from cell
+C) Not needed to isolated from cell
+D) None of these
+181. The DNA for sequencing is converted to
+fragments of small size. The fragments are
+made- (Pg. 119, E)
+A) On a pre — decided basis
+B) On a pre - defined basis
+C) Randomly
+D) Depending upon organism
+182. The step in DNA sequencing after
+fragmentation of DNA is- (Pg. 119, E)
+A) Cloning in host using vectors
+B) Cloning in vectors using host
+C) Amplification of DNA fragments
+D) More than one option
+183. Commonly used hosts for DNA cloning
+include- (Pg. 119, E)
+A) Bacteria B) BAC
+C) YAC D) Both A and C
+184. BAC stands for-(Pg. 119, E)
+A) Bacterial artificial colour
+B) Binominal artificial characterization
+C) Bacterial artificial chromosome
+D) Bacterial articular chromosome

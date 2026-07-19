@@ -1,0 +1,49 @@
+32. The relation b/w species richness & area C) Increased with decreasing explored
+for a wide variety of taxa turns out to be a area, but there are no limitations
+(Pg. 262, E) D) None of the above
+A) Linear B) Sigmoid 41. Find out A and B and also select the
+C) Rectangular Hyperbola correct answer (Pg. 262, E)
+D) None of the above
+33. Correct equation of species-Area 1 prac
+relationship (Pg. 262, E) 5 ENT EM
+A) logA=logS+ZlogC | fg
+B) logS=1log C+ ZlogA "i? Sh
+C) log S =log Z + C log A fea
+D) log S=1log C-Zlog A Toa —
+34. In species area relationship equation, Z A) a = species richness
+stands for- (Pg. 262, E) b = Area
+A) Slope of the line B) a = area
+B) Regression coefficient b = species richness
+C) species richness C) a= Area
+D) Both a & B are correct b = Regression coefficient
+35. Value of Z is (Pg. 262, E) D) none of these
+A) 20-30 B) 1-2 42. In species-area relationship equation
+C) 0.1-0.2 D) None of the above (Pg. 262, E)
+36. The value of Z in the entire continents A) S = species richness
+(Pg. 262, E) B) A = area
+A) 0.8-1.8 B) 0.6 -1.2 C) C=Y — intercept
+C) 0.1-0.2 D) None of the above D) All of these
+37. The value of Z for frugivorous birds & 43. Which one is correct about a stable
+mammals in the tropical forests of community? (Pg. 262, E)
+different continents (Pg. 262, E) A) Should not show too much variation in
+A) 2.15 B) 0.5 productivity from year to year
+C) 1.15 D) 0.8 B) It must be either resistant or resilient
+38. Concept of species-Area relationship given on surface disturbance
+by (Pg. 262, E) C) It must also be resistant to invasions
+A) Robert Frost by alien species
+B) Paul Ehrlich D) All of these are correct
+C) Alexander hook 44. Find out correct option about David
+D) Alexander Von Humboldt Tilman’s long term ecosystem experiments
+39. Alexander von Humboldt is a (Pg. 262, E) (Pg. 263, E)
+A) German naturalist A) Plots with more species showed less
+B) Philosopher year-to-year va riation in total biomass
+C) Geographer B) Plots with more species show too much
+D) Both A & C are correct variation in productivity
+40. According to Alexander species richness C) Increased diversity contributed to
+(Pg. 262, E) higher productivity
+A) Increased with increasing explored D) Both A & C are correct
+area, but only up to a limit 45. ‘Rivet popper hypothesis’ is given by
+B) Decreased with increasing explored (Pg. 263, E)
+area, but only up to a limit A) Alexander von Humboldt
+B) Paul Ehrlich
+27

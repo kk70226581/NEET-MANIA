@@ -1,0 +1,47 @@
+[ol] 2 [ 3 [ 1 [ 4 |]
+(op a [ 2 | 3 [ 1 |
+77. Morgan performed his experiments on(Pg.
+83, E)
+A) Garden pea B) Drosophila
+C) Snapdragon D) None of these
+78. When two genes are located on the same
+chromosome, the proportion of parental
+gene combination is (Pg. 83, E)
+A) higher than non-parental
+B) lower than non-parental
+C) equal to non-parental
+D) None of these
+79. Genes which are present on the same
+chromosome (Pg. 83, E)
+A) do not form any linkage group.
+B) affect the phenotype by forming
+interactive groups.
+C) form a linkage group.
+D) form different groups depending upon
+their relative distance.
+80. The term used to describe the generation
+of nonparental gene combination is (Pg.
+83, E)
+A) linkage B) recombination
+C) mutation D) none of these
+81. Which type of relationship is found
+between the distance of genes and
+percentage of recombination? (Pg. 83, E)
+A) Inverse B) Parallel
+C) Direct D) None of these
+82. Among the following which will not cause
+variations among siblings? (Pg. 83, H)
+A) Linkage
+B) Independent assortment of genes
+C) Crossing over
+D) Mutation
+83. Match Column-I with Column-II and
+choose the correct answer from the codes
+given below. (Pg. 83, H)
+[| Columnl [ [ Column |
+gene
+combination
+[(B) | Recombination | (2) | Genetic map |
+distance
+between
+genes

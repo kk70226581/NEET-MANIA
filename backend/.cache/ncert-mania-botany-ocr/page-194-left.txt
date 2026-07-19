@@ -1,0 +1,47 @@
+32. The relation b/w species richness & area
+for a wide variety of taxa turns out to be a
+(Pg. 262, E)
+A) Linear B) Sigmoid
+C) Rectangular Hyperbola
+D) None of the above
+33. Correct equation of species-Area
+relationship (Pg. 262, E)
+A) logA=1logS+ZlogC
+B) logS=1logC+ZlogA
+C) logS=1logZ + ClogA
+D) log S=1logC-Zlog A
+34. In species area relationship equation, Z
+stands for- (Pg. 262, E)
+A) Slope of the line
+B) Regression coefficient
+C) species richness
+D) Both a & B are correct
+35. Value of Z is (Pg. 262, E)
+A) 20-30 B) 1-2
+C) 0.1-0.2 D) None of the above
+36. The value of Z in the entire continents
+(Pg. 262, E)
+A) 0.8-1.8 B) 0.6-1.2
+C) 0.1-0.2 D) None of the above
+37. The value of Z for frugivorous birds &
+mammals in the tropical forests of
+different continents (Pg. 262, E)
+A) 2.15 B) 0.5
+C) 1.15 D) 0.8
+38. Concept of species-Area relationship given
+by (Pg. 262, E)
+A) Robert Frost
+B) Paul Ehrlich
+C) Alexander hook
+D) Alexander Von Humboldt
+39. Alexander von Humboldt is a (Pg. 262, E)
+A) German naturalist
+B) Philosopher
+C) Geographer
+D) Both A & C are correct
+40. According to Alexander species richness
+(Pg. 262, E)
+A) Increased with increasing explored
+area, but only up to a limit
+B) Decreased with increasing explored
+area, but only up to a limit

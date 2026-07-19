@@ -1,0 +1,18 @@
+ANSW.
+MICROBES IN H
+Q 1 2 3 4 5
+as DD A DD
+e 1 12 13 14 1s
+Ans [ Cc D A B
+Q 21 22 23 24 25
+Ans D D D A D
+Q 31 32 33 34 35
+Ans B B B [5] D
+Q 41 42 43 44 45
+Ans A B B A B
+Q 51 52 53 54 55
+Ans © D D D D
+Q 61 62 63 64 65
+Ans B A B B (2}
+Q 71 72
+Ans B A
