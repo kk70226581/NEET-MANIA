@@ -78,7 +78,7 @@ const fixQuestionWithAI = async (question) => {
 
 exports.getQuestions = async (req, res) => {
   try {
-    const { subject, chapter, topic, difficulty, source, search, page = 1, limit = 20 } = req.query;
+    const { subject, chapter, topic, difficulty, source, search, collection, page = 1, limit = 20 } = req.query;
     const safeLimit = Math.min(100, Math.max(1, Number(limit) || 20));
     const skip = (Math.max(1, Number(page) || 1) - 1) * safeLimit;
     const query = {
@@ -94,6 +94,7 @@ exports.getQuestions = async (req, res) => {
     if (topic) query.topic = topic;
     if (difficulty) query.difficulty = difficulty;
     if (source) query.source = source;
+    if (collection === 'ncert-mania') query.tags = 'ncert-mania';
     if (search) {
       const pattern = new RegExp(String(search).trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
       query.$or = [{ questionText: pattern }, { chapter: pattern }, { topic: pattern }];
@@ -476,13 +477,19 @@ exports.getQuestionStats = async (req, res) => {
 
 exports.getQuestionMetadata = async (req, res) => {
   try {
+    const match = {
+      isPublished: true,
+      inSyllabus: true,
+      syllabusVersion: 'NEET-UG-2026',
+      'qualityAudit.status': 'approved'
+    };
+
+    if (req.query.collection === 'ncert-mania') {
+      match.tags = 'ncert-mania';
+    }
+
     const rows = await Question.aggregate([
-      { $match: {
-        isPublished: true,
-        inSyllabus: true,
-        syllabusVersion: 'NEET-UG-2026',
-        'qualityAudit.status': 'approved'
-      } },
+      { $match: match },
       {
         $group: {
           _id: {

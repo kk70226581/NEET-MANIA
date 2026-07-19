@@ -22,7 +22,8 @@
     "import:pyq:verified": "node src/scripts/importVerifiedUserPyqs.js --apply",
     "quarantine:physics": "node src/scripts/quarantineWeakPhysics.js --apply",
     "build:physics:numericals": "node src/scripts/buildPhysicsNumericalBank.js --apply",
-    "quarantine:repetitive-physics": "node src/scripts/quarantineRepetitivePhysicsNumericals.js --apply"
+    "quarantine:repetitive-physics": "node src/scripts/quarantineRepetitivePhysicsNumericals.js --apply",
+    "import:ncert-mania:botany": "node src/scripts/importNcertManiaBotanyPdf.js --apply"
   },
   "keywords": [
     "NEET",

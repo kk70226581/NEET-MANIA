@@ -20,7 +20,7 @@ const TestsPage = () => {
   const [config, setConfig] = useState({ testType: 'chapter_test', classLevel: '11', subject: 'biology', chapter: '', topic: '', difficulty: '', questionCount: 5 });
   const [creating, setCreating] = useState(false);
   const [mockMode, setMockMode] = useState('standard');
-  const [selectedChapters, setSelectedChapters] = useState([]);
+  const [customChapters, setCustomChapters] = useState({ physics: [], chemistry: [], biology: [] });
 
   const daysToExam = Math.max(0, Math.ceil((new Date('2027-05-02') - new Date()) / 86400000));
 
@@ -39,6 +39,24 @@ const TestsPage = () => {
   const subjects = useMemo(() => [...new Set(metadata.map((row) => row._id.subject).filter(Boolean))], [metadata]);
   const chapters = useMemo(() => [...new Set(metadata.filter((row) => row._id.subject === config.subject && row._id.classLevel === config.classLevel).map((row) => row._id.chapter).filter(Boolean))], [metadata, config.subject, config.classLevel]);
   const topics = useMemo(() => [...new Set(metadata.filter((row) => row._id.subject === config.subject && row._id.classLevel === config.classLevel && (!config.chapter || row._id.chapter === config.chapter)).map((row) => row._id.topic).filter(Boolean))], [metadata, config.subject, config.classLevel, config.chapter]);
+  
+  const groupedChapters = useMemo(() => {
+    const grouped = { physics: { '11': [], '12': [] }, chemistry: { '11': [], '12': [] }, biology: { '11': [], '12': [] } };
+    metadata.forEach(row => {
+      const sub = row._id.subject;
+      const lvl = String(row._id.classLevel || '11');
+      const ch = row._id.chapter;
+      if (sub && ch) {
+        const targetSub = ['botany', 'zoology'].includes(sub) ? 'biology' : sub;
+        if (grouped[targetSub]) {
+          if (!grouped[targetSub][lvl]) grouped[targetSub][lvl] = [];
+          if (!grouped[targetSub][lvl].includes(ch)) grouped[targetSub][lvl].push(ch);
+        }
+      }
+    });
+    return grouped;
+  }, [metadata]);
+
   const availableQuestionCount = useMemo(() => metadata
     .filter((row) => row._id.subject === config.subject
       && row._id.classLevel === config.classLevel
@@ -61,20 +79,30 @@ const TestsPage = () => {
       ...(name === 'chapter' ? { topic: '' } : {}) 
     }));
     if (['classLevel', 'subject'].includes(name)) {
-      setSelectedChapters([]);
+      // Nothing needed for custom mock as it handles its own state
     }
   };
 
-  const handleChapterToggle = (ch) => {
-    setSelectedChapters((prev) => 
-      prev.includes(ch) ? prev.filter((item) => item !== ch) : [...prev, ch]
-    );
+  const handleChapterToggle = (subject, ch) => {
+    setCustomChapters((prev) => {
+      const subjectChapters = prev[subject] || [];
+      return {
+        ...prev,
+        [subject]: subjectChapters.includes(ch)
+          ? subjectChapters.filter((item) => item !== ch)
+          : [...subjectChapters, ch]
+      };
+    });
   };
 
   const generate = async () => {
     if (['chapter_test', 'topic_test'].includes(config.testType) && !config.chapter) return toast.error('Choose a chapter first.');
     if (config.testType === 'topic_test' && !config.topic) return toast.error('Choose a topic first.');
-    if (config.testType === 'full_mock' && mockMode === 'custom' && selectedChapters.length === 0) return toast.error('Select at least one chapter for the custom mock test.');
+    
+    if (config.testType === 'full_mock' && mockMode === 'custom') {
+      const hasChapters = Object.values(customChapters).some(list => list.length > 0);
+      if (!hasChapters) return toast.error('Select at least one chapter for the custom mock test.');
+    }
     
     setCreating(true);
     try {
@@ -83,9 +111,8 @@ const TestsPage = () => {
         if (mockMode === 'standard') {
           delete payload.classLevel; delete payload.subject; delete payload.chapter; delete payload.topic; delete payload.difficulty; delete payload.questionCount;
         } else {
-          payload.subject = config.subject;
-          payload.chapters = selectedChapters;
-          delete payload.chapter; delete payload.topic; delete payload.difficulty; delete payload.questionCount;
+          payload.customChapters = customChapters;
+          delete payload.classLevel; delete payload.subject; delete payload.chapter; delete payload.topic; delete payload.difficulty; delete payload.questionCount;
         }
       }
       const response = await testsAPI.generateTest(payload);
@@ -222,41 +249,37 @@ const TestsPage = () => {
                 </div>
               ) : (
                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-6">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-sm font-bold text-slate-700">Select Class</label>
-                    <select value={config.classLevel} onChange={(event) => update('classLevel', event.target.value)} className="p-3.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium text-slate-700 shadow-sm">
-                      <option value="11">Class 11</option>
-                      <option value="12">Class 12</option>
-                    </select>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label className="text-sm font-bold text-slate-700">Select Subject</label>
-                    <select 
-                      value={config.subject} 
-                      onChange={(event) => update('subject', event.target.value)} 
-                      className="p-3.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium text-slate-700 transition-all shadow-sm"
-                    >
-                      {(subjects.length ? subjects : ['biology', 'physics', 'chemistry']).map((item) => <option value={item} key={item} className="capitalize">{item}</option>)}
-                    </select>
-                  </div>
-
-                  <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-slate-700">Select Chapters <span className="text-slate-400 font-normal">(Multi-select)</span></label>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[300px] overflow-y-auto p-4 bg-white border border-slate-200 rounded-xl shadow-inner">
-                      {chapters.map((ch) => (
-                        <label key={ch} className="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer border border-transparent hover:border-slate-200 transition-colors">
-                          <input 
-                            type="checkbox" 
-                            checked={selectedChapters.includes(ch)} 
-                            onChange={() => handleChapterToggle(ch)}
-                            className="mt-1 w-4 h-4 text-primary rounded border-slate-300 focus:ring-primary"
-                          />
-                          <span className="text-sm font-medium text-slate-700 leading-tight">{ch}</span>
-                        </label>
-                      ))}
-                      {chapters.length === 0 && <div className="col-span-full p-4 text-center text-slate-500 font-medium">No chapters available. Please select another subject or add more questions.</div>}
+                  <p className="text-sm font-medium text-slate-600 mb-2">Select chapters across subjects. If no chapters are selected for a subject, the full syllabus for that subject will be used.</p>
+                  
+                  {['physics', 'chemistry', 'biology'].map(sub => (
+                    <div key={sub} className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                      <div className="p-4 bg-slate-100 border-b border-slate-200 flex items-center justify-between">
+                        <strong className="text-lg capitalize text-slate-800">{sub}</strong>
+                        <span className="text-xs font-bold bg-white px-2 py-1 rounded text-slate-500">{customChapters[sub]?.length || 0} selected</span>
+                      </div>
+                      <div className="p-4">
+                        {['11', '12'].map(lvl => (
+                          <div key={lvl} className="mb-4 last:mb-0">
+                            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 pb-2 border-b border-slate-100">Class {lvl}</h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                              {(groupedChapters[sub]?.[lvl] || []).map((ch) => (
+                                <label key={ch} className="flex items-start gap-3 p-2 rounded-lg hover:bg-slate-50 cursor-pointer border border-transparent hover:border-slate-200 transition-colors">
+                                  <input 
+                                    type="checkbox" 
+                                    checked={customChapters[sub]?.includes(ch) || false} 
+                                    onChange={() => handleChapterToggle(sub, ch)}
+                                    className="mt-1 w-4 h-4 text-primary rounded border-slate-300 focus:ring-primary"
+                                  />
+                                  <span className="text-sm font-medium text-slate-700 leading-tight">{ch}</span>
+                                </label>
+                              ))}
+                              {(!groupedChapters[sub]?.[lvl] || groupedChapters[sub]?.[lvl].length === 0) && <div className="text-slate-400 text-sm p-2">No chapters available</div>}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               )}
             </div>

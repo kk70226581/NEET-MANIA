@@ -66,7 +66,7 @@ export const questionsAPI = {
     headers: { 'Content-Type': 'multipart/form-data' }
   }),
   getStats: () => api.get('/questions/stats'),
-  getMetadata: () => api.get('/questions/metadata'),
+  getMetadata: (params) => api.get('/questions/metadata', { params }),
   getAdminQuestions: (params) => api.get('/questions/admin/review', { params }),
   classifyQuestions: (data) => api.post('/questions/classify', data),
   clearAllQuestions: (params) => api.delete('/questions/admin/clear-all', { params }),

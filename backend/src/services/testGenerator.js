@@ -61,9 +61,9 @@ class TestGenerator {
       // target: 30% easy, 50% medium, 20% hard
       if (!filters.difficulty || (Array.isArray(filters.difficulty) && filters.difficulty.length > 1)) {
         const count = filters.questionCount || 30;
-        const targetEasy = 0; // Removed easy questions
-        const targetHard = Math.round(count * 0.6); // 60% hard for high conceptual level
-        const targetMedium = count - targetHard;
+        const targetEasy = Math.round(count * 0.3); // 30% easy
+        const targetHard = Math.round(count * 0.2); // 20% hard
+        const targetMedium = count - targetEasy - targetHard; // ~50% medium
 
         const [easyQ, mediumQ, hardQ] = await Promise.all([
           this.fetchQuestionsByDifficulty(query, 'easy', targetEasy),
@@ -130,9 +130,10 @@ class TestGenerator {
         $addFields: {
           selectionScore: {
             $add: [
-              { $multiply: [{ $ifNull: ['$qualityScore', 50] }, 0.2] },
-              { $multiply: ['$chapterWeight', 10] },
-              { $multiply: [{ $ifNull: ['$weightage', 1] }, 5] },
+              { $multiply: [{ $divide: [{ $ifNull: ['$qualityScore', 50] }, 100] }, 20] },
+              { $multiply: ['$chapterWeight', 5] },
+              { $cond: [{ $eq: ['$pyq.isPYQ', true] }, 15, 0] },
+              { $cond: [{ $eq: ['$trendingFrequency', 'high'] }, 10, 0] },
               { $multiply: [{ $rand: {} }, 30] }
             ]
           }
@@ -216,14 +217,13 @@ class TestGenerator {
       { $replaceRoot: { newRoot: "$doc" } },
       { $addFields: {
           sortScore: {
-            $multiply: [
-              { $rand: {} }, // Base true randomness
-              { $cond: [{ $eq: ['$difficulty', 'hard'] }, 1.5, 1.0] }, // 50% boost to Hard questions
-              { $cond: [{ $eq: ['$difficulty', 'easy'] }, 0.1, 1.0] }, // 90% penalty to Easy questions
-              // 40% probability penalty to Assertion/Statement questions to prevent clustering, but still allow them
-              { $cond: [{ $regexMatch: { input: "$questionText", regex: /given below are two statements|assertion/i } }, 0.6, 1.0] },
-              // 40% probability penalty to Match the following to prevent them from repeating
-              { $cond: [{ $regexMatch: { input: "$questionText", regex: /match list|match the following/i } }, 0.6, 1.0] }
+            $add: [
+              { $multiply: [{ $divide: [{ $ifNull: ['$qualityScore', 50] }, 100] }, 30] },
+              { $cond: [{ $eq: ['$pyq.isPYQ', true] }, 15, 0] },
+              { $cond: [{ $eq: ['$trendingFrequency', 'high'] }, 10, 0] },
+              { $multiply: [{ $rand: {} }, 45] },
+              { $cond: [{ $regexMatch: { input: "$questionText", regex: /given below are two statements|assertion/i } }, -10, 0] },
+              { $cond: [{ $regexMatch: { input: "$questionText", regex: /match list|match the following/i } }, -10, 0] }
             ]
           }
         }
@@ -242,11 +242,11 @@ class TestGenerator {
    */
   static async generateFullMockTest(options = {}) {
     try {
-      const { subject, chapters } = options;
+      const { subject, chapters, customChapters } = options;
       console.log('🎲 Generating Full Mock Test. Options:', options);
 
-      // If user selected specific subject and chapters
-      if (subject && Array.isArray(chapters) && chapters.length > 0) {
+      // If user selected specific subject and chapters (Legacy)
+      if (subject && Array.isArray(chapters) && chapters.length > 0 && !customChapters) {
         console.log(`Generating custom mock of 180 questions for subject: ${subject}, chapters: ${chapters.join(', ')}`);
         const questionIds = await this.generateTest({
           subject,
@@ -345,6 +345,16 @@ class TestGenerator {
       };
 
       const fillSubject = async (subject, targetCount) => {
+        if (customChapters && customChapters[subject] && customChapters[subject].length > 0) {
+          console.log(`Generating mock subject ${subject} using custom chapters: ${customChapters[subject].join(', ')}`);
+          return await this.generateTest({
+            subject: subject === 'biology' ? ['biology', 'botany', 'zoology'] : subject,
+            chapter: { $in: customChapters[subject] },
+            questionCount: targetCount,
+            isPublished: true
+          });
+        }
+
         let selectedQuestions = [];
         const distribution = NEET_MOCK_DISTRIBUTION[subject] || [];
         

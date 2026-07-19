@@ -4,6 +4,7 @@ import {
   Search,
   Bookmark,
   Clock,
+  BookOpenCheck,
   Beaker,
   Dna,
   Zap,
@@ -69,14 +70,16 @@ const QuestionBankPage = () => {
     chapter: '',
     difficulty: '',
     search: '',
+    collection: '',
     page: 1,
   });
 
   useEffect(() => {
-    questionsAPI.getMetadata()
+    const params = filters.collection ? { collection: filters.collection } : {};
+    questionsAPI.getMetadata(params)
       .then((res) => setMetadata(res.data || []))
       .catch(() => {});
-  }, []);
+  }, [filters.collection]);
 
   useEffect(() => {
     setLoading(true);
@@ -110,7 +113,11 @@ const QuestionBankPage = () => {
     if (nextPage !== pagination.page) updateFilter('page', nextPage);
   };
 
-  const clearFilters = () => setFilters({ subject: '', chapter: '', difficulty: '', search: '', page: 1 });
+  const setCollection = (collection) => {
+    setFilters({ subject: '', chapter: '', difficulty: '', search: '', collection, page: 1 });
+  };
+
+  const clearFilters = () => setFilters((curr) => ({ subject: '', chapter: '', difficulty: '', search: '', collection: curr.collection, page: 1 }));
 
   return (
     <AppShell hideSearch>
@@ -120,8 +127,12 @@ const QuestionBankPage = () => {
         <div className="sticky top-0 z-20 bg-background/90 backdrop-blur-xl pt-4 pb-4 border-b border-slate-200/60 mb-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-6">
             <div>
-              <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-2">Question Bank</h1>
-              <p className="text-slate-500 font-medium">Browse and practice {pagination.total}+ verified NEET questions.</p>
+              <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-2">{filters.collection === 'ncert-mania' ? 'NCERT Mania' : 'Question Bank'}</h1>
+              <p className="text-slate-500 font-medium">
+                {filters.collection === 'ncert-mania'
+                  ? `Practice ${pagination.total}+ line-by-line NCERT Botany questions.`
+                  : `Browse and practice ${pagination.total}+ verified NEET questions.`}
+              </p>
             </div>
             
             <div className="relative w-full md:w-80">
@@ -137,6 +148,11 @@ const QuestionBankPage = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
+            <div className="flex bg-white p-1 rounded-xl border border-slate-200 shadow-sm">
+              <button onClick={() => setCollection('')} className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${!filters.collection ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}>All Practice</button>
+              <button onClick={() => setCollection('ncert-mania')} className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold transition-all ${filters.collection === 'ncert-mania' ? 'bg-emerald-50 text-emerald-700 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}><BookOpenCheck size={16} /> NCERT Mania</button>
+            </div>
+
             {/* Subject Chips */}
             <div className="flex bg-slate-100 p-1 rounded-xl">
               <button onClick={() => updateFilter('subject', '')} className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${!filters.subject ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}>All Subjects</button>
