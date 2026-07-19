@@ -12,6 +12,28 @@ const generateToken = (id) => {
   });
 };
 
+const adminConfigurationIsValid = () => (
+  process.env.ADMIN_EMAIL
+  && process.env.ADMIN_PASSWORD
+  && process.env.ADMIN_PASSWORD !== 'change_me_in_production'
+);
+
+const adminResponse = (res, user, message = 'Admin login successful') => {
+  const token = generateToken(user._id);
+  return res.status(200).json({
+    success: true,
+    message,
+    token,
+    user: {
+      _id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      role: user.role,
+    },
+  });
+};
+
 // @route   POST /api/auth/register
 // @desc    Register a new user
 // @access  Public
@@ -150,6 +172,52 @@ exports.login = async (req, res, next) => {
       success: false,
       message: error.message
     });
+  }
+};
+
+// @route   POST /api/auth/admin/login
+// @desc    Login the single owner account configured through environment variables.
+// @access  Public
+exports.adminLogin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const configuredEmail = String(process.env.ADMIN_EMAIL || '').trim().toLowerCase();
+
+    if (!adminConfigurationIsValid()) {
+      return res.status(503).json({
+        success: false,
+        message: 'Owner admin access is not configured. Set ADMIN_EMAIL and ADMIN_PASSWORD on the server.',
+      });
+    }
+
+    if (String(email || '').trim().toLowerCase() !== configuredEmail || password !== process.env.ADMIN_PASSWORD) {
+      return res.status(401).json({ success: false, message: 'Invalid admin ID or password' });
+    }
+
+    let user = await User.findOne({ email: configuredEmail }).select('+password');
+    if (!user) {
+      user = await User.create({
+        firstName: 'Medical',
+        lastName: 'Mania Admin',
+        email: configuredEmail,
+        password: process.env.ADMIN_PASSWORD,
+        class: 'just-exploring',
+        role: 'admin',
+        isVerified: true,
+        isActive: true,
+      });
+    } else {
+      user.role = 'admin';
+      user.isActive = true;
+      if (!(await user.comparePassword(process.env.ADMIN_PASSWORD))) user.password = process.env.ADMIN_PASSWORD;
+      user.lastLogin = new Date();
+      await user.save();
+    }
+
+    return adminResponse(res, user);
+  } catch (error) {
+    console.error('Admin login error:', error);
+    return res.status(500).json({ success: false, message: 'Unable to complete admin login' });
   }
 };
 

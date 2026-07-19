@@ -59,6 +59,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/admin', require('./routes/admin'));
 app.use('/api/questions', require('./routes/questions'));
 app.use('/api/ai-questions', require('./routes/aiQuestions'));
 app.use('/api/tests', require('./routes/tests'));

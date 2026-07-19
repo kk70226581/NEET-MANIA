@@ -44,10 +44,15 @@ api.interceptors.response.use(
 export const authAPI = {
   register: (data) => api.post('/auth/register', data),
   login: (data) => api.post('/auth/login', data),
+  adminLogin: (data) => api.post('/auth/admin/login', data),
   getCurrentUser: () => api.get('/auth/me'),
   updateProfile: (data) => api.put('/auth/profile', data),
   changePassword: (data) => api.put('/auth/password', data),
   logout: () => api.post('/auth/logout')
+};
+
+export const adminAPI = {
+  getOverview: () => api.get('/admin/overview')
 };
 
 // Questions APIs

@@ -24,15 +24,11 @@ const AdminLoginPage = () => {
     setLoading(true);
 
     try {
-      const response = await authAPI.login(formData);
-      if (response.user?.role !== 'admin') {
-        toast.error('This account is not an admin account.');
-        return;
-      }
+      const response = await authAPI.adminLogin(formData);
       dispatch(setToken(response.token));
       dispatch(setUser(response.user));
       toast.success('Admin login successful.');
-      navigate('/admin/questions');
+      navigate('/admin/overview');
     } catch (error) {
       const message = error.message || 'Admin login failed';
       dispatch(setError(message));
@@ -83,17 +79,17 @@ const AdminLoginPage = () => {
               </svg>
             </h1>
             <p className="auth-lede">
-              Use this page only for adding, reviewing, and publishing questions.
+              Use your owner credentials to manage Medical Mania, content quality, and platform health.
             </p>
 
             <form onSubmit={handleSubmit}>
               <div className="auth-field">
-                <label htmlFor="admin-email">Admin email</label>
+                <label htmlFor="admin-email">Admin ID / email</label>
                 <input
                   type="text"
                   id="admin-email"
                   name="email"
-                  placeholder="admin@solnut.local"
+                  placeholder="owner@medicalmania.site"
                   className="auth-input"
                   value={formData.email}
                   onChange={handleChange}

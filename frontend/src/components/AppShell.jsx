@@ -16,6 +16,7 @@ import {
   FileUp,
   Flame,
   LayoutDashboard,
+  LineChart,
   LogOut,
   Menu,
   Search,
@@ -73,7 +74,7 @@ const AppShell = ({ children, hideSearch = false }) => {
 
   const allNavItems = useMemo(() => {
     const adminItem = user?.role === 'admin'
-      ? [{ to: '/admin/questions', label: 'Question Import', icon: FileUp, hint: 'Review and publish questions' }, { to: '/admin/pyq', label: 'PYQ Quality', icon: ShieldCheck, hint: 'Validate imports and reports' }]
+      ? [{ to: '/admin/overview', label: 'Admin Overview', icon: LineChart, hint: 'Monitor Medical Mania' }, { to: '/admin/questions', label: 'Question Import', icon: FileUp, hint: 'Review and publish questions' }, { to: '/admin/pyq', label: 'PYQ Quality', icon: ShieldCheck, hint: 'Validate imports and reports' }]
       : [];
     return [...primaryNavItems, ...utilityItems, ...adminItem];
   }, [user?.role]);
@@ -183,6 +184,9 @@ const AppShell = ({ children, hideSearch = false }) => {
             ))}
             {user?.role === 'admin' && (
               <>
+                <NavLink to="/admin/overview" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
+                  <LineChart size={19} /> Admin Overview
+                </NavLink>
                 <NavLink to="/admin/questions" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
                   <FileUp size={19} /> Question Import
                 </NavLink>

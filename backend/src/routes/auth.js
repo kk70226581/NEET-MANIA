@@ -4,6 +4,7 @@ const { authenticate } = require('../middleware/auth');
 const {
   register,
   login,
+  adminLogin,
   logout,
   getCurrentUser,
   updateProfile,
@@ -13,6 +14,7 @@ const {
 // Public routes
 router.post('/register', register);
 router.post('/login', login);
+router.post('/admin/login', adminLogin);
 
 // Protected routes
 router.get('/me', authenticate, getCurrentUser);

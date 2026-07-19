@@ -22,6 +22,7 @@ import LeaderboardPage from './pages/LeaderboardPage';
 import MentorPage from './pages/MentorPage';
 import PyqHubPage from './pages/PyqHubPage';
 import PyqAdminPage from './pages/PyqAdminPage';
+import AdminDashboardPage from './pages/AdminDashboardPage';
 import ForgettingCurvePage from './pages/ForgettingCurvePage';
 import { authAPI } from './services/api';
 import { setUser } from './store/slices/userSlice';
@@ -56,8 +57,8 @@ function App() {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={isAuthenticated && user ? <Navigate to={isAdmin ? '/admin/questions' : '/dashboard'} /> : <LoginPage />} />
-        <Route path="/admin/login" element={isAuthenticated && user ? <Navigate to={isAdmin ? '/admin/questions' : '/dashboard'} /> : <AdminLoginPage />} />
+        <Route path="/login" element={isAuthenticated && user ? <Navigate to={isAdmin ? '/admin/overview' : '/dashboard'} /> : <LoginPage />} />
+        <Route path="/admin/login" element={isAuthenticated && user ? <Navigate to={isAdmin ? '/admin/overview' : '/dashboard'} /> : <AdminLoginPage />} />
         <Route path="/register" element={isAuthenticated ? <Navigate to="/dashboard" /> : <RegisterPage />} />
 
         {/* Protected Routes */}
@@ -81,6 +82,7 @@ function App() {
           <Route path="/memory-challenge" element={<ForgettingCurvePage />} />
         </Route>
         <Route element={<AdminRoute />}>
+          <Route path="/admin/overview" element={<AdminDashboardPage />} />
           <Route path="/admin/questions" element={<AdminQuestionsPage />} />
           <Route path="/admin/pyq" element={<PyqAdminPage />} />
         </Route>
