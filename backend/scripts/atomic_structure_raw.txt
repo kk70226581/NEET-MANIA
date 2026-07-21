@@ -1,1197 +1,826 @@
 <USER_REQUEST>
-Atomic Structure - High-Quality Question Bank
-152 Original Questions | NCERT-Aligned | NEET + Selected JEE Main Level | Explanations Included
-Coverage: subatomic particles, Thomson and Rutherford models, electromagnetic radiation, photoelectric effect, atomic spectra, Bohr model, hydrogen-like ions, de Broglie relation, uncertainty principle, quantum-mechanical model, orbitals, nodes, quantum numbers, electronic configurations, magnetic behaviour and assertion-reason.
-NCERT reference: Class XI Chemistry, Unit 2 - Structure of Atom. Topic references are used because printed page numbers vary by edition.
-Design basis: Questions are original and shaped around recurring NEET and JEE patterns: spectral transitions, photoelectric reasoning, Bohr numericals, quantum-number counting, nodes, configurations and NCERT statement traps.
-1. Cathode rays are independent of the nature of the gas in the discharge tube because they are streams of:
-A. positively charged gas ions
-B. electrons present in all atoms
-C. neutral radiation
-D. protons emitted by the cathode
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Discovery of electron
-Explanation: The charge-to-mass ratio of cathode-ray particles is the same for different gases and electrodes.
-
-2. In a cathode-ray discharge experiment, the rays travel from:
-A. anode to cathode
-B. cathode to anode
-C. both electrodes toward the centre
-D. gas molecules to the cathode
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Cathode rays
-Explanation: Cathode rays originate at the negative electrode and move toward the anode.
-
-3. The value of e/m for the electron was determined by:
-A. Millikan
-B. J. J. Thomson
-C. Rutherford
-D. Chadwick
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Electron e/m
-Explanation: Thomson measured the charge-to-mass ratio using electric and magnetic deflection.
-
-4. Millikan’s oil-drop experiment directly determined the:
-A. mass of electron
-B. charge on electron
-C. charge-to-mass ratio
-D. radius of electron
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Charge of electron
-Explanation: Combining Millikan’s charge with Thomson’s e/m gives electron mass.
-
-5. Canal rays differ from cathode rays because canal-ray particles:
-A. are always electrons
-B. depend on the gas present
-C. have no mass
-D. are electromagnetic waves
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Discovery of proton
-Explanation: Positive ions in canal rays are formed from the gas, so their properties depend on it.
-
-6. The lightest positive particle observed in discharge-tube experiments is obtained from:
-A. helium
-B. hydrogen
-C. nitrogen
-D. oxygen
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Proton
-Explanation: The H+ ion is the proton and has the smallest mass among common positive ions.
-
-7. The neutron was discovered by:
-A. Rutherford
-B. Chadwick
-C. Bohr
-D. Goldstein
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Neutron
-Explanation: James Chadwick established the existence of the neutral nuclear particle.
-
-8. For the species ²³₁₁Na⁺, the numbers of protons, neutrons and electrons are:
-A. 11,12,10
-B. 11,11,12
-C. 12,11,10
-D. 10,12,11
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Atomic number and mass number
-Explanation: Protons = Z = 11, neutrons = A−Z = 12 and Na+ has 10 electrons.
-
-9. Two atoms are isotopes when they have the same:
-A. mass number but different atomic number
-B. atomic number but different mass number
-C. numbers of neutrons and electrons
-D. mass and chemical properties
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Isotopes
-Explanation: Isotopes have the same number of protons but different numbers of neutrons.
-
-10. Which pair represents isobars?
-A. ³⁵Cl and ³⁷Cl
-B. ⁴⁰Ar and ⁴⁰Ca
-C. ¹⁴C and ¹²C
-D. ²³Na and ²⁴Mg
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Isobars
-Explanation: Isobars have the same mass number but different atomic numbers.
-
-11. Which pair is isotonic?
-A. ¹⁴C and ¹⁵N
-B. ²³Na and ²⁴Mg
-C. ³⁵Cl and ³⁷Cl
-D. ⁴⁰Ar and ⁴⁰Ca
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Isotones
-Explanation: ²³Na has 12 neutrons and ²⁴Mg also has 12 neutrons.
-
-12. In Thomson’s atomic model, the atom was considered as:
-A. a tiny positive nucleus with orbiting electrons
-B. a positive sphere with electrons embedded in it
-C. a neutral nucleus surrounded by electron clouds
-D. a solid indivisible sphere
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Thomson model
-Explanation: Thomson proposed a uniformly positive sphere containing embedded electrons.
-
-13. The major conclusion from Rutherford’s alpha-scattering experiment was that:
-A. electrons are positively charged
-B. most of the atom is empty space
-C. positive charge is uniformly distributed
-D. all alpha particles are reflected
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Rutherford experiment
-Explanation: Most alpha particles passed undeflected, showing that most atomic volume is empty.
-
-14. The very small fraction of alpha particles undergoing large deflection indicates that:
-A. electrons are massive
-B. positive charge and mass are concentrated in a tiny nucleus
-C. the atom has no empty space
-D. alpha particles are negatively charged
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Rutherford experiment
-Explanation: Large-angle scattering requires a dense, strongly positive centre.
-
-15. Rutherford’s model could not explain the stability of an atom because a revolving electron should:
-A. gain mass continuously
-B. radiate energy and spiral into the nucleus
-C. become positively charged
-D. remain stationary by electrostatic attraction
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Limitation of Rutherford model
-Explanation: According to classical electrodynamics, an accelerating charge radiates energy.
-
-16. If the radius of a nucleus is about 10⁻¹⁵ m and that of an atom is about 10⁻¹⁰ m, the ratio of their radii is:
-A. 10⁻⁵
-B. 10⁻¹⁰
-C. 10⁵
-D. 10¹⁰
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Atomic dimensions
-Explanation: The nucleus is about 10⁵ times smaller in radius than the atom.
-
-17. The nuclear model explains alpha-particle scattering mainly through:
-A. gravitational attraction
-B. electrostatic repulsion
-C. magnetic attraction
-D. nuclear fusion
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Rutherford scattering
-Explanation: Both the alpha particle and nucleus are positively charged.
-
-18. An atom is electrically neutral when:
-A. neutrons equal electrons
-B. protons equal electrons
-C. protons equal neutrons
-D. mass number equals atomic number
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Atomic neutrality
-Explanation: Equal positive and negative charges cancel.
-
-19. The number of nucleons in an atom is equal to its:
-A. atomic number
-B. mass number
-C. number of electrons
-D. ionic charge
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mass number
-Explanation: Nucleons are protons plus neutrons, which equals A.
-
-20. A species has 18 electrons, 17 protons and 20 neutrons. It is:
-A. ³⁷Cl
-B. ³⁷Cl⁻
-C. ³⁸Ar
-D. ³⁵Cl⁻
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Atomic species
-Explanation: Z=17 identifies chlorine, A=37 and one extra electron gives −1 charge.
-
-21. The relation between frequency ν, wavelength λ and speed of light c in vacuum is:
-A. c=ν/λ
-B. c=νλ
-C. c=λ/ν
-D. ν=cλ
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Electromagnetic radiation
-Explanation: Wave speed equals frequency multiplied by wavelength.
-
-22. Which radiation has the highest frequency?
-A. infrared
-B. visible
-C. ultraviolet
-D. microwave
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Electromagnetic spectrum
-Explanation: Frequency increases from microwave to infrared to visible to ultraviolet.
-
-23. Energy of one photon is given by:
-A. h/ν
-B. hν
-C. hcν
-D. hλ
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Planck quantum theory
-Explanation: Planck proposed that radiation energy is quantized as E=hν.
-
-24. If the wavelength of radiation is halved, the energy per photon becomes:
-A. half
-B. double
-C. four times
-D. unchanged
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Photon energy
-Explanation: E=hc/λ, so energy is inversely proportional to wavelength.
-
-25. The energy of one mole of photons of frequency ν is:
-A. hν/Nₐ
-B. Nₐhν
-C. Nₐh/ν
-D. hc/ν
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molar photon energy
-Explanation: One mole contains Nₐ photons, each of energy hν.
-
-26. A 600 nm photon has lower energy than a 300 nm photon by a factor of:
-A. 2
-B. 1/2
-C. 4
-D. 1/4
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Photon energy
-Explanation: Since E∝1/λ, doubling wavelength halves energy.
-
-27. The photoelectric effect supports the:
-A. wave nature only
-B. particle nature of radiation
-C. nuclear model
-D. existence of neutrons
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Photoelectric effect
-Explanation: Energy is transferred in discrete photons.
-
-28. For a given metal, photoelectric emission occurs only when incident frequency is:
-A. below threshold frequency
-B. equal to zero
-C. at least the threshold frequency
-D. independent of threshold frequency
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Threshold frequency
-Explanation: A photon must supply at least the work function.
-
-29. Increasing the intensity of light above threshold frequency mainly increases the:
-A. maximum kinetic energy of electrons
-B. number of emitted electrons
-C. work function
-D. threshold frequency
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Photoelectric effect
-Explanation: Intensity increases photon flux, while photon energy is set by frequency.
-
-30. Increasing the frequency of incident light above threshold increases the:
-A. work function
-B. maximum kinetic energy of photoelectrons
-C. number of atoms in the metal
-D. threshold wavelength
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Einstein photoelectric equation
-Explanation: Einstein’s equation is Kmax=hν−φ.
-
-31. A metal has threshold frequency ν₀. Its work function is:
-A. h/ν₀
-B. hν₀
-C. hcν₀
-D. ν₀/h
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Work function
-Explanation: At threshold, photon energy just equals the work function.
-
-32. If incident photon energy is 5 eV and work function is 2 eV, the maximum kinetic energy is:
-A. 2 eV
-B. 3 eV
-C. 5 eV
-D. 7 eV
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Photoelectric equation
-Explanation: Kmax=5−2=3 eV.
-
-33. The stopping potential for photoelectrons of maximum kinetic energy 4 eV is:
-A. 0.25 V
-B. 2 V
-C. 4 V
-D. 8 V
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Stopping potential
-Explanation: For an electron, Kmax in eV is numerically equal to stopping potential in volts.
-
-34. A line emission spectrum is produced when excited atoms:
-A. absorb all wavelengths continuously
-B. emit radiation of discrete frequencies
-C. emit only white light
-D. lose electrons permanently
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Atomic spectra
-Explanation: Transitions between quantized levels release photons of specific energies.
-
-35. An absorption spectrum contains dark lines because atoms:
-A. emit selected frequencies
-B. absorb selected frequencies from continuous radiation
-C. scatter all wavelengths equally
-D. destroy photons of every frequency
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Absorption spectrum
-Explanation: Only photons matching allowed energy gaps are absorbed.
-
-36. The hydrogen spectrum is a line spectrum because electron energies are:
-A. continuous
-B. quantized
-C. zero
-D. independent of orbit
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hydrogen spectrum
-Explanation: Only definite energy differences and hence definite photon frequencies are allowed.
-
-37. The Balmer series of hydrogen lies mainly in the:
-A. infrared region
-B. visible region
-C. microwave region
+Chapter 2: Atomic Structure
+These are 100 original AIPMT–NEET PYQ-pattern questions. They are aligned with the NEET-UG 2026 Atomic Structure syllabus, including electromagnetic radiation, photoelectric effect, hydrogen spectrum, Bohr model, de Broglie relation, uncertainty principle, quantum-mechanical model, orbitals, quantum numbers and electronic configuration. (National Testing Agency)
+Use:
+[
+h=6.626\times10^{-34}\text{ J s},\quad
+c=3\times10^8\text{ m s}^{-1}
+]
+[
+R_H=1.097\times10^7\text{ m}^{-1},\quad
+m_e=9.1\times10^{-31}\text{ kg}
+]
+Electromagnetic radiation
+1. [NEET/AIPMT Pattern | Easy]
+The correct relation between wavelength, frequency and speed of light is:
+A. (c=\nu/\lambda)
+B. (c=\nu\lambda)
+C. (c=\lambda/\nu)
+D. (c=\nu+\lambda)
+Answer: B
+Explanation: Electromagnetic radiation travels with speed (c=\nu\lambda).
+2. [NEET/AIPMT Pattern | Medium]
+The frequency of radiation having wavelength (600) nm is:
+A. (5\times10^{14}\text{ s}^{-1})
+B. (2\times10^{14}\text{ s}^{-1})
+C. (5\times10^{12}\text{ s}^{-1})
+D. (2\times10^{16}\text{ s}^{-1})
+Answer: A
+Explanation: (\nu=c/\lambda=3\times10^8/(600\times10^{-9})).
+3. [NEET/AIPMT Pattern | Medium]
+The wavelength of radiation with frequency (6\times10^{14}\text{ s}^{-1}) is:
+A. (200) nm
+B. (300) nm
+C. (500) nm
+D. (600) nm
+Answer: C
+Explanation: (\lambda=c/\nu=5\times10^{-7}) m (=500) nm.
+4. [NEET/AIPMT Pattern | Easy]
+Which electromagnetic radiation has the highest frequency?
+A. Infrared
+B. Visible light
+C. Ultraviolet
+D. Microwave
+Answer: C
+Explanation: Frequency increases from microwave to infrared, visible and ultraviolet.
+5. [NEET/AIPMT Pattern | Easy]
+Which radiation has the longest wavelength?
+A. X-rays
+B. Ultraviolet rays
+C. Microwaves
+D. Gamma rays
+Answer: C
+Explanation: Microwaves have much longer wavelengths than UV, X-rays and gamma rays.
+6. [NEET/AIPMT Pattern | Medium]
+The energy of one photon of frequency (5\times10^{14}\text{ s}^{-1}) is approximately:
+A. (3.31\times10^{-19}) J
+B. (6.63\times10^{-20}) J
+C. (1.33\times10^{-18}) J
+D. (5.00\times10^{-14}) J
+Answer: A
+Explanation: (E=h\nu=6.626\times10^{-34}\times5\times10^{14}).
+7. [NEET/AIPMT Pattern | Medium]
+The energy of a photon of wavelength (400) nm is approximately:
+A. (2.5\times10^{-19}) J
+B. (5.0\times10^{-19}) J
+C. (7.5\times10^{-19}) J
+D. (1.0\times10^{-18}) J
+Answer: B
+Explanation: (E=hc/\lambda\approx4.97\times10^{-19}) J.
+8. [NEET/AIPMT Pattern | Medium]
+The energy of one mole of photons of wavelength (500) nm is approximately:
+A. (120\text{ kJ mol}^{-1})
+B. (240\text{ kJ mol}^{-1})
+C. (360\text{ kJ mol}^{-1})
+D. (500\text{ kJ mol}^{-1})
+Answer: B
+Explanation: (N_Ahc/\lambda\approx239\text{ kJ mol}^{-1}).
+9. [NEET/AIPMT Pattern | Medium]
+If the frequency of radiation is doubled, the energy of each photon becomes:
+A. Half
+B. Double
+C. Four times
+D. Unchanged
+Answer: B
+Explanation: Photon energy is directly proportional to frequency.
+10. [NEET/AIPMT Pattern | Medium]
+If the wavelength of radiation is doubled, its photon energy becomes:
+A. Half
+B. Double
+C. Four times
+D. Unchanged
+Answer: A
+Explanation: (E=hc/\lambda), so energy is inversely proportional to wavelength.
+11. [NEET/AIPMT Pattern | Easy]
+The wave number of radiation is defined as:
+A. (\lambda)
+B. (1/\lambda)
+C. (\nu\lambda)
+D. (h\nu)
+Answer: B
+Explanation: Wave number is the number of waves per unit length.
+12. [NEET/AIPMT Pattern | Medium]
+The wave number of radiation of wavelength (500) nm is:
+A. (2\times10^4\text{ m}^{-1})
+B. (2\times10^5\text{ m}^{-1})
+C. (2\times10^6\text{ m}^{-1})
+D. (5\times10^6\text{ m}^{-1})
+Answer: C
+Explanation: (\bar\nu=1/(500\times10^{-9})=2\times10^6\text{ m}^{-1}).
+13. [NEET/AIPMT Pattern | Easy]
+According to Planck’s quantum theory, radiant energy is emitted or absorbed:
+A. Continuously in any amount
+B. In discrete packets called quanta
+C. Only as particles with mass
+D. Only by charged atoms
+Answer: B
+Explanation: Energy exchange occurs in packets of magnitude (h\nu).
+14. [NEET/AIPMT Pattern | Medium]
+Two radiations have wavelengths (\lambda) and (2\lambda). Their photon energies are in the ratio:
+A. (1:1)
+B. (1:2)
+C. (2:1)
+D. (4:1)
+Answer: C
+Explanation: Photon energy is inversely proportional to wavelength.
+15. [NEET/AIPMT Pattern | Medium]
+The number of photons present in (3.98) J of (500) nm light is approximately:
+A. (10^{18})
+B. (10^{19})
+C. (10^{20})
+D. (10^{23})
+Answer: B
+Explanation: One photon has energy about (3.98\times10^{-19}) J, giving (10^{19}) photons.
+The electromagnetic-radiation and quantum topics above are explicitly included in the official syllabus. (National Testing Agency)
+Photoelectric effect
+16. [NEET/AIPMT Pattern | Easy]
+Photoelectric emission occurs only when the incident radiation has frequency:
+A. Lower than threshold frequency
+B. Equal to or greater than threshold frequency
+C. Independent of threshold frequency
+D. Equal to zero
+Answer: B
+Explanation: A minimum photon energy is required to remove an electron.
+17. [NEET/AIPMT Pattern | Easy]
+The minimum frequency required for photoelectric emission is called:
+A. Resonance frequency
+B. Threshold frequency
+C. Orbital frequency
+D. Wave number
+Answer: B
+Explanation: Below the threshold frequency, photoelectrons are not emitted.
+18. [NEET/AIPMT Pattern | Medium]
+The work function of a metal is equal to:
+A. (h/\nu_0)
+B. (h\nu_0)
+C. (hc\nu_0)
+D. (h\lambda_0)
+Answer: B
+Explanation: (\phi=h\nu_0), where (\nu_0) is the threshold frequency.
+19. [NEET/AIPMT Pattern | Medium]
+Einstein’s photoelectric equation is:
+A. (h\nu=\phi-K_{\max})
+B. (h\nu=\phi+K_{\max})
+C. (h\nu=K_{\max}-\phi)
+D. (h\nu=\phi K_{\max})
+Answer: B
+Explanation: Photon energy is used to overcome the work function and provide kinetic energy.
+20. [NEET/AIPMT Pattern | Medium]
+Increasing the intensity of light above threshold frequency primarily increases:
+A. Maximum kinetic energy of electrons
+B. Number of emitted photoelectrons
+C. Work function
+D. Threshold frequency
+Answer: B
+Explanation: Greater intensity means more photons striking the surface per unit time.
+21. [NEET/AIPMT Pattern | Medium]
+Increasing the frequency of incident light above threshold primarily increases:
+A. Number of atoms in the metal
+B. Maximum kinetic energy of photoelectrons
+C. Work function
+D. Electron charge
+Answer: B
+Explanation: (K_{\max}=h\nu-\phi).
+22. [NEET/AIPMT Pattern | Medium]
+A metal has threshold frequency (4\times10^{14}\text{ s}^{-1}). It is irradiated with light of frequency (6\times10^{14}\text{ s}^{-1}). The maximum kinetic energy is:
+A. (6.626\times10^{-20}) J
+B. (1.325\times10^{-19}) J
+C. (2.650\times10^{-19}) J
+D. (3.975\times10^{-19}) J
+Answer: B
+Explanation: (K_{\max}=h(\nu-\nu_0)=h(2\times10^{14})).
+23. [NEET/AIPMT Pattern | Medium]
+If incident light has exactly the threshold frequency, the maximum kinetic energy of emitted electrons is:
+A. Zero
+B. (h\nu)
+C. Equal to work function
+D. Infinite
+Answer: A
+Explanation: All photon energy is used to overcome the work function.
+24. [NEET/AIPMT Pattern | Medium]
+Light of frequency below the threshold is made extremely intense. Photoelectric emission will:
+A. Occur with high kinetic energy
+B. Occur after a time delay
+C. Not occur
+D. Increase the work function
+Answer: C
+Explanation: Each photon individually lacks sufficient energy.
+25. [NEET/AIPMT Pattern | Easy]
+The photoelectric effect supports the:
+A. Purely wave nature of light
+B. Particle nature of light
+C. Nuclear model of atom
+D. Existence of neutrons
+Answer: B
+Explanation: Light transfers energy through individual photons.
+Hydrogen spectrum and Bohr model
+26. [NEET/AIPMT Pattern | Easy]
+The line spectrum of hydrogen arises because electrons:
+A. Can possess any energy
+B. Occupy only discrete energy levels
+C. Remain stationary in the nucleus
+D. Emit radiation continuously
+Answer: B
+Explanation: Each spectral line corresponds to a transition between fixed energy levels.
+27. [NEET/AIPMT Pattern | Easy]
+The Lyman series of hydrogen lies in the:
+A. Infrared region
+B. Visible region
+C. Ultraviolet region
+D. Microwave region
+Answer: C
+Explanation: Lyman transitions terminate at (n=1).
+28. [NEET/AIPMT Pattern | Easy]
+The Balmer series lies mainly in the:
+A. Visible region
+B. Ultraviolet region
+C. Microwave region
+D. Radio-wave region
+Answer: A
+Explanation: Balmer transitions terminate at (n=2).
+29. [NEET/AIPMT Pattern | Easy]
+The Paschen series lies in the:
+A. Ultraviolet region
+B. Visible region
+C. Infrared region
 D. X-ray region
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hydrogen spectral series
-Explanation: Balmer transitions terminate at n=2 and include visible lines.
-
-38. The Lyman series corresponds to transitions ending at:
-A. n=1
-B. n=2
-C. n=3
-D. n=4
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hydrogen spectral series
-Explanation: All Lyman transitions terminate in the ground level.
-
-39. The Paschen series corresponds to transitions ending at:
-A. n=1
-B. n=2
-C. n=3
-D. n=4
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hydrogen spectral series
-Explanation: Paschen lines arise from transitions to n=3.
-
-40. For a fixed lower level in hydrogen, the series-limit line has:
-A. minimum frequency
-B. maximum wavelength
-C. maximum frequency
-D. zero energy
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Series limit
-Explanation: The series limit corresponds to n₂→∞ and the largest possible energy gap for that series.
-
-41. According to Bohr, the angular momentum of an electron in the nth orbit is:
-A. nh
-B. nh/2π
-C. h/2πn
-D. 2πnh
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bohr postulate
-Explanation: Bohr quantized angular momentum as mvr=nh/2π.
-
-42. For a hydrogen-like species, radius of the nth orbit is proportional to:
-A. n/Z
-B. n²/Z
-C. Z/n²
-D. 1/nZ
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bohr radius
-Explanation: rₙ=a₀n²/Z.
-
-43. The radius of the second orbit of He⁺ relative to the first orbit of H is:
-A. 1/2
-B. 1
-C. 2
-D. 4
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bohr radius
-Explanation: r= a₀n²/Z = a₀×4/2 =2a₀.
-
-44. The energy of an electron in a hydrogen-like ion is proportional to:
-A. −Z/n²
-B. −Z²/n²
-C. −n²/Z²
-D. Z²n²
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bohr energy
-Explanation: Eₙ=−13.6Z²/n² eV.
-
-45. The ground-state energy of He⁺ is:
-A. −13.6 eV
-B. −27.2 eV
-C. −54.4 eV
-D. −108.8 eV
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hydrogen-like ions
-Explanation: For Z=2 and n=1, E=−13.6×4=−54.4 eV.
-
-46. Energy required to ionize H atom from n=2 is:
-A. 3.4 eV
-B. 10.2 eV
-C. 13.6 eV
-D. 27.2 eV
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Ionization energy
-Explanation: The electron at n=2 has energy −3.4 eV, so 3.4 eV is required.
-
-47. The excitation energy for H atom from n=1 to n=2 is:
-A. 3.4 eV
-B. 10.2 eV
-C. 12.1 eV
-D. 13.6 eV
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Excitation energy
-Explanation: ΔE=−3.4−(−13.6)=10.2 eV.
-
-48. The wavelength of radiation emitted in a transition is longest for:
-A. n=2→1
-B. n=3→1
-C. n=4→1
-D. n=3→2
-Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hydrogen transitions
-Explanation: The 3→2 transition has the smallest energy difference among the options.
-
-49. Among transitions 4→3, 3→2, 2→1 and 4→1, the highest-frequency photon is emitted in:
-A. 4→3
-B. 3→2
-C. 2→1
-D. 4→1
-Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hydrogen transitions
-Explanation: The largest energy drop produces the highest frequency.
-
-50. The number of spectral lines possible when an electron initially in n=5 returns to the ground state through all possible paths is:
-A. 4
-B. 5
-C. 10
-D. 20
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Number of spectral lines
-Explanation: Number of possible transitions is n(n−1)/2=10.
-
-51. An electron excited to n=4 can emit a maximum of how many different lines?
-A. 3
-B. 4
-C. 6
-D. 10
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Number of spectral lines
-Explanation: 4×3/2=6 transitions are possible.
-
-52. The ratio of radii of second and first Bohr orbits of hydrogen is:
-A. 2:1
-B. 4:1
-C. 1:4
-D. 8:1
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bohr radius
-Explanation: Radius varies as n².
-
-53. The ratio of speeds of electron in the first and third Bohr orbits of H is:
-A. 1:3
-B. 3:1
-C. 1:9
-D. 9:1
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bohr velocity
-Explanation: For fixed Z, vₙ∝1/n.
-
-54. The kinetic energy of the electron in the nth Bohr orbit is:
-A. equal to total energy
-B. negative of total energy
-C. twice total energy
-D. zero
-Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Bohr energetics
-Explanation: For Coulombic orbits, K=−E and potential energy U=2E.
-
-55. The potential energy of an electron in a Bohr orbit is related to its total energy E by:
-A. U=E
-B. U=−E
-C. U=2E
-D. U=−2E
-Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Bohr energetics
-Explanation: For a Coulomb-bound system, U=2E.
-
-56. Ionization energy of He⁺ from its first excited state is:
-A. 3.4 eV
-B. 13.6 eV
-C. 27.2 eV
-D. 54.4 eV
-Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Hydrogen-like ions
-Explanation: For Z=2, n=2: |E|=13.6×4/4=13.6 eV.
-
-57. The wavenumber of a hydrogen spectral line is expressed by:
-A. R(1/n₂²−1/n₁²)
-B. R(1/n₁²−1/n₂²)
-C. R(n₂²−n₁²)
-D. R/(n₁+n₂)
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Rydberg equation
-Explanation: For emission n₂>n₁, ṽ=R(1/n₁²−1/n₂²).
-
-58. The shortest wavelength in the Balmer series corresponds to:
-A. 3→2
-B. 4→2
-C. ∞→2
-D. 2→1
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Balmer series
-Explanation: The series limit has the maximum energy and minimum wavelength.
-
-59. The longest wavelength in the Lyman series corresponds to:
-A. 2→1
-B. 3→1
-C. ∞→1
-D. 3→2
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lyman series
-Explanation: The smallest Lyman energy gap is 2→1.
-
-60. The ratio of ionization energies of H and He⁺ in their ground states is:
-A. 1:1
-B. 1:2
-C. 1:4
-D. 4:1
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hydrogen-like species
-Explanation: Ionization energy varies as Z² for ground-state hydrogen-like ions.
-
-61. Which transition in H atom emits a photon of energy 12.09 eV?
-A. 2→1
-B. 3→1
-C. 4→2
-D. 3→2
-Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Hydrogen transitions
-Explanation: E₃−E₁=−1.51−(−13.6)=12.09 eV.
-
-62. Bohr’s model is most successful for:
-A. multi-electron atoms
-B. hydrogen and hydrogen-like ions
-C. molecules only
-D. all atoms equally
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Limitations of Bohr model
-Explanation: The model accurately treats one-electron species.
-
-63. Bohr’s model fails to explain:
-A. hydrogen line spectrum
-B. stability of hydrogen atom
-C. fine structure and Zeeman effect
-D. quantized energy levels in H
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Limitations of Bohr model
-Explanation: It cannot explain splitting and detailed spectra of multi-electron atoms.
-
-64. The frequency of revolution of an electron in a Bohr orbit varies with n as:
-A. n
-B. 1/n
-C. 1/n²
-D. 1/n³
-Answer: D  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Bohr model
-Explanation: v∝1/n and r∝n², so frequency v/2πr∝1/n³.
-
-65. For hydrogen-like species, the product of orbital radius and magnitude of energy is proportional to:
-A. n²
-B. Z
-C. Z²
-D. independent of n and Z
-Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Bohr model
-Explanation: r∝n²/Z and |E|∝Z²/n², so r|E|∝Z.
-
-66. The de Broglie wavelength of a particle is:
-A. h/p
-B. p/h
-C. hv
-D. mc²
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: de Broglie relation
+Answer: C
+Explanation: Paschen transitions terminate at (n=3).
+30. [NEET/AIPMT Pattern | Medium]
+The first line of the Balmer series corresponds to:
+A. (n=2\rightarrow1)
+B. (n=3\rightarrow2)
+C. (n=4\rightarrow2)
+D. (n=4\rightarrow3)
+Answer: B
+Explanation: The first Balmer line has the smallest energy transition ending at (n=2).
+31. [NEET/AIPMT Pattern | Medium]
+The second line of the Lyman series corresponds to:
+A. (n=2\rightarrow1)
+B. (n=3\rightarrow1)
+C. (n=3\rightarrow2)
+D. (n=4\rightarrow2)
+Answer: B
+Explanation: The first and second Lyman lines are (2\rightarrow1) and (3\rightarrow1).
+32. [NEET/AIPMT Pattern | Medium]
+The Rydberg equation for hydrogen emission is:
+A. (\bar\nu=R_H(1/n_2^2-1/n_1^2))
+B. (\bar\nu=R_H(1/n_1^2-1/n_2^2)), (n_2>n_1)
+C. (\bar\nu=R_H(n_2^2-n_1^2))
+D. (\bar\nu=R_H(n_1-n_2))
+Answer: B
+Explanation: The lower-energy level is represented by (n_1).
+33. [NEET/AIPMT Pattern | Medium]
+The longest wavelength in the Balmer series corresponds to:
+A. (3\rightarrow2)
+B. (4\rightarrow2)
+C. (5\rightarrow2)
+D. (\infty\rightarrow2)
+Answer: A
+Explanation: Longest wavelength corresponds to the smallest energy difference.
+34. [NEET/AIPMT Pattern | Medium]
+The shortest wavelength in the Balmer series corresponds to:
+A. (3\rightarrow2)
+B. (4\rightarrow2)
+C. (5\rightarrow2)
+D. (\infty\rightarrow2)
+Answer: D
+Explanation: The series limit has the maximum transition energy.
+35. [NEET/AIPMT Pattern | Medium]
+The ratio of wavelengths of the first Lyman line to the first Balmer line is:
+A. (5:27)
+B. (27:5)
+C. (4:9)
+D. (9:4)
+Answer: A
+Explanation: Using the Rydberg equation gives (\lambda_L/\lambda_B=5/27).
+36. [NEET/AIPMT Pattern | Easy]
+According to Bohr, the angular momentum of an electron is:
+A. (nh)
+B. (nh/2\pi)
+C. (h/n)
+D. (2\pi nh)
+Answer: B
+Explanation: Allowed angular momentum values are integral multiples of (h/2\pi).
+37. [NEET/AIPMT Pattern | Medium]
+The radius of the (n^\text{th}) Bohr orbit of a hydrogen-like species is proportional to:
+A. (n/Z)
+B. (n^2/Z)
+C. (Z/n^2)
+D. (Z^2/n)
+Answer: B
+Explanation: (r_n=a_0n^2/Z).
+38. [NEET/AIPMT Pattern | Medium]
+The energy of an electron in the (n^\text{th}) orbit of a hydrogen-like species is proportional to:
+A. (-Z/n^2)
+B. (-Z^2/n^2)
+C. (-n^2/Z)
+D. (Z^2n^2)
+Answer: B
+Explanation: (E_n=-13.6Z^2/n^2) eV.
+39. [NEET/AIPMT Pattern | Easy]
+The energy of an electron in the ground state of hydrogen is:
+A. (-3.4) eV
+B. (-13.6) eV
+C. (+13.6) eV
+D. (0) eV
+Answer: B
+Explanation: For hydrogen, (E_1=-13.6) eV.
+40. [NEET/AIPMT Pattern | Medium]
+The energy of an electron in the second orbit of hydrogen is:
+A. (-13.6) eV
+B. (-6.8) eV
+C. (-3.4) eV
+D. (-1.51) eV
+Answer: C
+Explanation: (E_2=-13.6/4=-3.4) eV.
+41. [NEET/AIPMT Pattern | Medium]
+The ionisation energy of ground-state hydrogen is:
+A. (3.4) eV
+B. (10.2) eV
+C. (13.6) eV
+D. (27.2) eV
+Answer: C
+Explanation: Removing the electron from (n=1) to (n=\infty) requires (13.6) eV.
+42. [NEET/AIPMT Pattern | Medium]
+The excitation energy required to move an electron in hydrogen from (n=1) to (n=2) is:
+A. (3.4) eV
+B. (6.8) eV
+C. (10.2) eV
+D. (13.6) eV
+Answer: C
+Explanation: ((-3.4)-(-13.6)=10.2) eV.
+43. [NEET/AIPMT Pattern | Medium]
+The energy of the ground state of (He^+) is:
+A. (-13.6) eV
+B. (-27.2) eV
+C. (-54.4) eV
+D. (-108.8) eV
+Answer: C
+Explanation: (E_1=-13.6Z^2=-13.6(4)).
+44. [NEET/AIPMT Pattern | Medium]
+The radius of the first orbit of (He^+) relative to hydrogen is:
+A. Twice
+B. Half
+C. Four times
+D. One-fourth
+Answer: B
+Explanation: Ground-state radius is inversely proportional to nuclear charge.
+45. [NEET/AIPMT Pattern | Medium]
+The ratio of radii of the second orbit of hydrogen and the first orbit of (He^+) is:
+A. (2:1)
+B. (4:1)
+C. (8:1)
+D. (1:8)
+Answer: C
+Explanation: (r\propto n^2/Z), so ratio (=(4/1):(1/2)=8:1).
+46. [NEET/AIPMT Pattern | Medium]
+The velocity of an electron in a Bohr orbit is proportional to:
+A. (n/Z)
+B. (Z/n)
+C. (n^2/Z)
+D. (Z^2/n^2)
+Answer: B
+Explanation: Electron speed in a hydrogen-like ion varies as (Z/n).
+47. [NEET/AIPMT Pattern | Medium]
+When an electron moves from (n=4) to (n=2) in hydrogen, the emitted line belongs to:
+A. Lyman series
+B. Balmer series
+C. Paschen series
+D. Brackett series
+Answer: B
+Explanation: All transitions ending at (n=2) belong to the Balmer series.
+48. [NEET/AIPMT Pattern | Medium]
+An electron in hydrogen is excited to (n=4). The maximum number of spectral lines possible during de-excitation is:
+A. (3)
+B. (4)
+C. (6)
+D. (10)
+Answer: C
+Explanation: Number of possible lines (=n(n-1)/2=4\times3/2=6).
+49. [NEET/AIPMT Pattern | Medium]
+If an electron is excited to the fifth shell, the maximum number of emission lines is:
+A. (5)
+B. (8)
+C. (10)
+D. (15)
+Answer: C
+Explanation: (5(5-1)/2=10).
+50. [NEET/AIPMT Pattern | Medium]
+Bohr’s model successfully explains the spectrum of:
+A. All multi-electron atoms
+B. Hydrogen and hydrogen-like species
+C. Molecules only
+D. Solids only
+Answer: B
+Explanation: Electron–electron interactions make the model unsuitable for multi-electron atoms.
+Hydrogen spectrum, Bohr relations and limitations of the Bohr model form part of the prescribed syllabus. (National Testing Agency)
+Dual nature and uncertainty principle
+51. [NEET/AIPMT Pattern | Easy]
+The de Broglie wavelength of a moving particle is:
+A. (p/h)
+B. (h/p)
+C. (hp)
+D. (h+p)
+Answer: B
 Explanation: Matter wavelength is inversely proportional to momentum.
-
-67. For particles moving with the same velocity, the largest de Broglie wavelength belongs to the:
-A. proton
-B. neutron
-C. electron
-D. alpha particle
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: de Broglie wavelength
-Explanation: At equal velocity, λ=h/mv, so the lightest particle has the largest wavelength.
-
-68. For an electron accelerated through potential V, de Broglie wavelength is proportional to:
-A. V
-B. 1/V
-C. √V
-D. 1/√V
-Answer: D  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Electron wavelength
-Explanation: K=eV and λ=h/√(2meV).
-
-69. If momentum of a particle doubles, its de Broglie wavelength becomes:
-A. double
-B. half
-C. four times
-D. unchanged
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: de Broglie relation
-Explanation: λ=h/p.
-
-70. The wave nature of electrons was experimentally verified by:
-A. Millikan experiment
-B. Davisson–Germer experiment
-C. Rutherford scattering
-D. photoelectric effect
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Matter waves
-Explanation: Electron diffraction confirmed de Broglie’s prediction.
-
-71. Heisenberg’s uncertainty principle states that it is impossible to determine simultaneously with arbitrary precision the:
-A. mass and charge
-B. position and momentum
-C. energy and charge
-D. speed and mass
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Uncertainty principle
-Explanation: The product of position and momentum uncertainties has a non-zero lower bound.
-
-72. If uncertainty in position decreases, uncertainty in momentum generally:
-A. decreases
-B. increases
-C. remains unchanged
-D. becomes zero
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Uncertainty principle
-Explanation: ΔxΔp≥h/4π.
-
-73. The uncertainty principle is significant mainly for:
-A. macroscopic bodies
-B. microscopic particles
-C. stationary buildings
-D. planetary motion only
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Uncertainty principle
-Explanation: The minimum uncertainty is negligible for large masses but important at atomic scale.
-
-74. An electron cannot be described as moving in a definite classical orbit because:
-A. it has no mass
-B. its exact position and momentum cannot be known simultaneously
-C. it is positively charged
-D. it has no wave nature
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Quantum mechanical model
-Explanation: A precise classical trajectory conflicts with the uncertainty principle.
-
-75. If the uncertainty in velocity of a particle is fixed, uncertainty in position is inversely proportional to its:
-A. charge
-B. mass
-C. volume
-D. density only
-Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Uncertainty principle
-Explanation: Δx≥h/(4πmΔv).
-
-76. An atomic orbital is best described as:
-A. a fixed circular path
-B. a one-electron wave function
-C. the nucleus of an atom
-D. a region where electron probability is exactly 100%
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Atomic orbital
-Explanation: In quantum mechanics, an orbital is a one-electron wave function.
-
-77. The physical significance of ψ² is:
-A. electron charge
-B. probability density
-C. electron mass
-D. orbital energy only
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Wave function
-Explanation: The square of the wave function gives probability density.
-
-78. The principal quantum number mainly determines the orbital’s:
-A. orientation only
-B. size and energy
-C. spin only
-D. shape only
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Principal quantum number
-Explanation: n identifies the shell and largely controls size and energy.
-
-79. For n=4, the allowed values of l are:
-A. 0,1,2
-B. 1,2,3,4
-C. 0,1,2,3
-D. −3 to +3
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Azimuthal quantum number
-Explanation: l ranges from 0 to n−1.
-
-80. For l=2, the subshell is designated:
-A. s
-B. p
-C. d
-D. f
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Subshell notation
-Explanation: l=0,1,2,3 correspond to s,p,d,f.
-
-81. For a p subshell, the possible mₗ values are:
-A. 0 only
-B. −1,0,+1
-C. −2 to +2
-D. −3 to +3
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Magnetic quantum number
-Explanation: mₗ ranges from −l to +l.
-
-82. The number of orbitals in a d subshell is:
-A. 3
-B. 5
-C. 7
-D. 10
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Number of orbitals
-Explanation: For l=2, 2l+1=5 orbitals.
-
-83. The maximum number of electrons in an f subshell is:
-A. 7
-B. 10
-C. 14
-D. 18
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Subshell capacity
-Explanation: Seven orbitals can each hold two electrons.
-
-84. The total number of orbitals in the shell n=4 is:
-A. 4
-B. 8
-C. 16
-D. 32
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Shell capacity
-Explanation: A shell contains n² orbitals.
-
-85. The maximum number of electrons in the shell n=5 is:
-A. 10
-B. 18
-C. 25
-D. 50
-Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Shell capacity
-Explanation: Maximum electrons =2n²=50.
-
-86. Which set of quantum numbers is not allowed?
-A. n=3,l=2,mₗ=−2
-B. n=2,l=1,mₗ=0
-C. n=3,l=3,mₗ=0
-D. n=4,l=0,mₗ=0
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Allowed quantum numbers
-Explanation: For n=3, l can only be 0,1 or 2.
-
-87. Which set can represent a 3p electron?
-A. n=3,l=1,mₗ=0
-B. n=3,l=2,mₗ=1
-C. n=2,l=1,mₗ=0
-D. n=3,l=0,mₗ=0
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Quantum numbers
-Explanation: A 3p electron has n=3 and l=1.
-
-88. The number of orbitals with n=4 and l=2 is:
-A. 2
-B. 3
-C. 5
-D. 10
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Quantum numbers
-Explanation: This is the 4d subshell, containing five orbitals.
-
-89. The number of orbitals with n=5 and mₗ=0 is:
-A. 1
-B. 3
-C. 5
-D. 9
-Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Quantum numbers
-Explanation: For l=0,1,2,3,4 there is one orbital with mₗ=0, giving five.
-
-90. The number of orbitals in n=4 having mₗ=+1 is:
-A. 1
-B. 2
-C. 3
-D. 4
-Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Quantum numbers
-Explanation: l=1,2,3 each allows mₗ=+1, so there are three.
-
-91. The total number of nodes in a 4p orbital is:
-A. 1
-B. 2
-C. 3
-D. 4
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Nodes
-Explanation: Total nodes=n−1=3.
-
-92. The number of radial nodes in a 4p orbital is:
-A. 1
-B. 2
-C. 3
-D. 4
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Radial nodes
-Explanation: Radial nodes=n−l−1=4−1−1=2.
-
-93. The number of angular nodes in a 3d orbital is:
-A. 0
-B. 1
-C. 2
-D. 3
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Angular nodes
-Explanation: Angular nodes equal l=2.
-
-94. The 2s orbital has:
-A. no node
-B. one radial node
-C. one angular node
-D. two radial nodes
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Nodes
-Explanation: For 2s, radial nodes=2−0−1=1.
-
-95. Which orbital has no radial node?
-A. 2s
-B. 2p
-C. 3s
-D. 3p
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Radial nodes
-Explanation: For 2p, n−l−1=2−1−1=0.
-
-96. The shape of an s orbital is:
-A. dumb-bell
-B. spherical
-C. double dumb-bell
-D. toroidal only
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Orbital shapes
-Explanation: All s orbitals are spherically symmetric.
-
-97. A p orbital has a nodal plane passing through the:
-A. outer boundary only
-B. nucleus
-C. maximum-probability point only
-D. electron path
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: p orbital shape
-Explanation: Its two lobes have opposite phases separated by a plane through the nucleus.
-
-98. The three 2p orbitals differ mainly in their:
-A. energy in an isolated atom
-B. size
-C. orientation in space
-D. number of radial nodes
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: p orbitals
-Explanation: They are degenerate but oriented along different axes.
-
-99. The d orbital that has a torus around the z-axis is:
-A. dxy
-B. dx²−y²
-C. dz²
-D. dyz
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: d orbital shapes
-Explanation: dz² has two lobes along z and a ring in the xy plane.
-
-100. In a many-electron atom, orbital energy generally depends on:
-A. n only
-B. l only
-C. both n and l
-D. mₗ only
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Orbital energies
-Explanation: Shielding and penetration split subshells of the same shell.
-
-101. For the same principal shell, penetration generally decreases in the order:
-A. s>p>d>f
-B. f>d>p>s
-C. p>s>d>f
-D. d>p>s>f
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Penetration
-Explanation: s orbitals penetrate closest to the nucleus most strongly.
-
-102. Aufbau principle states that electrons occupy orbitals in order of:
-A. decreasing energy
-B. increasing energy
-C. increasing mₗ only
-D. decreasing n only
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Aufbau principle
-Explanation: Lower-energy orbitals fill before higher-energy orbitals.
-
-103. According to the (n+l) rule, which orbital fills first?
-A. 4s before 3d
-B. 3d before 4s
-C. 4p before 3d
-D. 5s before 4p
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: n+l rule
-Explanation: 4s has n+l=4 whereas 3d has n+l=5.
-
-104. If two orbitals have equal n+l, the one with lower energy has:
-A. larger n
-B. smaller n
-C. larger l
-D. larger mₗ
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: n+l rule
-Explanation: For equal n+l, the orbital with smaller n fills first.
-
-105. Pauli exclusion principle states that no two electrons in an atom can have:
-A. the same n
-B. the same spin
-C. the same set of four quantum numbers
-D. the same l
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Pauli exclusion principle
-Explanation: At least one quantum number must differ for any pair of electrons.
-
-106. Hund’s rule requires electrons to occupy degenerate orbitals:
-A. in pairs first
-B. singly with parallel spins before pairing
-C. with opposite spins singly
-D. randomly
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hund rule
-Explanation: This maximizes the number of unpaired electrons and total spin.
-
-107. The ground-state configuration of nitrogen is:
-A. 1s²2s²2p³
-B. 1s²2s²2p⁵
-C. 1s²2s¹2p⁴
-D. 1s²2p⁵
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Electronic configuration
-Explanation: Nitrogen has seven electrons and three singly occupied 2p orbitals.
-
-108. The number of unpaired electrons in ground-state oxygen is:
-A. 0
-B. 1
-C. 2
-D. 4
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hund rule
-Explanation: 2p⁴ distributes as one pair and two unpaired electrons.
-
-109. The number of unpaired electrons in F atom is:
-A. 0
-B. 1
-C. 2
-D. 3
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Electronic configuration
-Explanation: 2p⁵ leaves one singly occupied p orbital.
-
-110. The electronic configuration of Cr is:
-A. [Ar]3d⁴4s²
-B. [Ar]3d⁵4s¹
-C. [Ar]3d⁶
-D. [Ar]3d³4s³
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Exceptional configuration
-Explanation: A half-filled 3d subshell gives extra stability.
-
-111. The electronic configuration of Cu is:
-A. [Ar]3d⁹4s²
-B. [Ar]3d¹⁰4s¹
-C. [Ar]3d⁸4s³
-D. [Ar]3d¹⁰4s²
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Exceptional configuration
-Explanation: A completely filled 3d subshell is especially stable.
-
-112. The configuration of Fe²⁺ is:
-A. [Ar]3d⁶
-B. [Ar]3d⁴4s²
-C. [Ar]3d⁵4s¹
-D. [Ar]3d⁸
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Ionic configuration
-Explanation: 4s electrons are removed before 3d electrons in transition-metal ions.
-
-113. The configuration of Fe³⁺ is:
-A. [Ar]3d³
-B. [Ar]3d⁵
-C. [Ar]3d⁶
-D. [Ar]4s¹3d⁴
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Ionic configuration
-Explanation: Fe loses two 4s electrons and one 3d electron, giving half-filled 3d⁵.
-
-114. Which ion has a completely filled 3d subshell?
-A. Fe²⁺
-B. Cu⁺
-C. Mn²⁺
-D. Cr³⁺
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Ionic configuration
-Explanation: Cu is [Ar]3d¹⁰4s¹; Cu+ is [Ar]3d¹⁰.
-
-115. The number of unpaired electrons in Mn²⁺ is:
-A. 1
-B. 3
-C. 5
-D. 0
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Electronic configuration
-Explanation: Mn²⁺ is [Ar]3d⁵ with five parallel unpaired electrons.
-
-116. Which species is diamagnetic?
-A. N atom
-B. O atom
-C. Na atom
-D. Zn²⁺
-Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Magnetic behaviour
-Explanation: Zn²⁺ has [Ar]3d¹⁰ with all electrons paired.
-
-117. The maximum number of electrons having n=3 and l=1 is:
-A. 2
-B. 6
-C. 10
-D. 14
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Quantum-number capacity
-Explanation: These are 3p electrons; three orbitals hold six electrons.
-
-118. The maximum number of electrons in an atom with n=4 and mₛ=+1/2 is:
-A. 8
-B. 16
-C. 18
-D. 32
-Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Quantum-number capacity
-Explanation: There are 16 orbitals in n=4, each can contain one spin-up electron.
-
-119. The maximum number of electrons with n=4 and l=3 is:
-A. 7
-B. 14
-C. 16
-D. 32
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Quantum-number capacity
-Explanation: The 4f subshell contains seven orbitals and holds 14 electrons.
-
-120. How many electrons in a completely filled n=3 shell have mₗ=0?
-A. 2
-B. 4
-C. 6
-D. 8
-Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Quantum numbers
-Explanation: 3s contributes 2, 3p one mₗ=0 orbital contributes 2, and 3d contributes 2: total 6.
-
-121. How many electrons in a filled 3d subshell have mₛ=+1/2?
-A. 2
-B. 5
-C. 10
-D. 0
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Spin quantum number
-Explanation: Each of the five d orbitals contains one spin-up electron.
-
-122. The extra stability of half-filled and fully filled subshells is associated mainly with:
-A. larger nuclear size
-B. symmetrical distribution and exchange energy
-C. absence of electron spin
-D. higher repulsion only
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Stability of configurations
-Explanation: Symmetry and maximum exchange interactions lower the energy.
-
-123. A boundary-surface diagram usually encloses a region with approximately:
-A. 50% electron probability
-B. 90% electron probability
-C. 100% electron probability
-D. zero probability
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Boundary surface diagrams
-Explanation: NCERT represents orbital shapes using surfaces enclosing a high, commonly about 90%, probability.
-
-124. A boundary surface enclosing 100% probability cannot be drawn at finite size because:
-A. ψ is always zero
-B. probability density extends to arbitrarily large distance
-C. electrons have no mass
-D. orbitals are circular
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Boundary surface diagrams
-Explanation: The wave function has a non-zero tail at every finite distance.
-
-125. In the plots of ψ for 2s, the sign of ψ changes across the:
-A. angular node
-B. radial node
-C. nucleus only
-D. outer boundary only
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Wave function and nodes
-Explanation: The 2s orbital has one spherical radial node separating opposite phases.
-
-126. At a node, the value of ψ² is:
-A. maximum
-B. minimum but non-zero
-C. zero
-D. infinite
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Nodes
-Explanation: A node is a region of zero probability density.
-
-127. Orbit and orbital differ because an orbital:
-A. is a definite path
-B. describes probability distribution rather than a trajectory
-C. can contain unlimited electrons
-D. has no energy
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Orbit versus orbital
-Explanation: Quantum mechanics replaces definite electron paths with probability distributions.
-
-128. Which statement is correct for an orbital?
-A. It can accommodate at most two electrons with opposite spins
-B. It can accommodate four electrons
-C. All orbitals are spherical
-D. An orbital has a fixed classical radius
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Atomic orbital
-Explanation: Pauli principle limits each orbital to two electrons of opposite spin.
-
-129. For a one-electron atom, orbitals with the same n are:
-A. always non-degenerate
-B. degenerate in absence of external fields
-C. ordered as s<p<d<f
-D. dependent only on mₛ
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Degeneracy
-Explanation: Hydrogen-like orbital energies depend only on n.
-
-130. For a many-electron atom, the correct energy order within the same shell is generally:
-A. s<p<d<f
-B. f<d<p<s
-C. p<s<f<d
-D. all equal
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Orbital energies
-Explanation: Greater penetration lowers energy: s is lowest, then p, d and f.
-
-131. Which phenomenon cannot be explained by a purely wave model of light?
-A. interference
-B. diffraction
-C. photoelectric effect
-D. polarization
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Dual nature of radiation
-Explanation: The photoelectric effect requires photons with quantized energy.
-
-132. Which phenomenon most directly demonstrates the wave nature of electrons?
-A. electron diffraction
-B. photoelectric emission
-C. line spectrum
-D. radioactivity
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Dual nature of matter
-Explanation: Diffraction is a wave phenomenon observed for electron beams.
-
-133. Assertion: Cathode rays are the same regardless of the gas used. Reason: Electrons are constituents of all atoms.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+52. [NEET/AIPMT Pattern | Medium]
+If the momentum of a particle is doubled, its de Broglie wavelength becomes:
+A. Double
+B. Half
+C. Four times
+D. Unchanged
+Answer: B
+Explanation: (\lambda=h/p).
+53. [NEET/AIPMT Pattern | Medium]
+Two particles have equal momentum. Their de Broglie wavelengths are:
+A. Equal
+B. Inversely proportional to mass
+C. Directly proportional to charge
+D. Inversely proportional to velocity only
+Answer: A
+Explanation: Wavelength depends only on momentum.
+54. [NEET/AIPMT Pattern | Medium]
+An electron and a proton have the same kinetic energy. Which has the greater de Broglie wavelength?
+A. Proton
+B. Electron
+C. Both equal
+D. Cannot be predicted
+Answer: B
+Explanation: (\lambda=h/\sqrt{2mK}), so the lighter electron has greater wavelength.
+55. [NEET/AIPMT Pattern | Medium]
+An electron and a proton move with the same velocity. The ratio (\lambda_e/\lambda_p) is approximately:
+A. (1)
+B. (m_e/m_p)
+C. (m_p/m_e)
+D. (\sqrt{m_p/m_e})
+Answer: C
+Explanation: At equal velocity, wavelength is inversely proportional to mass.
+56. [NEET/AIPMT Pattern | Medium]
+The de Broglie wavelength of an electron accelerated through potential (V) is proportional to:
+A. (V)
+B. (1/V)
+C. (\sqrt V)
+D. (1/\sqrt V)
+Answer: D
+Explanation: Its kinetic energy is (eV), so momentum varies as (\sqrt V).
+57. [NEET/AIPMT Pattern | Medium]
+The approximate wavelength of an electron accelerated through (150) V is:
+A. (0.1) Å
+B. (1.0) Å
+C. (10) Å
+D. (150) Å
+Answer: B
+Explanation: (\lambda(\text{Å})\approx12.27/\sqrt V\approx1.0) Å.
+58. [NEET/AIPMT Pattern | Easy]
+The wave nature of electrons was experimentally demonstrated by:
+A. Rutherford
+B. Davisson and Germer
+C. Chadwick
+D. Millikan
+Answer: B
+Explanation: Electron diffraction confirmed de Broglie’s hypothesis.
+59. [NEET/AIPMT Pattern | Easy]
+The Heisenberg uncertainty principle relates uncertainty in:
+A. Mass and charge
+B. Position and momentum
+C. Energy and mass only
+D. Wavelength and frequency only
+Answer: B
+Explanation: Position and momentum cannot both be known exactly.
+60. [NEET/AIPMT Pattern | Medium]
+The uncertainty relation is:
+A. (\Delta x\Delta p\ge h)
+B. (\Delta x\Delta p\ge h/4\pi)
+C. (\Delta x\Delta p=h^2)
+D. (\Delta x/\Delta p=h)
+Answer: B
+Explanation: The minimum product of uncertainties is (h/4\pi).
+61. [NEET/AIPMT Pattern | Medium]
+If uncertainty in position decreases, uncertainty in momentum:
+A. Decreases
+B. Increases
+C. Remains unchanged
+D. Becomes zero
+Answer: B
+Explanation: Their product has a minimum limiting value.
+62. [NEET/AIPMT Pattern | Medium]
+The uncertainty principle is most significant for:
+A. A moving car
+B. A cricket ball
+C. An electron
+D. A planet
+Answer: C
+Explanation: Quantum uncertainty becomes significant for microscopic particles.
+63. [NEET/AIPMT Pattern | Medium]
+Why is the concept of a fixed electron orbit incompatible with quantum mechanics?
+A. Electrons have no charge
+B. Exact position and momentum cannot be known simultaneously
+C. Electrons do not possess energy
+D. The nucleus has no mass
+Answer: B
+Explanation: A precise orbit would require exact position and momentum at every instant.
+64. [NEET/AIPMT Pattern | Medium]
+The uncertainty in velocity of a particle is inversely proportional to its:
+A. Charge
+B. Mass, for fixed position uncertainty
+C. Energy only
+D. Atomic number only
+Answer: B
+Explanation: (\Delta p=m\Delta v).
+65. [NEET/AIPMT Pattern | Easy]
+The dual nature of matter means that microscopic particles may display:
+A. Only particle behaviour
+B. Only wave behaviour
+C. Both wave and particle behaviour
+D. Neither wave nor particle behaviour
+Answer: C
+Explanation: Matter particles possess momentum as well as de Broglie wavelength.
+Orbitals and quantum numbers
+66. [NEET/AIPMT Pattern | Easy]
+An atomic orbital represents:
+A. A fixed circular path of an electron
+B. A region of high probability of finding an electron
+C. The exact position of an electron
+D. The radius of the nucleus
+Answer: B
+Explanation: Orbitals arise from one-electron wave functions.
+67. [NEET/AIPMT Pattern | Easy]
+The probability density of finding an electron is proportional to:
+A. (\psi)
+B. (\psi^2)
+C. (1/\psi)
+D. (\sqrt\psi)
+Answer: B
+Explanation: (|\psi|^2) represents probability density.
+68. [NEET/AIPMT Pattern | Easy]
+The principal quantum number primarily determines:
+A. Orientation of orbital
+B. Main shell and approximate size
+C. Spin direction only
+D. Shape only
+Answer: B
+Explanation: (n) identifies the principal energy level.
+69. [NEET/AIPMT Pattern | Easy]
+The azimuthal quantum number determines the:
+A. Shell
+B. Subshell and shape
+C. Spin
+D. Nuclear charge
+Answer: B
+Explanation: (l=0,1,2,3) correspond to (s,p,d,f).
+70. [NEET/AIPMT Pattern | Easy]
+The magnetic quantum number determines:
+A. Orbital orientation
+B. Electron mass
+C. Shell energy only
+D. Electron spin
+Answer: A
+Explanation: (m_l) specifies the orbital orientation within a subshell.
+71. [NEET/AIPMT Pattern | Easy]
+The spin quantum number of an electron may have values:
+A. (0) and (1)
+B. (+1) and (-1)
+C. (+\frac12) and (-\frac12)
+D. (1/2) only
+Answer: C
+Explanation: Electron spin has two allowed orientations.
+72. [NEET/AIPMT Pattern | Medium]
+For (n=4), the possible values of (l) are:
+A. (0,1,2)
+B. (1,2,3,4)
+C. (0,1,2,3)
+D. (0,1,2,3,4)
+Answer: C
+Explanation: (l) ranges from (0) to (n-1).
+73. [NEET/AIPMT Pattern | Medium]
+For a (3d) electron, the values of (n) and (l) are:
+A. (3,1)
+B. (3,2)
+C. (2,3)
+D. (3,3)
+Answer: B
+Explanation: The (d) subshell has (l=2).
+74. [NEET/AIPMT Pattern | Medium]
+The possible values of (m_l) for a (p) subshell are:
+A. (0) only
+B. (-1,0,+1)
+C. (-2,-1,0,+1,+2)
+D. (-3) to (+3)
+Answer: B
+Explanation: For (l=1), (m_l) ranges from (-1) to (+1).
+75. [NEET/AIPMT Pattern | Medium]
+The number of orbitals in a (d) subshell is:
+A. (3)
+B. (5)
+C. (7)
+D. (10)
+Answer: B
+Explanation: Number of orbitals is (2l+1=5).
+76. [NEET/AIPMT Pattern | Medium]
+The maximum number of electrons in a (p) subshell is:
+A. (2)
+B. (4)
+C. (6)
+D. (10)
+Answer: C
+Explanation: Three orbitals can each contain two electrons.
+77. [NEET/AIPMT Pattern | Medium]
+The number of orbitals in the fourth shell is:
+A. (4)
+B. (8)
+C. (16)
+D. (32)
+Answer: C
+Explanation: Total orbitals in shell (n) equal (n^2).
+78. [NEET/AIPMT Pattern | Medium]
+The maximum number of electrons in the fourth shell is:
+A. (8)
+B. (16)
+C. (18)
+D. (32)
+Answer: D
+Explanation: Maximum electrons in a shell equal (2n^2).
+79. [NEET/AIPMT Pattern | Medium]
+Which set of quantum numbers is not permitted?
+A. (n=3,l=2,m_l=0,m_s=+\frac12)
+B. (n=2,l=1,m_l=-1,m_s=-\frac12)
+C. (n=2,l=2,m_l=0,m_s=+\frac12)
+D. (n=4,l=3,m_l=2,m_s=-\frac12)
+Answer: C
+Explanation: For (n=2), (l) can only be (0) or (1).
+80. [NEET/AIPMT Pattern | Medium]
+Which set can represent a (4f) electron?
+A. (n=4,l=3,m_l=-2,m_s=+\frac12)
+B. (n=4,l=4,m_l=0,m_s=-\frac12)
+C. (n=3,l=3,m_l=1,m_s=+\frac12)
+D. (n=4,l=2,m_l=3,m_s=-\frac12)
+Answer: A
+Explanation: For (4f), (n=4), (l=3), and (m_l=-3) to (+3).
+81. [NEET/AIPMT Pattern | Medium]
+The total number of nodes in a (3p) orbital is:
+A. (1)
+B. (2)
+C. (3)
+D. (4)
+Answer: B
+Explanation: Total nodes (=n-1=2).
+82. [NEET/AIPMT Pattern | Medium]
+The number of radial nodes in a (3p) orbital is:
+A. (0)
+B. (1)
+C. (2)
+D. (3)
+Answer: B
+Explanation: Radial nodes (=n-l-1=3-1-1=1).
+83. [NEET/AIPMT Pattern | Medium]
+The number of angular nodes in a (3d) orbital is:
+A. (0)
+B. (1)
+C. (2)
+D. (3)
+Answer: C
+Explanation: Angular nodes equal (l), and for (d), (l=2).
+84. [NEET/AIPMT Pattern | Medium]
+The number of radial nodes in a (4s) orbital is:
+A. (0)
+B. (1)
+C. (2)
+D. (3)
+Answer: D
+Explanation: (n-l-1=4-0-1=3).
+85. [NEET/AIPMT Pattern | Easy]
+The general shape of an (s) orbital is:
+A. Dumb-bell
+B. Spherical
+C. Double dumb-bell
+D. Ring-shaped only
+Answer: B
+Explanation: All (s) orbitals are spherically symmetric.
+Quantum numbers, orbital probability, nodes and the quantum-mechanical model are included in the official syllabus. (National Testing Agency)
+Electronic configuration
+86. [NEET/AIPMT Pattern | Easy]
+The Aufbau principle states that electrons occupy:
+A. Higher-energy orbitals first
+B. Lower-energy orbitals first
+C. All orbitals simultaneously
+D. Only orbitals with (l=0)
+Answer: B
+Explanation: Ground-state configurations minimise total energy.
+87. [NEET/AIPMT Pattern | Medium]
+According to the ((n+l)) rule, which orbital fills first?
+A. (4p)
+B. (5s)
+C. Both simultaneously
+D. Cannot be predicted
+Answer: A
+Explanation: (4p) has (n+l=5), while (5s) also has (5); lower (n), (4p), fills first.
+88. [NEET/AIPMT Pattern | Medium]
+Which orbital fills before (3d)?
+A. (3p) only
+B. (4s)
+C. (4p)
+D. (5s)
+Answer: B
+Explanation: (4s) has lower ((n+l)) value than (3d).
+89. [NEET/AIPMT Pattern | Easy]
+Pauli’s exclusion principle states that:
+A. Electrons occupy degenerate orbitals singly first
+B. No two electrons in an atom have the same four quantum numbers
+C. Electrons always have parallel spins
+D. Each orbital contains one electron only
+Answer: B
+Explanation: Two electrons in one orbital must have opposite spins.
+90. [NEET/AIPMT Pattern | Easy]
+Hund’s rule states that electrons occupy degenerate orbitals:
+A. In pairs before singly
+B. Singly with parallel spins before pairing
+C. With opposite spins only
+D. In random order
+Answer: B
+Explanation: This maximises the number of unpaired electrons.
+91. [NEET/AIPMT Pattern | Medium]
+The ground-state electronic configuration of nitrogen is:
+A. (1s^22s^22p^3)
+B. (1s^22s^22p^5)
+C. (1s^22s^12p^4)
+D. (1s^22p^5)
+Answer: A
+Explanation: Nitrogen has seven electrons.
+92. [NEET/AIPMT Pattern | Medium]
+The number of unpaired electrons in ground-state nitrogen is:
+A. (0)
+B. (1)
+C. (2)
+D. (3)
+Answer: D
+Explanation: The three (2p) electrons occupy separate orbitals.
+93. [NEET/AIPMT Pattern | Medium]
+The ground-state configuration of chromium is:
+A. ([Ar]3d^44s^2)
+B. ([Ar]3d^54s^1)
+C. ([Ar]3d^64s^0)
+D. ([Ar]3d^34s^3)
+Answer: B
+Explanation: A half-filled (3d^5) subshell provides additional stability.
+94. [NEET/AIPMT Pattern | Medium]
+The ground-state configuration of copper is:
+A. ([Ar]3d^94s^2)
+B. ([Ar]3d^{10}4s^1)
+C. ([Ar]3d^84s^3)
+D. ([Ar]3d^{10}4s^2)
+Answer: B
+Explanation: A completely filled (3d^{10}) subshell is especially stable.
+95. [NEET/AIPMT Pattern | Medium]
+Which species is diamagnetic?
+A. (N)
+B. (O)
+C. (Na)
+D. (Ne)
+Answer: D
+Explanation: Neon has all electrons paired.
+Assertion–Reason questions
+For Questions 96–100, use:
+A. Both Assertion and Reason are true, and Reason correctly explains Assertion
+B. Both are true, but Reason does not correctly explain Assertion
 C. Assertion is true, but Reason is false
 D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Cathode rays
-Explanation: The gas-independent e/m value follows from the universal presence of electrons.
+96. [Assertion–Reason | Medium]
+Assertion: The energy of an electron in a hydrogen atom is negative.
+Reason: Energy is taken as zero when the electron and nucleus are infinitely separated.
+Answer: A
+Explanation: A bound electron has lower energy than the separated electron–nucleus system.
+97. [Assertion–Reason | Medium]
+Assertion: The (2s) orbital has one radial node.
+Reason: The number of radial nodes is (n-l-1).
+Answer: A
+Explanation: For (2s), (n=2) and (l=0), giving one radial node.
+98. [Assertion–Reason | Medium]
+Assertion: The (2p) and (3p) orbitals have the same shape but different sizes.
+Reason: Both have the same azimuthal quantum number but different principal quantum numbers.
+Answer: A
+Explanation: The same (l) gives the same basic shape, while higher (n) increases size.
+99. [Assertion–Reason | Medium]
+Assertion: The maximum number of electrons in a (d) subshell is ten.
+Reason: A (d) subshell contains five orbitals and each orbital can hold two electrons.
+Answer: A
+Explanation: (5\times2=10) electrons.
+100. [Assertion–Reason | Medium]
+Assertion: The exact path of an electron around the nucleus cannot be specified.
+Reason: Exact position and momentum cannot be determined simultaneously.
+Answer: A
+Explanation: The uncertainty principle rules out a precisely defined classical orbit.
+Website tags
+{
+  "subject": "Chemistry",
+  "chapter": "Atomic Structure",
+  "sourceType": "PYQ_INSPIRED",
+  "examPattern": ["AIPMT", "NEET"],
+  "trendPeriod": "1988-2026",
+  "isPyq": false
+}
 
-134. Assertion: Most alpha particles pass through a thin metal foil undeflected. Reason: Most of the volume of an atom is empty space.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Rutherford model
-Explanation: This is the central inference from Rutherford scattering.
-
-135. Assertion: Rutherford’s atom is unstable according to classical physics. Reason: A revolving electron is an accelerating charge and should radiate energy.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Rutherford model
-Explanation: Continuous energy loss would make the electron collapse into the nucleus.
-
-136. Assertion: Increasing intensity increases the maximum kinetic energy of photoelectrons. Reason: Higher intensity means more photons strike the surface per second.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: D  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Photoelectric effect
-Explanation: The reason is true, but Kmax depends on photon frequency, not intensity.
-
-137. Assertion: Hydrogen gives a line spectrum. Reason: Its electron can possess only certain allowed energies.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Hydrogen spectrum
-Explanation: Discrete transitions produce discrete photon frequencies.
-
-138. Assertion: The radius of Bohr orbit increases with n. Reason: rₙ is proportional to n² for a fixed hydrogen-like species.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Bohr model
-Explanation: The stated proportionality directly explains the assertion.
-
-139. Assertion: The de Broglie wavelength of a cricket ball is experimentally unnoticeable. Reason: Its momentum is very large compared with microscopic particles.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Matter waves
-Explanation: Large momentum makes λ=h/p extremely small.
-
-140. Assertion: Exact electron trajectories are not meaningful in quantum mechanics. Reason: Position and momentum cannot both be known exactly.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Uncertainty principle
-Explanation: A trajectory would require both quantities at every instant.
-
-141. Assertion: The 2s orbital has one radial node. Reason: Radial nodes equal n−l−1.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Nodes
-Explanation: For 2s, n=2 and l=0, giving one radial node.
-
-142. Assertion: All three 2p orbitals have equal energy in an isolated atom. Reason: They have the same n and l values.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Degenerate orbitals
-Explanation: Their different mₗ values change orientation, not energy in the absence of a field.
-
-143. Assertion: No two electrons in an atom can have all four quantum numbers identical. Reason: An orbital can contain two electrons only with opposite spins.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Pauli principle
-Explanation: The opposite spins make the fourth quantum number different.
-
-144. Assertion: Nitrogen has three unpaired 2p electrons in its ground state. Reason: Electrons singly occupy degenerate orbitals with parallel spins before pairing.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Hund rule
-Explanation: Hund’s rule produces 2p³ with three unpaired electrons.
-
-145. Assertion: The configuration of Cr is [Ar]3d⁵4s¹. Reason: A half-filled d subshell has additional stability.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Exceptional configuration
-Explanation: Promotion of one 4s electron creates the stable 3d⁵ arrangement.
-
-146. Assertion: 4s fills before 3d but is emptied before 3d during ion formation. Reason: Orbital energies change with electron occupancy and ion formation.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: JEE Main  |  NCERT topic: Transition-metal configurations
-Explanation: After 3d occupation, 4s becomes higher in energy and its electrons are removed first.
-
-147. Assertion: ψ may be positive or negative, but ψ² is never negative. Reason: ψ² represents probability density.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Wave function
-Explanation: Probability density must be non-negative.
-
-148. For n=6, the number of possible subshells is:
-A. 4
-B. 5
-C. 6
-D. 12
-Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Quantum numbers
-Explanation: A shell with principal quantum number n contains n subshells.
-
-149. The number of orbitals in the n=5 shell having l≥2 is:
-A. 9
-B. 16
-
-<truncated 1024 bytes>
-
-NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-07-21T18:44:27+05:30.
+</ADDITIONAL_METADATA>
