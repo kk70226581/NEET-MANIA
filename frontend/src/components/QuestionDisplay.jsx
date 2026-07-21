@@ -154,9 +154,16 @@ const QuestionDisplay = ({
 
   return (
     <div className="flex h-full flex-col bg-slate-50 font-sans text-slate-800">
-      <div className="flex items-center justify-between border-b border-slate-200 bg-white px-5 py-3 shadow-sm">
-        <div><span className="text-xs font-bold uppercase tracking-[0.16em] text-blue-600">Live question</span><p className="mt-0.5 text-sm font-black text-slate-900">Question {questionIndex + 1} of {totalQuestions}</p></div>
-        <div className="h-2 w-28 overflow-hidden rounded-full bg-slate-100 sm:w-48"><div className="h-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 transition-all" style={{ width: `${((questionIndex + 1) / totalQuestions) * 100}%` }}/></div>
+      {/* NTA Question Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-slate-200 bg-white px-5 py-3 gap-2 shadow-sm select-none">
+        <div>
+          <span className="text-xs font-extrabold uppercase tracking-widest text-[#0D47A1]">Section: {question.subject ? question.subject.toUpperCase() : 'GENERAL'}</span>
+          <p className="mt-0.5 text-base font-black text-slate-900">Question No. {questionIndex + 1}</p>
+        </div>
+        <div className="flex items-center gap-3 text-xs font-bold text-slate-600">
+          <span className="bg-green-50 text-green-700 px-2.5 py-1 rounded border border-green-200">Correct Marks: +4</span>
+          <span className="bg-red-50 text-red-700 px-2.5 py-1 rounded border border-red-200">Negative Marks: -1</span>
+        </div>
       </div>
 
       {/* Question Content Scrollable Area */}
@@ -179,60 +186,82 @@ const QuestionDisplay = ({
           )}
         </div>
 
-        {/* Options */}
+        {/* Options in NTA Style */}
         <div className="mx-auto mt-5 w-full max-w-5xl space-y-3">
           {Object.entries(question.options || {}).map(([key, option]) => {
             const isSelected = selectedOption === key;
             return (
               <label 
                 key={key}
-                className={`group flex cursor-pointer items-start gap-3 rounded-2xl border p-3.5 transition-all duration-200 sm:items-center sm:gap-4 sm:p-5 ${isSelected ? 'border-indigo-500 bg-indigo-50 shadow-lg shadow-indigo-900/5 ring-2 ring-indigo-100' : 'border-slate-200 bg-white hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-lg'}`}
+                className={`group flex cursor-pointer items-center gap-4 rounded-xl border p-4 transition-all duration-200 bg-white ${isSelected ? 'border-[#0D47A1] bg-blue-50/40 ring-1 ring-[#0D47A1]' : 'border-slate-200 hover:bg-slate-50'}`}
               >
-                <div className={`flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full font-bold text-lg transition-colors ${isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-indigo-100 group-hover:text-indigo-600'}`}>
-                  {key}
-                </div>
-                <div className="min-w-0 flex-1 break-words text-[15px] font-medium leading-relaxed text-slate-800 sm:text-[17px]">
-                  {option.text}
-                  {option.image?.url && (
-                    <img src={option.image.url} alt={`Option ${key}`} className="mt-3 max-w-full rounded-lg border border-slate-200 shadow-sm" />
-                  )}
-                </div>
                 <input
                   type="radio"
                   name={`q-${question._id}`}
                   value={key}
                   checked={isSelected}
                   onChange={() => handleSelectOption(key)}
-                  className="hidden"
+                  className="w-4 h-4 text-[#0D47A1] focus:ring-[#0D47A1] border-slate-300 cursor-pointer"
                 />
+                <div className="min-w-0 flex-1 break-words text-[15px] font-semibold text-slate-700">
+                  <span className="font-extrabold mr-2">({key})</span>
+                  {option.text}
+                  {option.image?.url && (
+                    <img src={option.image.url} alt={`Option ${key}`} className="mt-3 max-w-full rounded-lg border border-slate-200 shadow-sm" />
+                  )}
+                </div>
               </label>
             );
           })}
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-2 border-t border-slate-200 bg-white/95 p-2.5 text-xs font-semibold shadow-[0_-8px_30px_rgba(15,23,42,0.05)] backdrop-blur sm:flex sm:items-center sm:justify-between sm:p-3 sm:text-sm">
-        <button disabled={isFirst} onClick={onPrevious} className="rounded-xl border border-slate-200 px-2 py-2.5 font-bold text-slate-600 disabled:opacity-30 sm:px-4">Previous</button>
-        <div className="contents sm:flex sm:flex-wrap sm:justify-end sm:gap-2">
+      {/* NTA Action Bar */}
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-t border-slate-200 bg-slate-100 p-4 select-none">
+        
+        {/* Left Actions */}
+        <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
           <button 
             onClick={handleSaveAndNext}
-            className="rounded-xl bg-emerald-600 px-2 py-2.5 font-black text-white shadow-sm transition hover:bg-emerald-700 sm:order-3 sm:px-4"
+            className="px-5 py-2.5 bg-[#2E7D32] hover:bg-[#1B5E20] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded border border-transparent shadow transition-all duration-200"
           >
             Save & Next
           </button>
+          
           <button 
             onClick={handleClearResponse}
-            className="rounded-xl border border-slate-200 bg-white px-2 py-2.5 font-bold text-slate-600 transition hover:bg-slate-50 sm:px-4"
+            className="px-5 py-2.5 bg-white hover:bg-slate-50 text-slate-700 text-xs sm:text-sm font-bold uppercase tracking-wider rounded border border-slate-300 shadow-sm transition-all duration-200"
           >
-            Clear
+            Clear Response
           </button>
+
           <button 
             onClick={handleMarkAndNext}
-            className="col-span-2 rounded-xl bg-amber-500 px-2 py-2.5 font-black text-white transition hover:bg-amber-600 sm:col-auto sm:px-4"
+            className="px-5 py-2.5 bg-[#ED6C02] hover:bg-[#E65100] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded border border-transparent shadow transition-all duration-200"
           >
-            Review & Next
+            Mark for Review & Next
           </button>
         </div>
+
+        {/* Right Navigation */}
+        <div className="flex gap-2 justify-center sm:justify-end">
+          <button 
+            disabled={isFirst} 
+            onClick={onPrevious} 
+            className="px-5 py-2.5 bg-white hover:bg-slate-50 text-slate-700 disabled:opacity-50 text-xs sm:text-sm font-bold uppercase tracking-wider rounded border border-slate-300 shadow-sm transition-all duration-200"
+          >
+            &lt;&lt; Back
+          </button>
+          
+          <button 
+            disabled={isLast} 
+            onClick={onNext} 
+            className="px-5 py-2.5 bg-white hover:bg-slate-50 text-slate-700 disabled:opacity-50 text-xs sm:text-sm font-bold uppercase tracking-wider rounded border border-slate-300 shadow-sm transition-all duration-200"
+          >
+            Next &gt;&gt;
+          </button>
+        </div>
+
       </div>
     </div>
   );

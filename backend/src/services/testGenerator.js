@@ -113,34 +113,7 @@ class TestGenerator {
   static async fetchQuestionsWithWeightage(query, count) {
     const pipeline = [
       { $match: query },
-      {
-        $addFields: {
-          chapterWeight: {
-            $switch: {
-              branches: Object.entries(CHAPTER_WEIGHTAGES).map(([chapter, w]) => ({
-                case: { $eq: ['$chapter', chapter] },
-                then: w
-              })),
-              default: 3
-            }
-          }
-        }
-      },
-      {
-        $addFields: {
-          selectionScore: {
-            $add: [
-              { $multiply: [{ $divide: [{ $ifNull: ['$qualityScore', 50] }, 100] }, 20] },
-              { $multiply: ['$chapterWeight', 5] },
-              { $cond: [{ $eq: ['$pyq.isPYQ', true] }, 15, 0] },
-              { $cond: [{ $eq: ['$trendingFrequency', 'high'] }, 10, 0] },
-              { $multiply: [{ $rand: {} }, 30] }
-            ]
-          }
-        }
-      },
-      { $sort: { selectionScore: -1 } },
-      { $limit: Number(count) }
+      { $sample: { size: Number(count) } }
     ];
 
     return Question.aggregate(pipeline);
