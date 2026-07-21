@@ -1,0 +1,1076 @@
+<USER_REQUEST>
+Biotechnology: Principles and Processes
+150 Original NCERT-Aligned NEET Questions | Medium-Hard | PYQ-Inspired
+Composition: 120 single-correct MCQs, 20 assertion-reason questions and 10 match-the-following questions. Questions are original and inspired by recurring NEET patterns without copying PYQs.
+Coverage: principles of biotechnology, restriction enzymes, cloning vectors, competent hosts, DNA isolation, restriction digestion, ligation, transformation, selection and screening, PCR, gel electrophoresis, bioreactors and downstream processing.
+NCERT reference note: Topic references are provided instead of page numbers because pagination varies by NCERT edition and printing.
+1. Modern biotechnology is mainly based on the principles of:
+A. Tissue culture and hybridisation only
+B. Genetic engineering and maintenance of sterile conditions in industrial processes
+C. Natural selection and mutation only
+D. Fermentation without microbial culture
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Principles of biotechnology
+Explanation: NCERT identifies genetic engineering and sterile bioprocessing as the two core techniques.
+
+2. Genetic engineering primarily involves:
+A. Random mating of organisms
+B. Direct manipulation of DNA and introduction into a host
+C. Only selection of natural variants
+D. Only protein purification
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Genetic engineering
+Explanation: It alters the chemistry of genetic material and introduces it into a host organism.
+
+3. The first recombinant DNA was constructed by linking an antibiotic-resistance gene with a plasmid of:
+A. E. coli
+B. Salmonella typhimurium
+C. Agrobacterium tumefaciens
+D. Bacillus thuringiensis
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: History of recombinant DNA
+Explanation: Cohen and Boyer linked an antibiotic-resistance gene with a Salmonella plasmid.
+
+4. The enzyme used by Cohen and Boyer to cut DNA at specific locations was:
+A. DNA ligase
+B. Restriction endonuclease
+C. DNA polymerase
+D. Reverse transcriptase
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction enzymes
+Explanation: Restriction endonucleases recognise specific sequences and cleave DNA.
+
+5. DNA ligase is used in recombinant DNA technology to:
+A. Cut DNA
+B. Join DNA fragments
+C. Unwind DNA
+D. Separate DNA strands
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA ligase
+Explanation: Ligase seals phosphodiester bonds between compatible DNA ends.
+
+6. A restriction enzyme that cuts within a DNA molecule is called a:
+A. Exonuclease
+B. Endonuclease
+C. Ligase
+D. Polymerase
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction enzymes
+Explanation: Endonucleases cleave internal phosphodiester bonds.
+
+7. Exonucleases remove nucleotides from:
+A. Specific internal sites only
+B. The ends of DNA
+C. RNA primers only
+D. Centromeres
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Nucleases
+Explanation: Exonucleases digest nucleotides from DNA termini.
+
+8. Restriction enzymes are naturally present in bacteria mainly as a defence against:
+A. Other bacteria
+B. Bacteriophages
+C. Fungi
+D. Antibiotics
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction-modification system
+Explanation: They restrict invading phage DNA.
+
+9. In the restriction-modification system, bacterial DNA is protected by:
+A. Acetylation
+B. Methylation
+C. Phosphorylation
+D. Glycosylation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction-modification system
+Explanation: Methylation of recognition sites prevents cleavage by the corresponding enzyme.
+
+10. The first restriction endonuclease isolated was:
+A. EcoRI
+B. Hind II
+C. BamHI
+D. PstI
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction enzymes
+Explanation: Hind II was the first restriction endonuclease described in NCERT.
+
+11. The name EcoRI indicates that the enzyme was isolated from:
+A. Escherichia coli strain RY13
+B. Enterobacter coli strain I
+C. E. coli virus RI
+D. Euglena coli
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction enzyme nomenclature
+Explanation: Eco denotes E. coli, R the strain, and I the order of isolation.
+
+12. A palindromic DNA sequence reads the same:
+A. On one strand in both directions
+B. On both strands in the same 5′ to 3′ direction
+C. Only after translation
+D. Only in RNA
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Palindromic sequences
+Explanation: The sequence is identical when both complementary strands are read 5′ to 3′.
+
+13. EcoRI recognises the sequence:
+A. GGATCC
+B. GAATTC
+C. AAGCTT
+D. CTGCAG
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction sites
+Explanation: EcoRI recognises 5′-GAATTC-3′.
+
+14. EcoRI produces sticky ends by cutting between:
+A. G and A
+B. A and A
+C. T and T
+D. C and G
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: EcoRI cleavage
+Explanation: It makes staggered cuts between G and A on both strands.
+
+15. Sticky ends facilitate cloning because they:
+A. Prevent base pairing
+B. Form hydrogen bonds with complementary ends
+C. Destroy vector DNA
+D. Block ligase action
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Sticky ends
+Explanation: Complementary overhangs anneal and hold fragments for ligation.
+
+16. Blunt ends differ from sticky ends because blunt ends:
+A. Have single-stranded overhangs
+B. Have no overhangs
+C. Cannot be ligated
+D. Are produced only by exonucleases
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA ends
+Explanation: Both strands are cut at the same position.
+
+17. The molecular scissors of recombinant DNA technology are:
+A. Ligases
+B. Restriction enzymes
+C. Vectors
+D. Competent cells
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Tools of recombinant DNA technology
+Explanation: Restriction endonucleases cut DNA at defined sequences.
+
+18. The molecular glue of recombinant DNA technology is:
+A. DNA ligase
+B. Helicase
+C. Topoisomerase
+D. RNase
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA ligase
+Explanation: DNA ligase joins DNA fragments by phosphodiester bond formation.
+
+19. A cloning vector must possess an origin of replication because it:
+A. Provides antibiotic resistance
+B. Initiates replication and controls copy number
+C. Cuts foreign DNA
+D. Selects recombinants by colour
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Cloning vectors
+Explanation: The ori permits autonomous replication in the host.
+
+20. A selectable marker helps in:
+A. Increasing insert size
+B. Identifying and eliminating non-transformants
+C. Cutting DNA
+D. Producing sticky ends
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Selectable markers
+Explanation: Marker genes distinguish transformed cells from non-transformed cells.
+
+21. Common selectable markers in E. coli plasmids encode resistance to:
+A. Insulin and interferon
+B. Ampicillin and tetracycline
+C. Lactose and glucose
+D. Auxin and cytokinin
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Selectable markers
+Explanation: Antibiotic-resistance genes are standard plasmid selectable markers.
+
+22. Insertional inactivation is useful for distinguishing:
+A. Donor DNA from vector DNA
+B. Recombinants from non-recombinants
+C. DNA from RNA
+D. Gram-positive from Gram-negative bacteria
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Insertional inactivation
+Explanation: Insertion disrupts a marker gene, producing a detectable phenotype.
+
+23. In pBR322, insertion into the tetracycline-resistance gene can be detected by:
+A. Blue-white screening only
+B. Loss of tetracycline resistance while ampicillin resistance remains
+C. Loss of both resistance genes
+D. Growth only without antibiotics
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: pBR322
+Explanation: Recombinants selected on ampicillin fail to grow on tetracycline.
+
+24. The blue-white selection system commonly depends on insertional inactivation of:
+A. ampR
+B. tetR
+C. lacZ
+D. ori
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Blue-white screening
+Explanation: Disruption of lacZ alpha prevents blue colour formation.
+
+25. On X-gal medium, colonies carrying a recombinant plasmid with disrupted lacZ are usually:
+A. Blue
+B. White
+C. Red
+D. Colourless only after UV
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Blue-white screening
+Explanation: Non-functional beta-galactosidase cannot cleave X-gal, so colonies remain white.
+
+26. A vector should preferably have a single recognition site for a restriction enzyme to:
+A. Prevent replication
+B. Avoid fragmentation of the vector at multiple sites
+C. Stop selection
+D. Increase mutation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Cloning site
+Explanation: A unique site allows controlled insertion without breaking the vector into many pieces.
+
+27. The copy number of a linked DNA sequence is largely controlled by the vector's:
+A. Selectable marker
+B. Origin of replication
+C. Promoter only
+D. Terminator
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Origin of replication
+Explanation: The ori determines replication frequency and hence copy number.
+
+28. A plasmid is best described as:
+A. Linear chromosomal DNA
+B. Extrachromosomal autonomously replicating circular DNA
+C. A bacterial protein
+D. A viral capsid
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Plasmids
+Explanation: Plasmids are small, circular, extrachromosomal replicons.
+
+29. Agrobacterium tumefaciens naturally transfers part of its plasmid DNA into:
+A. Animal cells
+B. Plant cells
+C. Bacteriophages
+D. Fungal spores only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Plant vectors
+Explanation: Its Ti plasmid transfers T-DNA into plant cells.
+
+30. The Ti plasmid used as a vector is disarmed by removing:
+A. The origin of replication
+B. Tumour-inducing genes
+C. All restriction sites
+D. T-DNA border sequences
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Ti plasmid
+Explanation: Oncogenic genes are removed while DNA-transfer ability is retained.
+
+31. Retroviruses can be modified as vectors for:
+A. Only bacterial cells
+B. Delivering desirable genes into animal cells
+C. Cutting plant DNA
+D. Separating proteins
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Animal vectors
+Explanation: Disarmed retroviruses efficiently introduce genes into animal cells.
+
+32. The term competent host refers to a cell that:
+A. Cannot divide
+B. Can take up recombinant DNA
+C. Produces no enzymes
+D. Has no chromosome
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Competent host
+Explanation: Competence is the ability to accept foreign DNA.
+
+33. Bacterial cells are commonly made competent by treatment with:
+A. Calcium ions followed by heat shock
+B. Sodium chloride followed by freezing only
+C. DNA ligase
+D. Ethidium bromide
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Transformation
+Explanation: Divalent calcium ions and heat shock facilitate plasmid entry.
+
+34. During heat-shock transformation, cells are briefly exposed to approximately:
+A. 4°C
+B. 42°C
+C. 72°C
+D. 100°C
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Transformation
+Explanation: A brief 42°C heat shock promotes DNA uptake after ice incubation.
+
+35. Microinjection introduces recombinant DNA directly into the:
+A. Cell wall
+B. Nucleus of an animal cell
+C. Bacterial capsule
+D. Culture medium only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gene transfer methods
+Explanation: A fine needle delivers DNA into the nucleus.
+
+36. Biolistics is particularly useful for introducing genes into:
+A. Plant cells
+B. Only E. coli
+C. Viruses
+D. Human red blood cells
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gene gun
+Explanation: DNA-coated gold or tungsten particles are shot into plant cells.
+
+37. In biolistics, DNA is coated onto microscopic particles of:
+A. Iron or copper
+B. Gold or tungsten
+C. Calcium or sodium
+D. Silicon only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gene gun
+Explanation: Dense inert gold or tungsten particles carry DNA into cells.
+
+38. A disarmed pathogen used as a vector is one in which:
+A. All DNA is removed
+B. Disease-causing genes are removed but gene-delivery ability remains
+C. Replication is always impossible
+D. Restriction sites are absent
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Vector design
+Explanation: Pathogenicity is eliminated while transfer functions are retained.
+
+39. Isolation of genetic material requires removal of all except:
+A. Proteins
+B. RNA
+C. Lipids
+D. Desired DNA
+Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA isolation
+Explanation: The aim is to obtain pure DNA after removing other cellular components.
+
+40. Plant cells are commonly treated with which enzyme during DNA isolation?
+A. Lysozyme
+B. Cellulase
+C. Chitinase
+D. Pepsin
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA isolation
+Explanation: Cellulase degrades the plant cell wall.
+
+41. Fungal cells are commonly treated with:
+A. Cellulase
+B. Chitinase
+C. Lysozyme
+D. Trypsin
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA isolation
+Explanation: Chitinase breaks down the chitin-containing fungal wall.
+
+42. Bacterial cells are commonly treated with:
+A. Lysozyme
+B. Cellulase
+C. Chitinase
+D. Lipase only
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA isolation
+Explanation: Lysozyme hydrolyses bacterial peptidoglycan.
+
+43. RNA is removed from a DNA preparation using:
+A. Protease
+B. RNase
+C. DNase
+D. Ligase
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA purification
+Explanation: RNase selectively degrades RNA.
+
+44. Proteins are removed from a DNA preparation using:
+A. Protease
+B. RNase
+C. DNA polymerase
+D. Ligase
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA purification
+Explanation: Proteases digest contaminating proteins.
+
+45. Purified DNA is precipitated by adding chilled:
+A. Water
+B. Ethanol
+C. Glucose solution
+D. Acetic acid only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA precipitation
+Explanation: DNA appears as fine threads in chilled ethanol.
+
+46. Restriction digestion of vector and insert with the same enzyme is preferred because it:
+A. Destroys both DNAs
+B. Creates compatible ends
+C. Prevents ligation
+D. Eliminates the ori
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction digestion
+Explanation: Matching complementary ends can anneal and be ligated.
+
+47. The enzyme that joins an insert to a vector is:
+A. Restriction endonuclease
+B. DNA ligase
+C. DNA helicase
+D. Primase
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Ligation
+Explanation: Ligase seals the sugar-phosphate backbone.
+
+48. A recombinant DNA molecule contains:
+A. Only vector DNA
+B. DNA from two different sources joined together
+C. Only host chromosome
+D. Only RNA
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Recombinant DNA
+Explanation: Recombinant DNA combines sequences from distinct origins.
+
+49. Gel electrophoresis separates DNA fragments primarily according to:
+A. Base sequence
+B. Size
+C. Colour
+D. Source organism
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gel electrophoresis
+Explanation: Smaller fragments migrate faster through agarose pores.
+
+50. DNA moves toward the anode during electrophoresis because DNA is:
+A. Positively charged
+B. Negatively charged
+C. Neutral
+D. Alternately charged
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gel electrophoresis
+Explanation: Phosphate groups give DNA a net negative charge.
+
+51. The commonly used matrix for DNA gel electrophoresis is:
+A. Agarose
+B. Cellulose paper
+C. Starch grains only
+D. Silica crystals
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gel electrophoresis
+Explanation: Agarose forms a porous gel that resolves DNA fragments.
+
+52. Agarose is obtained from:
+A. Bacteria
+B. Seaweeds
+C. Viruses
+D. Animal collagen
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Agarose
+Explanation: Agarose is a polysaccharide extracted from seaweeds.
+
+53. Separated DNA fragments are visualised after staining with ethidium bromide under:
+A. Infrared light
+B. Ultraviolet light
+C. Green light only
+D. X-rays
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA visualisation
+Explanation: Ethidium bromide-DNA complexes fluoresce under UV.
+
+54. The orange-coloured bands seen in a stained DNA gel represent:
+A. Proteins
+B. DNA fragments
+C. RNA polymerase
+D. Lipids
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gel electrophoresis
+Explanation: Ethidium bromide-bound DNA fluoresces orange under UV.
+
+55. The process of cutting out a desired DNA band from agarose and extracting it is called:
+A. Elution
+B. Annealing
+C. Denaturation
+D. Translation
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Elution
+Explanation: Elution recovers the desired fragment from the gel.
+
+56. PCR is used to:
+A. Separate proteins
+B. Amplify a specific DNA segment
+C. Translate mRNA
+D. Join chromosomes
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: PCR
+Explanation: Polymerase chain reaction generates many copies of target DNA.
+
+57. The three basic steps in a PCR cycle are:
+A. Ligation, transformation, selection
+B. Denaturation, primer annealing, extension
+C. Replication, transcription, translation
+D. Digestion, elution, staining
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: PCR
+Explanation: Each cycle melts DNA, anneals primers and extends new strands.
+
+58. During PCR, denaturation separates DNA strands by:
+A. Breaking phosphodiester bonds
+B. Disrupting hydrogen bonds at high temperature
+C. Digesting bases
+D. Adding ligase
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: PCR denaturation
+Explanation: Heating melts the double helix without cutting the backbone.
+
+59. PCR primers are:
+A. Long proteins
+B. Short oligonucleotides complementary to target-flanking sequences
+C. Restriction enzymes
+D. Selectable markers
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: PCR primers
+Explanation: They provide free 3′-OH ends for DNA synthesis.
+
+60. The thermostable DNA polymerase commonly used in PCR is obtained from:
+A. E. coli
+B. Thermus aquaticus
+C. Agrobacterium
+D. Saccharomyces
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Taq polymerase
+Explanation: Taq polymerase withstands repeated high-temperature cycles.
+
+61. Taq polymerase functions mainly during the PCR step of:
+A. Denaturation
+B. Primer extension
+C. Gel staining
+D. Transformation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: PCR extension
+Explanation: It extends primers by adding deoxyribonucleotides.
+
+62. If one DNA molecule is ideally amplified through 10 PCR cycles, the approximate number of copies is:
+A. 10
+B. 20
+C. 100
+D. 1024
+Answer: D  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: PCR calculation
+Explanation: Ideal amplification doubles the target each cycle: 2^10=1024.
+
+63. Ideal amplification of one target through 20 PCR cycles gives approximately:
+A. 2×20 copies
+B. 20² copies
+C. 2^20 copies
+D. 10^20 copies
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: PCR calculation
+Explanation: Each cycle ideally doubles the number of target molecules.
+
+64. The specificity of PCR is mainly determined by:
+A. Gel concentration
+B. Primer sequences
+C. Colour of tubes
+D. Source of agarose
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: PCR specificity
+Explanation: Primers anneal only to complementary target-flanking regions.
+
+65. A cloning host carrying recombinant DNA is multiplied mainly to:
+A. Destroy the insert
+B. Obtain many copies and/or express the gene product
+C. Remove the vector
+D. Prevent replication
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Cloning
+Explanation: Host replication amplifies recombinant DNA and may produce the encoded protein.
+
+66. A foreign gene will be efficiently expressed in a host only when placed near an appropriate:
+A. Centromere
+B. Promoter
+C. Telomere
+D. Intron only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Expression vector
+Explanation: A promoter initiates transcription in the chosen host.
+
+67. The orientation of an insert relative to a promoter matters because:
+A. DNA has no direction
+B. Transcription is directional
+C. Ligase works only backward
+D. Restriction sites disappear
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Expression of cloned genes
+Explanation: RNA polymerase transcribes in a defined direction.
+
+68. A bioreactor is designed to:
+A. Store dry DNA only
+B. Provide optimum conditions for large-scale biological product formation
+C. Perform only gel electrophoresis
+D. Measure chromosome number
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bioreactors
+Explanation: It maintains controlled growth and product-formation conditions.
+
+69. The most commonly used large-scale bioreactor mentioned in NCERT is:
+A. Petri dish
+B. Stirred-tank bioreactor
+C. Test tube
+D. Microscope chamber
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bioreactors
+Explanation: Stirred-tank vessels support mixing and aeration.
+
+70. A sparged stirred-tank bioreactor differs by having:
+A. No stirrer
+B. Air bubbled through the reactor
+C. No temperature control
+D. No sampling port
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bioreactor design
+Explanation: A sparger introduces sterile air for aeration.
+
+71. An agitator in a bioreactor mainly ensures:
+A. DNA mutation
+B. Mixing and oxygen distribution
+C. Restriction digestion
+D. Colony selection
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bioreactor components
+Explanation: Agitation maintains uniform nutrients, cells and dissolved oxygen.
+
+72. A bioreactor generally includes systems for controlling:
+A. Temperature, pH, aeration and agitation
+B. Only colour
+C. Only chromosome number
+D. Only light intensity
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bioreactor control
+Explanation: These conditions strongly affect microbial or cell growth and product yield.
+
+73. The sampling ports of a bioreactor allow:
+A. Continuous removal of the chromosome
+B. Periodic monitoring without opening the vessel
+C. Restriction digestion
+D. UV irradiation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bioreactor components
+Explanation: Samples are withdrawn aseptically to monitor the process.
+
+74. Foam-control systems in bioreactors are needed because excessive foam can:
+A. Improve sterility
+B. Interfere with aeration and contaminate the process
+C. Amplify DNA
+D. Act as a selectable marker
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bioreactor control
+Explanation: Foaming can reduce process efficiency and compromise containment.
+
+75. Downstream processing begins:
+A. Before culturing cells
+B. After the biosynthetic stage is complete
+C. Before vector construction
+D. During restriction digestion only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Downstream processing
+Explanation: It includes recovery, purification and formulation after product formation.
+
+76. Downstream processing commonly includes:
+A. Only DNA cutting
+B. Separation, purification, formulation and quality control
+C. Only transformation
+D. Only PCR
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Downstream processing
+Explanation: The product must be recovered, purified and prepared for use.
+
+77. For a therapeutic product, downstream processing must ensure:
+A. Only high colour intensity
+B. Purity and compliance with quality standards
+C. No packaging
+D. No testing
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Downstream processing
+Explanation: Medicinal products require stringent quality control and formulation.
+
+78. Sterile conditions in biotechnology are especially important to:
+A. Increase mutation rates
+B. Prevent contamination by unwanted microbes
+C. Stop host growth
+D. Destroy recombinant DNA
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Aseptic processing
+Explanation: Contaminants can outgrow the desired culture or spoil the product.
+
+79. The correct broad order in recombinant DNA technology is:
+A. Isolation → cutting → amplification/ligation → transfer → selection/expression → product recovery
+B. Translation → mutation → fertilisation
+C. Gel staining → DNA isolation → cell lysis only
+D. Bioreactor → restriction digestion → vector isolation
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Steps of recombinant DNA technology
+Explanation: This sequence follows the standard workflow from DNA isolation to product recovery.
+
+80. After transformation, cells are plated on selective medium mainly to:
+A. Kill all cells
+B. Allow only transformants carrying the selectable marker to grow
+C. Remove the insert
+D. Denature DNA
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Selection of transformants
+Explanation: Selection enriches for cells that received the vector.
+
+81. Growth on ampicillin medium after plasmid transformation proves that a cell:
+A. Definitely carries an insert
+B. Carries an ampicillin-resistance plasmid
+C. Is a non-transformant
+D. Has lost all plasmids
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Selection and screening
+Explanation: Antibiotic resistance confirms vector uptake, not necessarily insertion.
+
+82. To distinguish recombinant from non-recombinant transformants, one additionally needs:
+A. A screening method such as insertional inactivation
+B. More ampicillin only
+C. No marker
+D. Only distilled water
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Selection versus screening
+Explanation: Selection detects transformants; screening identifies those with inserts.
+
+83. If foreign DNA is inserted within the ampR gene of a plasmid, recombinant cells are expected to be:
+A. Ampicillin resistant
+B. Ampicillin sensitive
+C. Tetracycline sensitive necessarily
+D. Unable to replicate
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Insertional inactivation
+Explanation: Insertion disrupts ampR expression.
+
+84. A restriction site located within an essential ori would be a poor cloning site because insertion could:
+A. Increase copy number always
+B. Disrupt vector replication
+C. Improve selection
+D. Create protein bands
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Vector design
+Explanation: A functional ori is necessary for plasmid maintenance.
+
+85. A vector with a very high copy number is advantageous when the aim is to:
+A. Reduce DNA yield
+B. Obtain large amounts of cloned DNA
+C. Prevent replication
+D. Eliminate host cells
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Vector copy number
+Explanation: More vector copies yield more copies of the inserted sequence.
+
+86. For expression of a toxic protein, an inducible promoter is useful because it:
+A. Always keeps expression maximal
+B. Allows growth before controlled induction of expression
+C. Removes the insert
+D. Prevents transcription permanently
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Expression vectors
+Explanation: Controlled induction reduces toxicity during biomass accumulation.
+
+87. A DNA fragment with EcoRI sticky ends can be most efficiently ligated into a vector cut with:
+A. Any blunt-end enzyme
+B. EcoRI
+C. RNase
+D. Protease
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Compatible ends
+Explanation: The same enzyme creates complementary compatible overhangs.
+
+88. DNA fragments cut by different enzymes can be directly ligated efficiently only if their ends are:
+A. Always identical in sequence
+B. Compatible
+C. Methylated only
+D. Protein-coated
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA ligation
+Explanation: Compatible cohesive or blunt ends can be joined by ligase.
+
+89. Restriction enzymes recognise DNA sequences with a typical length of:
+A. One base only
+B. Usually 4 to 8 base pairs
+C. Hundreds of kilobases only
+D. Exactly 100 bases
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction sites
+Explanation: Most restriction sites are short specific sequences, commonly 4–8 bp.
+
+90. A six-base recognition sequence is statistically expected once in approximately:
+A. 64 bp
+B. 256 bp
+C. 4096 bp
+D. 1,000,000 bp
+Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Restriction-site probability
+Explanation: For random DNA, probability is (1/4)^6, so average spacing is 4^6=4096 bp.
+
+91. A four-base cutter is generally expected to cut random DNA more frequently than a six-base cutter because:
+A. It is larger
+B. Its recognition sequence occurs more often
+C. It cannot methylate DNA
+D. It cuts RNA
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction enzymes
+Explanation: Shorter specific sequences have higher random occurrence.
+
+92. If a circular plasmid has one EcoRI site, complete digestion produces:
+A. Two linear fragments
+B. One linear fragment
+C. No fragment
+D. One circular and one linear fragment
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction mapping
+Explanation: A single cut opens the circle into one linear molecule.
+
+93. If a circular plasmid has two sites for the same restriction enzyme, complete digestion produces:
+A. One fragment
+B. Two fragments
+C. Three fragments
+D. Four fragments
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction mapping
+Explanation: For circular DNA, the number of fragments equals the number of cuts.
+
+94. If a linear DNA molecule has two sites for a restriction enzyme, complete digestion produces:
+A. One fragment
+B. Two fragments
+C. Three fragments
+D. Four fragments
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction mapping
+Explanation: For linear DNA, fragments equal cuts plus one.
+
+95. A 6 kb circular plasmid cut once gives a band of:
+A. 3 kb only
+B. 6 kb linear DNA
+C. 12 kb
+D. Two 6 kb bands
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Restriction mapping
+Explanation: One cut linearises the full plasmid.
+
+96. A 10 kb linear DNA cut at positions 2 kb and 7 kb gives fragments of:
+A. 2, 5 and 3 kb
+B. 2 and 8 kb
+C. 7 and 3 kb
+D. 5 and 5 kb
+Answer: A  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Restriction mapping
+Explanation: Segments are 0–2, 2–7 and 7–10 kb.
+
+97. During agarose electrophoresis, a 500 bp fragment compared with a 2000 bp fragment generally migrates:
+A. More slowly
+B. Faster
+C. At exactly the same rate
+D. Toward the cathode
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gel electrophoresis
+Explanation: Smaller DNA fragments pass more readily through gel pores.
+
+98. Increasing agarose concentration generally improves separation of:
+A. Very large DNA only
+B. Smaller DNA fragments
+C. Proteins only
+D. Whole chromosomes exclusively
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Gel electrophoresis
+Explanation: Denser gels have smaller pores suitable for resolving small fragments.
+
+99. A DNA ladder is loaded in a gel to:
+A. Cut DNA
+B. Estimate fragment sizes
+C. Make cells competent
+D. Ligate inserts
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gel electrophoresis
+Explanation: Known-size standards allow comparison of migration distances.
+
+100. If no DNA band is visible after electrophoresis, one possible procedural cause is:
+A. DNA ran toward the wrong electrode due to reversed polarity
+B. DNA is positively charged
+C. Agarose cannot form gels
+D. Ligase was too active
+Answer: A  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Gel troubleshooting
+Explanation: Reversing electrodes can cause negatively charged DNA to leave the gel in the wrong direction.
+
+101. In PCR, primers bind to opposite strands with their 3′ ends directed:
+A. Away from the target
+B. Toward the target region
+C. Toward the chromosome ends only
+D. Randomly
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: PCR primer design
+Explanation: DNA synthesis proceeds inward across the desired segment.
+
+102. A PCR reaction lacking primers will fail because DNA polymerase:
+A. Cannot withstand heat
+B. Requires a free 3′-OH to begin synthesis
+C. Cuts DNA instead
+D. Needs no template
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: PCR requirements
+Explanation: DNA polymerases cannot initiate chains de novo.
+
+103. A PCR reaction lacking Mg2+ is likely to fail because Mg2+ is required as:
+A. A DNA stain
+B. A polymerase cofactor
+C. A selectable marker
+D. A restriction site
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: PCR requirements
+Explanation: DNA polymerases require divalent metal ions for catalysis.
+
+104. PCR amplification eventually plateaus mainly because:
+A. DNA becomes positively charged
+B. Reagents become limiting and polymerase activity declines
+C. Primers become chromosomes
+D. Restriction enzymes appear spontaneously
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: PCR kinetics
+Explanation: Ideal doubling cannot continue indefinitely as substrates and enzyme performance decline.
+
+105. The term amplification in cloning may refer to:
+A. Only protein degradation
+B. Increase in copies of a DNA segment
+C. Decrease in plasmid number
+D. Loss of host cells
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA amplification
+Explanation: Both PCR and replication in a host can increase target DNA copy number.
+
+106. A recombinant plasmid introduced into E. coli is replicated using:
+A. Only plant enzymes
+B. Host replication machinery acting at the plasmid ori
+C. No enzymes
+D. Only restriction endonuclease
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Cloning in host
+Explanation: The host machinery recognises the vector origin and copies the plasmid.
+
+107. A plasmid without a selectable marker would make it difficult to:
+A. Cut DNA
+B. Identify cells that received the plasmid
+C. Perform PCR
+D. Use agarose
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Selectable markers
+Explanation: Transformants could not be readily distinguished from non-transformants.
+
+108. A plasmid without an origin of replication would generally:
+A. Replicate at very high copy number
+B. Fail to be stably amplified in the host
+C. Become a restriction enzyme
+D. Always integrate into the chromosome
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Origin of replication
+Explanation: Without an ori, autonomous plasmid replication cannot occur.
+
+109. Which combination is essential for cloning but not necessarily for expression?
+A. Ori, selectable marker and cloning site
+B. Promoter and ribosome-binding site only
+C. Only terminator
+D. Only enhancer
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Cloning vector
+Explanation: Basic cloning requires replication, selection and insertion features.
+
+110. Which additional feature is especially needed in an expression vector?
+A. A suitable promoter
+B. Removal of ori
+C. Absence of selectable marker
+D. No cloning site
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Expression vector
+Explanation: The promoter drives transcription of the inserted gene.
+
+111. The product of a cloned gene may require downstream purification because:
+A. Host cells produce only the desired protein
+B. The culture contains cells, medium components and other biomolecules
+C. DNA cannot be expressed
+D. Bioreactors are sterile
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Downstream processing
+Explanation: The target is mixed with many contaminants after production.
+
+112. The scale-up from a flask to a bioreactor is challenging mainly because:
+A. Biological requirements change with mixing and oxygen transfer
+B. DNA loses all bases
+C. Restriction sites vanish
+D. Cells become non-living
+Answer: A  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Bioprocess scale-up
+Explanation: Large volumes require controlled mass transfer, heat transfer and mixing.
+
+113. In an aerobic stirred-tank culture, insufficient agitation most directly reduces:
+A. Restriction-site number
+B. Oxygen and nutrient distribution
+C. DNA charge
+D. Selectable-marker function
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bioreactor operation
+Explanation: Poor mixing creates gradients and limits oxygen transfer.
+
+114. A pH probe in a bioreactor is used to:
+A. Measure plasmid size
+B. Monitor and regulate acidity or alkalinity
+C. Cut DNA
+D. Count chromosomes
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bioreactor control
+Explanation: Cell growth and enzyme activity depend strongly on pH.
+
+115. A cooling jacket in a bioreactor helps remove heat generated by:
+A. Restriction mapping
+B. Cellular metabolism and agitation
+C. Gel staining only
+D. DNA ligation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bioreactor temperature control
+Explanation: Large cultures generate substantial metabolic and mechanical heat.
+
+116. Sterilisation of medium and vessel before inoculation is intended to:
+A. Kill the production organism after inoculation
+B. Eliminate contaminating organisms
+C. Destroy nutrients
+D. Remove the selectable marker
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Sterile bioprocessing
+Explanation: Asepsis ensures growth of the desired culture only.
+
+117. Inoculation means:
+A. Purifying the final product
+B. Introducing the desired production organism into sterile medium
+C. Cutting plasmid DNA
+D. Staining a gel
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bioprocessing
+Explanation: The selected culture is added aseptically to initiate growth.
+
+118. The term upstream processing generally includes:
+A. Product formulation only
+B. Culture preparation and production before harvest
+C. Only patenting
+D. Only chromatography after harvest
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Bioprocessing
+Explanation: Upstream operations create biomass and product before recovery.
+
+119. A desired extracellular product is usually easier to recover than an intracellular product because it:
+A. Is already present in the culture medium
+B. Needs no purification ever
+C. Cannot be degraded
+D. Is always colourless
+Answer: A  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Product recovery
+Explanation: Intracellular products first require cell disruption.
+
+120. An intracellular recombinant protein generally requires which additional early downstream step?
+A. Cell disruption
+B. Transformation
+C. Restriction digestion of vector
+D. Methylation
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Downstream processing
+Explanation: The product must be released from host cells.
+
+121. Assertion: Restriction endonucleases are called molecular scissors. Reason: They cleave DNA at specific recognition sequences.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Restriction enzymes
+Explanation: Their sequence-specific cleavage justifies the term.
+
+122. Assertion: Bacterial chromosomal DNA is normally not destroyed by its own restriction enzyme. Reason: Recognition sites in host DNA are methylated.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Restriction-modification system
+Explanation: Methylation protects host sites from cleavage.
+
+123. Assertion: Sticky ends increase ligation efficiency. Reason: Complementary overhangs can base-pair before ligase seals the backbone.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Sticky ends
+Explanation: Annealing aligns the fragments for covalent joining.
+
+124. Assertion: A plasmid lacking an ori cannot serve as an efficient autonomous cloning vector. Reason: ori is required for initiation of plasmid replication.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Origin of replication
+Explanation: Without replication the inserted DNA is not amplified or stably maintained.
+
+125. Assertion: Growth on antibiotic medium always proves that a colony is recombinant. Reason: Antibiotic resistance can indicate uptake of an empty vector.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Selection and screening
+Explanation: The assertion is false; the reason correctly explains why selection alone is insufficient.
+
+126. Assertion: White colonies are selected as recombinants in blue-white screening. Reason: Insertion of foreign DNA can inactivate lacZ.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Blue-white screening
+Explanation: Loss of beta-galactosidase prevents blue colour.
+
+127. Assertion: DNA migrates toward the anode during gel electrophoresis. Reason: DNA has negatively charged phosphate groups.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Gel electrophoresis
+Explanation: The negative charge drives movement toward the positive electrode.
+
+128. Assertion: Smaller DNA fragments migrate faster through agarose. Reason: They experience less resistance while passing through gel pores.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Gel electrophoresis
+Explanation: The porous matrix acts as a molecular sieve.
+
+129. Assertion: Taq polymerase is suitable for PCR. Reason: It remains active after repeated high-temperature denaturation steps.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: PCR
+Explanation: Thermostability permits repeated cycling.
+
+130. Assertion: PCR can begin DNA synthesis without primers. Reason: DNA polymerase requires a free 3′-OH group.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: PCR
+Explanation: The assertion is false; primers provide the required 3′-OH.
+
+131. Assertion: The two primers in PCR are complementary to the same DNA strand. Reason: They flank the target sequence on opposite strands.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: PCR primer design
+Explanation: They bind opposite strands, as correctly stated in the reason.
+
+132. Assertion: A single cut in circular plasmid DNA produces one linear fragment. Reason: The circular molecule is opened at one point.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Restriction mapping
+Explanation: One cleavage converts the circle into a full-length linear molecule.
+
+133. Assertion: Agrobacterium Ti plasmid can be used as a plant vector after disarming. Reason: Tumour-inducing genes are removed while T-DNA transfer ability is retained.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Ti plasmid
+Explanation: This converts a pathogen into a gene-delivery system.
+
+134. Assertion: Biolistics is particularly useful for plant transformation. Reason: DNA-coated metal particles can penetrate rigid plant cell walls.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Ass
+<truncated 8837 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.
