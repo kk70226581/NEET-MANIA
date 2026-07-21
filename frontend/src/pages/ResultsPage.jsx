@@ -11,7 +11,8 @@ import {
   Trophy,
   XCircle,
   TrendingUp,
-  BookOpen
+  BookOpen,
+  Share2
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import AppShell from '../components/AppShell';
@@ -89,13 +90,30 @@ const ResultsPage = () => {
       eyebrow="Performance"
       title="Result report"
       actions={
-        <button 
-          className="flex items-center gap-2 px-4 py-2 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-medium rounded-lg shadow-sm transition-colors"
-          onClick={() => window.print()}
-        >
-          <Download size={18} />
-          <span>Print scorecard</span>
-        </button>
+        <div className="flex gap-3">
+          <button 
+            className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-700 text-white font-bold rounded-lg shadow-sm transition-colors"
+            onClick={() => {
+              if (result?.testId) {
+                const shareUrl = `${window.location.origin}/exam/${result.testId}`;
+                navigator.clipboard.writeText(shareUrl);
+                toast.success('Test link copied to clipboard!');
+              } else {
+                toast.error('Could not generate share link.');
+              }
+            }}
+          >
+            <Share2 size={18} />
+            <span>Share Test</span>
+          </button>
+          <button 
+            className="flex items-center gap-2 px-4 py-2 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-medium rounded-lg shadow-sm transition-colors"
+            onClick={() => window.print()}
+          >
+            <Download size={18} />
+            <span>Print scorecard</span>
+          </button>
+        </div>
       }
     >
       <div className="max-w-6xl mx-auto space-y-8 pb-12">

@@ -583,19 +583,6 @@ exports.uploadImage = async (req, res) => {
   }
 };
 
-exports.clearAllQuestions = async (req, res) => {
-  try {
-    const result = await Question.deleteMany({});
-    res.status(200).json({
-      success: true,
-      message: `Deleted ${result.deletedCount} questions`,
-      data: { questionsDeleted: result.deletedCount }
-    });
-  } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
-  }
-};
-
 exports.getAdminQuestions = async (req, res) => {
   try {
     const { status = 'pending', page = 1, limit = 50 } = req.query;

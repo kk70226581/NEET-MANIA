@@ -4,7 +4,7 @@
  */
 import React, { useEffect, useState, useCallback } from 'react';
 import {
-  AlertTriangle, Brain, CheckCircle2, ChevronDown, ChevronRight,
+  Brain, CheckCircle2, ChevronDown, ChevronRight,
   Database, Edit2, File, FileText, FileUp, Folder, FolderOpen,
   RefreshCw, Save, Search, ShieldCheck, Sparkles,
   Trash2, X, Zap, BarChart2
@@ -740,7 +740,7 @@ const AdminQuestionsPage = () => {
     loadTree(); loadStats(); loadQuestions(1);
   };
 
-  const handleClearAll = () => {
+  const handleContentReview = () => {
     setShowClearModal(true);
   };
 
@@ -791,6 +791,9 @@ const AdminQuestionsPage = () => {
 
 
   // ── PDF upload ───────────────────────────────────────────────────────────
+  // Kept as an inert legacy reference while older clients finish updating; the API route no longer exists.
+  void executeClear;
+
   const handlePdfUpload = async (e) => {
     e.preventDefault();
     if (!pdfFile || !pdfMeta.chapter) { toast.error('Choose a PDF and a chapter option.'); return; }
@@ -902,8 +905,8 @@ const AdminQuestionsPage = () => {
           <button className="aw-btn aw-btn--ghost" onClick={() => { loadTree(); loadStats(); loadDrafts(); loadQuestions(1); }}>
             <RefreshCw size={13} /> Refresh
           </button>
-          <button className="aw-btn aw-btn--danger" onClick={handleClearAll}>
-            <AlertTriangle size={13} /> Clear DB
+          <button className="aw-btn aw-btn--ghost" onClick={handleContentReview}>
+            <ShieldCheck size={13} /> Content review
           </button>
         </div>
       </header>
@@ -1446,11 +1449,11 @@ const AdminQuestionsPage = () => {
             color: '#fff', display: 'flex', flexDirection: 'column', gap: '18px',
             fontFamily: 'system-ui, sans-serif'
           }}>
-            <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '8px', color: '#ff4d4d', fontSize: '18px' }}>
-              <AlertTriangle size={20} /> Selective Clear Database
+            <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '8px', color: '#5eead4', fontSize: '18px' }}>
+              <ShieldCheck size={20} /> Content review workflow
             </h3>
             <p style={{ margin: 0, fontSize: '13px', color: '#a0a0b0', lineHeight: 1.5 }}>
-              Choose filter criteria to selectively delete questions. Warning: matching questions will be permanently deleted!
+              Narrow the review to a subject, chapter, topic, or status. AI checks matching questions and updates quality metadata; this workflow never deletes data.
             </p>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -1499,7 +1502,7 @@ const AdminQuestionsPage = () => {
                   onChange={e => setClearFilters(f => ({ ...f, status: e.target.value }))}
                   style={{ background: '#222232', border: '1px solid #3d3d52', color: '#fff', padding: '10px', borderRadius: '6px', outline: 'none' }}
                 >
-                  <option value="all">All (Drafts & Published)</option>
+                  <option value="all">All questions</option>
                   <option value="draft">Drafts Only</option>
                   <option value="published">Published Only</option>
                 </select>
@@ -1520,12 +1523,6 @@ const AdminQuestionsPage = () => {
                 style={{ background: '#0f766e', border: 'none', color: '#fff', padding: '10px 20px', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(15,118,110,0.3)' }}
               >
                 Review DB
-              </button>
-              <button 
-                onClick={executeClear}
-                style={{ background: '#ff4d4d', border: 'none', color: '#fff', padding: '10px 20px', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(255,77,77,0.3)' }}
-              >
-                Clear Database
               </button>
             </div>
           </div>

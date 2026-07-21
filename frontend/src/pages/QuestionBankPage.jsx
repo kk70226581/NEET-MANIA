@@ -17,48 +17,151 @@ import { questionsAPI } from '../services/api';
 
 const PAGE_SIZE = 12;
 
-const QuestionCard = ({ question, index }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.4, delay: index * 0.05 }}
-    className="glass-card p-6 flex flex-col group h-full hover:border-primary/30"
-  >
-    <div className="flex justify-between items-start mb-4">
-      <div className="flex gap-2">
-        <span className={`px-2.5 py-1 text-xs font-bold rounded-lg ${
-          question.difficulty === 'hard' ? 'bg-red-50 text-red-600 border border-red-100' :
-          question.difficulty === 'medium' ? 'bg-orange-50 text-orange-600 border border-orange-100' :
-          'bg-emerald-50 text-emerald-600 border border-emerald-100'
-        }`}>
-          {question.difficulty ? question.difficulty.toUpperCase() : 'HARD'}
-        </span>
-        <span className="px-2.5 py-1 text-xs font-bold rounded-lg bg-slate-100 text-slate-600 border border-slate-200">
-          {question.pyq?.isPYQ ? `PYQ ${question.sourceDetails?.year || ''}`.trim() : 'Practice'}
-        </span>
+const QuestionCard = ({ question, index }) => {
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  // Helper to format Assertion-Reason text if it matches
+  const formatQuestionText = (text) => {
+    if (!text) return null;
+    
+    // Clean up any double spaces, extra newlines, and trailing dashes
+    let formattedText = text.trim();
+
+    // Check if it's an Assertion-Reason question
+    if (formattedText.toLowerCase().includes('assertion') || formattedText.toLowerCase().includes('reason')) {
+      const parts = formattedText.split(/(Assertion\s*\(A\)|Reason\s*\(R\)|Assertion|Reason)/i);
+      return (
+        <div className="space-y-2 text-slate-800 font-medium">
+          {parts.map((part, i) => {
+            if (/assertion/i.test(part) || /reason/i.test(part)) {
+              return <strong key={i} className="text-indigo-600 block mt-2">{part}:</strong>;
+            }
+            return <span key={i} className="block pl-2 border-l-2 border-slate-200">{part.trim()}</span>;
+          })}
+        </div>
+      );
+    }
+
+    // Replace internal newlines with paragraph breaks to make it look clean
+    return (
+      <div className="space-y-1">
+        {formattedText.split('\n').map((line, i) => (
+          <p key={i} className="text-slate-700">{line.trim()}</p>
+        ))}
       </div>
-      <button className="text-slate-300 hover:text-primary transition-colors p-1">
-        <Bookmark size={18} />
-      </button>
-    </div>
+    );
+  };
 
-    <div className="flex-1">
-      <p className="text-sm font-semibold text-primary mb-1">{question.chapter}</p>
-      <h3 className="text-slate-800 font-medium leading-relaxed mb-4 line-clamp-4">
-        {question.questionText}
-      </h3>
-    </div>
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.03 }}
+      className="bg-white rounded-2xl border border-slate-100 hover:border-indigo-100 shadow-sm hover:shadow-md transition-all p-6 flex flex-col h-full group"
+    >
+      {/* Badge & Meta Header */}
+      <div className="flex justify-between items-start mb-4">
+        <div className="flex flex-wrap gap-2">
+          <span className={`px-2.5 py-1 text-xs font-bold rounded-lg ${
+            question.difficulty === 'hard' ? 'bg-rose-50 text-rose-600 border border-rose-100' :
+            question.difficulty === 'medium' ? 'bg-amber-50 text-amber-600 border border-amber-100' :
+            'bg-emerald-50 text-emerald-600 border border-emerald-100'
+          }`}>
+            {question.difficulty ? question.difficulty.toUpperCase() : 'MEDIUM'}
+          </span>
+          <span className="px-2.5 py-1 text-xs font-bold rounded-lg bg-slate-50 text-slate-600 border border-slate-100">
+            {question.pyq?.isPYQ ? `PYQ ${question.sourceDetails?.year || ''}`.trim() : 'Practice'}
+          </span>
+        </div>
+        <button className="text-slate-300 hover:text-indigo-600 transition-colors p-1 rounded-full hover:bg-slate-50">
+          <Bookmark size={18} />
+        </button>
+      </div>
 
-    <div className="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
-      <span className="text-xs font-semibold text-slate-400 flex items-center gap-1">
-        <Clock size={14} /> Est. 1m 30s
-      </span>
-      <button className="text-sm font-bold text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-        View Details <ChevronRight size={16} />
-      </button>
-    </div>
-  </motion.div>
-);
+      <div className="flex-1 flex flex-col justify-between">
+        <div>
+          {/* Chapter Breadcrumb */}
+          <span className="text-xs font-bold text-indigo-500 uppercase tracking-wider block mb-2">{question.chapter}</span>
+          
+          {/* Question Text */}
+          <div className="text-slate-800 font-medium leading-relaxed mb-6">
+            {formatQuestionText(question.questionText)}
+          </div>
+        </div>
+
+        {/* Options List - Always Visible */}
+        {question.options && (
+          <div className="space-y-2.5 mb-6">
+            {['A', 'B', 'C', 'D'].map((opt) => {
+              const hasText = question.options[opt]?.text;
+              if (!hasText) return null;
+
+              const isCorrect = question.correctAnswer === opt;
+              const optionBgClass = showAnswer
+                ? isCorrect
+                  ? 'bg-emerald-50 border-emerald-200 text-emerald-900 shadow-sm'
+                  : 'bg-slate-50/50 border-slate-100 text-slate-400 opacity-60'
+                : 'bg-slate-50/50 border-slate-100 hover:border-slate-300 text-slate-700 hover:bg-slate-50';
+
+              const indicatorClass = showAnswer
+                ? isCorrect
+                  ? 'bg-emerald-500 text-white'
+                  : 'bg-slate-200 text-slate-400'
+                : 'bg-white text-slate-500 border border-slate-200 group-hover:border-slate-300';
+
+              return (
+                <div 
+                  key={opt}
+                  className={`p-3 rounded-xl border flex items-center gap-3 transition-all duration-200 ${optionBgClass}`}
+                >
+                  <span className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs shadow-sm shrink-0 ${indicatorClass}`}>
+                    {opt}
+                  </span>
+                  <span className="text-sm font-medium leading-normal">{question.options[opt].text}</span>
+                  {showAnswer && isCorrect && (
+                    <span className="text-[10px] font-extrabold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded uppercase tracking-wider ml-auto shrink-0">
+                      Correct
+                    </span>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Explanation Drawer */}
+        {showAnswer && question.explanation?.text && (
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            className="mb-6 p-4 bg-indigo-50/40 border border-indigo-100/50 rounded-2xl"
+          >
+            <p className="text-xs font-bold text-indigo-700 uppercase tracking-wider mb-1">Explanation</p>
+            <p className="text-sm text-slate-600 leading-relaxed font-normal">{question.explanation.text}</p>
+          </motion.div>
+        )}
+      </div>
+
+      {/* Footer Actions */}
+      <div className="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center">
+        <span className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+          <Clock size={13} className="text-slate-400" /> Est. 1m 30s
+        </span>
+        <button 
+          onClick={() => setShowAnswer(!showAnswer)}
+          className={`text-sm font-bold flex items-center gap-1 px-4 py-2 rounded-xl transition-all ${
+            showAnswer 
+              ? 'bg-slate-100 text-slate-700 hover:bg-slate-200' 
+              : 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm shadow-indigo-100 hover:shadow'
+          }`}
+        >
+          {showAnswer ? 'Hide Solution' : 'Show Solution'}
+          <ChevronRight size={15} className={`transition-transform duration-200 ${showAnswer ? 'rotate-90' : ''}`} />
+        </button>
+      </div>
+    </motion.div>
+  );
+};
 
 const QuestionBankPage = () => {
   const [metadata, setMetadata] = useState([]);

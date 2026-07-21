@@ -27,6 +27,7 @@ import {
   User,
   X,
   Zap,
+  Mail,
 } from 'lucide-react';
 import { logout } from '../store/slices/userSlice';
 
@@ -211,6 +212,9 @@ const AppShell = ({ children, hideSearch = false }) => {
         </div>
 
         <div className="border-t border-slate-800 p-4">
+          <a href="mailto:admin@medicalmania.site" className="mb-1 flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-slate-400 hover:bg-slate-800 hover:text-white transition-colors">
+            <Mail size={19} /> Contact Support
+          </a>
           <NavLink to="/settings" className={({ isActive }) => `mb-1 flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
             <Settings size={19} /> Settings
           </NavLink>

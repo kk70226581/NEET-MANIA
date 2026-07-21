@@ -14,6 +14,7 @@ import {
   Sparkles,
   Target,
   Trophy,
+  Share2,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import AppShell from '../components/AppShell';
@@ -157,7 +158,28 @@ const AttemptsPage = () => {
                     )}
 
                     {completed && <span className="mt-4 block h-1.5 overflow-hidden rounded-full bg-slate-100"><motion.span initial={{ width: 0 }} animate={{ width: `${scorePercent}%` }} transition={{ duration: 0.7, delay: 0.15 }} className="block h-full rounded-full bg-gradient-to-r from-blue-500 to-emerald-500" /></span>}
-                    <span className="mt-5 flex items-center justify-between text-sm font-extrabold text-blue-600"><span>{completed ? 'View detailed result' : 'Resume test'}</span><ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></span>
+                    <span className="mt-5 flex items-center justify-between text-sm font-extrabold text-blue-600">
+                      <span>{completed ? 'View detailed result' : 'Resume test'}</span>
+                      <div className="flex items-center gap-3">
+                        {attempt.test && (
+                          <button
+                            type="button"
+                            title="Share Test Link"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              const testId = attempt.test?._id || attempt.test;
+                              const shareUrl = `${window.location.origin}/exam/${testId}`;
+                              navigator.clipboard.writeText(shareUrl);
+                              toast.success('Test link copied to clipboard!');
+                            }}
+                            className="p-2 text-slate-400 hover:text-blue-600 hover:bg-slate-100 rounded-xl transition-all"
+                          >
+                            <Share2 size={16} />
+                          </button>
+                        )}
+                        <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </span>
                   </motion.button>
                 );
               })}

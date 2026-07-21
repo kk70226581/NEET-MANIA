@@ -20,7 +20,6 @@ const {
   getQuestionMetadata,
   getAdminQuestions,
   aiFixQuestion,
-  clearAllQuestions,
   generateQuestions,
   generateQuestionsStream
 } = require('../controllers/questionController');
@@ -67,7 +66,6 @@ router.get('/metadata', authenticate, getQuestionMetadata);
 
 // Protected routes (Admin only)
 router.get('/admin/review', authenticate, isAdmin, getAdminQuestions);
-router.delete('/admin/clear-all', authenticate, isAdmin, clearAllQuestions);
 router.post('/generate', authenticate, isAdmin, generateQuestions);
 router.post('/generate-stream', authenticate, isAdmin, generateQuestionsStream);
 router.post('/upload-pdf', authenticate, isAdmin, pdfUpload.single('pdf'), uploadPDF);

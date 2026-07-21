@@ -125,10 +125,7 @@ exports.generateTest = async (req, res) => {
 // @access  Private
 exports.getTest = async (req, res) => {
   try {
-    const test = await Test.findOne({
-      _id: req.params.testId,
-      $or: [{ createdBy: req.userId }, { isPublished: true }]
-    })
+    const test = await Test.findById(req.params.testId)
       .populate('questions', 'questionText difficulty subject chapter -_id');
 
     if (!test) {
@@ -156,10 +153,7 @@ exports.getTest = async (req, res) => {
 // @access  Private
 exports.getTestQuestions = async (req, res) => {
   try {
-    const test = await Test.findOne({
-      _id: req.params.testId,
-      $or: [{ createdBy: req.userId }, { isPublished: true }]
-    });
+    const test = await Test.findById(req.params.testId);
 
     if (!test) {
       return res.status(404).json({
@@ -211,10 +205,7 @@ exports.getTestQuestions = async (req, res) => {
 // @access  Private
 exports.startTest = async (req, res) => {
   try {
-    const test = await Test.findOne({
-      _id: req.params.testId,
-      $or: [{ createdBy: req.userId }, { isPublished: true }]
-    });
+    const test = await Test.findById(req.params.testId);
 
     if (!test) {
       return res.status(404).json({
@@ -660,6 +651,7 @@ exports.getResults = async (req, res) => {
     res.status(200).json({
       success: true,
       data: {
+        testId: attempt.test?._id || attempt.test,
         score: attempt.score,
         maxScore: attempt.maxScore,
         accuracy: attempt.analysis.accuracy.toFixed(2),

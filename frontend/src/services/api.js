@@ -74,7 +74,6 @@ export const questionsAPI = {
   getMetadata: (params) => api.get('/questions/metadata', { params }),
   getAdminQuestions: (params) => api.get('/questions/admin/review', { params }),
   classifyQuestions: (data) => api.post('/questions/classify', data),
-  clearAllQuestions: (params) => api.delete('/questions/admin/clear-all', { params }),
   importPatternQuestions: (data) => api.post('/questions/import-pattern', data),
   reviewQuestions: (data) => api.post('/questions/review-db', data),
   generateQuestions: (data) => api.post('/questions/generate', data)

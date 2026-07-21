@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
+import toast from 'react-hot-toast';
 import {
   ArrowRight,
   AlarmClock,
@@ -17,6 +18,7 @@ import {
   Timer,
   TrendingUp,
   Trophy,
+  Share2
 } from 'lucide-react';
 import AppShell from '../components/AppShell';
 import { testsAPI } from '../services/api';
@@ -55,6 +57,38 @@ const DashboardPage = () => {
   const user = useSelector((state) => state.user.user);
   const [attempts, setAttempts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [guideStep, setGuideStep] = useState(0);
+
+  const guideSteps = [
+    {
+      title: "1. Navigate to Mock Tests Page",
+      desc: "To get started, click on 'Start practice' in the banner above or navigate to the 'Mock Tests' tab in the left sidebar.",
+      actionText: "Go to Mock Tests Page",
+      icon: Play,
+      action: () => navigate('/tests')
+    },
+    {
+      title: "2. Choose Your Test Type",
+      desc: "On the Mock Tests page, select the type of test you'd like to attempt (e.g. Chapter Test, Topic Drill, PYQ Test, or a Full NEET Mock).",
+      actionText: "Next Step",
+      icon: Target,
+      action: () => setGuideStep(2)
+    },
+    {
+      title: "3. Customize Your Configuration",
+      desc: "Choose the Class (11 or 12), Subject, Chapter, Difficulty level, and number of questions you want in this practice session.",
+      actionText: "Next Step",
+      icon: BookOpen,
+      action: () => setGuideStep(3)
+    },
+    {
+      title: "4. Start and Complete Your Exam!",
+      desc: "Once configured, click the 'Start Exam' button. The exam interface will load, allowing you to answer NEET-pattern questions with auto-saving.",
+      actionText: "Let's Build a Test!",
+      icon: Sparkles,
+      action: () => navigate('/tests')
+    }
+  ];
 
   const hour = new Date().getHours();
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
@@ -143,6 +177,73 @@ const DashboardPage = () => {
           </div>
         </motion.section>
 
+        {/* Guided Mock Test Tour */}
+        <motion.section 
+          initial={{ opacity: 0, y: 18 }} 
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="glass-card p-6 md:p-8 bg-gradient-to-r from-blue-50/50 via-indigo-50/50 to-emerald-50/50 border border-slate-200/60 rounded-3xl"
+        >
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+            <div className="max-w-2xl">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50/80 text-blue-700 text-xs font-bold border border-blue-200 mb-3">
+                <Sparkles size={13} /> Interactive Tour
+              </span>
+              <h2 className="text-xl md:text-2xl font-black text-slate-800 mb-2">How to build & take a Mock Test</h2>
+              <p className="text-slate-500 font-medium text-sm md:text-base">
+                Follow these simple steps to customize your practice and build exam temperament.
+              </p>
+            </div>
+            <div className="flex bg-white p-1 rounded-xl border border-slate-200 shadow-sm self-stretch sm:self-auto justify-between">
+              {[0, 1, 2, 3].map((step) => (
+                <button 
+                  key={step} 
+                  onClick={() => setGuideStep(step)} 
+                  className={`px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all ${
+                    guideStep === step ? 'bg-primary text-white shadow-sm' : 'text-slate-500 hover:text-slate-700'
+                  }`}
+                >
+                  Step {step + 1}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div className="md:col-span-8 space-y-3">
+              <h3 className="text-lg font-bold text-slate-800">
+                {guideSteps[guideStep].title}
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                {guideSteps[guideStep].desc}
+              </p>
+              <div className="flex items-center gap-3 pt-2">
+                {guideStep > 0 && (
+                  <button 
+                    onClick={() => setGuideStep(curr => curr - 1)}
+                    className="px-4 py-2 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold hover:bg-slate-50 transition-colors"
+                  >
+                    Back
+                  </button>
+                )}
+                <button 
+                  onClick={guideSteps[guideStep].action}
+                  className="px-4 py-2 bg-primary text-white rounded-xl text-xs font-bold hover:bg-blue-700 transition-colors shadow-sm"
+                >
+                  {guideSteps[guideStep].actionText}
+                </button>
+              </div>
+            </div>
+            <div className="md:col-span-4 bg-white/60 p-5 rounded-2xl border border-slate-200/50 shadow-sm flex flex-col justify-center items-center text-center">
+              <span className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3">
+                {React.createElement(guideSteps[guideStep].icon, { size: 24 })}
+              </span>
+              <strong className="block text-sm text-slate-700 mb-1">Interactive Action</strong>
+              <p className="text-xs text-slate-400 font-medium">Click the button to try it out or go to the next step!</p>
+            </div>
+          </div>
+        </motion.section>
+
         <motion.section variants={containerVariants} initial="hidden" animate="show" className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           <MetricCard title="Questions solved" value={loading ? '...' : data.totalQuestions.toLocaleString()} subtitle="From your completed attempts" icon={Target} tone="blue" />
           <MetricCard title="Average accuracy" value={loading ? '...' : `${data.averageAccuracy}%`} subtitle="Across completed tests" icon={TrendingUp} tone="emerald" />
@@ -192,11 +293,38 @@ const DashboardPage = () => {
             {loading ? <div className="space-y-3">{[1, 2, 3].map((item) => <div key={item} className="h-16 animate-pulse rounded-xl bg-slate-100" />)}</div> : data.completed.length ? (
               <div className="space-y-2">
                 {data.completed.slice(0, 4).map((attempt) => (
-                  <button type="button" key={attempt._id} onClick={() => navigate(`/results/${attempt._id}`)} className="group flex w-full items-center gap-3 rounded-xl border border-transparent p-3 text-left transition hover:border-slate-200 hover:bg-slate-50">
+                  <div 
+                    key={attempt._id} 
+                    onClick={() => navigate(`/results/${attempt._id}`)} 
+                    className="group flex w-full items-center gap-3 rounded-xl border border-transparent p-3 text-left transition hover:border-slate-200 hover:bg-slate-50 cursor-pointer"
+                  >
                     <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-blue-50 text-blue-600"><Target size={18} /></span>
-                    <span className="min-w-0 flex-1"><strong className="block truncate text-sm text-slate-800">{attempt.test?.testName || 'Practice test'}</strong><span className="mt-0.5 block text-xs text-slate-400">{new Date(attempt.createdAt).toLocaleDateString()} · {Math.round(Number(attempt.analysis?.accuracy || 0))}% accuracy</span></span>
-                    <ChevronRight size={17} className="text-slate-300 group-hover:text-blue-500" />
-                  </button>
+                    <span className="min-w-0 flex-1">
+                      <strong className="block truncate text-sm text-slate-800">{attempt.test?.testName || 'Practice test'}</strong>
+                      <span className="mt-0.5 block text-xs text-slate-400">
+                        {new Date(attempt.createdAt).toLocaleDateString()} · {Math.round(Number(attempt.analysis?.accuracy || 0))}% accuracy
+                      </span>
+                    </span>
+                    <div className="flex items-center gap-2">
+                      {attempt.test && (
+                        <button
+                          type="button"
+                          title="Share Test Link"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const testId = attempt.test?._id || attempt.test;
+                            const shareUrl = `${window.location.origin}/exam/${testId}`;
+                            navigator.clipboard.writeText(shareUrl);
+                            toast.success('Test link copied to clipboard!');
+                          }}
+                          className="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-slate-100 rounded-lg transition-colors"
+                        >
+                          <Share2 size={15} />
+                        </button>
+                      )}
+                      <ChevronRight size={17} className="text-slate-300 group-hover:text-blue-500" />
+                    </div>
+                  </div>
                 ))}
               </div>
             ) : (

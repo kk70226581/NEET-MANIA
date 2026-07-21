@@ -374,7 +374,13 @@ export default function Home() {
             </span>
             Medical Mania
           </div>
-          <p className="text-sm font-medium text-slate-500">&copy; 2026 Medical Mania. All rights reserved.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm font-semibold text-slate-500">
+            <a href="mailto:admin@medicalmania.site" className="hover:text-indigo-600 transition-colors">
+              Contact: admin@medicalmania.site
+            </a>
+            <span className="hidden sm:block text-slate-300">|</span>
+            <p>&copy; 2026 Medical Mania. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>
