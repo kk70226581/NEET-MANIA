@@ -12,7 +12,11 @@ import {
   XCircle,
   TrendingUp,
   BookOpen,
-  Share2
+  Share2,
+  BrainCircuit,
+  MessageSquare,
+  AlertCircle,
+  HelpCircle
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import AppShell from '../components/AppShell';
@@ -23,6 +27,8 @@ const ResultsPage = () => {
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [reviewFilter, setReviewFilter] = useState('all'); // 'all', 'correct', 'incorrect', 'skipped'
+  const [explanations, setExplanations] = useState({}); // { questionId: { loading, text, error } }
 
   useEffect(() => {
     let active = true;
@@ -49,6 +55,26 @@ const ResultsPage = () => {
       { label: 'Avg. Time/Q', value: `${Math.round(Number(result.averageTimePerQuestion) || 0)}s`, icon: Clock3, color: 'text-indigo-600', bg: 'bg-indigo-100', border: 'border-indigo-200' },
     ];
   }, [result]);
+
+  const handleAskAI = async (questionId) => {
+    setExplanations(prev => ({
+      ...prev,
+      [questionId]: { loading: true, text: null, error: null }
+    }));
+
+    try {
+      const response = await testsAPI.explainQuestion(attemptId, questionId);
+      setExplanations(prev => ({
+        ...prev,
+        [questionId]: { loading: false, text: response.data.explanation, error: null }
+      }));
+    } catch (err) {
+      setExplanations(prev => ({
+        ...prev,
+        [questionId]: { loading: false, text: null, error: err.message || 'Could not fetch explanation.' }
+      }));
+    }
+  };
 
   if (loading) {
     return (
@@ -84,6 +110,19 @@ const ResultsPage = () => {
 
   const accuracy = Math.max(0, Math.min(100, Number(result.accuracy) || 0));
   const scorePercent = result.maxScore ? Math.max(0, (result.score / result.maxScore) * 100) : 0;
+
+  // Filter review questions
+  const filteredReview = (result.questionReview || []).filter((item) => {
+    if (reviewFilter === 'correct') return item.isCorrect;
+    if (reviewFilter === 'incorrect') return !item.isCorrect && !item.isSkipped;
+    if (reviewFilter === 'skipped') return item.isSkipped;
+    return true;
+  });
+
+  const countCorrect = (result.questionReview || []).filter(item => item.isCorrect).length;
+  const countIncorrect = (result.questionReview || []).filter(item => !item.isCorrect && !item.isSkipped).length;
+  const countSkipped = (result.questionReview || []).filter(item => item.isSkipped).length;
+  const countAll = (result.questionReview || []).length;
 
   return (
     <AppShell
@@ -284,42 +323,168 @@ const ResultsPage = () => {
           </section>
         )}
 
+        {/* Mock Test Analysis Section */}
         {result.questionReview?.length > 0 && (
           <section className="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 md:p-8">
-            <div className="mb-8">
-              <span className="text-xs font-bold uppercase tracking-widest text-rose-500 mb-1 block">Incorrect Answer Review</span>
-              <h3 className="text-2xl font-bold text-slate-800">Fix each mistake from the source</h3>
-              <p className="text-slate-500 mt-2">Every available citation points to the NCERT edition used to verify the question.</p>
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-widest text-primary mb-1 block">Mock Exam Analysis</span>
+                <h3 className="text-2xl font-bold text-slate-800">Interactive Question Breakdown</h3>
+                <p className="text-slate-500 mt-1">Review each question, see your status, and clear doubts in Hinglish with your AI Mentor Bhaiya.</p>
+              </div>
+
+              {/* Filter Tabs */}
+              <div className="flex flex-wrap gap-1 bg-slate-100 p-1 rounded-xl self-stretch md:self-auto">
+                {[
+                  { id: 'all', label: `All (${countAll})` },
+                  { id: 'correct', label: `Correct (${countCorrect})` },
+                  { id: 'incorrect', label: `Incorrect (${countIncorrect})` },
+                  { id: 'skipped', label: `Skipped (${countSkipped})` }
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => setReviewFilter(item.id)}
+                    className={`px-4 py-2 rounded-lg text-xs font-bold transition-all capitalize ${
+                      reviewFilter === item.id 
+                        ? 'bg-white text-slate-800 shadow-sm' 
+                        : 'text-slate-500 hover:text-slate-700'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            <div className="space-y-5">
-              {result.questionReview.map((item, index) => {
+            <div className="space-y-6">
+              {filteredReview.map((item, index) => {
                 const reference = item.ncertReference;
                 const pageLabel = reference?.page || reference?.pdfPage;
+                const aiExp = explanations[item.questionId];
+
                 return (
-                  <article key={item.questionId} className="rounded-2xl border border-slate-200 p-5 md:p-6 bg-slate-50/70">
-                    <div className="flex flex-wrap items-center gap-2 mb-3 text-xs font-bold uppercase tracking-wide">
-                      <span className="px-2.5 py-1 rounded-full bg-rose-100 text-rose-700">Question {index + 1}</span>
-                      <span className="text-slate-500 capitalize">{item.subject} · {item.chapter}</span>
-                    </div>
-                    <h4 className="font-bold text-slate-800 leading-relaxed mb-4">{item.questionText}</h4>
-                    <div className="grid md:grid-cols-2 gap-3 mb-4">
-                      <div className="rounded-xl bg-rose-50 border border-rose-100 p-3 text-sm text-rose-800">
-                        <strong>Your answer ({item.selectedOption}):</strong> {item.selectedAnswer}
+                  <article key={item.questionId} className="rounded-2xl border border-slate-200 p-5 md:p-6 bg-slate-50/70 hover:bg-slate-50/90 transition-colors">
+                    {/* Badge and Details Row */}
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide">
+                        <span className="px-2.5 py-1 rounded-full bg-slate-200 text-slate-700">Question {index + 1}</span>
+                        <span className="text-slate-500 capitalize">{item.subject} · {item.chapter}</span>
                       </div>
-                      <div className="rounded-xl bg-emerald-50 border border-emerald-100 p-3 text-sm text-emerald-800">
-                        <strong>Correct ({item.correctOption}):</strong> {item.correctAnswer}
-                      </div>
+                      
+                      {/* Status Tag */}
+                      {item.isSkipped ? (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-extrabold border border-amber-200">
+                          <HelpCircle size={14} /> Skipped (0)
+                        </span>
+                      ) : item.isCorrect ? (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-extrabold border border-emerald-200">
+                          <CheckCircle2 size={14} /> Correct (+4)
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 text-rose-700 text-xs font-extrabold border border-rose-200">
+                          <XCircle size={14} /> Incorrect (-1)
+                        </span>
+                      )}
                     </div>
-                    {item.explanation && <p className="text-slate-600 leading-relaxed mb-4">{item.explanation}</p>}
-                    {reference?.chapter && (
-                      <div className="flex flex-wrap items-center gap-2 rounded-xl bg-indigo-50 border border-indigo-100 px-4 py-3 text-sm text-indigo-800">
-                        <BookOpen size={17} />
-                        <strong>NCERT Class {reference.class}</strong>
-                        <span>· {reference.chapter}</span>
-                        {pageLabel && <span>· PDF page {pageLabel}</span>}
-                        {reference.edition && <span>· {reference.edition}</span>}
-                        {reference.sourceUrl && <a href={reference.sourceUrl} target="_blank" rel="noreferrer" className="font-bold underline ml-auto">Open source</a>}
+
+                    {/* Question Text */}
+                    <h4 className="font-bold text-slate-800 leading-relaxed mb-5 whitespace-pre-wrap">
+                      {item.questionText?.replace(/\[[a-f0-9]{8}\]$/i, '').trim()}
+                    </h4>
+
+                    {/* Options Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
+                      {['A', 'B', 'C', 'D'].map((opt) => {
+                        const optionText = item.options?.[opt]?.text || '';
+                        if (!optionText) return null;
+
+                        const isUserChoice = item.selectedOption === opt;
+                        const isCorrectAnswer = item.correctOption === opt;
+
+                        let cardStyle = 'border-slate-200 bg-white text-slate-700';
+                        let badgeText = '';
+
+                        if (isCorrectAnswer) {
+                          cardStyle = 'border-emerald-500 bg-emerald-50 text-emerald-950 font-semibold shadow-sm';
+                          badgeText = isUserChoice ? 'Your Answer (Correct)' : 'Correct Option';
+                        } else if (isUserChoice) {
+                          cardStyle = 'border-rose-400 bg-rose-50/50 text-rose-950 font-semibold';
+                          badgeText = 'Your Answer';
+                        }
+
+                        return (
+                          <div 
+                            key={opt}
+                            className={`flex justify-between items-center p-4 border rounded-xl transition-all ${cardStyle}`}
+                          >
+                            <span className="text-sm">
+                              <strong className="mr-2">({opt})</strong> {optionText}
+                            </span>
+                            {badgeText && (
+                              <span className={`text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full ${
+                                isCorrectAnswer ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'
+                              }`}>
+                                {badgeText}
+                              </span>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* NCERT Reference & Explanation Row */}
+                    <div className="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between border-t border-slate-200/60 pt-4">
+                      {reference?.chapter ? (
+                        <div className="flex flex-wrap items-center gap-2 rounded-xl bg-indigo-50/50 border border-indigo-100/60 px-4 py-2.5 text-xs text-indigo-800">
+                          <BookOpen size={15} />
+                          <strong>NCERT Class {reference.class}</strong>
+                          <span>· {reference.chapter}</span>
+                          {pageLabel && <span>· PDF page {pageLabel}</span>}
+                          {reference.edition && <span>· {reference.edition}</span>}
+                          {reference.sourceUrl && (
+                            <a href={reference.sourceUrl} target="_blank" rel="noreferrer" className="font-bold underline ml-2">
+                              Open source
+                            </a>
+                          )}
+                        </div>
+                      ) : (
+                        <div className="text-slate-400 text-xs italic">Citation not indexed.</div>
+                      )}
+
+                      {/* AI Mentor Button */}
+                      <button
+                        onClick={() => handleAskAI(item.questionId)}
+                        disabled={aiExp?.loading}
+                        className="flex items-center justify-center gap-2 px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs rounded-xl shadow-md transition-all self-end md:self-auto hover:shadow-lg disabled:opacity-55"
+                      >
+                        <BrainCircuit size={16} />
+                        <span>{aiExp ? 'Refresh AI Bhaiya Explanation' : 'Ask AI Mentor Bhaiya'}</span>
+                      </button>
+                    </div>
+
+                    {/* AI Hinglish Explanation Container */}
+                    {aiExp && (
+                      <div className="mt-5 p-5 bg-purple-50/70 rounded-2xl border border-purple-100 flex gap-4 animate-fade-in shadow-inner">
+                        <div className="w-10 h-10 rounded-full bg-purple-600 text-white flex-shrink-0 flex items-center justify-center font-bold text-sm shadow-sm">
+                          Bhaiya
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-xs font-bold text-purple-700 uppercase tracking-widest mb-1.5 flex items-center gap-1.5">
+                            <BrainCircuit size={14} /> AI Mentor Bhaiya (Hinglish Support)
+                          </p>
+                          {aiExp.loading ? (
+                            <div className="flex items-center gap-2 text-sm text-slate-500 py-2">
+                              <div className="w-4 h-4 border-2 border-purple-200 border-t-purple-600 rounded-full animate-spin" />
+                              <span>Thinking in Hinglish...</span>
+                            </div>
+                          ) : aiExp.error ? (
+                            <p className="text-sm text-rose-600 font-semibold">{aiExp.error}</p>
+                          ) : (
+                            <p className="text-sm text-slate-700 leading-relaxed font-medium whitespace-pre-wrap">
+                              {aiExp.text}
+                            </p>
+                          )}
+                        </div>
                       </div>
                     )}
                   </article>

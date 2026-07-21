@@ -9,7 +9,8 @@ const {
   saveResponse,
   submitTest,
   getResults,
-  getUserAttempts
+  getUserAttempts,
+  explainQuestion
 } = require('../controllers/testController');
 
 // All routes require authentication
@@ -20,6 +21,7 @@ router.get('/attempts', getUserAttempts);
 router.put('/attempts/:attemptId/response', saveResponse);
 router.put('/attempts/:attemptId/submit', submitTest);
 router.get('/attempts/:attemptId/results', getResults);
+router.post('/attempts/:attemptId/explain-question', explainQuestion);
 
 // Generate & Get tests
 router.post('/generate', generateTest);

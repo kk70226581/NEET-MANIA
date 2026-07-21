@@ -88,7 +88,8 @@ export const testsAPI = {
   saveResponse: (attemptId, data) => api.put(`/tests/attempts/${attemptId}/response`, data),
   submitTest: (attemptId) => api.put(`/tests/attempts/${attemptId}/submit`),
   getResults: (attemptId) => api.get(`/tests/attempts/${attemptId}/results`),
-  getUserAttempts: (params) => api.get('/tests/attempts', { params })
+  getUserAttempts: (params) => api.get('/tests/attempts', { params }),
+  explainQuestion: (attemptId, questionId) => api.post(`/tests/attempts/${attemptId}/explain-question`, { questionId })
 };
 
 export const mistakesAPI = {

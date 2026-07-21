@@ -640,26 +640,29 @@ exports.getResults = async (req, res) => {
       ? `Prioritize ${attempt.weakAreas.slice(0, 3).join(', ')}. Review each incorrect concept, then take a focused chapter test.`
       : 'Review every incorrect answer, note the concept behind it, and take a focused test next.';
 
-    const incorrectResponses = attempt.responses.filter((response) => response.selectedOption && !response.isCorrect);
-    const incorrectQuestions = await Question.find({
-      _id: { $in: incorrectResponses.map((response) => response.questionId) }
+    const allQuestions = await Question.find({
+      _id: { $in: attempt.responses.map((response) => response.questionId) }
     }).select('questionText options correctAnswer explanation subject chapter topic ncertReference').lean();
-    const questionById = new Map(incorrectQuestions.map((question) => [String(question._id), question]));
-    const questionReview = incorrectResponses.map((response) => {
+    const questionById = new Map(allQuestions.map((question) => [String(question._id), question]));
+    const questionReview = attempt.responses.map((response) => {
       const question = questionById.get(String(response.questionId));
       if (!question) return null;
+      const isSkipped = !response.selectedOption;
       return {
         questionId: question._id,
         questionText: question.questionText,
         subject: question.subject,
         chapter: question.chapter,
         topic: question.topic,
-        selectedOption: response.selectedOption,
-        selectedAnswer: question.options?.[response.selectedOption]?.text || '',
+        options: question.options,
+        selectedOption: response.selectedOption || null,
+        selectedAnswer: response.selectedOption ? (question.options?.[response.selectedOption]?.text || '') : 'Skipped',
         correctOption: question.correctAnswer,
         correctAnswer: question.options?.[question.correctAnswer]?.text || '',
         explanation: question.explanation?.text || '',
-        ncertReference: question.ncertReference || null
+        ncertReference: question.ncertReference || null,
+        isCorrect: isSkipped ? false : response.isCorrect,
+        isSkipped
       };
     }).filter(Boolean);
 
@@ -727,5 +730,93 @@ exports.getUserAttempts = async (req, res) => {
       success: false,
       message: error.message
     });
+  }
+};
+
+// @route   POST /api/tests/attempts/:attemptId/explain-question
+// @desc    Explain a test question using AI (Hinglish response)
+// @access  Private
+exports.explainQuestion = async (req, res, next) => {
+  try {
+    const { questionId } = req.body;
+    const { attemptId } = req.params;
+    if (!questionId) {
+      return res.status(400).json({ success: false, message: 'questionId is required' });
+    }
+
+    const [attempt, question] = await Promise.all([
+      TestAttempt.findOne({ _id: attemptId, student: req.userId }),
+      Question.findById(questionId).lean()
+    ]);
+
+    if (!attempt) {
+      return res.status(404).json({ success: false, message: 'Test attempt not found' });
+    }
+    if (!question) {
+      return res.status(404).json({ success: false, message: 'Question not found' });
+    }
+
+    // Find student's response in this attempt
+    const response = attempt.responses.find(r => String(r.questionId) === String(questionId));
+    const selectedOption = response ? response.selectedOption : null;
+    const isSkipped = !selectedOption;
+    const isCorrect = response ? response.isCorrect : false;
+
+    let attemptStatusText = '';
+    if (isSkipped) {
+      attemptStatusText = 'Skipped (You did not attempt this question in the test)';
+    } else if (isCorrect) {
+      attemptStatusText = `Correctly Answered (You selected Option ${selectedOption})`;
+    } else {
+      attemptStatusText = `Incorrectly Answered (You selected Option ${selectedOption}, but the correct answer is Option ${question.correctAnswer})`;
+    }
+
+    const { getGeminiText } = require('../services/geminiClient');
+
+    const prompt = `Student is reviewing a question from a completed mock test.
+Question Details:
+Subject: ${question.subject}
+Chapter: ${question.chapter}
+Topic: ${question.topic || 'General'}
+Question: "${question.questionText}"
+Options:
+A: ${question.options?.A?.text || ''}
+B: ${question.options?.B?.text || ''}
+C: ${question.options?.C?.text || ''}
+D: ${question.options?.D?.text || ''}
+Correct Option: Option ${question.correctAnswer}
+Student's Action in Test: ${attemptStatusText}
+NCERT/NTA Explanation: "${question.explanation?.text || ''}"
+
+Please explain this question to the student as their caring expert NEET Bhaiya / mentor.
+Explain in "Hinglish" (a natural mix of English and Hindi, but English dominant, e.g. "Dekho, is question mein hume transform principle find karna hai...").
+Requirements:
+1. First, acknowledge their response. For example: "Aapne ye question skip kiya tha..." or "Aapne Option ${selectedOption} select kiya jo incorrect hai, correct answer is Option ${question.correctAnswer}..." in a warm, elder-brother style.
+2. Break down the concept and solve/explain step-by-step using simple terms.
+3. Keep the explanation very clear and structure it into 2-3 short, readable paragraphs.
+4. Use 1-3 emojis naturally.
+5. Write all formulas or math steps in plain text (e.g. E = h * c / lambda). DO NOT use LaTeX, backticks, or Markdown formatting styles that might fail to render.`;
+
+    const explanation = await getGeminiText({
+      systemInstruction: 'You are a warm, expert Indian elder brother (Bhaiya) and NEET mentor explaining questions in Hinglish (English-Hindi mix, English dominant). Be encouraging, extremely clear, and structured. Use plain text only: never markdown, LaTeX, asterisks, or code formatting.',
+      prompt,
+      maxOutputTokens: 500,
+      temperature: 0.7
+    });
+
+    res.status(200).json({
+      success: true,
+      data: {
+        questionId,
+        isSkipped,
+        isCorrect,
+        selectedOption,
+        correctAnswer: question.correctAnswer,
+        explanation: explanation || 'Ek baar fir try karo yaar, main explain karta hoon! 😊'
+      }
+    });
+
+  } catch (error) {
+    next(error);
   }
 };
