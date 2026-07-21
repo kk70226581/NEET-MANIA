@@ -1,0 +1,809 @@
+<USER_REQUEST>
+Motion in One Dimension
+100 Numerical-Heavy NEET Questions | NCERT-Aligned | Selected JEE Main Level
+Question mix: Approximately 85% numerical/graph-based and 15% conceptual or assertion-reason. Use g = 10 m s⁻² unless stated otherwise.
+Coverage: distance and displacement, average and instantaneous velocity, acceleration, equations of motion, graphs, nth-second relations, free fall, vertical projection, relative motion, trains, stopping distance, and variable acceleration.
+1. A particle moves 30 m east and then 20 m west in 10 s. Its average speed and magnitude of average velocity are:
+A. 1 m/s, 1 m/s
+B. 5 m/s, 1 m/s
+C. 5 m/s, 5 m/s
+D. 1 m/s, 5 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Distance, displacement and averages
+Explanation: Total distance is 50 m, displacement is 10 m east; divide each by 10 s.
+
+2. A body covers the first half of a distance with speed 20 m/s and the second half with speed 30 m/s. Its average speed is:
+A. 24 m/s
+B. 25 m/s
+C. 26 m/s
+D. 10 m/s
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Average speed
+Explanation: For equal distances, average speed is 2v₁v₂/(v₁+v₂)=24 m/s.
+
+3. A car travels for equal time intervals with speeds 20 m/s and 30 m/s. Its average speed is:
+A. 24 m/s
+B. 25 m/s
+C. 26 m/s
+D. 50 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Average speed
+Explanation: For equal times, average speed is the arithmetic mean.
+
+4. The position of a particle is x = 4t² - 2t + 3. Its velocity at t = 2 s is:
+A. 6 m/s
+B. 10 m/s
+C. 14 m/s
+D. 18 m/s
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Position-time relation
+Explanation: v=dx/dt=8t-2, so v=14 m/s.
+
+5. For x = 2t³ - 3t² + 4, acceleration at t = 2 s is:
+A. 6 m/s²
+B. 12 m/s²
+C. 18 m/s²
+D. 24 m/s²
+Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Differentiation in kinematics
+Explanation: v=6t²-6t and a=12t-6=18 m/s².
+
+6. A body starts from rest and moves with acceleration 4 m/s² for 5 s. Distance covered is:
+A. 20 m
+B. 40 m
+C. 50 m
+D. 100 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Uniform acceleration
+Explanation: s=ut+½at²=50 m.
+
+7. A particle moving at 20 m/s is uniformly retarded at 2 m/s². Time taken to stop is:
+A. 5 s
+B. 10 s
+C. 20 s
+D. 40 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Retardation
+Explanation: 0=20-2t gives t=10 s.
+
+8. A train moving at 15 m/s accelerates uniformly at 1 m/s² for 10 s. Final speed is:
+A. 20 m/s
+B. 25 m/s
+C. 30 m/s
+D. 35 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Uniform acceleration
+Explanation: v=u+at=15+10=25 m/s.
+
+9. A body moving with 10 m/s accelerates at 2 m/s² through 75 m. Its final speed is:
+A. 15 m/s
+B. 20 m/s
+C. 25 m/s
+D. 30 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Equation independent of time
+Explanation: v²=u²+2as=100+300=400.
+
+10. A car at 25 m/s stops in 50 m. Its uniform retardation is:
+A. 3.125 m/s²
+B. 6.25 m/s²
+C. 12.5 m/s²
+D. 25 m/s²
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Braking
+Explanation: 0=625+2a(50), so a=-6.25 m/s².
+
+11. A stone is dropped from rest. Taking g=10 m/s², distance fallen in 3 s is:
+A. 15 m
+B. 30 m
+C. 45 m
+D. 90 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Free fall
+Explanation: s=½gt²=45 m.
+
+12. A ball is thrown vertically upward with speed 30 m/s. Maximum height is:
+A. 30 m
+B. 45 m
+C. 60 m
+D. 90 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vertical motion
+Explanation: H=u²/(2g)=900/20=45 m.
+
+13. A ball is thrown upward with speed 20 m/s. Total time of flight is:
+A. 2 s
+B. 4 s
+C. 5 s
+D. 8 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vertical motion
+Explanation: T=2u/g=4 s.
+
+14. A body falls freely from a height of 80 m. Time of fall is:
+A. 2 s
+B. 4 s
+C. 6 s
+D. 8 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Free fall
+Explanation: 80=5t², so t=4 s.
+
+15. A body is thrown downward with speed 10 m/s from a height of 60 m. Time to reach ground is:
+A. 2 s
+B. 3 s
+C. 4 s
+D. 5 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vertical motion
+Explanation: 60=10t+5t² gives t=3 s.
+
+16. A ball is thrown upward from a tower with speed 20 m/s and reaches the ground after 6 s. Height of the tower is:
+A. 40 m
+B. 60 m
+C. 80 m
+D. 100 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vertical motion
+Explanation: Taking upward positive, displacement=-h=20(6)-5(36)=-60.
+
+17. Two particles start simultaneously from the same point in the same direction with speeds 10 m/s and 15 m/s. Their separation after 8 s is:
+A. 20 m
+B. 30 m
+C. 40 m
+D. 50 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative motion in 1D
+Explanation: Relative speed is 5 m/s, so separation is 40 m.
+
+18. Two trains move toward each other at 20 m/s and 30 m/s. If initially 500 m apart, they meet after:
+A. 5 s
+B. 10 s
+C. 20 s
+D. 25 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative motion
+Explanation: Relative speed is 50 m/s; time=500/50=10 s.
+
+19. A police car moving at 30 m/s chases a car moving at 20 m/s, 200 m ahead. Catch-up time is:
+A. 10 s
+B. 20 s
+C. 30 s
+D. 40 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative motion
+Explanation: Relative speed is 10 m/s; time=200/10=20 s.
+
+20. A particle has velocity v = 6t - 2. Displacement from t=1 s to t=3 s is:
+A. 12 m
+B. 16 m
+C. 20 m
+D. 24 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Velocity-time integration
+Explanation: Integrate v: [3t²-2t]₁³ = 21-1=20 m.
+
+21. Acceleration of a particle is a=4t. If it starts from rest, velocity at t=3 s is:
+A. 6 m/s
+B. 12 m/s
+C. 18 m/s
+D. 24 m/s
+Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Acceleration-time integration
+Explanation: v=∫₀³4t dt=2t²=18 m/s.
+
+22. A particle has acceleration a=6 m/s² and initial velocity -4 m/s. Its velocity after 3 s is:
+A. 10 m/s
+B. 14 m/s
+C. 18 m/s
+D. 22 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Signed velocity
+Explanation: v=-4+6×3=14 m/s.
+
+23. A body starts with velocity -10 m/s and acceleration +2 m/s². It reverses direction after:
+A. 2 s
+B. 5 s
+C. 10 s
+D. 20 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Direction reversal
+Explanation: At reversal v=0: -10+2t=0.
+
+24. For the previous motion, displacement before reversal is:
+A. -10 m
+B. -20 m
+C. -25 m
+D. -50 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Direction reversal
+Explanation: s=ut+½at²=-50+25=-25 m.
+
+25. A particle moves according to x=t³-6t²+9t. It is instantaneously at rest at:
+A. t=1 s only
+B. t=3 s only
+C. t=1 s and 3 s
+D. t=0 s and 3 s
+Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Turning points
+Explanation: v=3(t-1)(t-3), so v=0 at 1 s and 3 s.
+
+26. For x=t³-6t²+9t, acceleration at t=2 s is:
+A. -6 m/s²
+B. 0
+C. 6 m/s²
+D. 12 m/s²
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Position-time relation
+Explanation: a=6t-12, hence zero at 2 s.
+
+27. A velocity-time graph is a straight line from (0,0) to (4 s,20 m/s). Displacement in 4 s is:
+A. 20 m
+B. 40 m
+C. 60 m
+D. 80 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Velocity-time graph
+Explanation: Area under graph is ½×4×20=40 m.
+
+28. A particle moves at 10 m/s for 5 s and then at 20 m/s for 5 s. Total displacement is:
+A. 50 m
+B. 100 m
+C. 150 m
+D. 200 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Velocity-time graph
+Explanation: Displacement=10×5+20×5=150 m.
+
+29. A particle’s velocity changes uniformly from 10 m/s to -10 m/s in 4 s. Acceleration is:
+A. -10 m/s²
+B. -5 m/s²
+C. 0
+D. 5 m/s²
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Velocity-time graph
+Explanation: a=(v-u)/t=(-20)/4=-5 m/s².
+
+30. In the previous case, displacement during the 4 s interval is:
+A. -40 m
+B. 0
+C. 20 m
+D. 40 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Signed area under v-t graph
+Explanation: Average velocity=(10-10)/2=0.
+
+31. A particle moves with constant acceleration. Its speeds at two points 20 m apart are 10 m/s and 14 m/s. Acceleration is:
+A. 1.2 m/s²
+B. 2.4 m/s²
+C. 4.8 m/s²
+D. 9.6 m/s²
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Uniform acceleration
+Explanation: a=(v²-u²)/(2s)=(196-100)/40=2.4.
+
+32. A body covers 10 m in the first second and 14 m in the second second. Its acceleration is:
+A. 2 m/s²
+B. 4 m/s²
+C. 6 m/s²
+D. 8 m/s²
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Distance in nth second
+Explanation: Difference between successive one-second distances equals acceleration.
+
+33. A body covers 5 m in the first second and 15 m in the third second. Its acceleration is:
+A. 2.5 m/s²
+B. 5 m/s²
+C. 7.5 m/s²
+D. 10 m/s²
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Distance in nth second
+Explanation: sₙ=u+a(n-½); s₃-s₁=2a=10, so a=5.
+
+34. A freely falling body covers in its fifth second a distance of:
+A. 25 m
+B. 35 m
+C. 45 m
+D. 50 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Distance in nth second
+Explanation: s₅=g(5-½)=10×4.5=45 m.
+
+35. A stone thrown upward at 40 m/s covers during its fourth second a displacement of:
+A. 5 m upward
+B. 10 m upward
+C. 5 m downward
+D. 10 m downward
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Distance in nth second
+Explanation: s₄=u+a(3.5)=40-35=5 m upward.
+
+36. A body starts from rest and covers 25 m in its last second before reaching 45 m/s. Acceleration is:
+A. 10 m/s²
+B. 20 m/s²
+C. 40 m/s²
+D. 45 m/s²
+Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Distance in last second
+Explanation: Final speed 45=at. Last-second distance=a(t-0.5)=45-0.5a=25, so a=40 m/s².
+
+37. A particle starts from rest, accelerates at 4 m/s² for 5 s, then moves uniformly for 5 s. Total distance is:
+A. 100 m
+B. 150 m
+C. 200 m
+D. 250 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Piecewise motion
+Explanation: First part 50 m; speed becomes 20 m/s and next distance is 100 m.
+
+38. A car accelerates from rest at 2 m/s² for 10 s and then brakes at 4 m/s² until rest. Total distance is:
+A. 100 m
+B. 125 m
+C. 150 m
+D. 200 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Piecewise motion
+Explanation: Acceleration distance=100 m; braking distance=50 m.
+
+39. A train starts from rest, reaches 20 m/s in 10 s, travels uniformly for 20 s and stops in 5 s. Total distance is:
+A. 400 m
+B. 500 m
+C. 550 m
+D. 600 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Velocity-time graph
+Explanation: Areas under v-t graph: 100+400+50=550 m.
+
+40. A body travels 40 m in 4 s and 60 m in the next 4 s with uniform acceleration. Initial velocity is:
+A. 5 m/s
+B. 7.5 m/s
+C. 10 m/s
+D. 12.5 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Successive interval displacement
+Explanation: First: 40=4u+8a; second interval displacement=4u+24a=60. Solving gives a=1.25 and u=7.5.
+
+41. A particle covers equal distances with speeds v, 2v and 3v. Average speed is:
+A. 18v/11
+B. 2v
+C. 11v/6
+D. 6v/11
+Answer: A  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Average speed
+Explanation: For equal distances, average=3/(1/v+1/2v+1/3v)=18v/11.
+
+42. A particle moves for equal times with speeds v, 2v and 3v. Average speed is:
+A. 18v/11
+B. 2v
+C. 11v/6
+D. 6v/11
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Average speed
+Explanation: For equal times, arithmetic mean=(v+2v+3v)/3=2v.
+
+43. A man walks at 5 km/h for 2 h and at 3 km/h for 1 h. Average speed is:
+A. 3.5 km/h
+B. 4 km/h
+C. 13/3 km/h
+D. 5 km/h
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Average speed
+Explanation: Total distance=13 km and total time=3 h.
+
+44. A body moves with speed 10 m/s for 30 s and 20 m/s for 20 s. Average speed is:
+A. 12 m/s
+B. 14 m/s
+C. 16 m/s
+D. 18 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Average speed
+Explanation: Total distance=700 m, total time=50 s.
+
+45. The position-time graph of a particle is a straight line with negative slope. The particle has:
+A. positive acceleration
+B. negative acceleration
+C. constant negative velocity
+D. variable negative velocity
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Position-time graph
+Explanation: Slope of x-t graph is velocity; constant negative slope means constant negative velocity.
+
+46. A horizontal line on a position-time graph represents:
+A. uniform velocity
+B. zero velocity
+C. uniform acceleration
+D. zero displacement only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Position-time graph
+Explanation: Position remains constant, so velocity is zero.
+
+47. A horizontal line above the time axis on a velocity-time graph represents:
+A. zero velocity
+B. constant positive velocity
+C. constant acceleration
+D. increasing displacement at increasing rate
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Velocity-time graph
+Explanation: Velocity is constant and positive.
+
+48. The slope of a velocity-time graph gives:
+A. displacement
+B. distance
+C. acceleration
+D. jerk
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Graph interpretation
+Explanation: Acceleration is the time derivative of velocity.
+
+49. The area under an acceleration-time graph gives:
+A. displacement
+B. change in velocity
+C. average velocity
+D. distance
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Acceleration-time graph
+Explanation: Integral of acceleration over time is change in velocity.
+
+50. A particle has acceleration zero but velocity non-zero. Its motion is:
+A. impossible
+B. uniform motion
+C. necessarily at rest
+D. uniformly accelerated
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Conceptual kinematics
+Explanation: Zero acceleration means constant velocity, which may be non-zero.
+
+51. A particle has velocity zero at an instant. Its acceleration at that instant:
+A. must be zero
+B. must be positive
+C. must be negative
+D. may be non-zero
+Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Turning point
+Explanation: At a turning point, velocity can be zero while acceleration remains non-zero.
+
+52. A body moving with constant speed in one dimension has:
+A. always zero acceleration
+B. always positive acceleration
+C. possibly non-zero acceleration at direction reversal
+D. constant displacement
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Speed versus velocity
+Explanation: In one-dimensional ideal motion, direction reversal requires velocity change and hence acceleration.
+
+53. A particle moves from x=-5 m to x=+15 m. Its displacement is:
+A. 10 m
+B. 20 m
+C. -20 m
+D. 15 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Displacement
+Explanation: Displacement=15-(-5)=20 m.
+
+54. A particle moves from x=10 m to x=-20 m and then to x=5 m. Total distance and displacement are:
+A. 55 m, -5 m
+B. 55 m, 5 m
+C. 45 m, -5 m
+D. 45 m, 5 m
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Distance and displacement
+Explanation: Distance=30+25=55 m; displacement=5-10=-5 m.
+
+55. A body’s speed increases from 5 m/s to 15 m/s in 4 s. Average acceleration is:
+A. 1.25 m/s²
+B. 2.5 m/s²
+C. 5 m/s²
+D. 10 m/s²
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Average acceleration
+Explanation: Average acceleration=(15-5)/4=2.5 m/s².
+
+56. A body’s velocity changes from +10 m/s to -20 m/s in 5 s. Average acceleration is:
+A. -2 m/s²
+B. -4 m/s²
+C. -6 m/s²
+D. +6 m/s²
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Signed acceleration
+Explanation: Acceleration=(-20-10)/5=-6 m/s².
+
+57. A particle has negative velocity and positive acceleration. Its speed:
+A. must increase
+B. must decrease initially
+C. must remain constant
+D. is zero
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Signs of velocity and acceleration
+Explanation: Acceleration opposite to velocity reduces speed until reversal.
+
+58. A particle has negative velocity and negative acceleration. Its speed:
+A. increases
+B. decreases
+C. remains constant
+D. becomes zero immediately
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Signs of velocity and acceleration
+Explanation: Velocity and acceleration have the same direction, so speed increases.
+
+59. A stone is released from a balloon rising upward at 10 m/s from a height of 40 m. Time to hit ground is:
+A. 2 s
+B. 4 s
+C. 5 s
+D. 6 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Vertical motion from moving platform
+Explanation: 0=40+10t-5t² gives t=4 s.
+
+60. A stone is released from a balloon descending at 10 m/s from a height of 40 m. Time to hit ground is:
+A. 1.5 s
+B. 2 s
+C. 3 s
+D. 4 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vertical motion from moving platform
+Explanation: 40=10t+5t² gives t=2 s.
+
+61. Two stones are dropped from the same point with a time gap of 1 s. Separation 3 s after the first is dropped is:
+A. 5 m
+B. 15 m
+C. 20 m
+D. 25 m
+Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative free fall
+Explanation: First falls 45 m, second falls 20 m; separation=25 m.
+
+62. A ball is thrown upward at 30 m/s. Its velocity after 4 s is:
+A. -10 m/s
+B. 0
+C. 10 m/s
+D. 20 m/s
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vertical motion
+Explanation: v=30-10×4=-10 m/s.
+
+63. A ball thrown upward at 20 m/s is at a height 15 m at times:
+A. 1 s only
+B. 3 s only
+C. 1 s and 3 s
+D. 2 s and 4 s
+Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Vertical motion
+Explanation: 15=20t-5t² gives t=1 s and 3 s.
+
+64. A body dropped from rest covers half its total height in the last 1 s. Total time of fall is:
+A. 2+√2 s
+B. 2-√2 s
+C. 1+√2 s
+D. 1-√2 s
+Answer: A  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Last-second free fall
+Explanation: 5T²-5(T-1)²=½·5T² gives T²-4T+2=0; T=2+√2.
+
+65. A freely falling body covers 35 m in its last second. Total time of fall is:
+A. 3 s
+B. 4 s
+C. 5 s
+D. 6 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Distance in nth second
+Explanation: Distance in nth second is 5(2n-1)=35, giving n=4.
+
+66. A body projected vertically upward crosses a point 20 m above projection twice with a 2 s interval. Its initial speed is:
+A. 20 m/s
+B. 10√5 m/s
+C. 10√6 m/s
+D. 30 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Vertical motion
+Explanation: Roots of 5t²-ut+20=0 differ by 2; using discriminant relation gives u²=500.
+
+67. A lift moving upward at 5 m/s releases a bolt. After 2 s, its displacement relative to ground is:
+A. 10 m upward
+B. 10 m downward
+C. 20 m downward
+D. zero
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Released body
+Explanation: s=ut-½gt²=10-20=-10 m.
+
+68. A body is projected downward at 5 m/s. Its speed after falling 15 m is:
+A. 15 m/s
+B. 5√13 m/s
+C. 10√3 m/s
+D. 20 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vertical motion
+Explanation: v²=5²+2×10×15=325, so v=5√13 m/s.
+
+69. A particle’s velocity is v=4-t². It changes direction at:
+A. 1 s
+B. 2 s
+C. 4 s
+D. never
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Variable velocity
+Explanation: Direction changes when v=0, giving t=2 s.
+
+70. For v=4-t², displacement from t=0 to t=3 s is:
+A. 3 m
+B. 5 m
+C. 7 m
+D. 9 m
+Answer: A  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Velocity-time integration
+Explanation: ∫₀³(4-t²)dt=12-9=3 m.
+
+71. For v=4-t², total distance from t=0 to t=3 s is:
+A. 3 m
+B. 13/3 m
+C. 19/3 m
+D. 9 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Distance from variable velocity
+Explanation: Distance=∫₀²(4-t²)dt + |∫₂³(4-t²)dt| =16/3+1=19/3 m.
+
+72. A particle has x=5+4t-t². Its maximum x-coordinate is:
+A. 5 m
+B. 7 m
+C. 9 m
+D. 11 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Turning point
+Explanation: v=4-2t=0 at t=2 s; x=5+8-4=9 m.
+
+73. For x=5+4t-t², the particle returns to x=5 m after:
+A. 2 s
+B. 4 s
+C. 5 s
+D. 8 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Return to initial position
+Explanation: 4t-t²=0 gives t=4 s besides t=0.
+
+74. A particle begins at x=0 with velocity 6 m/s and acceleration -2 m/s². Its maximum displacement is:
+A. 6 m
+B. 9 m
+C. 12 m
+D. 18 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Retarded motion
+Explanation: At v=0, t=3 s; s=18-9=9 m.
+
+75. A body is moving at 72 km/h. Its speed in m/s is:
+A. 10
+B. 15
+C. 20
+D. 25
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Unit conversion
+Explanation: Multiply by 5/18.
+
+76. A car accelerates from 36 km/h to 72 km/h in 5 s. Acceleration is:
+A. 1 m/s²
+B. 2 m/s²
+C. 4 m/s²
+D. 7.2 m/s²
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Unit conversion and acceleration
+Explanation: Speeds are 10 and 20 m/s; acceleration=2 m/s².
+
+77. A 150 m long train moving at 15 m/s crosses a pole in:
+A. 5 s
+B. 10 s
+C. 15 s
+D. 20 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Train problems
+Explanation: Time=train length/speed=150/15=10 s.
+
+78. A 120 m train moving at 20 m/s crosses a 180 m platform in:
+A. 6 s
+B. 9 s
+C. 12 s
+D. 15 s
+Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Train problems
+Explanation: Total distance=300 m; time=15 s.
+
+79. Two trains of lengths 100 m and 150 m move in opposite directions at 10 m/s and 15 m/s. Crossing time is:
+A. 5 s
+B. 10 s
+C. 15 s
+D. 25 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative motion of trains
+Explanation: Relative speed=25 m/s and total length=250 m.
+
+80. Two trains of lengths 100 m and 150 m move in the same direction at 20 m/s and 15 m/s. Overtaking time is:
+A. 10 s
+B. 25 s
+C. 50 s
+D. 75 s
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative motion of trains
+Explanation: Relative speed=5 m/s and total length=250 m.
+
+81. A car moving at 20 m/s sees an obstacle 50 m away. Reaction time is 0.5 s and braking retardation is 5 m/s². It will:
+A. stop 5 m before obstacle
+B. stop exactly at obstacle
+C. hit obstacle at 10 m/s
+D. hit obstacle at 15 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Stopping distance
+Explanation: Reaction distance=10 m; braking distance=40 m; total=50 m.
+
+82. For the same car, if reaction time becomes 1 s, distance available for braking is 30 m. Speed at impact is:
+A. 5 m/s
+B. 10 m/s
+C. 15 m/s
+D. 20 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Stopping distance
+Explanation: v²=20²-2×5×30=100, so v=10 m/s.
+
+83. A particle covers 24 m and 64 m in two successive intervals of 4 s each under constant acceleration. Acceleration is:
+A. 1.25 m/s²
+B. 2.5 m/s²
+C. 5 m/s²
+D. 10 m/s²
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Successive intervals
+Explanation: Difference of successive equal-interval displacements is aT²: 40=16a.
+
+84. A particle covers 10 m in the first 2 s and 30 m in the next 2 s. Initial velocity is:
+A. 0
+B. 2.5 m/s
+C. 5 m/s
+D. 10 m/s
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Successive intervals
+Explanation: 10=2u+2a and 30=2u+6a; solving gives a=5 and u=0.
+
+85. A body has velocities 10 m/s and 30 m/s at positions separated by 100 m. Its velocity at the midpoint is:
+A. 20 m/s
+B. 10√5 m/s
+C. 5√20 m/s
+D. 25 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Velocity at midpoint
+Explanation: With constant acceleration, v_mid²=(u²+v²)/2=500.
+
+86. A particle moving with uniform acceleration has average velocity 20 m/s over 5 s. If initial velocity is 10 m/s, final velocity is:
+A. 20 m/s
+B. 25 m/s
+C. 30 m/s
+D. 40 m/s
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Average velocity
+Explanation: For uniform acceleration, average velocity=(u+v)/2.
+
+87. A particle’s velocity at half the total time of uniformly accelerated motion is:
+A. arithmetic mean of initial and final velocities
+B. geometric mean
+C. harmonic mean
+D. always zero
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Uniform acceleration concept
+Explanation: Velocity varies linearly with time.
+
+88. A body projected upward reaches maximum height H. At height H/2, its speed is:
+A. u/2
+B. u/√2
+C. u/4
+D. u
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vertical motion
+Explanation: v²=u²-2g(H/2)=u²/2.
+
+89. A body falls from rest through height H. Its speed after falling H/2 is:
+A. √gH
+B. √2gH
+C. ½√2gH
+D. 2√gH
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Free fall
+Explanation: v²=2g(H/2)=gH.
+
+90. A body projected upward takes 2 s to reach maximum height. Its initial speed and maximum height are:
+A. 10 m/s, 5 m
+B. 20 m/s, 20 m
+C. 20 m/s, 40 m
+D. 40 m/s, 20 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vertical motion
+Explanation: u=gt=20 m/s and H=u²/2g=20 m.
+
+91. Assertion: The distance travelled by a particle is always greater than or equal to the magnitude of its displacement. Reason: Distance depends on the actual path, whereas displacement depends only on initial and final positions.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Distance and displacement
+Explanation: The reason directly explains the inequality.
+
+92. Assertion: Average speed can be zero only if no distance is covered. Reason: Distance is a non-negative scalar quantity.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Average speed
+Explanation: Zero average speed requires zero total distance.
+
+93. Assertion: Average velocity can be zero even when average speed is non-zero. Reason: A body can return to its starting point after travelling a finite distance.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Average quantities
+Explanation: A round trip has zero displacement but non-zero distance.
+
+94. Assertion: A body moving in the negative x-direction may have positive acceleration. Reason: Acceleration and velocity need not have the same direction.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Signs in kinematics
+Explanation: Positive acceleration can slow a negatively moving body.
+
+95. Assertion: At the highest point of vertical projection, velocity and acceleration are both zero. Reason: Gravity acts continuously downward.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Vertical motion
+Explanation: Velocity is zero momentarily, but acceleration remains g downward.
+
+96. Assertion: The area under a velocity-time graph gives displacement. Reason: Velocity is the time derivative of displacement.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Graphs
+Explanation: Integration of velocity yields displacement.
+
+97. Assertion: A straight-line velocity-time graph always represents uniform velocity. Reason: The slope of a velocity-time graph gives acceleration.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Graphs
+Explanation: A sloping straight line represents constant acceleration, not constant velocity.
+
+98. Assertion: For uniformly accelerated motion, average velocity equals (u+v)/2. Reason: Velocity changes linearly with time.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Uniform acceleration
+Explanation: The time average of a linear function equals the mean of endpoint values.
+
+99. Assertion: A body can have zero displacement and non-zero distance. Reason: Displacement is a vector and distance is a scalar.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: B  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Distance and displacement
+Explanation: Both are true, but the return-to-origin path is the direct explanation.
+
+100. Assertion: In free fall near Earth, all bodies have the same acceleration if air resistance is neglected. Reason: Gravitational acceleration is independent of the mass of the falling body.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Free fall
+Explanation: The reason explains equal acceleration.
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-07-21T11:42:44+05:30.
+</ADDITIONAL_METADATA>
