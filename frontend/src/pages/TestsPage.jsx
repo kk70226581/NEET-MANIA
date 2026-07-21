@@ -22,6 +22,7 @@ const TestsPage = () => {
   const [mockMode, setMockMode] = useState('standard');
   const [customChapters, setCustomChapters] = useState({ physics: [], chemistry: [], biology: [] });
   const [sharedCode, setSharedCode] = useState('');
+  const [createdTest, setCreatedTest] = useState(null);
 
   const handleJoinTest = async () => {
     if (!sharedCode.trim()) {
@@ -113,7 +114,7 @@ const TestsPage = () => {
     });
   };
 
-  const generate = async () => {
+  const generate = async (onlyCreate = false) => {
     if (['chapter_test', 'topic_test'].includes(config.testType) && !config.chapter) return toast.error('Choose a chapter first.');
     if (config.testType === 'topic_test' && !config.topic) return toast.error('Choose a topic first.');
     
@@ -134,7 +135,17 @@ const TestsPage = () => {
         }
       }
       const response = await testsAPI.generateTest(payload);
-      navigate(`/exam/${response.data.testId}`);
+      
+      if (onlyCreate) {
+        const testDetails = await testsAPI.getTest(response.data.testId);
+        setCreatedTest({
+          id: response.data.testId,
+          code: testDetails.data.testId
+        });
+        toast.success('Test generated! Code is ready.');
+      } else {
+        navigate(`/exam/${response.data.testId}`);
+      }
     } catch (error) {
       toast.error(error.message || 'Could not generate this test.');
     } finally {
@@ -394,19 +405,93 @@ const TestsPage = () => {
             <p className="text-slate-500 font-medium flex items-center gap-2">
               <Sparkles size={18} className="text-primary" /> Questions are randomized and answers auto-save during the exam.
             </p>
-            <button 
-              onClick={generate} 
-              disabled={creating}
-              className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-bold text-lg rounded-2xl hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-            >
-              {creating ? (
-                <>Preparing paper <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin ml-2" /></>
-              ) : (
-                <><Play size={20} className="fill-white" /> Start Exam</>
-              )}
-            </button>
+            <div className="flex flex-col sm:flex-row w-full md:w-auto gap-4">
+              <button 
+                onClick={() => generate(true)}
+                disabled={creating}
+                className="w-full md:w-auto flex items-center justify-center gap-2 px-6 py-4 bg-white border-2 border-indigo-600 text-indigo-700 font-bold text-lg rounded-2xl hover:bg-slate-50 transition-colors shadow-sm disabled:opacity-50"
+              >
+                Create & Get Code
+              </button>
+              <button 
+                onClick={() => generate(false)}
+                disabled={creating}
+                className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-bold text-lg rounded-2xl hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              >
+                {creating ? (
+                  <>Preparing paper <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin ml-2" /></>
+                ) : (
+                  <><Play size={20} className="fill-white" /> Start Exam</>
+                )}
+              </button>
+            </div>
           </div>
         </motion.div>
+        {createdTest && (
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+            <div className="bg-white rounded-[2rem] shadow-2xl max-w-lg w-full overflow-hidden border border-slate-100">
+              <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white px-8 py-6 relative">
+                <h2 className="text-2xl font-black">Test Created Successfully!</h2>
+                <p className="text-indigo-100 text-sm mt-1">Your custom exam is ready. Share it with your students or friends.</p>
+              </div>
+              <div className="p-8 space-y-6">
+                
+                {/* Code Box */}
+                <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-left">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Shareable Test Code</span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xl font-black text-slate-800 tracking-wider select-all">{createdTest.code}</span>
+                    <button 
+                      onClick={() => {
+                        navigator.clipboard.writeText(createdTest.code);
+                        toast.success('Test Code copied!');
+                      }}
+                      className="px-3.5 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-extrabold rounded-lg transition-colors border border-indigo-100 shadow-sm"
+                    >
+                      Copy Code
+                    </button>
+                  </div>
+                </div>
+
+                {/* Direct Link Box */}
+                <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-left">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Direct Exam Link</span>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-sm font-semibold text-slate-600 truncate select-all">{`${window.location.origin}/exam/${createdTest.code}`}</span>
+                    <button 
+                      onClick={() => {
+                        navigator.clipboard.writeText(`${window.location.origin}/exam/${createdTest.code}`);
+                        toast.success('Direct link copied!');
+                      }}
+                      className="px-3.5 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-extrabold rounded-lg transition-colors border border-indigo-100 shadow-sm shrink-0"
+                    >
+                      Copy Link
+                    </button>
+                  </div>
+                </div>
+
+                <div className="flex gap-3 pt-4 border-t border-slate-100">
+                  <button
+                    type="button"
+                    className="flex-1 py-3.5 text-slate-700 hover:bg-slate-100 font-bold rounded-2xl border border-slate-200 transition-colors"
+                    onClick={() => setCreatedTest(null)}
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    className="flex-1 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl shadow-md transition-colors"
+                    onClick={() => {
+                      navigate(`/exam/${createdTest.id}`);
+                    }}
+                  >
+                    Start Test Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </AppShell>
   );
