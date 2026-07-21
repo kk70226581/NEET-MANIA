@@ -1,1023 +1,833 @@
-1. Which statement best expresses the mole concept?
-A. One mole is the mass of one molecule expressed in grams
-B. One mole contains exactly 6.022 × 10²³ specified entities
-C. One mole of every substance occupies 22.4 L at all temperatures
-D. One mole is numerically equal to the atomic number
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mole and Avogadro constant
-Explanation: A mole is an amount of substance containing Avogadro’s number of specified entities.
-
-2. The number of oxygen atoms present in 0.25 mol of H₂SO₄ is:
-A. 0.25 Nₐ
-B. Nₐ
-C. 2Nₐ
-D. 4Nₐ
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mole–particle conversion
-Explanation: Each H₂SO₄ molecule has 4 O atoms, so 0.25 × 4Nₐ = Nₐ.
-
-3. Which sample contains the greatest number of molecules?
-A. 4 g H₂
-B. 16 g O₂
-C. 22 g CO₂
-D. 28 g N₂
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molar mass and number of particles
-Explanation: 4 g H₂ = 2 mol, while the other samples are 0.5, 0.5 and 1 mol respectively.
-
-4. The mass of one molecule of CO₂ is approximately:
-A. 44 g
-B. 7.31 × 10⁻²³ g
-C. 2.66 × 10⁻²³ g
-D. 1.66 × 10⁻²⁴ g
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molecular mass
-Explanation: Mass of one molecule = 44/Nₐ ≈ 7.31 × 10⁻²³ g.
-
-5. The number of neutrons in 0.20 mol of ²³Na atoms is:
-A. 2.4Nₐ
-B. 12Nₐ
-C. 0.2Nₐ
-D. 4.8Nₐ
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Atomic composition and mole
-Explanation: Each ²³Na atom has 12 neutrons; total = 0.20 × 12Nₐ = 2.4Nₐ.
-
-6. A sample contains 3.011 × 10²³ molecules of NH₃. Its mass is:
-A. 8.5 g
-B. 17 g
-C. 34 g
-D. 4.25 g
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mole–mass conversion
-Explanation: The sample is 0.5 mol NH₃; mass = 0.5 × 17 = 8.5 g.
-
-7. How many total atoms are present in 18 g of water?
-A. Nₐ
-B. 2Nₐ
-C. 3Nₐ
-D. 18Nₐ
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Atoms in a compound
-Explanation: 18 g H₂O is 1 mol molecules and each molecule contains 3 atoms.
-
-8. The number of electrons present in 0.10 mol of Na⁺ ions is:
-A. Nₐ
-B. 1.0Nₐ
-C. 0.10Nₐ
-D. 10Nₐ
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Ions and particles
-Explanation: Each Na⁺ has 10 electrons; 0.10 × 10Nₐ = Nₐ.
-
-9. Which pair contains equal numbers of atoms?
-A. 1 mol He and 0.5 mol H₂
-B. 1 mol O₂ and 1 mol O₃
-C. 16 g O₂ and 16 g O₃
-D. 1 g H and 1 g He
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mole comparison
-Explanation: 1 mol He has Nₐ atoms and 0.5 mol H₂ also has Nₐ atoms.
-
-10. A gas sample contains 1.2044 × 10²⁴ molecules. The amount of gas is:
-A. 0.5 mol
-B. 1 mol
-C. 2 mol
-D. 4 mol
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Avogadro constant
-Explanation: 1.2044 × 10²⁴ = 2Nₐ, hence 2 mol.
-
-11. The average atomic mass of chlorine is 35.5 u because natural chlorine:
-A. Contains atoms each having mass 35.5 u
-B. Is an equimolar mixture of ³⁵Cl and ³⁶Cl
-C. Contains isotopes in unequal natural abundances
-D. Forms diatomic molecules
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Average atomic mass
-Explanation: Average atomic mass is the abundance-weighted mean of isotopic masses.
-
-12. An element has isotopes of masses 10 u and 11 u in the ratio 1:4. Its average atomic mass is:
-A. 10.2 u
-B. 10.5 u
-C. 10.8 u
-D. 10.9 u
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Isotopic abundance
-Explanation: Average = (10×1 + 11×4)/5 = 10.8 u.
-
-13. The law illustrated when carbon forms CO and CO₂ is the law of:
+<USER_REQUEST>
+add more question pyq inspireed and add it on site , pyq inspired questions
+Chapter 1: Some Basic Concepts of Chemistry / Mole Concept
+The following are 100 original AIPMT–NEET PYQ-pattern questions. They are not falsely assigned to individual examination years; use the tag PYQ_INSPIRED and isPyq: false. The concepts and distractor styles are modelled on recurring patterns seen across official NEET papers available in the NTA archive. (NEET)
+Use (N_A=6.022\times10^{23}) and molar volume (=22.4\ \text{L mol}^{-1}) at STP unless stated otherwise.
+Mole, mass and number of particles
+1. [NEET/AIPMT Pattern | Medium]
+The number of oxygen atoms present in (0.25) mol of (H_2SO_4) is:
+A. (0.25N_A)
+B. (0.50N_A)
+C. (N_A)
+D. (4N_A)
+Answer: C
+Explanation: Each molecule has four oxygen atoms, so (0.25\times4N_A=N_A).
+2. [NEET/AIPMT Pattern | Medium]
+Which sample contains the maximum number of molecules?
+A. (4) g (H_2)
+B. (16) g (O_2)
+C. (22) g (CO_2)
+D. (28) g (N_2)
+Answer: A
+Explanation: These contain (2,\ 0.5,\ 0.5,) and (1) mol molecules respectively.
+3. [NEET/AIPMT Pattern | Medium]
+The mass of one molecule of (CO_2) is approximately:
+A. (44) g
+B. (7.31\times10^{-23}) g
+C. (2.66\times10^{-23}) g
+D. (1.66\times10^{-24}) g
+Answer: B
+Explanation: Mass of one molecule (=44/N_A).
+4. [NEET/AIPMT Pattern | Medium]
+The total number of atoms present in (18) g of water is:
+A. (N_A)
+B. (2N_A)
+C. (3N_A)
+D. (18N_A)
+Answer: C
+Explanation: (18) g water is one mole of (H_2O), containing three moles of atoms.
+5. [NEET/AIPMT Pattern | Medium]
+The number of electrons in (0.1) mol of (Na^+) ions is:
+A. (0.1N_A)
+B. (N_A)
+C. (1.1N_A)
+D. (2.3N_A)
+Answer: B
+Explanation: Each (Na^+) ion has ten electrons; (0.1\times10N_A=N_A).
+6. [NEET/AIPMT Pattern | Medium]
+The number of neutrons present in (0.2) mol of (^{23}_{11}Na) atoms is:
+A. (0.2N_A)
+B. (1.1N_A)
+C. (2.2N_A)
+D. (2.4N_A)
+Answer: D
+Explanation: Each atom has (23-11=12) neutrons; total (=0.2\times12N_A).
+7. [NEET/AIPMT Pattern | Easy]
+A sample contains (3.011\times10^{23}) molecules of ammonia. Its mass is:
+A. (4.25) g
+B. (8.5) g
+C. (17) g
+D. (34) g
+Answer: B
+Explanation: The sample contains (0.5) mol (NH_3); mass (=0.5\times17).
+8. [NEET/AIPMT Pattern | Medium]
+Which pair contains the same number of atoms?
+A. (1) mol He and (0.5) mol (H_2)
+B. (1) mol (O_2) and (1) mol (O_3)
+C. (16) g (O_2) and (16) g (O_3)
+D. (1) g H and (1) g He
+Answer: A
+Explanation: Both samples contain (N_A) atoms.
+9. [NEET/AIPMT Pattern | Medium]
+The number of moles of atoms in (0.5) mol of (Al_2(SO_4)_3) is:
+A. (5)
+B. (7)
+C. (8.5)
+D. (17)
+Answer: C
+Explanation: One formula unit contains (17) atoms; (0.5\times17=8.5) mol atoms.
+10. [NEET/AIPMT Pattern | Medium]
+The number of moles of oxygen atoms in (0.2) mol of (Ca(NO_3)_2) is:
+A. (0.2)
+B. (0.4)
+C. (0.6)
+D. (1.2)
+Answer: D
+Explanation: Each formula unit contains six oxygen atoms.
+11. [NEET/AIPMT Pattern | Medium]
+The number of electrons present in one mole of (OH^-) ions is:
+A. (8N_A)
+B. (9N_A)
+C. (10N_A)
+D. (17N_A)
+Answer: C
+Explanation: (OH^-) contains (8+1+1=10) electrons.
+12. [NEET/AIPMT Pattern | Medium]
+The ratio of protons to electrons in a sulphate ion, (SO_4^{2-}), is:
+A. (48:48)
+B. (48:50)
+C. (50:48)
+D. (16:18)
+Answer: B
+Explanation: It has (48) protons and (50) electrons.
+13. [NEET/AIPMT Pattern | Medium]
+A sample contains (3.01\times10^{22}) molecules and has mass (2.2) g. Its molar mass is:
+A. (22\ \text{g mol}^{-1})
+B. (44\ \text{g mol}^{-1})
+C. (66\ \text{g mol}^{-1})
+D. (88\ \text{g mol}^{-1})
+Answer: B
+Explanation: (3.01\times10^{22}) molecules correspond to (0.05) mol; (M=2.2/0.05).
+14. [NEET/AIPMT Pattern | Medium]
+A (3.2) g sample of (S_8) contains how many sulphur atoms?
+A. (0.1N_A)
+B. (0.4N_A)
+C. (0.8N_A)
+D. (N_A)
+Answer: A
+Explanation: (3.2/256=0.0125) mol (S_8), corresponding to (0.1) mol S atoms.
+15. [NEET/AIPMT Pattern | Easy]
+The formula mass of (Ca_3(PO_4)_2) is:
+A. (182) u
+B. (248) u
+C. (310) u
+D. (372) u
+Answer: C
+Explanation: (3(40)+2(31)+8(16)=310) u.
+Laws of chemical combination and atomic masses
+16. [NEET/AIPMT Pattern | Easy]
+The formation of both CO and (CO_2) from carbon and oxygen illustrates the law of:
 A. Conservation of mass
 B. Definite proportions
 C. Multiple proportions
 D. Reciprocal proportions
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Laws of chemical combination
-Explanation: For a fixed mass of carbon, oxygen masses combine in a simple whole-number ratio.
-
-14. Which observation directly supports the law of definite proportions?
-A. Water from different sources always has the same H:O mass ratio
-B. Total mass remains constant in a closed reaction vessel
-C. Two elements form more than one compound
+Answer: C
+Explanation: For a fixed mass of carbon, oxygen combines in a simple whole-number ratio.
+17. [NEET/AIPMT Pattern | Medium]
+Which observation best supports the law of definite proportions?
+A. Water from different sources has the same H:O mass ratio
+B. Total mass remains constant in a closed vessel
+C. Carbon forms CO and (CO_2)
 D. Gas volumes combine in simple ratios
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Law of definite proportions
-Explanation: A pure compound always contains the same elements in a fixed mass ratio.
-
-15. In a reaction, 5.0 g of A combines completely with 8.0 g of B. If 10.0 g of A is reacted with 16.0 g of B, the mass of product formed is:
-A. 13.0 g
-B. 16.0 g
-C. 21.0 g
-D. 26.0 g
-Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Law of definite proportions
-Explanation: The given masses are exactly twice the combining ratio, so all 26.0 g forms product.
-
-16. Dalton’s atomic theory cannot explain:
-A. Conservation of mass
-B. Law of multiple proportions
-C. Existence of isotopes
-D. Atoms participating in reactions
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Dalton’s atomic theory
-Explanation: Isotopes of the same element have different masses, contrary to Dalton’s original postulate.
-
-17. Which quantity is dimensionless?
+Answer: A
+Explanation: A pure compound always has a fixed elemental composition by mass.
+18. [NEET/AIPMT Pattern | Medium]
+Dalton’s original atomic theory could not explain the existence of:
+A. Atoms in chemical reactions
+B. Conservation of mass
+C. Isotopes
+D. Multiple proportions
+Answer: C
+Explanation: Isotopes of the same element have different atomic masses.
+19. [NEET/AIPMT Pattern | Medium]
+An element has isotopes of masses (10) u and (11) u in the ratio (1:4). Its average atomic mass is:
+A. (10.2) u
+B. (10.5) u
+C. (10.8) u
+D. (10.9) u
+Answer: C
+Explanation: ((10\times1+11\times4)/5=10.8) u.
+20. [NEET/AIPMT Pattern | Medium]
+An element has isotopes (X)-35 and (X)-37. If its average atomic mass is (35.5) u, the percentage abundance of (X)-37 is:
+A. (20%)
+B. (25%)
+C. (50%)
+D. (75%)
+Answer: B
+Explanation: (35(1-x)+37x=35.5), giving (x=0.25).
+21. [NEET/AIPMT Pattern | Easy]
+The average atomic mass of chlorine is fractional because:
+A. Each chlorine atom has mass (35.5) u
+B. Chlorine exists only as (Cl_2)
+C. Natural chlorine contains isotopes in unequal abundances
+D. Chlorine atoms contain fractional numbers of protons
+Answer: C
+Explanation: Average atomic mass is an abundance-weighted isotopic average.
+22. [NEET/AIPMT Pattern | Medium]
+If (12) g carbon combines with (16) g oxygen to form CO, the mass of CO formed in a closed system is:
+A. (12) g
+B. (16) g
+C. (28) g
+D. (44) g
+Answer: C
+Explanation: The total product mass equals the total reactant mass.
+23. [NEET/AIPMT Pattern | Medium]
+In NO and (NO_2), the masses of oxygen combining with a fixed mass of nitrogen are in the ratio:
+A. (1:1)
+B. (1:2)
+C. (2:3)
+D. (3:4)
+Answer: B
+Explanation: (NO_2) contains twice as much oxygen for the same amount of nitrogen.
+24. [NEET/AIPMT Pattern | Medium]
+Which pair is suitable for demonstrating the law of multiple proportions?
+A. NaCl and KCl
+B. (H_2O) and (H_2O_2)
+C. (CO_2) and (SO_2)
+D. (NH_3) and (CH_4)
+Answer: B
+Explanation: The same two elements form both compounds in different simple ratios.
+25. [NEET/AIPMT Pattern | Easy]
+A balanced chemical equation obeys the law of:
+A. Definite proportions
+B. Conservation of mass
+C. Reciprocal proportions
+D. Gaseous volumes only
+Answer: B
+Explanation: Balancing gives equal numbers of each atom on both sides.
+Concentration terms
+26. [NEET/AIPMT Pattern | Easy]
+Which concentration term is dimensionless?
 A. Molarity
 B. Molality
 C. Mole fraction
 D. Mass concentration
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Concentration terms
-Explanation: Mole fraction is a ratio of moles and has no unit.
-
-18. Molarity changes with temperature because:
-A. Mass of solute changes
-B. Number of moles changes
+Answer: C
+Explanation: Mole fraction is a ratio of moles.
+27. [NEET/AIPMT Pattern | Easy]
+Molarity changes with temperature because:
+A. Moles of solute change
+B. Molar mass changes
 C. Volume of solution changes
-D. Molar mass changes
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molarity
-Explanation: Molarity depends on solution volume, which varies with temperature.
-
-19. Molality is preferred in colligative-property calculations because it:
-A. Is always numerically larger than molarity
-B. Is independent of temperature
-C. Uses volume of solvent
-D. Has no unit
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molality
-Explanation: Molality depends on masses, which are temperature-independent.
-
-20. The molarity of a solution containing 5.85 g NaCl in 500 mL solution is:
-A. 0.1 M
-B. 0.2 M
-C. 0.5 M
-D. 1.0 M
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molarity calculation
-Explanation: Moles NaCl = 5.85/58.5 = 0.1; molarity = 0.1/0.5 = 0.2 M.
-
-21. The molality of 9.0 g glucose dissolved in 90 g water is:
-A. 0.056 m
-B. 0.50 m
-C. 0.556 m
-D. 5.56 m
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molality calculation
-Explanation: Moles glucose = 9/180 = 0.05; solvent = 0.09 kg; m = 0.556.
-
-22. The mole fraction of solute in a solution containing 1 mol solute and 4 mol solvent is:
-A. 0.20
-B. 0.25
-C. 0.40
-D. 0.80
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mole fraction
-Explanation: Mole fraction = 1/(1+4) = 0.20.
-
-23. A 10% w/w NaOH solution contains:
-A. 10 g NaOH in 100 mL solution
-B. 10 g NaOH in 100 g solution
-C. 10 mol NaOH in 100 g solution
-D. 10 g NaOH in 90 g solution
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mass percentage
-Explanation: Mass percent is grams of solute per 100 g of solution.
-
-24. A 20% w/v glucose solution contains:
-A. 20 g glucose in 100 g water
-B. 20 g glucose in 100 mL solution
-C. 20 mol glucose in 1 L solution
-D. 20 mL glucose in 100 mL solution
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mass by volume percentage
-Explanation: w/v percentage means grams of solute per 100 mL of solution.
-
-25. The ppm concentration of 2 mg solute in 1 kg solution is approximately:
-A. 0.2 ppm
-B. 2 ppm
-C. 20 ppm
-D. 2000 ppm
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Parts per million
-Explanation: For dilute aqueous-like systems, mg per kg corresponds numerically to ppm.
-
-26. A solution is prepared by diluting 100 mL of 2.0 M HCl to 500 mL. Final molarity is:
-A. 0.2 M
-B. 0.4 M
-C. 1.0 M
-D. 10 M
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Dilution
-Explanation: M₁V₁ = M₂V₂ gives M₂ = 2×100/500 = 0.4 M.
-
-27. Equal volumes of 0.2 M and 0.6 M NaCl solutions are mixed. The final molarity is:
-A. 0.2 M
-B. 0.3 M
-C. 0.4 M
-D. 0.8 M
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mixing solutions
-Explanation: For equal volumes, concentration is the arithmetic mean: 0.4 M.
-
-28. 100 mL of 1 M NaOH is mixed with 200 mL of 0.5 M NaOH. Assuming additive volumes, final molarity is:
-A. 0.33 M
-B. 0.50 M
-C. 0.67 M
-D. 1.50 M
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mixing solutions
-Explanation: Total moles = 0.1 + 0.1 = 0.2; total volume = 0.3 L; M = 0.667.
-
-29. The number of significant figures in 0.0040500 is:
-A. 3
-B. 4
-C. 5
-D. 6
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Significant figures
-Explanation: Leading zeros are not significant; the internal zero and trailing zeros after decimal are significant.
-
-30. The result of 12.11 + 18.0 + 1.013, reported correctly, is:
-A. 31.123
-B. 31.12
-C. 31.1
-D. 31
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Significant figures
-Explanation: Addition is rounded to the least number of decimal places, which is one.
-
-31. The result of 4.221 × 0.20, reported with correct significant figures, is:
-A. 0.8442
-B. 0.84
-C. 0.8
-D. 0.844
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Significant figures
-Explanation: Multiplication is reported to two significant figures because 0.20 has two.
-
-32. Which measurement is the most precise?
-A. 2.3 g
-B. 2.30 g
-C. 2.300 g
-D. 2 g
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Precision and accuracy
-Explanation: More recorded decimal places generally indicate greater precision.
-
-33. A balance gives 10.02 g, 10.01 g and 10.02 g for a true mass of 9.50 g. The measurements are:
-A. Accurate and precise
-B. Accurate but not precise
-C. Precise but not accurate
-D. Neither
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Accuracy and precision
-Explanation: The readings are close to one another but far from the true value.
-
-34. The correctly rounded value of 6.245 to three significant figures, using the usual school convention, is:
-A. 6.24
-B. 6.25
-C. 6.20
-D. 6.30
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Rounding off
-Explanation: Under the NCERT round-to-even rule, the retained digit 4 is even, so 6.245 becomes 6.24.
-
-35. The dimensional formula of molarity is:
-A. mol L⁻¹
-B. mol kg⁻¹
-C. mol m⁻³
-D. dimensionless
-Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Units and dimensions
-Explanation: In SI base volume units, molarity has units mol m⁻³.
-
-36. The percentage by mass of oxygen in H₂SO₄ is approximately:
-A. 32.7%
-B. 49.0%
-C. 65.3%
-D. 81.6%
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Percentage composition
-Explanation: Oxygen contributes 64 g out of 98 g mol⁻¹: 64/98 × 100 ≈ 65.3%.
-
-37. The percentage by mass of nitrogen in NH₄NO₃ is:
-A. 17.5%
-B. 28.0%
-C. 35.0%
-D. 70.0%
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Percentage composition
-Explanation: Nitrogen mass = 28 and molar mass = 80, so percentage = 35%.
-
-38. A compound contains 40.0% C, 6.67% H and 53.33% O. Its empirical formula is:
-A. CH₂O
-B. C₂H₄O₂
-C. CHO
-D. CH₄O
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Empirical formula
-Explanation: Mole ratio = 40/12 : 6.67/1 : 53.33/16 ≈ 1:2:1.
-
-39. A compound has empirical formula CH₂O and molar mass 180 g mol⁻¹. Its molecular formula is:
-A. CH₂O
-B. C₂H₄O₂
-C. C₆H₁₂O₆
-D. C₅H₁₀O₅
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molecular formula
-Explanation: Empirical formula mass = 30; multiplier = 180/30 = 6.
-
-40. An oxide contains 70.0% metal M and 30.0% oxygen by mass. If atomic mass of M is 56, the empirical formula is:
-A. MO
-B. M₂O₃
-C. MO₂
-D. M₃O₄
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Empirical formula
-Explanation: Moles: M = 70/56 = 1.25; O = 30/16 = 1.875; ratio = 2:3.
-
-41. A hydrocarbon contains 85.7% carbon and 14.3% hydrogen. Its empirical formula is:
-A. CH
-B. CH₂
-C. C₂H₃
-D. C₃H₄
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Empirical formula
-Explanation: Moles per 100 g: C ≈ 7.14, H = 14.3; ratio ≈ 1:2.
-
-42. On complete combustion, 0.10 mol of a hydrocarbon gives 0.30 mol CO₂ and 0.40 mol H₂O. The hydrocarbon is:
-A. CH₄
-B. C₂H₄
-C. C₃H₈
-D. C₃H₆
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Combustion analysis
-Explanation: Carbon atoms = 0.30/0.10 = 3; H atoms = 2×0.40/0.10 = 8.
-
-43. A compound has empirical formula NO₂ and molar mass 92 g mol⁻¹. Its molecular formula is:
-A. NO₂
-B. N₂O₄
-C. N₃O₆
-D. N₄O₈
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molecular formula
-Explanation: Empirical formula mass is 46; multiplier is 2.
-
-44. Which statement about empirical formula is correct?
-A. It always represents the actual number of atoms in a molecule
-B. It gives the simplest whole-number ratio of atoms
-C. It is identical to molecular formula for all ionic solids
-D. It can contain fractional subscripts
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Empirical formula concept
-Explanation: An empirical formula gives the simplest integral ratio of constituent atoms.
-
-45. For the reaction 2H₂ + O₂ → 2H₂O, the mass of O₂ required to react completely with 4 g H₂ is:
-A. 8 g
-B. 16 g
-C. 32 g
-D. 64 g
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Stoichiometry
-Explanation: 4 g H₂ = 2 mol, requiring 1 mol O₂ = 32 g.
-
-46. For N₂ + 3H₂ → 2NH₃, moles of NH₃ formed from 2 mol N₂ and excess H₂ are:
-A. 1 mol
-B. 2 mol
-C. 3 mol
-D. 4 mol
-Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Stoichiometry
-Explanation: One mole N₂ gives 2 mol NH₃; 2 mol gives 4 mol.
-
-47. For 2KClO₃ → 2KCl + 3O₂, moles of O₂ formed from 0.40 mol KClO₃ are:
-A. 0.20
-B. 0.40
-C. 0.60
-D. 1.20
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Stoichiometry
-Explanation: O₂ moles = 0.40 × 3/2 = 0.60.
-
-48. The mass of CaCO₃ required to produce 11.2 L CO₂ at STP by complete decomposition is:
-A. 25 g
-B. 50 g
-C. 100 g
-D. 200 g
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gas stoichiometry
-Explanation: 11.2 L at STP is 0.5 mol CO₂, requiring 0.5 mol CaCO₃ = 50 g.
-
-49. In 2Al + Fe₂O₃ → Al₂O₃ + 2Fe, mass of Fe produced by 5.4 g Al with excess Fe₂O₃ is:
-A. 5.6 g
-B. 11.2 g
-C. 16.8 g
-D. 22.4 g
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Stoichiometry
-Explanation: 5.4 g Al = 0.2 mol and produces 0.2 mol Fe = 11.2 g.
-
-50. For CH₄ + 2O₂ → CO₂ + 2H₂O, oxygen required for complete combustion of 8 g CH₄ is:
-A. 8 g
-B. 16 g
-C. 32 g
-D. 64 g
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Combustion stoichiometry
-Explanation: 8 g CH₄ = 0.5 mol; it needs 1 mol O₂ = 32 g.
-
-51. When 10 g CaCO₃ decomposes completely, the mass of CaO formed is:
-A. 4.4 g
-B. 5.6 g
-C. 10.0 g
-D. 14.4 g
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mass stoichiometry
-Explanation: 100 g CaCO₃ yields 56 g CaO, so 10 g yields 5.6 g.
-
-52. The limiting reagent in a mixture of 2 mol H₂ and 2 mol O₂ for water formation is:
-A. H₂
-B. O₂
-C. H₂O
-D. Neither
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Limiting reagent
-Explanation: 2 mol H₂ needs only 1 mol O₂, so H₂ is consumed first.
-
-53. For N₂ + 3H₂ → 2NH₃, when 1 mol N₂ and 2 mol H₂ react, maximum NH₃ formed is:
-A. 1 mol
-B. 4/3 mol
-C. 2 mol
-D. 3 mol
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Limiting reagent
-Explanation: H₂ is limiting; 3 mol H₂ gives 2 mol NH₃, so 2 mol gives 4/3 mol.
-
-54. For 2A + B → A₂B, 5 mol A and 2 mol B are mixed. The limiting reactant and product formed are:
-A. A; 2.5 mol
-B. B; 2 mol
-C. A; 2 mol
-D. B; 5 mol
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Limiting reagent
-Explanation: 2 mol B needs 4 mol A and forms 2 mol product; B is limiting.
-
-55. For 2H₂ + O₂ → 2H₂O, 5 mol H₂ and 2 mol O₂ produce:
-A. 2 mol H₂O
-B. 4 mol H₂O
-C. 5 mol H₂O
-D. 7 mol H₂O
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Limiting reagent
-Explanation: O₂ is limiting and 2 mol O₂ yields 4 mol H₂O.
-
-56. A reaction theoretically gives 20 g product but actually gives 15 g. Percentage yield is:
-A. 25%
-B. 50%
-C. 75%
-D. 133%
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Percentage yield
-Explanation: Percentage yield = 15/20 × 100 = 75%.
-
-57. A 10 g impure sample of CaCO₃ gives 1.76 g CO₂ on heating. Percentage purity is:
-A. 20%
-B. 40%
-C. 60%
-D. 80%
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Purity and stoichiometry
-Explanation: 1.76 g CO₂ = 0.04 mol, requiring 4.0 g pure CaCO₃; purity = 40%.
-
-58. A 5.0 g sample of Mg reacts with excess HCl. If 4.48 L H₂ at STP is obtained, percentage purity of Mg is approximately:
-A. 48%
-B. 72%
-C. 96%
-D. 100%
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Purity calculation
-Explanation: 4.48 L H₂ = 0.2 mol, requiring 0.2 mol Mg = 4.8 g; purity = 96%.
-
-59. In a reaction, 2 mol A produces 3 mol B. If 4 mol A gives only 4.5 mol B, the percentage yield is:
-A. 50%
-B. 60%
-C. 75%
-D. 90%
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Percentage yield
-Explanation: Theoretical B = 6 mol; yield = 4.5/6 × 100 = 75%.
-
-60. The volume occupied by 0.25 mol of an ideal gas at STP, using 22.4 L mol⁻¹, is:
-A. 2.8 L
-B. 5.6 L
-C. 11.2 L
-D. 22.4 L
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molar volume of gas
-Explanation: Volume = 0.25 × 22.4 = 5.6 L.
-
-61. At the same temperature and pressure, equal volumes of different gases contain equal numbers of:
+D. Mass of solute changes
+Answer: C
+Explanation: Molarity is defined per litre of solution.
+28. [NEET/AIPMT Pattern | Easy]
+Molality is independent of temperature because it is based on:
+A. Solution volume
+B. Solvent mass
+C. Solute volume
+D. Solution density
+Answer: B
+Explanation: Mass is unaffected by ordinary temperature changes.
+29. [NEET/AIPMT Pattern | Medium]
+The molarity of a solution containing (5.85) g NaCl in (500) mL solution is:
+A. (0.1) M
+B. (0.2) M
+C. (0.5) M
+D. (1.0) M
+Answer: B
+Explanation: Moles (=5.85/58.5=0.1); molarity (=0.1/0.5).
+30. [NEET/AIPMT Pattern | Medium]
+The molality of (9) g glucose dissolved in (90) g water is:
+A. (0.056) m
+B. (0.50) m
+C. (0.556) m
+D. (5.56) m
+Answer: C
+Explanation: (n=9/180=0.05) mol and solvent mass (=0.09) kg.
+31. [NEET/AIPMT Pattern | Easy]
+The mole fraction of a solute in a solution containing (1) mol solute and (4) mol solvent is:
+A. (0.20)
+B. (0.25)
+C. (0.40)
+D. (0.80)
+Answer: A
+Explanation: (x=1/(1+4)).
+32. [NEET/AIPMT Pattern | Easy]
+A (10%) w/w NaOH solution contains:
+A. (10) g NaOH in (100) mL solution
+B. (10) g NaOH in (100) g solution
+C. (10) mol NaOH in (100) g water
+D. (10) g NaOH in (100) g water
+Answer: B
+Explanation: w/w percentage is grams of solute per (100) g solution.
+33. [NEET/AIPMT Pattern | Easy]
+A (20%) w/v glucose solution contains:
+A. (20) g glucose in (100) g solution
+B. (20) g glucose in (100) mL solution
+C. (20) mL glucose in (100) mL solution
+D. (20) mol glucose in (1) L solution
+Answer: B
+Explanation: w/v percentage is grams of solute per (100) mL solution.
+34. [NEET/AIPMT Pattern | Medium]
+The concentration of (2) mg solute in (1) kg solution is:
+A. (0.2) ppm
+B. (2) ppm
+C. (20) ppm
+D. (2000) ppm
+Answer: B
+Explanation: (2) mg per (10^6) mg solution equals (2) ppm.
+35. [NEET/AIPMT Pattern | Medium]
+A solution is prepared by diluting (100) mL of (2) M HCl to (500) mL. The final molarity is:
+A. (0.2) M
+B. (0.4) M
+C. (1.0) M
+D. (10) M
+Answer: B
+Explanation: (M_1V_1=M_2V_2).
+36. [NEET/AIPMT Pattern | Medium]
+Equal volumes of (0.2) M and (0.6) M NaCl solutions are mixed. The final molarity is:
+A. (0.2) M
+B. (0.3) M
+C. (0.4) M
+D. (0.8) M
+Answer: C
+Explanation: For equal volumes, the resulting concentration is their arithmetic mean.
+37. [NEET/AIPMT Pattern | Medium]
+(100) mL of (1) M NaOH is mixed with (200) mL of (0.5) M NaOH. Assuming additive volumes, the final molarity is:
+A. (0.33) M
+B. (0.50) M
+C. (0.67) M
+D. (1.50) M
+Answer: C
+Explanation: Total moles (=0.1+0.1=0.2), total volume (=0.3) L.
+38. [NEET/AIPMT Pattern | Hard]
+A (10%) w/w NaOH solution has density (1.11\ \text{g mL}^{-1}). Its molarity is approximately:
+A. (1.11) M
+B. (2.22) M
+C. (2.78) M
+D. (4.00) M
+Answer: C
+Explanation: One litre weighs (1110) g and contains (111) g NaOH (=2.775) mol.
+39. [NEET/AIPMT Pattern | Hard]
+A (1.0) M glucose solution has density (1.20\ \text{g mL}^{-1}). Its molality is approximately:
+A. (0.50) m
+B. (0.83) m
+C. (0.98) m
+D. (1.20) m
+Answer: C
+Explanation: One litre solution contains (180) g glucose and (1020) g water.
+40. [NEET/AIPMT Pattern | Hard]
+The mole fraction of water in a (1) molal aqueous solution is approximately:
+A. (0.018)
+B. (0.50)
+C. (0.982)
+D. (0.999)
+Answer: C
+Explanation: (1) kg water contains (55.56) mol, so (x_{water}=55.56/56.56).
+Percentage composition and formula determination
+41. [NEET/AIPMT Pattern | Medium]
+The percentage by mass of oxygen in (H_2SO_4) is approximately:
+A. (32.7%)
+B. (49.0%)
+C. (65.3%)
+D. (81.6%)
+Answer: C
+Explanation: ((64/98)\times100\approx65.3%).
+42. [NEET/AIPMT Pattern | Medium]
+The percentage by mass of nitrogen in (NH_4NO_3) is:
+A. (17.5%)
+B. (28.0%)
+C. (35.0%)
+D. (70.0%)
+Answer: C
+Explanation: Nitrogen contributes (28) g in (80) g molar mass.
+43. [NEET/AIPMT Pattern | Medium]
+A compound contains (40.0%) C, (6.67%) H and (53.33%) O. Its empirical formula is:
+A. (CH_2O)
+B. (C_2H_4O_2)
+C. (CHO)
+D. (CH_4O)
+Answer: A
+Explanation: The mole ratio is approximately (1:2:1).
+44. [NEET/AIPMT Pattern | Medium]
+A compound has empirical formula (CH_2O) and molar mass (180\ \text{g mol}^{-1}). Its molecular formula is:
+A. (CH_2O)
+B. (C_2H_4O_2)
+C. (C_6H_{12}O_6)
+D. (C_5H_{10}O_5)
+Answer: C
+Explanation: Empirical formula mass (=30); multiplier (=180/30=6).
+45. [NEET/AIPMT Pattern | Hard]
+An oxide contains (70%) metal M and (30%) oxygen by mass. If the atomic mass of M is (56), its empirical formula is:
+A. (MO)
+B. (M_2O_3)
+C. (MO_2)
+D. (M_3O_4)
+Answer: B
+Explanation: Mole ratio (70/56:30/16=1.25:1.875=2:3).
+46. [NEET/AIPMT Pattern | Medium]
+A hydrocarbon contains (85.7%) carbon and (14.3%) hydrogen. Its empirical formula is:
+A. (CH)
+B. (CH_2)
+C. (C_2H_3)
+D. (C_3H_4)
+Answer: B
+Explanation: Moles are approximately (7.14:14.3=1:2).
+47. [NEET/AIPMT Pattern | Hard]
+On complete combustion, (0.1) mol of a hydrocarbon gives (0.3) mol (CO_2) and (0.4) mol (H_2O). The hydrocarbon is:
+A. (CH_4)
+B. (C_2H_4)
+C. (C_3H_8)
+D. (C_3H_6)
+Answer: C
+Explanation: Carbon atoms (=3); hydrogen atoms (=2(0.4/0.1)=8).
+48. [NEET/AIPMT Pattern | Medium]
+A compound has empirical formula (NO_2) and molar mass (92\ \text{g mol}^{-1}). Its molecular formula is:
+A. (NO_2)
+B. (N_2O_4)
+C. (N_3O_6)
+D. (N_4O_8)
+Answer: B
+Explanation: Empirical formula mass is (46); multiplier is (2).
+49. [NEET/AIPMT Pattern | Hard]
+An oxide (MO) contains (20%) oxygen by mass. The atomic mass of M is:
+A. (16)
+B. (32)
+C. (48)
+D. (64)
+Answer: D
+Explanation: (16/(M+16)=0.20), giving (M=64).
+50. [NEET/AIPMT Pattern | Hard]
+An oxide (M_2O_3) contains (30%) oxygen by mass. The approximate atomic mass of M is:
+A. (24)
+B. (40)
+C. (56)
+D. (80)
+Answer: C
+Explanation: (48/(2M+48)=0.30), giving (M=56).
+Stoichiometry
+51. [NEET/AIPMT Pattern | Easy]
+For (2H_2+O_2\rightarrow2H_2O), the mass of oxygen required to react with (4) g hydrogen is:
+A. (8) g
+B. (16) g
+C. (32) g
+D. (64) g
+Answer: C
+Explanation: (4) g hydrogen is (2) mol and requires (1) mol oxygen.
+52. [NEET/AIPMT Pattern | Easy]
+For (N_2+3H_2\rightarrow2NH_3), the amount of ammonia formed from (2) mol nitrogen and excess hydrogen is:
+A. (1) mol
+B. (2) mol
+C. (3) mol
+D. (4) mol
+Answer: D
+Explanation: One mole nitrogen gives two moles ammonia.
+53. [NEET/AIPMT Pattern | Medium]
+For (2KClO_3\rightarrow2KCl+3O_2), moles of oxygen formed from (0.4) mol (KClO_3) are:
+A. (0.2)
+B. (0.4)
+C. (0.6)
+D. (1.2)
+Answer: C
+Explanation: (0.4\times3/2=0.6) mol.
+54. [NEET/AIPMT Pattern | Medium]
+The mass of (CaCO_3) required to produce (11.2) L (CO_2) at STP is:
+A. (25) g
+B. (50) g
+C. (100) g
+D. (200) g
+Answer: B
+Explanation: (11.2) L is (0.5) mol; (0.5) mol (CaCO_3) weighs (50) g.
+55. [NEET/AIPMT Pattern | Medium]
+For (2Al+Fe_2O_3\rightarrow Al_2O_3+2Fe), the mass of iron obtained from (5.4) g aluminium is:
+A. (5.6) g
+B. (11.2) g
+C. (16.8) g
+D. (22.4) g
+Answer: B
+Explanation: (5.4) g Al is (0.2) mol, producing (0.2) mol Fe.
+56. [NEET/AIPMT Pattern | Medium]
+The mass of oxygen required for complete combustion of (8) g methane is:
+A. (8) g
+B. (16) g
+C. (32) g
+D. (64) g
+Answer: C
+Explanation: (0.5) mol (CH_4) requires (1) mol (O_2).
+57. [NEET/AIPMT Pattern | Medium]
+When (10) g (CaCO_3) decomposes completely, the mass of (CaO) formed is:
+A. (4.4) g
+B. (5.6) g
+C. (10) g
+D. (14.4) g
+Answer: B
+Explanation: (100) g (CaCO_3) produces (56) g (CaO).
+58. [NEET/AIPMT Pattern | Medium]
+For (4NH_3+5O_2\rightarrow4NO+6H_2O), (3.4) g ammonia produces:
+A. (3.0) g NO
+B. (6.0) g NO
+C. (9.0) g NO
+D. (12.0) g NO
+Answer: B
+Explanation: (3.4) g ammonia is (0.2) mol and forms (0.2) mol NO.
+59. [NEET/AIPMT Pattern | Medium]
+For (2Na+2H_2O\rightarrow2NaOH+H_2), (4.6) g sodium produces hydrogen volume at STP equal to:
+A. (1.12) L
+B. (2.24) L
+C. (4.48) L
+D. (11.2) L
+Answer: B
+Explanation: (4.6) g sodium is (0.2) mol and forms (0.1) mol hydrogen.
+60. [NEET/AIPMT Pattern | Medium]
+For (Zn+2HCl\rightarrow ZnCl_2+H_2), (6.5) g zinc produces:
+A. (0.05) mol (H_2)
+B. (0.10) mol (H_2)
+C. (0.20) mol (H_2)
+D. (1.0) mol (H_2)
+Answer: B
+Explanation: (6.5) g zinc is (0.1) mol.
+Limiting reagent, purity and yield
+61. [NEET/AIPMT Pattern | Easy]
+The limiting reagent in a mixture of (2) mol (H_2) and (2) mol (O_2) is:
+A. (H_2)
+B. (O_2)
+C. (H_2O)
+D. Neither reactant
+Answer: A
+Explanation: Two moles hydrogen require only one mole oxygen.
+62. [NEET/AIPMT Pattern | Medium]
+For (N_2+3H_2\rightarrow2NH_3), the maximum amount of ammonia formed from (1) mol (N_2) and (2) mol (H_2) is:
+A. (1) mol
+B. (4/3) mol
+C. (2) mol
+D. (3) mol
+Answer: B
+Explanation: Hydrogen is limiting; (2\times2/3=4/3) mol ammonia.
+63. [NEET/AIPMT Pattern | Medium]
+For (2A+B\rightarrow A_2B), (5) mol A and (2) mol B are mixed. The limiting reactant and product amount are:
+A. A; (2.5) mol
+B. B; (2) mol
+C. A; (2) mol
+D. B; (5) mol
+Answer: B
+Explanation: Two moles B require four moles A and form two moles product.
+64. [NEET/AIPMT Pattern | Medium]
+For (2H_2+O_2\rightarrow2H_2O), (5) mol hydrogen and (2) mol oxygen produce:
+A. (2) mol water
+B. (4) mol water
+C. (5) mol water
+D. (7) mol water
+Answer: B
+Explanation: Oxygen is limiting and two moles oxygen form four moles water.
+65. [NEET/AIPMT Pattern | Medium]
+When (4) g hydrogen and (40) g oxygen react, the mass of water formed and oxygen left are:
+A. (36) g, (8) g
+B. (44) g, (0) g
+C. (18) g, (22) g
+D. (40) g, (4) g
+Answer: A
+Explanation: (4) g hydrogen consumes (32) g oxygen and forms (36) g water.
+66. [NEET/AIPMT Pattern | Medium]
+For (CaCO_3+2HCl\rightarrow CaCl_2+H_2O+CO_2), (10) g (CaCO_3) and (7.3) g HCl are mixed. The limiting reagent is:
+A. (CaCO_3)
+B. HCl
+C. (CaCl_2)
+D. Neither reactant
+Answer: D
+Explanation: The reactants are present in the exact (0.1:0.2) mol ratio.
+67. [NEET/AIPMT Pattern | Medium]
+For (2SO_2+O_2\rightarrow2SO_3), (6.4) g (SO_2) and (3.2) g (O_2) react. The mass of (SO_3) formed is:
+A. (4.0) g
+B. (8.0) g
+C. (9.6) g
+D. (16.0) g
+Answer: B
+Explanation: (SO_2) is limiting and (0.1) mol (SO_3) is produced.
+68. [NEET/AIPMT Pattern | Easy]
+A reaction theoretically produces (20) g product but actually gives (15) g. Its percentage yield is:
+A. (25%)
+B. (50%)
+C. (75%)
+D. (133%)
+Answer: C
+Explanation: Percentage yield (=(15/20)\times100).
+69. [NEET/AIPMT Pattern | Medium]
+A (10) g impure sample of (CaCO_3) gives (1.76) g (CO_2) on heating. Its percentage purity is:
+A. (20%)
+B. (40%)
+C. (60%)
+D. (80%)
+Answer: B
+Explanation: (1.76) g (CO_2) corresponds to (4) g pure (CaCO_3).
+70. [NEET/AIPMT Pattern | Medium]
+A (5.0) g impure magnesium sample gives (4.48) L hydrogen at STP with excess acid. Its percentage purity is approximately:
+A. (48%)
+B. (72%)
+C. (96%)
+D. (100%)
+Answer: C
+Explanation: (4.48) L hydrogen requires (0.2) mol or (4.8) g Mg.
+71. [NEET/AIPMT Pattern | Medium]
+A (25) g limestone sample is (80%) (CaCO_3). On complete decomposition, the mass of (CO_2) formed is:
+A. (4.4) g
+B. (8.8) g
+C. (11.0) g
+D. (20.0) g
+Answer: B
+Explanation: Pure (CaCO_3=20) g (=0.2) mol, producing (8.8) g (CO_2).
+72. [NEET/AIPMT Pattern | Medium]
+Two moles of A theoretically produce three moles of B. If four moles A give (4.5) mol B, the percentage yield is:
+A. (50%)
+B. (60%)
+C. (75%)
+D. (90%)
+Answer: C
+Explanation: Theoretical B (=6) mol; (4.5/6\times100=75%).
+Gaseous stoichiometry and volume relationships
+73. [NEET/AIPMT Pattern | Easy]
+The volume occupied by (0.25) mol ideal gas at STP is:
+A. (2.8) L
+B. (5.6) L
+C. (11.2) L
+D. (22.4) L
+Answer: B
+Explanation: (V=0.25\times22.4).
+74. [NEET/AIPMT Pattern | Easy]
+At the same temperature and pressure, equal volumes of different gases contain equal numbers of:
 A. Atoms
 B. Molecules
 C. Electrons
 D. Neutrons
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Avogadro’s law
+Answer: B
 Explanation: This is Avogadro’s law.
-
-62. At identical temperature and pressure, 2 L N₂ and 2 L CO₂ have equal:
+75. [NEET/AIPMT Pattern | Medium]
+At identical temperature and pressure, (2) L (N_2) and (2) L (CO_2) contain equal:
 A. Masses
 B. Densities
 C. Numbers of molecules
 D. Numbers of atoms
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Avogadro’s law
-Explanation: Equal gas volumes under the same conditions contain equal numbers of molecules.
-
-63. The density of a gas at STP is 1.25 g L⁻¹. Its approximate molar mass is:
-A. 14 g mol⁻¹
-B. 22.4 g mol⁻¹
-C. 28 g mol⁻¹
-D. 44.8 g mol⁻¹
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gas density and molar mass
-Explanation: Molar mass ≈ density × molar volume = 1.25 × 22.4 = 28.
-
-64. A gaseous hydrocarbon occupies 100 mL and requires 300 mL O₂ for complete combustion, producing 200 mL CO₂ at the same conditions. Its formula is:
-A. CH₄
-B. C₂H₄
-C. C₂H₆
-D. C₃H₈
-Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Gay-Lussac volumes and combustion
-Explanation: CO₂ volume gives x = 2; oxygen demand x + y/4 = 3 gives y = 4.
-
-65. A mixture contains 1 mol O₂ and 2 mol N₂. Mole fraction of O₂ is:
-A. 1/2
-B. 1/3
-C. 2/3
-D. 1
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mole fraction of gases
-Explanation: Total moles = 3, so x(O₂) = 1/3.
-
-66. Which has the highest mass?
-A. Nₐ molecules of H₂
-B. Nₐ atoms of He
-C. 0.5Nₐ molecules of O₂
-D. 0.25Nₐ molecules of CO₂
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Particle–mass comparison
-Explanation: Masses are 2 g, 4 g, 16 g and 11 g respectively.
-
-67. The ratio of numbers of molecules in 4 g H₂ and 64 g O₂ is:
-A. 1:1
-B. 1:2
-C. 2:1
-D. 4:1
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mole ratio
-Explanation: Both samples contain 2 mol molecules.
-
-68. The ratio of total atoms in 18 g H₂O and 44 g CO₂ is:
-A. 1:1
-B. 2:3
-C. 3:2
-D. 3:3
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Total atom comparison
-Explanation: Each is 1 mol molecules and each molecule contains 3 atoms.
-
-69. The number of moles of atoms in 0.5 mol Al₂(SO₄)₃ is:
-A. 5
-B. 7
-C. 8.5
-D. 17
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Atoms in formula units
-Explanation: Each formula unit has 17 atoms; 0.5 mol contains 8.5 mol atoms.
-
-70. The number of moles of oxygen atoms in 0.20 mol Ca(NO₃)₂ is:
-A. 0.20
-B. 0.40
-C. 0.60
-D. 1.20
-Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Atoms in formula units
-Explanation: Each formula unit has 6 oxygen atoms; 0.20 × 6 = 1.20 mol O atoms.
-
-71. 0.1 mol of Al³⁺ contains a total positive charge equal to:
-A. 0.1 F
-B. 0.2 F
-C. 0.3 F
-D. 3 F
-Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Mole of charge
-Explanation: One mole of unit charges is one faraday; 0.1 mol Al³⁺ carries 0.3 mol unit charges.
-
-72. Which sample contains the maximum number of electrons?
-A. 1 mol H₂
-B. 1 mol He
-C. 0.5 mol H₂O
-D. 1 mol NH₃
-Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Electron counting
-Explanation: The electron amounts are 2, 2, 5 and 10 mol electrons respectively.
-
-73. The ratio of protons to electrons in one sulfate ion, SO₄²⁻, is:
-A. 48:48
-B. 48:50
-C. 50:48
-D. 16:18
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Subatomic particles in ions
-Explanation: Total protons = 16 + 4×8 = 48; the 2− charge gives 50 electrons.
-
-74. The total number of electrons in 1 mol of OH⁻ ions is:
-A. 8Nₐ
-B. 9Nₐ
-C. 10Nₐ
-D. 17Nₐ
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Electrons in ions
-Explanation: OH⁻ has 8 + 1 + 1 = 10 electrons.
-
-75. The equivalent number of molecules in 9 g H₂O is:
-A. 0.25Nₐ
-B. 0.5Nₐ
-C. Nₐ
-D. 2Nₐ
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mole–particle conversion
-Explanation: 9 g water is 0.5 mol.
-
-76. If 3.01 × 10²² molecules of a gas weigh 2.2 g, its molar mass is:
-A. 22 g mol⁻¹
-B. 44 g mol⁻¹
-C. 66 g mol⁻¹
-D. 88 g mol⁻¹
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molar mass from particles
-Explanation: 3.01 × 10²² is 0.05 mol; molar mass = 2.2/0.05 = 44.
-
-77. A sample of sulfur contains 3.2 g S₈. Number of S atoms is:
-A. 0.1Nₐ
-B. 0.4Nₐ
-C. 0.8Nₐ
-D. Nₐ
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molecular elemental substances
-Explanation: 3.2 g S₈ = 0.0125 mol molecules and contains 0.1 mol S atoms.
-
-78. Which relation is correct for a pure substance?
-A. Moles = mass × molar mass
-B. Number of particles = moles/Nₐ
-C. Mass = moles × molar mass
-D. Molar mass = moles/mass
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Basic mole relations
-Explanation: Mass equals amount in moles multiplied by molar mass.
-
-79. A 1.0 M aqueous solution of glucose has density 1.20 g mL⁻¹. The molality is approximately:
-A. 0.83 m
-B. 0.98 m
-C. 1.20 m
-D. 5.56 m
-Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Molarity–molality relation
-Explanation: One litre solution has mass 1200 g, containing 180 g glucose and 1020 g water; m ≈ 1/1.02 = 0.98.
-
-80. A solution is 10% w/w NaOH and has density 1.11 g mL⁻¹. Its molarity is approximately:
-A. 1.11 M
-B. 2.22 M
-C. 2.78 M
-D. 4.00 M
-Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Mass percent to molarity
-Explanation: One litre weighs 1110 g and contains 111 g NaOH = 2.775 mol.
-
-81. The mole fraction of water in a 1 molal aqueous solution is approximately:
-A. 0.018
-B. 0.50
-C. 0.982
-D. 0.999
-Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Molality and mole fraction
-Explanation: 1 kg water has 55.56 mol; x(H₂O)=55.56/56.56≈0.982.
-
-82. A 2 molal solution contains 0.50 mol solute. Mass of solvent is:
-A. 0.10 kg
-B. 0.25 kg
-C. 0.50 kg
-D. 1.0 kg
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molality
-Explanation: m = n/kg solvent, so kg solvent = 0.50/2 = 0.25.
-
-83. A 5% w/w urea solution has 5 g urea and:
-A. 95 g water
-B. 100 g water
-C. 5 g water
-D. 105 g water
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mass percentage
-Explanation: A 5% w/w solution contains 5 g solute in 100 g solution.
-
-84. A sample contains equal masses of CH₄ and O₂. The ratio of their molecules is:
-A. 1:1
-B. 2:1
-C. 1:2
-D. 4:1
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mole comparison
-Explanation: For equal mass, mole ratio is inverse molar-mass ratio: 1/16 : 1/32 = 2:1.
-
-85. Equal numbers of molecules of CO and CO₂ have masses in the ratio:
-A. 1:1
-B. 7:11
-C. 11:7
-D. 14:22
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molecular mass comparison
-Explanation: Equal molecule numbers mean equal moles; mass ratio equals 28:44 = 7:11.
-
-86. If the atomic mass unit were defined as 1/24 of the mass of a ¹²C atom instead of 1/12, the numerical atomic mass of carbon-12 would be:
-A. 6
-B. 12
-C. 24
-D. 48
-Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Atomic mass unit concept
-Explanation: A smaller unit definition change makes the ¹²C atom equal to 24 of the new units.
-
-87. The formula mass of Ca₃(PO₄)₂ is:
-A. 182 u
-B. 248 u
-C. 310 u
-D. 372 u
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Formula mass
-Explanation: 3×40 + 2×31 + 8×16 = 310 u.
-
-88. The mass ratio of nitrogen to hydrogen in NH₃ is:
-A. 14:1
-B. 14:3
-C. 7:3
-D. 3:14
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mass ratio in compounds
-Explanation: One molecule contains 14 u nitrogen and 3 u hydrogen.
-
-89. In NO and NO₂, the masses of oxygen combining with a fixed mass of nitrogen are in the ratio:
-A. 1:1
-B. 1:2
-C. 2:3
-D. 3:4
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Law of multiple proportions
-Explanation: For the same amount of nitrogen, NO₂ contains twice as much oxygen as NO.
-
-90. Which pair is most suitable to demonstrate the law of multiple proportions?
-A. NaCl and KCl
-B. H₂O and H₂O₂
-C. CO₂ and SO₂
-D. NH₃ and CH₄
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Law of multiple proportions
-Explanation: The same two elements form two compounds with oxygen masses in a simple ratio.
-
-91. In a closed vessel, 4 g H₂ reacts with 32 g O₂. Mass of water formed is:
-A. 18 g
-B. 32 g
-C. 36 g
-D. 40 g
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Conservation of mass
-Explanation: The reactants are stoichiometric and total mass is conserved: 36 g.
-
-92. A 12 g carbon sample burns in 16 g oxygen to form only CO. The mass of CO formed is:
-A. 12 g
-B. 16 g
-C. 28 g
-D. 44 g
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Conservation and stoichiometry
-Explanation: All reactant mass appears in CO, so product mass is 28 g.
-
-93. For the reaction 4NH₃ + 5O₂ → 4NO + 6H₂O, 3.4 g NH₃ with excess O₂ produces NO mass:
-A. 3.0 g
-B. 6.0 g
-C. 9.0 g
-D. 12.0 g
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Stoichiometry
-Explanation: 3.4 g NH₃ = 0.2 mol and gives 0.2 mol NO = 6.0 g.
-
-94. For 2Na + 2H₂O → 2NaOH + H₂, 4.6 g Na produces H₂ volume at STP:
-A. 1.12 L
-B. 2.24 L
-C. 4.48 L
-D. 11.2 L
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Stoichiometry
-Explanation: 4.6 g Na = 0.2 mol; H₂ = 0.1 mol = 2.24 L.
-
-95. For Zn + 2HCl → ZnCl₂ + H₂, 6.5 g Zn produces moles of H₂:
-A. 0.05
-B. 0.10
-C. 0.20
-D. 1.0
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Stoichiometry
-Explanation: 6.5 g Zn is 0.10 mol, giving 0.10 mol H₂.
-
-96. When 4 g H₂ and 40 g O₂ are ignited, mass of water formed and O₂ left are:
-A. 36 g, 8 g
-B. 44 g, 0 g
-C. 18 g, 22 g
-D. 40 g, 4 g
-Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Limiting reagent and excess
-Explanation: 4 g H₂ consumes 32 g O₂ to form 36 g H₂O, leaving 8 g O₂.
-
-97. For CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂, 10 g CaCO₃ and 7.3 g HCl are mixed. The limiting reagent is:
-A. CaCO₃
-B. HCl
-C. CaCl₂
-D. Neither
-Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Limiting reagent
-Explanation: 10 g CaCO₃ = 0.1 mol and 7.3 g HCl = 0.2 mol, exactly stoichiometric.
-
-98. For 2SO₂ + O₂ → 2SO₃, 6.4 g SO₂ and 3.2 g O₂ react. The mass of SO₃ formed is:
-A. 4.0 g
-B. 8.0 g
-C. 9.6 g
-D. 16.0 g
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Limiting reagent
-Explanation: SO₂ is 0.1 mol and needs 0.05 mol O₂; it forms 0.1 mol SO₃ = 8.0 g.
-
-99. A 25 g limestone sample is 80% CaCO₃. On complete decomposition, CO₂ formed is:
-A. 4.4 g
-B. 8.8 g
-C. 11.0 g
-D. 20.0 g
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Purity and stoichiometry
-Explanation: Pure CaCO₃ = 20 g = 0.2 mol, giving 0.2 mol CO₂ = 8.8 g.
-
-100. A metal oxide MO contains 20% oxygen by mass. Atomic mass of M is:
-A. 16
-B. 32
-C. 48
-D. 64
-Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Percentage composition
-Explanation: 16/(M+16)=0.20 gives M=64.
-
-101. An oxide M₂O₃ contains 30% oxygen by mass. Approximate atomic mass of M is:
-A. 24
-B. 40
-C. 56
-D. 80
-Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Percentage composition
-Explanation: 48/(2M+48)=0.30 gives M=56.
-
-102. A 0.50 g organic compound gives 0.733 g CO₂ on combustion. Percentage carbon is approximately:
-A. 20%
-B. 40%
-C. 60%
-D. 80%
-Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Combustion analysis
-Explanation: Carbon mass = 0.733×12/44 ≈ 0.20 g; percentage ≈ 40%.
-
-103. A 0.30 g compound gives 0.18 g H₂O on combustion. Percentage hydrogen is:
-A. 3.33%
-B. 6.67%
-C. 10.0%
-D. 20.0%
-Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Combustion analysis
-Explanation: Hydrogen mass = 0.18×2/18 = 0.02 g; percentage = 6.67%.
-
-104. The smallest whole-number coefficients for C₂H₆ + O₂ → CO₂ + H₂O are:
-A. 1, 3, 2, 3
-B. 2, 7, 4, 6
-C. 2, 5, 4, 6
-D. 1, 7, 2, 3
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Balancing chemical equations
-Explanation: Balancing gives 2C₂H₆ + 7O₂ → 4CO₂ + 6H₂O.
-
-105. The stoichiometric coefficient ratio O₂:H₂O in combustion of propane is:
-A. 3:4
-B. 4:5
-C. 5:4
-D. 5:3
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Balancing and stoichiometry
-Explanation: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O.
-
-106. Which is not a valid interpretation of the equation 2H₂ + O₂ → 2H₂O?
-A. 2 molecules H₂ react with 1 molecule O₂
-B. 2 mol H₂ react with 1 mol O₂
-C. 4 g H₂ react with 32 g O₂
-D. 2 g H₂ react with 1 g O₂
-Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Interpretation of chemical equations
-Explanation: Stoichiometric mass ratio is 4:32, not 2:1.
-
-107. A reaction equation must be balanced primarily to satisfy the law of:
-A. Definite proportions
-B. Conservation of mass
-C. Multiple proportions
-D. Avogadro
-Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Balancing equations
-Explanation: Balancing ensures equal numbers of each type of atom on both sides.
-
-108. A reagent present in more than the stoichiometric requirement is called:
-A. Catalyst
-B. Limiting reagent
-C. Excess reagent
-D. Product
-Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Stoichiometric terminology
-Explanation: The reagent left after the limiting reagent is consumed is the excess reagent.
-
-109. Assertion: Molarity of a solution generally decreases on heating. Reason: The volume of a liquid solution generally increases on heating while moles of solute remain unchanged.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+Answer: C
+Explanation: Equal volumes at the same conditions contain equal numbers of molecules.
+76. [NEET/AIPMT Pattern | Medium]
+The density of a gas at STP is (1.25\ \text{g L}^{-1}). Its approximate molar mass is:
+A. (14)
+B. (22.4)
+C. (28)
+D. (44.8)
+Answer: C
+Explanation: Molar mass (=1.25\times22.4=28\ \text{g mol}^{-1}).
+77. [NEET/AIPMT Pattern | Hard]
+A gaseous hydrocarbon occupies (100) mL and requires (300) mL oxygen for complete combustion, producing (200) mL (CO_2). Its formula is:
+A. (CH_4)
+B. (C_2H_4)
+C. (C_2H_6)
+D. (C_3H_8)
+Answer: B
+Explanation: (CO_2) volume gives two carbons; oxygen consumption gives four hydrogens.
+78. [NEET/AIPMT Pattern | Medium]
+A gas mixture contains (1) mol oxygen and (2) mol nitrogen. The mole fraction of oxygen is:
+A. (1/2)
+B. (1/3)
+C. (2/3)
+D. (1)
+Answer: B
+Explanation: Total amount is (3) mol.
+79. [NEET/AIPMT Pattern | Medium]
+The ratio of numbers of molecules in (4) g hydrogen and (64) g oxygen is:
+A. (1:1)
+B. (1:2)
+C. (2:1)
+D. (4:1)
+Answer: A
+Explanation: Both samples contain two moles of molecules.
+80. [NEET/AIPMT Pattern | Medium]
+Equal numbers of molecules of CO and (CO_2) have masses in the ratio:
+A. (1:1)
+B. (7:11)
+C. (11:7)
+D. (14:11)
+Answer: B
+Explanation: For equal moles, mass ratio equals molar-mass ratio (28:44=7:11).
+Significant figures, precision and measurement
+81. [NEET/AIPMT Pattern | Easy]
+The number of significant figures in (0.0040500) is:
+A. (3)
+B. (4)
+C. (5)
+D. (6)
+Answer: B
+Explanation: Leading zeros are not significant; the internal and trailing decimal zeros are significant.
+82. [NEET/AIPMT Pattern | Medium]
+The correctly reported result of (12.11+18.0+1.013) is:
+A. (31.123)
+B. (31.12)
+C. (31.1)
+D. (31)
+Answer: C
+Explanation: Addition is rounded to the least number of decimal places.
+83. [NEET/AIPMT Pattern | Medium]
+The result of (4.221\times0.20), expressed with correct significant figures, is:
+A. (0.8442)
+B. (0.84)
+C. (0.8)
+D. (0.844)
+Answer: B
+Explanation: The answer must contain two significant figures.
+84. [NEET/AIPMT Pattern | Easy]
+Which measurement is the most precise?
+A. (2.3) g
+B. (2.30) g
+C. (2.300) g
+D. (2) g
+Answer: C
+Explanation: It is recorded to the greatest number of decimal places.
+85. [NEET/AIPMT Pattern | Medium]
+A balance gives (10.02,\ 10.01,\ 10.02) g for a true mass of (9.50) g. The measurements are:
+A. Accurate and precise
+B. Accurate but not precise
+C. Precise but not accurate
+D. Neither accurate nor precise
+Answer: C
+Explanation: The readings agree closely with each other but not with the true value.
+86. [NEET/AIPMT Pattern | Medium]
+Using the NCERT round-to-even rule, (6.245) rounded to three significant figures is:
+A. (6.24)
+B. (6.25)
+C. (6.20)
+D. (6.30)
+Answer: A
+Explanation: The retained digit (4) is even, so it remains unchanged.
+87. [NEET/AIPMT Pattern | Medium]
+The result of (2.5\times3.42), with correct significant figures, is:
+A. (8.55)
+B. (8.6)
+C. (8.550)
+D. (9)
+Answer: B
+Explanation: The result must have two significant figures.
+88. [NEET/AIPMT Pattern | Medium]
+The result of (5.00/2.0), with proper significant figures, is:
+A. (2.5)
+B. (2.50)
+C. (2.500)
+D. (3)
+Answer: A
+Explanation: The least precise factor has two significant figures.
+89. [NEET/AIPMT Pattern | Easy]
+Which zero is not significant?
+A. Zero between two non-zero digits
+B. Trailing zero after a decimal point
+C. Leading zero before the first non-zero digit
+D. Trailing zero in (2.300)
+Answer: C
+Explanation: Leading zeros merely locate the decimal point.
+90. [NEET/AIPMT Pattern | Medium]
+The correctly expressed sum of (4.0,\ 2.25) and (0.003) is:
+A. (6.253)
+B. (6.25)
+C. (6.3)
+D. (6)
+Answer: C
+Explanation: The least precise term has one decimal place.
+Mixed conceptual and higher-order questions
+91. [NEET/AIPMT Pattern | Medium]
+Which sample contains the greatest mass?
+A. (N_A) molecules of (H_2)
+B. (N_A) atoms of He
+C. (0.5N_A) molecules of (O_2)
+D. (0.25N_A) molecules of (CO_2)
+Answer: C
+Explanation: Their masses are (2,\ 4,\ 16,) and (11) g respectively.
+92. [NEET/AIPMT Pattern | Medium]
+Equal masses of methane and oxygen contain molecules in the ratio:
+A. (1:1)
+B. (2:1)
+C. (1:2)
+D. (4:1)
+Answer: B
+Explanation: For equal masses, moles are inversely proportional to molar masses.
+93. [NEET/AIPMT Pattern | Medium]
+Which sample contains the maximum number of electrons?
+A. (1) mol (H_2)
+B. (1) mol He
+C. (0.5) mol (H_2O)
+D. (1) mol (NH_3)
+Answer: D
+Explanation: The samples contain (2,\ 2,\ 5,) and (10) mol electrons respectively.
+94. [NEET/AIPMT Pattern | Hard]
+If the atomic mass unit were defined as (1/24) of the mass of a carbon-12 atom, the numerical atomic mass of carbon-12 would be:
+A. (6)
+B. (12)
+C. (24)
+D. (48)
+Answer: C
+Explanation: One carbon-12 atom would equal (24) of the newly defined units.
+95. [NEET/AIPMT Pattern | Medium]
+Which statement is correct?
+A. One mole of every gas occupies (22.4) L under all conditions
+B. One mole always contains the same number of specified entities
+C. One mole of atoms and one mole of molecules have equal masses
+D. Molar mass is independent of the identity of the substance
+Answer: B
+Explanation: The mole specifies a fixed number of entities.
+96. [Assertion–Reason | NEET Pattern | Medium]
+Assertion: Molarity generally decreases when a solution is heated.
+Reason: The volume of the solution generally increases while the moles of solute remain unchanged.
+A. Both are true, and Reason correctly explains Assertion
+B. Both are true, but Reason does not explain Assertion
 C. Assertion is true, but Reason is false
 D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Molarity and temperature
-Explanation: Molarity is moles per litre, so thermal expansion lowers it.
-
-110. Assertion: Molality is independent of temperature. Reason: Molality is defined using the mass of solvent.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+Answer: A
+Explanation: Thermal expansion increases the denominator in moles per litre.
+97. [Assertion–Reason | NEET Pattern | Medium]
+Assertion: One mole of (O_2) and one mole of (O_3) contain equal numbers of molecules.
+Reason: One mole of every substance contains (N_A) specified entities.
+A. Both are true, and Reason correctly explains Assertion
+B. Both are true, but Reason does not explain Assertion
 C. Assertion is true, but Reason is false
 D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Molality
-Explanation: Mass does not change with ordinary temperature variation.
-
-111. Assertion: One mole of O₂ and one mole of O₃ contain equal numbers of molecules. Reason: One mole of every substance contains the same number of specified entities.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+Answer: A
+Explanation: Both samples contain (N_A) molecules.
+98. [Assertion–Reason | NEET Pattern | Medium]
+Assertion: Equal masses of (H_2) and (O_2) contain equal numbers of molecules.
+Reason: Number of molecules depends on the number of moles.
+A. Both are true, and Reason correctly explains Assertion
+B. Both are true, but Reason does not explain Assertion
 C. Assertion is true, but Reason is false
 D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Mole concept
-Explanation: Both contain Nₐ molecules by definition of a mole.
-
-112. Assertion: One mole of O₂ and one mole of O₃ contain equal numbers of oxygen atoms. Reason: Both samples contain Avogadro’s number of molecules.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+Answer: D
+Explanation: Equal masses correspond to different moles because their molar masses differ.
+99. [Assertion–Reason | NEET Pattern | Medium]
+Assertion: The empirical formula of benzene is different from its molecular formula.
+Reason: A molecular formula is an integral multiple of the empirical formula.
+A. Both are true, and Reason correctly explains Assertion
+B. Both are true, but Reason does not explain Assertion
 C. Assertion is true, but Reason is false
 D. Assertion is false, but Reason is true
-Answer: D  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Molecule versus atom count
-Explanation: The reason is true, but O₃ contains more oxygen atoms per molecule.
-
-113. Assertion: Average atomic mass of chlorine is fractional. Reason: Every chlorine atom has a fractional mass.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+Answer: A
+Explanation: Benzene is (C_6H_6), whereas its empirical formula is (CH).
+100. [Assertion–Reason | NEET Pattern | Medium]
+Assertion: A limiting reagent determines the maximum amount of product formed.
+Reason: It is consumed completely before the other reactants.
+A. Both are true, and Reason correctly explains Assertion
+B. Both are true, but Reason does not explain Assertion
 C. Assertion is true, but Reason is false
 D. Assertion is false, but Reason is true
-Answer: C  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Average atomic mass
-Explanation: The average is fractional because of isotope abundances, not because each atom has that mass.
+Answer: A
+Explanation: Product formation stops when the limiting reagent is exhausted.
+Website tags for all 100 questions
+{
+  "subject": "Chemistry",
+  "chapter": "Some Basic Concepts of Chemistry",
+  "sourceType": "PYQ_INSPIRED",
+  "examPattern": ["AIPMT", "NEET"],
+  "trendPeriod": "1988-2026",
+  "isPyq": false
+}
 
-114. Assertion: A limiting reagent determines the maximum amount of product. Reason: It is consumed completely before other reactants.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Limiting reagent
-Explanation: Once the limiting reagent is exhausted, further product cannot form.
-
-115. Assertion: Percentage yield can never exceed 100% in an ideal correctly measured experiment. Reason: Actual yield cannot exceed the stoichiometric theoretical yield.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Percentage yield
-Explanation: The theoretical yield is the maximum predicted from stoichiometry.
-
-116. Assertion: Equal masses of H₂ and O₂ contain equal numbers of molecules. Reason: Number of molecules depends on the number of moles.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: D  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Mole comparison
-Explanation: The reason is true, but equal masses give different moles because molar masses differ.
-
-117. Assertion: The empirical formula and molecular formula of benzene are different. Reason: The molecular formula is an integral multiple of the empirical formula.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Empirical and molecular formula
-Explanation: Benzene is C₆H₆ while its empirical formula is CH.
-
-118. Assertion: The law of multiple proportions applies only when the same two elements form more than one compound. Reason: The masses of one element combining with a fixed mass of the other are in small whole-number ratios.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Law of multiple proportions
-Explanation: The reason states the defining relation of the law.
-
-119. Assertion: 0.1 mol Na⁺ and 0.1 mol Ne contain equal numbers of electrons. Reason: Na⁺ and Ne are isoelectronic.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Isoelectronic species
-Explanation: Each entity has 10 electrons and the amounts are equal.
-
-120. Assertion: The sum of mole fractions in a solution is unity. Reason: Each mole fraction is the ratio of component moles to total moles.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Mole fraction
-Explanation: Summing all component moles over total moles gives one.
-
-121. Assertion: Significant figures indicate the precision of a measured value. Reason: All non-zero digits are significant.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: B  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Significant figures
-Explanation: The reason is true but does not fully explain precision or the complete rules.
-
-122. Assertion: A balanced chemical equation gives the actual reaction yield. Reason: Stoichiometric coefficients give theoretical mole ratios.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: D  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Stoichiometry and yield
-Explanation: Coefficients predict theoretical ratios, but actual yield can be lower.
-
-123. Assertion: One mole of electrons carries approximately 96500 C of charge. Reason: Charge equals number of electrons multiplied by charge on one electron.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: JEE Main  |  NCERT topic: Mole of charge
-Explanation: Nₐ × elementary charge gives the Faraday constant.
-
-124. Assertion: The molecular mass of an ionic solid is commonly called formula mass. Reason: Ionic solids do not exist as discrete molecules under ordinary conditions.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Formula mass
-Explanation: Their composition is represented by formula units rather than molecules.
-
-125. Assertion: A 1 M NaCl solution always contains 58.5 g NaCl in 1 L water. Reason: Molarity is moles of solute per litre of solution.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: D  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Molarity definition
-Explanation: The reason is true; the assertion is false because the final volume is 1 L solution, not 1 L water.
-
-126. Assertion: In a pure compound, elemental mass percentage is fixed. Reason: A pure compound has a definite composition by mass.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Definite proportions
-Explanation: This follows directly from the law of definite proportions.
-
-127. Assertion: 22.4 L is the molar volume of every gas under all conditions. Reason: Gas volume depends on temperature and pressure.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: D  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Molar volume
-Explanation: The assertion is false; 22.4 L mol⁻¹ is an approximate STP value under the stated convention.
-
-128. Assertion: In 2H₂ + O₂ → 2H₂O, 2 g H₂ reacts completely with 16 g O₂. Reason: The stoichiometric mole ratio H₂:O₂ is 2:1.
-A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
-B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
-C. Assertion is true, but Reason is false
-D. Assertion is false, but Reason is true
-Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  NCERT topic: Stoichiometric mass relation
-Explanation: 2 g H₂ is 1 mol and 16 g O₂ is 0.5 mol, matching 2:1.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-07-21T18:38:37+05:30.
+</ADDITIONAL_METADATA>
