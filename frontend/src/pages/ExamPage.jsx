@@ -82,12 +82,19 @@ const ExamPage = () => {
 
   const currentQuestion = questions[exam.currentQuestionIndex];
 
-  // ---------- Subject tabs (Physics / Chemistry / Botany / Zoology, NTA-style) ----------
+  // ---------- Subject tabs (Physics / Chemistry / Biology) ----------
   const subjectSections = useMemo(() => {
     const sections = [];
     questions.forEach((q, idx) => {
-      const subject = q.subject || 'General';
-      let section = sections.find((s) => s.subject === subject);
+      let subject = q.subject || 'General';
+      
+      // Normalize subject casing and map botany/zoology to biology
+      const normalized = subject.toLowerCase().trim();
+      if (normalized === 'botany' || normalized === 'zoology') {
+        subject = 'biology';
+      }
+
+      let section = sections.find((s) => s.subject.toLowerCase() === subject.toLowerCase());
       if (!section) {
         section = { subject, startIndex: idx };
         sections.push(section);
