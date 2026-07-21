@@ -1,0 +1,1183 @@
+<USER_REQUEST>
+Molecular Basis of Inheritance
+155 Original NCERT-Aligned NEET Questions | Medium-Hard | PYQ-Inspired
+Composition: 130 single-correct MCQs, 15 assertion-reason questions and 10 match-the-following questions. Questions are original and based on recurring NEET patterns without copying previous-year questions.
+Syllabus coverage: Search for genetic material, DNA and RNA structure, DNA packaging, replication, central dogma, transcription, RNA processing, genetic code, translation, lac operon, Human Genome Project and DNA fingerprinting.
+NCERT reference note: Topic labels are supplied instead of page numbers because pagination varies across NCERT editions and rationalised printings.
+1. The transforming principle was first demonstrated by:
+A. Avery
+B. Griffith
+C. Hershey
+D. Chargaff
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Search for genetic material
+Explanation: Griffith observed transformation of non-virulent R bacteria into virulent forms.
+
+2. In Griffith’s experiment, mice died when injected with:
+A. Live R strain only
+B. Heat-killed S strain only
+C. Live R plus heat-killed S
+D. Heat-killed R plus live S
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Griffith experiment
+Explanation: A transforming principle from dead S cells converted live R cells into virulent forms.
+
+3. Avery, MacLeod and McCarty concluded that the transforming principle was:
+A. Protein
+B. RNA
+C. DNA
+D. Polysaccharide
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Avery-MacLeod-McCarty experiment
+Explanation: Transformation was abolished by DNase but not by protease or RNase.
+
+4. In the Avery experiment, transformation failed when the extract was treated with:
+A. Protease
+B. RNase
+C. DNase
+D. Lipase
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA as genetic material
+Explanation: DNase destroyed the transforming material, identifying it as DNA.
+
+5. Hershey and Chase used which organism to establish DNA as genetic material?
+A. Tobacco mosaic virus
+B. Bacteriophage T2
+C. Pneumococcus
+D. Drosophila
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hershey-Chase experiment
+Explanation: They traced labelled phage DNA and protein during infection of E. coli.
+
+6. In the Hershey-Chase experiment, DNA was labelled with:
+A. 35S
+B. 32P
+C. 14C
+D. 15N
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hershey-Chase experiment
+Explanation: DNA contains phosphorus but no sulfur.
+
+7. In the Hershey-Chase experiment, protein was labelled with:
+A. 32P
+B. 35S
+C. 3H
+D. 14N
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hershey-Chase experiment
+Explanation: Proteins contain sulfur in cysteine and methionine, whereas DNA does not.
+
+8. After blending and centrifugation in the Hershey-Chase experiment, most 32P was found in the:
+A. Supernatant
+B. Bacterial pellet
+C. Phage coats only
+D. Culture medium before infection
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hershey-Chase experiment
+Explanation: Labelled DNA entered bacteria and sedimented with the cells.
+
+9. Most 35S remained in the supernatant because:
+A. Protein entered bacteria
+B. Protein coats remained outside the bacterial cells
+C. DNA was degraded
+D. Sulfur diffused through membranes
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hershey-Chase experiment
+Explanation: Phage protein coats did not enter the bacteria.
+
+10. RNA serves as genetic material in:
+A. All bacteria
+B. Some viruses
+C. All eukaryotes
+D. Only plants
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: RNA as genetic material
+Explanation: Several viruses use RNA as their hereditary material.
+
+11. DNA is generally a better genetic material than RNA because DNA is:
+A. More reactive
+B. Chemically more stable and repairable
+C. Always single-stranded
+D. Catalytically more active
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Properties of genetic material
+Explanation: Deoxyribose lacks the reactive 2′-OH group and double strands permit repair.
+
+12. RNA is considered the first genetic material partly because it can:
+A. Only store information
+B. Both store information and catalyse reactions
+C. Replicate without enzymes in modern cells
+D. Form histones
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: RNA world
+Explanation: RNA can act as genetic material and as a ribozyme.
+
+13. The genetic material must be able to:
+A. Replicate, express and mutate
+B. Only replicate
+C. Only express phenotype
+D. Remain completely unchanged
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Properties of genetic material
+Explanation: Heredity requires replication, expression and capacity for variation.
+
+14. Which observation most directly identifies DNA as the transforming principle?
+A. Transformation after protease treatment
+B. Loss of transformation after DNase treatment
+C. Presence of a capsule in S bacteria
+D. Death of mice after live S injection
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Avery experiment
+Explanation: Specific elimination of transformation by DNase implicates DNA.
+
+15. The virulence of S strain Pneumococcus is mainly associated with its:
+A. Rough cell wall
+B. Polysaccharide coat
+C. RNA genome
+D. Flagellum
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Griffith experiment
+Explanation: The smooth strain has a protective polysaccharide capsule.
+
+16. Heat-killed S bacteria alone did not kill mice because:
+A. Their DNA was absent
+B. They were non-virulent after death
+C. Their capsule transformed mice cells
+D. They became R bacteria
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Griffith experiment
+Explanation: Dead bacteria cannot multiply and produce disease.
+
+17. The bacteriophage material detected in progeny phages after infection was mainly:
+A. 35S-labelled protein
+B. 32P-labelled DNA
+C. Both labels equally
+D. Neither label
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hershey-Chase experiment
+Explanation: DNA entered bacteria and directed production of progeny phages.
+
+18. A genetic material should be structurally stable but must also permit:
+A. No variation
+B. Occasional mutation
+C. Constant degradation
+D. Only protein synthesis
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Properties of genetic material
+Explanation: Mutation is essential for variation and evolution.
+
+19. Which molecule is more likely to undergo spontaneous hydrolysis because of a 2′-OH group?
+A. DNA
+B. RNA
+C. Protein
+D. Lipid
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA versus RNA
+Explanation: The 2′-OH makes RNA chemically less stable.
+
+20. The decisive evidence from transformation studies was obtained in:
+A. 1928 by Griffith only
+B. 1944 by Avery, MacLeod and McCarty
+C. 1953 by Watson and Crick
+D. 1961 by Jacob and Monod
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA as genetic material
+Explanation: The 1944 experiments identified DNA as the transforming principle.
+
+21. A nucleotide consists of:
+A. Base and sugar only
+B. Sugar, phosphate and nitrogenous base
+C. Phosphate and base only
+D. Amino acid and phosphate
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Nucleotide structure
+Explanation: A nucleotide is a nucleoside with one or more phosphate groups.
+
+22. A nucleoside consists of:
+A. Base plus sugar
+B. Sugar plus phosphate
+C. Base plus phosphate
+D. Base, sugar and phosphate
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Nucleoside
+Explanation: A nitrogenous base attached to pentose sugar forms a nucleoside.
+
+23. Purine bases are:
+A. Cytosine and thymine
+B. Adenine and guanine
+C. Uracil and thymine
+D. Cytosine and uracil
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Nitrogenous bases
+Explanation: Adenine and guanine have two-ring purine structures.
+
+24. Pyrimidines present in DNA are:
+A. Adenine and guanine
+B. Cytosine and thymine
+C. Cytosine and uracil
+D. Guanine and thymine
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Nitrogenous bases
+Explanation: DNA contains C and T as pyrimidines.
+
+25. RNA differs from DNA by containing:
+A. Thymine and deoxyribose
+B. Uracil and ribose
+C. Uracil and deoxyribose
+D. Thymine and ribose
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA versus RNA
+Explanation: RNA contains ribose sugar and uracil.
+
+26. The bond joining base to sugar in a nucleotide is:
+A. Phosphodiester bond
+B. N-glycosidic bond
+C. Peptide bond
+D. Hydrogen bond
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Nucleotide structure
+Explanation: The base is linked to the 1′ carbon of sugar by an N-glycosidic bond.
+
+27. Adjacent nucleotides in a polynucleotide are joined by:
+A. 3′-5′ phosphodiester bonds
+B. Peptide bonds
+C. Hydrogen bonds
+D. Disulfide bonds
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Polynucleotide chain
+Explanation: A phosphate links the 3′ carbon of one sugar to the 5′ carbon of the next.
+
+28. The two strands of DNA are:
+A. Parallel
+B. Antiparallel
+C. Identical in polarity
+D. Covalently joined throughout
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA double helix
+Explanation: One strand runs 5′→3′ and the other 3′→5′.
+
+29. Adenine pairs with thymine through:
+A. One hydrogen bond
+B. Two hydrogen bonds
+C. Three hydrogen bonds
+D. A phosphodiester bond
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Base pairing
+Explanation: A-T base pairs have two hydrogen bonds.
+
+30. Guanine pairs with cytosine through:
+A. One hydrogen bond
+B. Two hydrogen bonds
+C. Three hydrogen bonds
+D. Four hydrogen bonds
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Base pairing
+Explanation: G-C base pairs have three hydrogen bonds.
+
+31. According to Chargaff’s rule in double-stranded DNA:
+A. A=G and T=C
+B. A=T and G=C
+C. A+C=G only
+D. A=T=G=C always
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Chargaff rule
+Explanation: Complementary pairing makes adenine equal thymine and guanine equal cytosine.
+
+32. If a double-stranded DNA has 20% adenine, the percentage of guanine is:
+A. 20%
+B. 30%
+C. 40%
+D. 60%
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Chargaff calculation
+Explanation: T is 20%, leaving 60% for G+C, so G is 30%.
+
+33. If cytosine is 18% in double-stranded DNA, adenine is:
+A. 18%
+B. 32%
+C. 36%
+D. 64%
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Chargaff calculation
+Explanation: G is 18%; A+T=64%, so A=32%.
+
+34. The diameter of the DNA double helix is approximately:
+A. 0.34 nm
+B. 2 nm
+C. 3.4 nm
+D. 20 nm
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Watson-Crick model
+Explanation: The constant helix diameter is about 2 nm.
+
+35. The distance between two successive base pairs is approximately:
+A. 0.034 nm
+B. 0.34 nm
+C. 3.4 nm
+D. 34 nm
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Watson-Crick model
+Explanation: Adjacent base pairs are separated by 0.34 nm.
+
+36. One complete turn of B-DNA contains approximately:
+A. 5 base pairs
+B. 10 base pairs
+C. 20 base pairs
+D. 34 base pairs
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Watson-Crick model
+Explanation: B-DNA has about 10 base pairs per turn.
+
+37. The pitch of the DNA helix is approximately:
+A. 0.34 nm
+B. 2 nm
+C. 3.4 nm
+D. 34 nm
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Watson-Crick model
+Explanation: Ten base pairs at 0.34 nm each give a pitch of 3.4 nm.
+
+38. The sugar-phosphate backbone of DNA lies:
+A. Inside the helix
+B. Outside the helix
+C. Only at one end
+D. Between paired bases
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA double helix
+Explanation: Hydrophilic backbones are outside while bases stack inside.
+
+39. Base stacking contributes to DNA stability mainly through:
+A. Peptide bonds
+B. Hydrophobic and van der Waals interactions
+C. Ionic bonds with histones only
+D. Disulfide bonds
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA stability
+Explanation: Stacked aromatic bases stabilise the helix.
+
+40. The two strands of DNA are complementary because:
+A. Their sequences are identical
+B. Specific base pairing determines one sequence from the other
+C. Both run 5′→3′
+D. They contain equal numbers of all four bases
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Complementarity
+Explanation: A pairs with T and G with C.
+
+41. A DNA strand has sequence 5′-ATGCC-3′. Its complementary strand is:
+A. 5′-TACGG-3′
+B. 3′-TACGG-5′
+C. 3′-ATGCC-5′
+D. 5′-GGCAT-3′
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Complementary sequence
+Explanation: Complementary strands are antiparallel.
+
+42. The 5′ end of a polynucleotide generally bears a free:
+A. 3′-OH group
+B. Phosphate group
+C. Amino group
+D. Base only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Polynucleotide polarity
+Explanation: The 5′ carbon commonly carries the terminal phosphate.
+
+43. The 3′ end of a polynucleotide has a free:
+A. Phosphate group
+B. 3′-OH group
+C. 5′-OH group only
+D. Carboxyl group
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Polynucleotide polarity
+Explanation: The terminal sugar exposes its 3′ hydroxyl group.
+
+44. DNA with higher G-C content generally has:
+A. Lower melting temperature
+B. Higher melting temperature
+C. No hydrogen bonds
+D. More uracil
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA stability
+Explanation: G-C pairs have three hydrogen bonds and stronger stacking.
+
+45. Denaturation of DNA primarily disrupts:
+A. Phosphodiester bonds
+B. Hydrogen bonds and base stacking
+C. Glycosidic bonds
+D. Covalent bonds in sugar
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA denaturation
+Explanation: The strands separate without breaking the backbone.
+
+46. Renaturation of DNA is favoured when separated strands are:
+A. Unrelated
+B. Complementary
+C. Both proteins
+D. Both RNA only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA renaturation
+Explanation: Complementary sequences reassociate under suitable conditions.
+
+47. The Watson-Crick model was supported strongly by X-ray diffraction data of:
+A. Mendel
+B. Rosalind Franklin and Maurice Wilkins
+C. Jacob and Monod
+D. Avery and McCarty
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Discovery of DNA structure
+Explanation: Their diffraction studies revealed helical dimensions.
+
+48. A single-stranded RNA molecule may form local double-stranded regions due to:
+A. Peptide bonding
+B. Intramolecular base pairing
+C. Lack of polarity
+D. Only protein binding
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: RNA structure
+Explanation: Complementary segments can fold into hairpins and stems.
+
+49. Which RNA typically has a cloverleaf secondary structure?
+A. mRNA
+B. tRNA
+C. rRNA only
+D. hnRNA
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: RNA structure
+Explanation: tRNA folds into a characteristic cloverleaf structure.
+
+50. The anticodon is located on:
+A. mRNA
+B. tRNA
+C. rRNA
+D. DNA polymerase
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: tRNA
+Explanation: The anticodon loop of tRNA pairs with an mRNA codon.
+
+51. In prokaryotes, DNA is located in a region called the:
+A. Nucleus
+B. Nucleoid
+C. Nucleolus
+D. Centrosome
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA packaging
+Explanation: Prokaryotic DNA occupies the non-membrane-bound nucleoid.
+
+52. The positively charged proteins associated with eukaryotic DNA are:
+A. Actins
+B. Histones
+C. Tubulins
+D. Keratin
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Histones
+Explanation: Histones are rich in basic amino acids and bind negatively charged DNA.
+
+53. A histone octamer contains:
+A. One copy each of H1-H4
+B. Two copies each of H2A, H2B, H3 and H4
+C. Only H1 proteins
+D. Eight identical H3 molecules
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Nucleosome
+Explanation: The nucleosome core contains two copies of four core histones.
+
+54. Approximately how much DNA is wrapped around a histone octamer?
+A. 20 bp
+B. 80 bp
+C. 146 bp
+D. 1000 bp
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Nucleosome
+Explanation: About 146 base pairs form 1.65 turns around the core.
+
+55. The linker histone is:
+A. H1
+B. H2A
+C. H3
+D. H4
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Chromatin packaging
+Explanation: H1 associates with linker DNA and aids higher-order packing.
+
+56. The repeating unit of chromatin is the:
+A. Codon
+B. Nucleosome
+C. Replicon
+D. Operon
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Nucleosome
+Explanation: Nucleosomes appear as beads on a string.
+
+57. Euchromatin is generally:
+A. Highly condensed and inactive
+B. Loosely packed and transcriptionally active
+C. Always centromeric
+D. Lacking DNA
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Chromatin
+Explanation: Less condensed chromatin is more accessible for transcription.
+
+58. Heterochromatin is generally:
+A. Lightly stained and active
+B. Densely packed and relatively inactive
+C. Made only of RNA
+D. Present only in bacteria
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Chromatin
+Explanation: Dense packing usually correlates with low transcription.
+
+59. The semiconservative nature of DNA replication was demonstrated by:
+A. Watson and Crick
+B. Meselson and Stahl
+C. Hershey and Chase
+D. Beadle and Tatum
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Meselson-Stahl experiment
+Explanation: They used 15N and 14N to track old and new strands.
+
+60. Meselson and Stahl grew E. coli initially in medium containing:
+A. 32P
+B. 35S
+C. 15N
+D. 14C
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Meselson-Stahl experiment
+Explanation: Heavy nitrogen labelled parental DNA.
+
+61. After one generation in 14N medium, DNA from 15N-grown bacteria formed:
+A. Only heavy band
+B. Only light band
+C. A single intermediate band
+D. Heavy and light bands
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Semiconservative replication
+Explanation: Each molecule contained one old heavy and one new light strand.
+
+62. After two generations in 14N medium, semiconservative replication predicts:
+A. Only intermediate DNA
+B. Only light DNA
+C. Equal intermediate and light DNA
+D. Heavy and intermediate DNA
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Semiconservative replication
+Explanation: Half the molecules are hybrid and half are light.
+
+63. DNA replication begins at specific sites called:
+A. Codons
+B. Origins of replication
+C. Promoters only
+D. Operators
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA replication
+Explanation: Replication initiates at defined origins.
+
+64. The enzyme that unwinds the DNA helix is:
+A. Ligase
+B. Helicase
+C. Primase
+D. Topoisomerase only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Replication enzymes
+Explanation: Helicase separates parental strands at the replication fork.
+
+65. The enzyme that synthesises RNA primers is:
+A. DNA ligase
+B. Primase
+C. Helicase
+D. Exonuclease
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Replication enzymes
+Explanation: Primase makes short RNA primers required for DNA polymerase.
+
+66. DNA polymerase synthesises DNA in the direction:
+A. 3′→5′ only
+B. 5′→3′ only
+C. Both directions
+D. Without polarity
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA polymerase
+Explanation: Nucleotides are added to a free 3′-OH group.
+
+67. The template strand is read by DNA polymerase in the direction:
+A. 5′→3′
+B. 3′→5′
+C. Both simultaneously
+D. No fixed direction
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA replication
+Explanation: Antiparallel synthesis requires reading the template 3′→5′.
+
+68. The continuously synthesised strand is the:
+A. Lagging strand
+B. Leading strand
+C. Coding strand
+D. Non-template strand
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Leading strand
+Explanation: It is extended in the same direction as fork movement.
+
+69. Okazaki fragments are formed on the:
+A. Leading strand
+B. Lagging strand
+C. Both strands equally
+D. RNA primer only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lagging strand
+Explanation: The lagging strand is synthesised discontinuously.
+
+70. DNA ligase functions to:
+A. Unwind DNA
+B. Join Okazaki fragments
+C. Synthesise primers
+D. Remove histones
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Replication enzymes
+Explanation: Ligase seals phosphodiester gaps between fragments.
+
+71. The main role of topoisomerase during replication is to:
+A. Add nucleotides
+B. Relieve torsional strain ahead of the fork
+C. Make RNA primers
+D. Join fragments
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Replication enzymes
+Explanation: It prevents excessive supercoiling during unwinding.
+
+72. Replication is described as bidirectional because:
+A. Both strands are copied
+B. Two forks move away from an origin
+C. Polymerase works in both chemical directions
+D. DNA and RNA are copied together
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA replication
+Explanation: Replication bubbles expand in two directions from each origin.
+
+73. The energy for DNA chain elongation comes mainly from:
+A. ATP hydrolysis by histones
+B. Hydrolysis of incoming deoxynucleoside triphosphates
+C. Breaking hydrogen bonds only
+D. Peptide-bond formation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA replication
+Explanation: Cleavage of high-energy phosphate bonds drives polymerisation.
+
+74. Proofreading by DNA polymerase increases:
+A. Mutation rate
+B. Fidelity of replication
+C. RNA synthesis
+D. Chromosome number
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Replication fidelity
+Explanation: Incorrectly paired nucleotides are removed during synthesis.
+
+75. If one DNA molecule undergoes three complete rounds of replication, the number of DNA molecules formed is:
+A. 3
+B. 6
+C. 8
+D. 16
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Replication calculation
+Explanation: Each round doubles the number: 2^3=8.
+
+76. After three rounds of semiconservative replication from one labelled DNA molecule in unlabelled medium, molecules retaining at least one original labelled strand are:
+A. 1
+B. 2
+C. 4
+D. 8
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Semiconservative calculation
+Explanation: The two original strands remain in two separate molecules.
+
+77. In the same situation, the fraction of molecules retaining an original strand is:
+A. 1/8
+B. 1/4
+C. 1/2
+D. 3/4
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Semiconservative calculation
+Explanation: Two of eight molecules retain one original strand.
+
+78. Replication of a circular bacterial chromosome produces:
+A. Only one fork
+B. A theta-like intermediate with two forks
+C. No origin
+D. Only linear products
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Prokaryotic replication
+Explanation: Bidirectional replication generates a theta structure.
+
+79. The lagging strand requires multiple primers because:
+A. DNA polymerase works 3′→5′
+B. Its synthesis is discontinuous as the fork opens
+C. It has no template
+D. Ligase cannot act
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lagging strand
+Explanation: Repeated priming is needed for successive Okazaki fragments.
+
+80. The leading strand generally requires:
+A. No primer
+B. One primer per origin/fork
+C. A primer for every nucleotide
+D. Only protein primers
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Leading strand
+Explanation: Continuous synthesis starts from a single primer at each fork.
+
+81. The central dogma is commonly represented as:
+A. Protein→RNA→DNA
+B. DNA→RNA→Protein
+C. RNA→DNA→Lipid
+D. DNA→Protein→RNA
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Central dogma
+Explanation: Genetic information is generally transcribed into RNA and translated into protein.
+
+82. Reverse transcription is the flow of information from:
+A. DNA to RNA
+B. RNA to DNA
+C. Protein to RNA
+D. Protein to DNA
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Central dogma exceptions
+Explanation: Reverse transcriptase copies RNA into DNA.
+
+83. The DNA strand used by RNA polymerase as template is called the:
+A. Coding strand
+B. Template strand
+C. Sense strand only
+D. Leading strand
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Transcription
+Explanation: RNA is complementary to the template strand.
+
+84. The coding strand has the same sequence as RNA except that DNA contains:
+A. Uracil instead of thymine
+B. Thymine instead of uracil
+C. Ribose instead of deoxyribose
+D. No phosphate
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Transcription
+Explanation: mRNA resembles the coding strand with U replacing T.
+
+85. RNA polymerase synthesises RNA in the direction:
+A. 3′→5′
+B. 5′→3′
+C. Both
+D. No polarity
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Transcription
+Explanation: Ribonucleotides are added to the 3′ end.
+
+86. The promoter is the DNA region where:
+A. Ribosome binds
+B. RNA polymerase binds to initiate transcription
+C. Translation terminates
+D. DNA ligase binds
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Promoter
+Explanation: Promoters specify transcription start and direction.
+
+87. The terminator signals:
+A. Start of replication
+B. End of transcription
+C. Start of translation
+D. RNA splicing only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Transcription termination
+Explanation: It causes release of the RNA transcript and polymerase.
+
+88. In bacteria, a transcription unit includes:
+A. Promoter, structural gene and terminator
+B. Only exons
+C. Operator and ribosome only
+D. Origin and centromere
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Transcription unit
+Explanation: These are the core components of a transcription unit.
+
+89. In eukaryotes, the primary transcript of a structural gene is often called:
+A. tRNA
+B. hnRNA
+C. rRNA only
+D. Polysome
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Eukaryotic transcription
+Explanation: Heterogeneous nuclear RNA requires processing.
+
+90. Removal of introns from hnRNA is called:
+A. Capping
+B. Tailing
+C. Splicing
+D. Translation
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: RNA processing
+Explanation: Splicing joins exons and removes introns.
+
+91. Addition of methyl guanosine to the 5′ end is called:
+A. Splicing
+B. Capping
+C. Tailing
+D. Editing
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: RNA processing
+Explanation: The 5′ cap protects RNA and aids translation.
+
+92. Polyadenylation adds adenylate residues to the:
+A. 5′ end
+B. 3′ end
+C. Middle of every exon
+D. Promoter
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: RNA processing
+Explanation: A poly-A tail is added at the 3′ end.
+
+93. Exons are sequences that:
+A. Are always removed
+B. Remain in mature RNA after splicing
+C. Never get transcribed
+D. Occur only in bacteria
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Split genes
+Explanation: Exons are represented in the processed transcript.
+
+94. Introns are:
+A. Intervening sequences removed during RNA processing
+B. Protein-coding regions only
+C. Promoter elements
+D. Ribosomal subunits
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Split genes
+Explanation: Introns interrupt eukaryotic genes and are spliced out.
+
+95. The genetic code is described as degenerate because:
+A. One codon codes for many amino acids
+B. Several codons can specify the same amino acid
+C. Codons overlap
+D. It differs completely among organisms
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Genetic code
+Explanation: Most amino acids are encoded by more than one codon.
+
+96. The genetic code is unambiguous because:
+A. Each codon specifies only one amino acid
+B. Each amino acid has one codon
+C. Codons overlap
+D. Stop codons encode amino acids
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Genetic code
+Explanation: A codon has a single meaning in translation.
+
+97. The start codon is usually:
+A. UAA
+B. UAG
+C. AUG
+D. UGA
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Genetic code
+Explanation: AUG initiates translation and codes for methionine.
+
+98. Which is a stop codon?
+A. AUG
+B. UGG
+C. UAA
+D. GUG only
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Genetic code
+Explanation: UAA is one of three termination codons.
+
+99. The number of possible triplet codons is:
+A. 20
+B. 32
+C. 61
+D. 64
+Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Genetic code
+Explanation: Four bases in triplets give 4^3=64 codons.
+
+100. The number of sense codons is:
+A. 20
+B. 61
+C. 64
+D. 3
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Genetic code
+Explanation: Sixty-one codons specify amino acids and three are stops.
+
+101. The adaptor molecule in protein synthesis is:
+A. mRNA
+B. tRNA
+C. DNA
+D. rRNA only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Translation
+Explanation: tRNA carries amino acids and recognises codons.
+
+102. Aminoacylation of tRNA means:
+A. Removal of anticodon
+B. Attachment of the correct amino acid to tRNA
+C. Joining ribosomal subunits
+D. Formation of mRNA cap
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: tRNA charging
+Explanation: Aminoacyl-tRNA synthetases charge tRNAs with amino acids.
+
+103. The anticodon of tRNA pairs with the:
+A. Promoter
+B. Codon on mRNA
+C. Operator
+D. DNA origin
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Translation
+Explanation: Complementary codon-anticodon pairing ensures correct amino-acid order.
+
+104. Peptide bond formation is catalysed primarily by:
+A. DNA polymerase
+B. Peptidyl transferase activity of rRNA
+C. Ligase
+D. Aminoacyl-tRNA synthetase
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Ribosome
+Explanation: The ribosome functions as a ribozyme.
+
+105. A polysome consists of:
+A. Many mRNAs on one ribosome
+B. Many ribosomes translating one mRNA
+C. Many DNA molecules
+D. Only tRNAs
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Polysome
+Explanation: Multiple ribosomes simultaneously translate the same mRNA.
+
+106. Translation terminates when:
+A. AUG enters A site
+B. A stop codon enters the ribosomal A site
+C. The promoter is reached
+D. DNA polymerase dissociates
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Translation termination
+Explanation: Release factors recognise stop codons.
+
+107. If an mRNA coding region contains 300 nucleotides including one stop codon, the maximum number of amino acids encoded is:
+A. 99
+B. 100
+C. 101
+D. 300
+Answer: A  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Genetic code calculation
+Explanation: There are 100 codons, but the stop codon does not specify an amino acid.
+
+108. A polypeptide of 50 amino acids requires a coding sequence of at least:
+A. 50 nucleotides
+B. 100 nucleotides
+C. 150 nucleotides excluding stop
+D. 200 nucleotides
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Genetic code calculation
+Explanation: Each amino acid requires one triplet codon.
+
+109. A mutation changing UAU to UAA is a:
+A. Silent mutation
+B. Missense mutation
+C. Nonsense mutation
+D. Frameshift mutation
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mutation and genetic code
+Explanation: UAA is a stop codon, causing premature termination.
+
+110. A mutation changing one codon to another codon for the same amino acid is:
+A. Nonsense
+B. Silent
+C. Frameshift
+D. Deletion
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mutation and genetic code
+Explanation: Degeneracy can preserve the amino acid despite a base change.
+
+111. Insertion of one nucleotide into a coding region usually causes:
+A. No change
+B. Frameshift
+C. Only one amino-acid substitution
+D. Chromosome duplication
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Frameshift mutation
+Explanation: The reading frame changes downstream of the insertion.
+
+112. A deletion of exactly three nucleotides from a coding region generally:
+A. Shifts the entire reading frame
+B. Removes one amino acid without shifting downstream frame
+C. Creates no change
+D. Stops transcription always
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: In-frame deletion
+Explanation: One complete codon is removed.
+
+113. The first amino acid in a newly synthesised bacterial polypeptide is often:
+A. Methionine only
+B. N-formylmethionine
+C. Valine
+D. Tryptophan
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Translation initiation
+Explanation: Bacterial initiation uses initiator fMet-tRNA.
+
+114. Ribosomes read mRNA in the direction:
+A. 3′→5′
+B. 5′→3′
+C. Both directions
+D. From stop to start
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Translation
+Explanation: Translation proceeds from the 5′ end toward the 3′ end.
+
+115. The amino end of a polypeptide is synthesised:
+A. Last
+B. First
+C. At the same time as carboxyl end
+D. Only after termination
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Translation
+Explanation: Polypeptide elongation proceeds from N-terminus to C-terminus.
+
+116. The lac operon is an example of a/an:
+A. Inducible operon
+B. Repressible operon
+C. Constitutive operon only
+D. Eukaryotic enhancer
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lac operon
+Explanation: It is switched on in the presence of lactose.
+
+117. The structural genes of lac operon are:
+A. i, p and o
+B. z, y and a
+C. lacI only
+D. rRNA genes
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lac operon
+Explanation: lacZ, lacY and lacA encode beta-galactosidase, permease and transacetylase.
+
+118. The lacI gene encodes the:
+A. Permease
+B. Repressor
+C. Beta-galactosidase
+D. RNA polymerase
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lac operon
+Explanation: The regulator gene produces the repressor protein.
+
+119. In the absence of lactose, the lac repressor binds to the:
+A. Promoter only
+B. Operator
+C. Structural gene z
+D. Ribosome
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lac operon
+Explanation: Operator binding blocks RNA polymerase movement.
+
+120. The inducer of the lac operon is derived from:
+A. Glucose
+B. Lactose
+C. Galactose only
+D. Tryptophan
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lac operon
+Explanation: Allolactose, formed from lactose, binds and inactivates the repressor.
+
+121. When lactose is present, the repressor:
+A. Binds operator more strongly
+B. Is inactivated and cannot bind operator effectively
+C. Destroys RNA polymerase
+D. Activates DNA replication
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lac operon
+Explanation: Inducer binding changes repressor conformation.
+
+122. lacZ encodes:
+A. Permease
+B. Beta-galactosidase
+C. Transacetylase
+D. Repressor
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lac operon
+Explanation: Beta-galactosidase cleaves lactose.
+
+123. lacY encodes:
+A. Permease
+B. Repressor
+C. Ligase
+D. Histone
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lac operon
+Explanation: Permease facilitates lactose entry into the cell.
+
+124. lacA encodes:
+A. Beta-galactosidase
+B. Transacetylase
+C. Permease
+D. RNA polymerase
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lac operon
+Explanation: lacA codes for transacetylase.
+
+125. The Human Genome Project aimed primarily to:
+A. Sequence only one human gene
+B. Determine the complete human DNA sequence and identify genes
+C. Create transgenic humans
+D. Eliminate all mutations
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Human Genome Project
+Explanation: HGP mapped and sequenced the human genome.
+
+126. The approximate size of the human haploid genome is:
+A. 3.2 million bp
+B. 32 million bp
+C. 3.2 billion bp
+D. 32 billion bp
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Human genome
+Explanation: The human haploid genome contains about 3.2 × 10^9 base pairs.
+
+127. Protein-coding sequences constitute approximately what fraction of the human genome?
+A. Less than 2%
+B. About 25%
+C. About 50%
+D. More than 90%
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Human genome
+Explanation: Only a small fraction directly encodes proteins.
+
+128. A major source of DNA polymorphism used in fingerprinting is:
+A. Identical coding exons only
+B. Variable number tandem repeats
+C. Histone proteins
+D. Ribosomal RNA
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA fingerprinting
+Explanation: VNTR loci vary in repeat number among individuals.
+
+129. DNA fingerprinting was developed by:
+A. Alec Jeffreys
+B. Frederick Sanger
+C. Francis Crick
+D. Meselson
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA fingerprinting
+Explanation: Alec Jeffreys pioneered DNA fingerprinting using repetitive DNA variation.
+
+130. DNA fingerprinting is especially useful in:
+A. Measuring blood pressure
+B. Forensic identification and paternity analysis
+C. Protein translation only
+D. Chromosome replication
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: DNA fingerprinting
+Explanation: Highly polymorphic DNA patterns can identify individuals and relationships.
+
+131. Assertion: DNA is more stable than RNA. Reason: DNA lacks a 2′-OH group and is usually double-stranded.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: DNA versus RNA
+Explanation: Both features make DNA less reactive and allow repair.
+
+132. Assertion: In double-stranded DNA, purines equal pyrimidines. Reason: Each purine pairs with a pyrimidine.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Chargaff rule
+Explanation: A-T and G-C pairing ensures equal totals.
+
+133. Assertion: The two DNA strands are parallel. Reason: One strand runs 5′→3′ and the other 3′→5′.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: DNA structure
+Explanation: The reason is true and shows that the strands are antiparallel.
+
+134. Assertion: DNA replication is semiconservative. Reason: Each daughter molecule contains one parental and one newly synthesised strand.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: DNA replication
+Explanation: The reason defines semiconservative replication.
+
+135. Assertion: DNA polymerase can initiate synthesis without a primer. Reason: It can add nucleotides only to a free 3′-OH group.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: DNA polymerase
+Explanation: The reason is true, but it means a primer is required.
+
+136. Assertion: Okazaki fragments form on the lagging strand. Reason: DNA polymerase synthesises only in the 5′→3′ direction while the templates are antiparallel.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Lagging strand
+Explanation: Discontinuous synthesis resolves the polarity problem.
+
+137. Assertion: Both DNA strands are transcribed for a given gene. Reason: Simultaneous transcription of both would produce complementary RNAs.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Transcription
+Explanation: Usually only one strand is the template for a transcription unit.
+
+138. Assertion: The genetic code is degenerate. Reason: More than one codon can specify the same amino acid.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Genetic code
+Explanation: The reason states degeneracy.
+
+139. Assertion: The genetic code is ambiguous. Reason: One codon generally specifies only one amino acid.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Genetic code
+Explanation: The code is unambiguous; the reason is true.
+
+140. Assertion: Ribosomes are ribozymes. Reason: Peptide bond formation is catalysed by ribosomal RNA.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Translation
+Explanation: Catalytic rRNA demonstrates ribozyme activity.
+
+141. Assertion: Introns are absent from the primary transcript. Reason: Introns are removed during RNA splicing.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: RNA processing
+Explanation: Introns are present in the primary transcript and removed later.
+
+142. Assertion: The lac operon is switched on by lactose. Reason: The inducer inactivates the repressor.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Lac operon
+Explanation: Inactivated repressor cannot block the operator.
+
+143. Assertion: The lac repressor binds the promoter. Reason: The operator controls access of RNA polymerase to structural genes.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Lac operon
+Explanation: The repressor binds the operator, not the promoter.
+
+144. Assertion: DNA fingerprinting can distinguish most unrelated individuals. Reason: VNTR loci show high polymorphism.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: DNA fingerprinting
+Explanation: Variation in repeat number creates individual-specific patterns.
+
+145. Assertion: Most human DNA directly codes for proteins. Reason: Less than 2% of the genome is protein-coding.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Human genome
+Explanation: The reason is true and contradicts the assertion.
+
+146. Match the experiment with conclusion: I. Griffith; II. Avery-MacLeod-McCarty; III. Hershey-Chase; IV. Meselson-Stahl. a. Semiconservative replication; b. Transformation observed; c. DNA is transforming principle; d. DNA enters bacteria during phage infection
+A. I-b, II-c, III-d, IV-a
+B. I-c, II-b, III-a, IV-d
+C. I-d, II-a, III-b, IV-c
+D. I-a, II-d, III-c, IV-b
+Answer: A  |  Type: Match the Following  |  Level: NEET  |  NCERT topic: Classic experiments
+Explanation: Each experiment is paired with its principal conclusion.
+
+147. Match the component with function: I. Helicase; II. Primase; III. Ligase; IV. DNA polymerase. a. Joins fragments; b. Synthesises primer; c. Unwinds helix; d. Extends DNA chain
+A. I-c, II-b, III-a, IV-d
+B. I-b, II-c, III-d, IV-a
+C. I-a, II-d, III-b, IV-c
+D. I-d, II-a, III-c, IV-b
+Answer: A  |  Type: Match the Followi
+<truncated 3808 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.

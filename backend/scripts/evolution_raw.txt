@@ -1,0 +1,1104 @@
+<USER_REQUEST>
+Evolution
+160 Original NCERT-Aligned NEET Questions | Medium-Hard | PYQ-Inspired
+Composition: 135 single-correct MCQs, 15 assertion-reason questions and 10 match-the-following questions. Questions are original and model recurring NEET patterns without reproducing past-paper wording.
+Coverage: origin of life, chemical evolution, evidence for evolution, homology and analogy, Darwinism, natural selection, adaptive radiation, industrial melanism, modern synthesis, Hardy-Weinberg equilibrium, mutation, recombination, gene flow, genetic drift, speciation, geological history and human evolution.
+NCERT reference note: Topic references are used instead of page numbers because NCERT pagination differs among editions and rationalised printings.
+1. Evolutionary biology primarily deals with:
+A. Development of an individual from zygote
+B. History and changes of life forms on Earth
+C. Classification without ancestry
+D. Only origin of humans
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Introduction to evolution
+Explanation: Evolutionary biology studies the origin, diversification and historical change of life forms.
+
+2. According to the Big Bang theory, the universe originated approximately:
+A. 4.5 billion years ago
+B. 13.8 billion years ago
+C. 3.5 million years ago
+D. 20,000 years ago
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Origin of universe
+Explanation: Current estimates place the origin of the universe around 13.8 billion years ago.
+
+3. The age of Earth is approximately:
+A. 4.5 billion years
+B. 13.8 billion years
+C. 500 million years
+D. 65 million years
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Origin of Earth
+Explanation: Earth formed about 4.5 billion years ago.
+
+4. The primitive atmosphere of Earth is generally considered to have lacked free:
+A. Methane
+B. Ammonia
+C. Hydrogen
+D. Oxygen
+Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Primitive atmosphere
+Explanation: The early reducing atmosphere had little or no free molecular oxygen.
+
+5. The theory of chemical evolution was independently proposed by:
+A. Darwin and Wallace
+B. Oparin and Haldane
+C. Miller and Urey
+D. Watson and Crick
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Chemical evolution
+Explanation: Oparin and Haldane proposed that life arose through gradual chemical evolution.
+
+6. The Miller-Urey experiment simulated:
+A. Modern oxygen-rich atmosphere
+B. Conditions of primitive Earth
+C. Conditions inside a living cell
+D. Deep-sea hydrothermal vents only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Miller-Urey experiment
+Explanation: Their apparatus modelled a reducing atmosphere with energy supplied by electric sparks.
+
+7. Miller obtained which class of organic compounds in his experiment?
+A. Amino acids
+B. DNA molecules
+C. Living cells
+D. Proteins with enzymes
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Miller-Urey experiment
+Explanation: The experiment produced amino acids and other simple organic molecules, not life.
+
+8. In Miller’s experimental mixture, electric discharge represented:
+A. Ocean currents
+B. Lightning
+C. Ultraviolet shielding
+D. Volcanic ash
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Miller-Urey experiment
+Explanation: Electric sparks supplied energy analogous to lightning on primitive Earth.
+
+9. The first non-cellular forms of life may have originated approximately:
+A. 20 billion years ago
+B. 3 billion years ago
+C. 65 million years ago
+D. 10,000 years ago
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Origin of life
+Explanation: NCERT places the earliest non-cellular life around three billion years ago.
+
+10. The first cellular forms of life probably appeared about:
+A. 2 billion years ago
+B. 20 million years ago
+C. 4.5 billion years ago
+D. 5000 years ago
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Origin of cellular life
+Explanation: NCERT indicates cellular life appeared roughly two billion years ago.
+
+11. Spontaneous generation was experimentally disproved by:
+A. Lamarck
+B. Louis Pasteur
+C. Darwin
+D. Haldane
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Biogenesis
+Explanation: Pasteur showed that life arises from pre-existing life under present conditions.
+
+12. Pasteur’s swan-neck flask experiment supported:
+A. Abiogenesis under present conditions
+B. Biogenesis
+C. Inheritance of acquired characters
+D. Mutation theory
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Biogenesis
+Explanation: Microbial growth occurred only when contamination by pre-existing organisms was possible.
+
+13. The statement “life comes only from pre-existing life” expresses:
+A. Chemical evolution
+B. Biogenesis
+C. Special creation
+D. Adaptive radiation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Biogenesis
+Explanation: Biogenesis states that present-day living organisms arise from existing life.
+
+14. Which observation does NOT prove that life arose naturally on primitive Earth?
+A. Abiotic synthesis of amino acids
+B. Formation of organic molecules in meteorites
+C. Pasteur’s demonstration of biogenesis today
+D. Presence of reducing gases in early atmosphere
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Origin of life
+Explanation: Pasteur addressed present conditions and did not rule out chemical evolution on primitive Earth.
+
+15. Organic molecules detected in meteorites support the idea that:
+A. Only Earth can form organic compounds
+B. Organic compounds can form under non-biological conditions
+C. Living cells exist in all meteorites
+D. Oxygen was abundant on primitive Earth
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Chemical evolution
+Explanation: Abiotic organic synthesis is possible beyond Earth as well.
+
+16. The earliest self-replicating systems were most likely based on:
+A. RNA-like molecules
+B. Cellulose
+C. Steroid hormones
+D. Haemoglobin
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: RNA world
+Explanation: RNA can store information and catalyse reactions, making an RNA-world stage plausible.
+
+17. Which sequence best represents chemical evolution?
+A. Cells → proteins → monomers → inorganic molecules
+B. Inorganic molecules → simple organic molecules → polymers → protocells
+C. Proteins → inorganic molecules → cells
+D. DNA → atmosphere → ocean
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Chemical evolution
+Explanation: Chemical evolution proceeds from simpler inorganic substances to complex organised systems.
+
+18. The primitive atmosphere was reducing mainly because it contained:
+A. Abundant free oxygen
+B. Hydrogen-rich gases and little free oxygen
+C. Only nitrogen and oxygen
+D. High ozone concentration
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Primitive atmosphere
+Explanation: Methane, ammonia, hydrogen and water vapour favoured reduction reactions.
+
+19. Formation of ozone became important after:
+A. Anaerobic life disappeared
+B. Photosynthetic organisms released oxygen
+C. Earth lost all water
+D. Mammals evolved
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Atmospheric evolution
+Explanation: Oxygen accumulation enabled ozone formation, reducing harmful ultraviolet radiation.
+
+20. The earliest organisms were most likely:
+A. Aerobic photoautotrophs
+B. Anaerobic heterotrophs
+C. Large multicellular animals
+D. Flowering plants
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Early life
+Explanation: Free oxygen was absent, so early organisms were probably simple anaerobes.
+
+21. The rise of oxygen in the atmosphere is strongly associated with:
+A. Methanogenic archaea only
+B. Photosynthetic cyanobacteria
+C. First mammals
+D. Fungi
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Oxygen revolution
+Explanation: Oxygenic photosynthesis by cyanobacteria caused major atmospheric oxygenation.
+
+22. Which is the most appropriate interpretation of the Miller experiment?
+A. It created life in the laboratory
+B. It demonstrated possible abiotic formation of organic monomers
+C. It proved the exact composition of primitive atmosphere
+D. It produced the first DNA molecule
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Miller-Urey experiment
+Explanation: It supported a plausible step in chemical evolution, not the creation of life.
+
+23. Coacervates and microspheres are relevant to origin-of-life discussions because they:
+A. Are fully living cells
+B. Show non-living molecular aggregates with cell-like organisation
+C. Contain chromosomes identical to bacteria
+D. Carry out meiosis
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Protocell models
+Explanation: They demonstrate spontaneous compartmentalisation, although they are not living organisms.
+
+24. Which requirement is essential for natural selection but not for chemical evolution?
+A. Heritable variation among replicating entities
+B. Presence of water
+C. Energy input
+D. Organic molecules
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Transition to biological evolution
+Explanation: Natural selection acts only when replicators differ in inherited reproductive success.
+
+25. The origin of life and biological evolution differ because:
+A. Only biological evolution involves changes in reproducing populations
+B. Chemical evolution requires natural selection from the start
+C. Biological evolution occurred before organic molecules formed
+D. They are identical processes
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Chemical vs biological evolution
+Explanation: Biological evolution begins after self-replicating living systems arise.
+
+26. Fossils are most directly used as evidence for:
+A. Physiological homeostasis
+B. Past life forms and their chronological succession
+C. Only current biodiversity
+D. Mendelian segregation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Palaeontological evidence
+Explanation: Fossils preserve remains or traces of organisms from earlier geological periods.
+
+27. The age of fossils can be estimated using:
+A. Hybridisation only
+B. Radiometric dating
+C. Test cross
+D. Artificial selection
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Dating fossils
+Explanation: Radioactive decay provides an absolute time estimate for rocks and fossils.
+
+28. Fossils in deeper undisturbed sedimentary layers are generally:
+A. Younger
+B. Older
+C. Always identical in age
+D. Necessarily human
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Fossil succession
+Explanation: Lower strata were usually deposited earlier than upper strata.
+
+29. Archaeopteryx is regarded as a connecting link because it shows:
+A. Fish and amphibian characters
+B. Reptilian and avian characters
+C. Mammalian and reptilian characters
+D. Plant and animal characters
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Connecting links
+Explanation: It possessed feathers and wings along with reptilian teeth and a long bony tail.
+
+30. Homologous organs have:
+A. Same function and different origin
+B. Common basic structural plan but possibly different functions
+C. No structural similarity
+D. Identical function and identical environment only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Homology
+Explanation: Homology indicates shared ancestry with divergent modification.
+
+31. The forelimbs of human, whale, bat and cheetah are examples of:
+A. Analogous organs
+B. Homologous organs
+C. Vestigial organs only
+D. Atavism
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Homologous organs
+Explanation: They share the pentadactyl plan but perform different functions.
+
+32. Homologous structures are evidence for:
+A. Convergent evolution
+B. Divergent evolution
+C. Spontaneous generation
+D. No common ancestry
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Divergent evolution
+Explanation: Related structures diversify for different functions from a common ancestor.
+
+33. Analogous organs have:
+A. Common origin and different functions
+B. Different origin but similar functions
+C. Identical embryonic development
+D. No adaptive value
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Analogy
+Explanation: Analogy results from independent evolution under similar selection pressures.
+
+34. The wings of birds and butterflies are analogous because they:
+A. Have the same basic skeletal plan
+B. Perform the same function but differ in origin and structure
+C. Are inherited from a recent common winged ancestor
+D. Contain identical genes
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Analogous organs
+Explanation: Both enable flight but evolved from different structural origins.
+
+35. Analogous organs support:
+A. Divergent evolution
+B. Convergent evolution
+C. Inheritance of acquired characters
+D. Genetic drift only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Convergent evolution
+Explanation: Unrelated groups evolve similar functional solutions under similar environments.
+
+36. The eyes of octopus and mammals are commonly cited as:
+A. Homologous organs
+B. Analogous structures formed by convergence
+C. Vestigial organs
+D. Embryological recapitulation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Convergent evolution
+Explanation: Their camera-like eyes evolved independently in separate lineages.
+
+37. A vestigial organ is best defined as:
+A. An organ absent in all ancestors
+B. A reduced structure that has lost much of its ancestral function
+C. A newly evolved organ
+D. An organ with no genetic basis
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Vestigial organs
+Explanation: Vestiges are evolutionary remnants of structures functional in ancestors.
+
+38. Which is a vestigial structure in humans?
+A. Appendix
+B. Heart
+C. Liver
+D. Kidney
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Vestigial organs
+Explanation: The appendix is reduced relative to its digestive role in many herbivorous ancestors.
+
+39. Molecular homology is inferred from similarity in:
+A. Only external appearance
+B. DNA and protein sequences
+C. Habitat alone
+D. Body size only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molecular evidence
+Explanation: Sequence similarity reflects shared inherited information and ancestry.
+
+40. Greater similarity in DNA sequences generally indicates:
+A. More distant ancestry
+B. Closer evolutionary relationship
+C. No common ancestry
+D. Identical ecological niche only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molecular evidence
+Explanation: Fewer accumulated differences usually imply a more recent common ancestor.
+
+41. Similarity in proteins and genes across diverse organisms supports:
+A. Independent special creation
+B. Common ancestry
+C. Absence of mutation
+D. Inheritance of acquired traits
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Molecular evidence
+Explanation: Conserved molecular systems are inherited from ancestral organisms.
+
+42. Embryological similarities among vertebrates are interpreted as evidence of:
+A. Common ancestry
+B. Identical adult form
+C. No evolution
+D. Artificial selection only
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Embryological evidence
+Explanation: Shared developmental patterns can reflect inherited ancestral programmes.
+
+43. The claim that vertebrate embryos pass through complete adult stages of ancestors is:
+A. Fully accepted as the modern view
+B. An oversimplified recapitulation concept
+C. Proof of Lamarckism
+D. A principle of population genetics
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Embryological evidence
+Explanation: Modern embryology recognises shared developmental features but not literal adult-stage repetition.
+
+44. Industrial melanism in peppered moths provides evidence for:
+A. Artificial selection
+B. Natural selection in a changing environment
+C. Use and disuse
+D. Inheritance without variation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Industrial melanism
+Explanation: Camouflage-related survival changed allele frequencies as pollution altered tree backgrounds.
+
+45. Before industrialisation, light-coloured moths were favoured mainly because:
+A. They reproduced asexually
+B. They were camouflaged on lichen-covered trunks
+C. Dark moths could not fly
+D. Birds preferred light moths
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Industrial melanism
+Explanation: Camouflage reduced predation on pale, lichen-covered bark.
+
+46. In polluted industrial areas, dark moths increased because:
+A. Soot made them less visible to predators
+B. Pollution directly converted light moths into dark moths
+C. Darkness increased mutation in every individual
+D. They were artificially bred
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Industrial melanism
+Explanation: Natural selection favoured pre-existing dark variants on soot-darkened trunks.
+
+47. Evolution of antibiotic resistance in bacteria demonstrates:
+A. Need-induced directed mutation
+B. Selection of resistant variants
+C. Inheritance of acquired immunity by all cells
+D. Absence of genetic variation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Antibiotic resistance
+Explanation: Antibiotics eliminate susceptible bacteria and allow resistant variants to reproduce.
+
+48. Pesticide resistance becomes common because pesticides:
+A. Create the required adaptive allele in every insect
+B. Select insects already carrying resistance variants
+C. Prevent reproduction of resistant insects
+D. Act as homologous organs
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Pesticide resistance
+Explanation: Selection changes variant frequencies rather than generating adaptive mutations on demand.
+
+49. Which pair is homologous?
+A. Bird wing and butterfly wing
+B. Human arm and whale flipper
+C. Potato and sweet potato as storage organs
+D. Eye of octopus and eye of human
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Homology
+Explanation: Human forelimb and whale flipper share a common skeletal origin.
+
+50. Which pair is analogous?
+A. Thorn of Bougainvillea and tendril of Cucurbita
+B. Forelimb of horse and flipper of whale
+C. Wing of bird and wing of butterfly
+D. Human arm and bat forelimb
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Analogy
+Explanation: Bird and insect wings evolved independently for flight.
+
+51. Thorn of Bougainvillea and tendril of Cucurbita are homologous because both are modifications of:
+A. Roots
+B. Stems or axillary buds
+C. Leaves only
+D. Flowers
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Plant homology
+Explanation: They share a common origin but perform different functions.
+
+52. Potato and sweet potato are analogous storage organs because potato is a modified:
+A. Root, while sweet potato is stem
+B. Stem, while sweet potato is root
+C. Leaf, while sweet potato is stem
+D. Flower, while sweet potato is root
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Plant analogy
+Explanation: They store food but arise from different organs.
+
+53. A fossil showing a gradual series of structural changes is strongest evidence for:
+A. Fixity of species
+B. Descent with modification
+C. Spontaneous generation
+D. Independent creation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Fossil evidence
+Explanation: Chronological transitional changes support evolutionary lineage transformation.
+
+54. Biogeographical evidence is based on:
+A. Distribution of organisms across regions
+B. Only fossil chemistry
+C. Chromosome staining
+D. Protein synthesis
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Biogeography
+Explanation: Geographic patterns reveal isolation, dispersal and common ancestry.
+
+55. Endemic species on isolated islands often arise because of:
+A. Continuous gene flow with mainland
+B. Geographic isolation and local selection
+C. Absence of mutation
+D. Identical habitats worldwide
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Biogeography
+Explanation: Isolation reduces gene flow and permits divergence.
+
+56. Darwin’s major mechanism of evolution was:
+A. Natural selection
+B. Use and disuse
+C. Saltation only
+D. Spontaneous generation
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Darwinism
+Explanation: Darwin proposed differential survival and reproduction of heritable variants.
+
+57. Alfred Russel Wallace is important because he:
+A. Discovered DNA structure
+B. Independently conceived natural selection
+C. Proposed chromosomal theory
+D. Disproved biogenesis
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Darwin and Wallace
+Explanation: Wallace independently developed a theory of natural selection similar to Darwin’s.
+
+58. Darwin’s observations on finches were made on the:
+A. Hawaiian Islands
+B. Galapagos Islands
+C. Andaman Islands
+D. Madagascar
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Darwin finches
+Explanation: Galapagos finches displayed beak diversification related to food niches.
+
+59. Darwin’s finches illustrate:
+A. Adaptive radiation
+B. Artificial selection only
+C. No common ancestry
+D. Convergent evolution among unrelated phyla
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Adaptive radiation
+Explanation: Multiple finch species diversified from a common ancestor into different niches.
+
+60. Adaptive radiation refers to:
+A. Evolution of similar forms from unrelated ancestors
+B. Diversification of one ancestral lineage into many ecological forms
+C. Random extinction only
+D. Increase in chromosome number
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Adaptive radiation
+Explanation: A common ancestor rapidly gives rise to species adapted to varied niches.
+
+61. Australian marsupials are a classic example of:
+A. Adaptive radiation
+B. Only convergent evolution
+C. Industrial melanism
+D. Hardy-Weinberg equilibrium
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Adaptive radiation
+Explanation: Many marsupial forms diversified within Australia from common ancestors.
+
+62. Placental mammals and Australian marsupials with similar ecological roles demonstrate:
+A. Only homology
+B. Convergent evolution
+C. No evolution
+D. Gene flow
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Convergent evolution
+Explanation: Separate placental and marsupial lineages independently evolved similar body forms.
+
+63. The marsupial mole and placental mole are similar mainly due to:
+A. Recent common ancestry as the same species
+B. Convergent adaptation to burrowing
+C. Identical chromosomes
+D. Artificial selection
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Convergent evolution
+Explanation: Similar environments selected analogous body plans in different lineages.
+
+64. Natural selection directly acts on:
+A. Genotype without phenotype
+B. Phenotypic variation affecting reproductive success
+C. Mutations before they occur
+D. Species as fixed units only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Natural selection
+Explanation: Selection filters expressed heritable differences among individuals.
+
+65. The ultimate evolutionary response to natural selection is a change in:
+A. An individual’s acquired traits
+B. Allele frequencies in a population
+C. A single organism’s genotype during life
+D. Earth’s gravity
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Population evolution
+Explanation: Evolution is measured as heritable population-level genetic change.
+
+66. Fitness in evolutionary biology means:
+A. Physical strength only
+B. Relative reproductive contribution to the next generation
+C. Longest lifespan regardless of reproduction
+D. Largest body size
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Fitness
+Explanation: Fitness measures survival and reproductive success relative to alternatives.
+
+67. Variation is essential for natural selection because:
+A. Selection can create all needed variants instantly
+B. Individuals must differ in heritable traits affecting fitness
+C. All individuals must be identical
+D. Only acquired traits are inherited
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Variation and selection
+Explanation: Without inherited variation, differential selection cannot cause evolutionary change.
+
+68. Overproduction of offspring leads to:
+A. Absence of competition
+B. Struggle for limited resources
+C. Identical survival of all individuals
+D. Immediate speciation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Darwinism
+Explanation: More offspring are produced than resources can support.
+
+69. Natural selection is not random because:
+A. Mutations are always adaptive
+B. Survival and reproduction depend systematically on phenotype and environment
+C. Every organism has equal fitness
+D. Environment plans future changes
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Natural selection
+Explanation: Although variation arises without regard to need, its differential success is non-random.
+
+70. Mutation is considered random with respect to adaptation because it:
+A. Never affects fitness
+B. Does not arise because an organism needs a particular change
+C. Always improves survival
+D. Occurs only after selection
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mutation and selection
+Explanation: Mutations arise without foresight of their environmental usefulness.
+
+71. Stabilising selection favours:
+A. Both extreme phenotypes
+B. Intermediate phenotypes
+C. Only one extreme phenotype
+D. No phenotype
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Types of natural selection
+Explanation: It reduces variation around an established optimum.
+
+72. Directional selection favours:
+A. The average phenotype only
+B. One extreme phenotype
+C. Both extremes equally
+D. Random mating
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Types of natural selection
+Explanation: The population mean shifts toward one end of the phenotypic range.
+
+73. Disruptive selection favours:
+A. Intermediate individuals
+B. Both extremes over intermediates
+C. Only one extreme
+D. Complete genetic uniformity
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Types of natural selection
+Explanation: Extreme phenotypes have higher fitness than intermediate forms.
+
+74. Birth weight in humans is often used to illustrate:
+A. Directional selection only
+B. Stabilising selection
+C. Disruptive selection
+D. Genetic drift
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Stabilising selection
+Explanation: Very low and very high birth weights have lower survival than intermediate weights.
+
+75. A gradual shift toward antibiotic resistance under treatment is an example of:
+A. Directional selection
+B. Stabilising selection
+C. No selection
+D. Use and disuse
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Directional selection
+Explanation: Selection favours the resistant end of the variation spectrum.
+
+76. If small- and large-beaked birds survive better than medium-beaked birds, selection is:
+A. Stabilising
+B. Directional
+C. Disruptive
+D. Artificial only
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Disruptive selection
+Explanation: Both extremes are favoured over intermediates.
+
+77. Artificial selection differs from natural selection because:
+A. It never causes heritable change
+B. Humans choose breeding individuals for desired traits
+C. It acts only on non-heritable traits
+D. It occurs without reproduction
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Artificial selection
+Explanation: Selective breeding imposes human-defined reproductive preferences.
+
+78. The variety of dog breeds most clearly demonstrates:
+A. Artificial selection acting on heritable variation
+B. Spontaneous generation
+C. No common ancestry
+D. Hardy-Weinberg equilibrium
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Artificial selection
+Explanation: Human selection can greatly diversify descendants of a common ancestor.
+
+79. Darwin lacked a correct explanation for:
+A. Existence of variation and inheritance mechanism
+B. Differential survival
+C. Overproduction
+D. Competition
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Limitations of Darwinism
+Explanation: Mendelian genetics and mutation theory were not integrated into Darwin’s original model.
+
+80. The modern synthetic theory combines natural selection with:
+A. Mendelian genetics, mutation and population genetics
+B. Only use and disuse
+C. Special creation
+D. Spontaneous generation
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Modern synthesis
+Explanation: Neo-Darwinism integrates genetic variation and population-level inheritance.
+
+81. Lamarck proposed that evolution occurs through:
+A. Inheritance of acquired characters
+B. Random genetic drift only
+C. Chromosomal segregation
+D. Natural selection alone
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lamarckism
+Explanation: Lamarck emphasised use and disuse and inheritance of acquired modifications.
+
+82. The classic Lamarckian explanation for the long neck of giraffe involved:
+A. Selection of inherited neck-length variants
+B. Stretching and inheritance of acquired elongation
+C. Chromosome doubling
+D. Genetic drift
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lamarckism
+Explanation: Lamarck attributed elongation to repeated use and transmission of acquired change.
+
+83. Modern genetics generally rejects inheritance of acquired somatic characters because:
+A. Somatic changes usually do not alter germ-line DNA transmitted to offspring
+B. All mutations are lethal
+C. Environment never affects phenotype
+D. Natural selection does not occur
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Lamarckism evaluation
+Explanation: Heritable information must reach germ cells to pass to descendants.
+
+84. Natural selection can be described as:
+A. Survival of every individual
+B. Differential reproduction among heritable variants
+C. Inheritance of all acquired changes
+D. A process acting only after extinction
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Natural selection
+Explanation: Variants differ in contribution to future generations.
+
+85. A population becomes better adapted when:
+A. Every individual changes identically during life
+B. Alleles increasing reproductive success become more frequent
+C. Variation disappears completely
+D. Mutation stops
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Adaptation
+Explanation: Selection increases frequencies of advantageous heritable variants.
+
+86. An adaptation is best described as:
+A. Any temporary physiological state
+B. A heritable feature increasing fitness in a particular environment
+C. Every mutation
+D. A trait beneficial in all environments
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Adaptation
+Explanation: Adaptations are environment-dependent inherited traits shaped by selection.
+
+87. The same trait may be advantageous in one environment but disadvantageous in another, showing that fitness is:
+A. Absolute and unchanging
+B. Environment-dependent
+C. Independent of reproduction
+D. Always determined by body size
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Relative fitness
+Explanation: Selective value depends on ecological context.
+
+88. Convergent evolution commonly produces:
+A. Homologous structures
+B. Analogous structures
+C. Identical ancestry
+D. Loss of selection
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Convergent evolution
+Explanation: Independent lineages evolve similar functional features.
+
+89. Divergent evolution commonly produces:
+A. Analogous structures
+B. Homologous structures modified for different functions
+C. Unrelated DNA sequences only
+D. No speciation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Divergent evolution
+Explanation: Shared ancestral structures diverge under different selective pressures.
+
+90. Adaptive radiation is most likely when:
+A. A lineage encounters many vacant ecological niches
+B. Gene flow is unlimited among all populations
+C. All habitats are identical and occupied
+D. Variation is absent
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Adaptive radiation
+Explanation: Ecological opportunity promotes diversification into multiple niches.
+
+91. The Hardy-Weinberg principle states that allele frequencies remain constant when:
+A. Evolutionary forces are absent in a large randomly mating population
+B. Natural selection is intense
+C. Mutation rate is high
+D. Migration occurs continuously
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg equilibrium
+Explanation: Under ideal assumptions, genetic equilibrium is maintained across generations.
+
+92. For a locus with alleles A and a, if frequencies are p and q, then:
+A. p-q=1
+B. p+q=1
+C. p²+q²=1
+D. 2pq=1
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg equation
+Explanation: The two allele frequencies sum to one.
+
+93. Under Hardy-Weinberg equilibrium, genotype frequencies are:
+A. p+2q+q²
+B. p²+2pq+q²
+C. p²+pq+q
+D. 2p+2q
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg equation
+Explanation: Expansion of (p+q)² gives AA, Aa and aa frequencies.
+
+94. In p²+2pq+q², the frequency of heterozygotes is:
+A. p²
+B. 2pq
+C. q²
+D. p+q
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg equation
+Explanation: Heterozygotes can arise as A from either parent and a from the other.
+
+95. If q=0.2, the frequency of recessive homozygotes is:
+A. 0.04
+B. 0.16
+C. 0.32
+D. 0.80
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg calculation
+Explanation: q²=(0.2)²=0.04.
+
+96. If p=0.7 and q=0.3, heterozygote frequency is:
+A. 0.09
+B. 0.21
+C. 0.42
+D. 0.49
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg calculation
+Explanation: 2pq=2×0.7×0.3=0.42.
+
+97. If a recessive phenotype occurs in 9% of a population, q is:
+A. 0.09
+B. 0.30
+C. 0.70
+D. 0.91
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg calculation
+Explanation: q²=0.09, so q=0.30.
+
+98. For the previous population, the frequency of the dominant allele is:
+A. 0.09
+B. 0.30
+C. 0.70
+D. 0.91
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg calculation
+Explanation: p=1-q=0.70.
+
+99. If q²=0.01, carrier frequency is approximately:
+A. 0.01
+B. 0.09
+C. 0.18
+D. 0.99
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg calculation
+Explanation: q=0.1 and p=0.9, so 2pq=0.18.
+
+100. In a population of 10,000, a recessive disorder frequency is 1 in 10,000. Approximate carrier frequency is:
+A. 1/10,000
+B. 1/1000
+C. 1/50
+D. 1/2
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg calculation
+Explanation: q²=0.0001, q=0.01, p≈0.99 and 2pq≈0.0198≈1/50.
+
+101. Which factor directly violates random mating?
+A. Assortative mating
+B. Large population size
+C. No mutation
+D. Equal fertility
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg assumptions
+Explanation: Preference for particular phenotypes or relatives changes genotype proportions.
+
+102. Gene migration changes allele frequencies through:
+A. Gene flow
+B. Use and disuse
+C. Biogenesis
+D. Homology
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gene flow
+Explanation: Movement and reproduction of migrants introduce or remove alleles.
+
+103. Genetic drift is strongest in:
+A. Very large populations
+B. Small populations
+C. Populations with unlimited gene flow
+D. Populations without reproduction
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Genetic drift
+Explanation: Random sampling effects have greater proportional impact in small populations.
+
+104. The founder effect occurs when:
+A. A large population mates randomly
+B. A new population is established by a few individuals
+C. All mutations stop
+D. Natural selection is absent forever
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Founder effect
+Explanation: Founders carry only a sample of the original gene pool.
+
+105. A population bottleneck can cause:
+A. Random loss of alleles
+B. Guaranteed increase in adaptation
+C. Immediate origin of life
+D. Perfect Hardy-Weinberg equilibrium
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Bottleneck effect
+Explanation: Drastic population reduction leaves a non-representative genetic sample.
+
+106. Genetic drift differs from natural selection because drift is:
+A. Always adaptive
+B. Random with respect to fitness
+C. Impossible in small populations
+D. Caused only by migration
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Genetic drift
+Explanation: Drift changes allele frequencies by chance rather than consistent fitness differences.
+
+107. An allele may become fixed by drift, meaning its frequency becomes:
+A. 0
+B. 0.25
+C. 0.5
+D. 1
+Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Genetic drift
+Explanation: Fixation means all gene copies in the population carry that allele.
+
+108. Mutation affects Hardy-Weinberg equilibrium by:
+A. Creating new alleles or converting one allele into another
+B. Preventing all reproduction
+C. Always increasing fitness
+D. Making p+q greater than 1
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mutation pressure
+Explanation: Mutation introduces new variation and can slowly alter frequencies.
+
+109. Recombination contributes to evolution mainly by:
+A. Creating new allele combinations
+B. Creating all new alleles
+C. Stopping segregation
+D. Eliminating variation
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Recombination
+Explanation: Crossing over and independent assortment reshuffle existing alleles.
+
+110. Natural selection changes allele frequencies when genotypes differ in:
+A. Reproductive success
+B. Molecular mass only
+C. Chromosome staining
+D. Location in a textbook
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Selection in populations
+Explanation: Differential fitness produces predictable frequency shifts.
+
+111. Which is NOT an evolutionary force disturbing Hardy-Weinberg equilibrium?
+A. Mutation
+B. Gene migration
+C. Genetic drift
+D. Random mating
+Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg equilibrium
+Explanation: Random mating is one of the equilibrium assumptions.
+
+112. If 16% of a population shows a recessive phenotype, the heterozygote frequency is:
+A. 0.16
+B. 0.24
+C. 0.48
+D. 0.64
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg calculation
+Explanation: q=0.4, p=0.6 and 2pq=0.48.
+
+113. If heterozygote frequency is maximum at a two-allele locus, p and q are:
+A. 1 and 0
+B. 0.75 and 0.25
+C. 0.5 and 0.5
+D. 0.9 and 0.1
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg calculation
+Explanation: 2pq reaches its maximum of 0.5 when p=q=0.5.
+
+114. If p=0.8, the frequency of homozygous dominant individuals is:
+A. 0.16
+B. 0.32
+C. 0.64
+D. 0.80
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg calculation
+Explanation: p²=0.64.
+
+115. In a population, AA=360, Aa=480 and aa=160. Frequency of allele A is:
+A. 0.40
+B. 0.50
+C. 0.60
+D. 0.72
+Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  NCERT topic: Allele-frequency calculation
+Explanation: A copies=(2×360)+480=1200 of 2000 alleles, so p=0.60.
+
+116. For the previous population, frequency of allele a is:
+A. 0.20
+B. 0.40
+C. 0.60
+D. 0.80
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Allele-frequency calculation
+Explanation: q=1-p=0.40.
+
+117. In a Hardy-Weinberg population, p=0.6. Expected genotype frequencies AA:Aa:aa are:
+A. 0.36:0.48:0.16
+B. 0.60:0.24:0.16
+C. 0.36:0.24:0.40
+D. 0.16:0.48:0.36
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Hardy-Weinberg calculation
+Explanation: p²=0.36, 2pq=0.48 and q²=0.16.
+
+118. A sudden disaster kills individuals irrespective of genotype. The resulting allele-frequency change is most likely due to:
+A. Directional selection
+B. Genetic drift
+C. Artificial selection
+D. Adaptive radiation
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Genetic drift
+Explanation: Chance mortality, especially after population reduction, causes drift.
+
+119. Migration between populations tends to:
+A. Increase genetic differentiation indefinitely
+B. Introduce gene flow and often reduce differences
+C. Stop recombination
+D. Cause only polyploidy
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Gene flow
+Explanation: Exchange of alleles generally homogenises populations.
+
+120. Reproductive isolation is important in speciation because it:
+A. Increases unrestricted gene flow
+B. Prevents gene exchange and permits divergence
+C. Makes all populations identical
+D. Eliminates natural selection
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Speciation
+Explanation: Reduced gene flow allows independent evolutionary change.
+
+121. The earliest vertebrates were:
+A. Reptiles
+B. Fishes
+C. Birds
+D. Mammals
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Evolutionary history
+Explanation: Fish-like vertebrates appeared before amphibians, reptiles, birds and mammals.
+
+122. Amphibians evolved from ancestral:
+A. Fishes
+B. Birds
+C. Mammals
+D. Flowering plants
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Vertebrate evolution
+Explanation: Lobe-finned fish-like ancestors gave rise to early tetrapods.
+
+123. Reptiles were better adapted to land than amphibians mainly because of:
+A. External fertilisation and aquatic eggs
+B. Amniotic eggs and less water-dependent reproduction
+C. Absence of lungs
+D. Moist permeable skin only
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Vertebrate evolution
+Explanation: The amniotic egg reduced dependence on water for reproduction.
+
+124. Birds are evolutionarily related to:
+A. Reptilian ancestors
+B. Only mammals
+C. Modern amphibians directly
+D. Flowering plants
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Origin of birds
+Explanation: Fossil and anatomical evidence links birds to theropod reptiles.
+
+125. Mammals became especially diverse after:
+A. Origin of Earth
+B. Extinction of non-avian dinosaurs
+C. First formation of oceans
+D. Origin of prokaryotes
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Mammalian evolution
+Explanation: Vacant niches after the end-Cretaceous extinction promoted mammalian radiation.
+
+126. The age of dinosaurs ended approximately:
+A. 4.5 billion years ago
+B. 65-66 million years ago
+C. 2 million years ago
+D. 10,000 years ago
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Geological history
+Explanation: The end-Cretaceous mass extinction occurred about 66 million years ago.
+
+127. The first primates probably appeared around:
+A. 65 million years ago
+B. 4.5 billion years ago
+C. 5000 years ago
+D. 2 billion years ago
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Primate evolution
+Explanation: Early primates arose in the early Cenozoic era.
+
+128. Dryopithecus and Ramapithecus were:
+A. Early primate forms
+B. Modern human races
+C. Dinosaurs
+D. First cellular organisms
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Human evolution
+Explanation: NCERT discusses them as Miocene primates related to ape-human evolution.
+
+129. Dryopithecus was considered more:
+A. Man-like
+B. Ape-like
+C. Bird-like
+D. Reptile-like
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Human evolution
+Explanation: NCERT describes Dryopithecus as more ape-like.
+
+130. Ramapithecus was considered more:
+A. Ape-like than Dryopithecus
+B. Man-like
+C. Reptile-like
+D. Fish-like
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Human evolution
+Explanation: NCERT historically describes Ramapithecus as more man-like.
+
+131. Australopithecines lived mainly in:
+A. East African grasslands
+B. Antarctica
+C. Deep oceans
+D. Europe only
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Human evolution
+Explanation: Fossils indicate African origin and terrestrial bipedal adaptations.
+
+132. Homo habilis is associated with:
+A. First simple stone tools
+B. Agriculture
+C. Metal tools only
+D. Writing
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Human evolution
+Explanation: The “handy man” is linked to early tool use and increased brain size.
+
+133. Homo erectus is notable for:
+A. Smaller brain than all earlier hominins
+B. More upright posture and use of fire
+C. No tool use
+D. Origin before Australopithecus
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Human evolution
+Explanation: H. erectus had a larger brain, upright body and evidence of fire use.
+
+134. Neanderthals lived approximately:
+A. 100,000-40,000 years ago
+B. 4.5 billion years ago
+C. 65 million years ago
+D. Only after agriculture began
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Human evolution
+Explanation: Neanderthals occupied Europe and western Asia during the late Pleistocene.
+
+135. Modern Homo sapiens originated in:
+A. Africa
+B. Australia
+C. South America
+D. Antarctica
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  NCERT topic: Human evolution
+Explanation: Genetic and fossil evidence supports an African origin of modern humans.
+
+136. Assertion: Homologous organs support divergent evolution. Reason: They share a basic structural plan inherited from a common ancestor but perform different functions.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Homology
+Explanation: The shared origin and functional divergence directly demonstrate divergent evolution.
+
+137. Assertion: Wings of birds and butterflies are homologous. Reason: Both are used for flight.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion-Reason  |  Level: NEET  |  NCERT topic: Analogy
+Explanation: The same function is true, but their structures and or
+<truncated 13253 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.
