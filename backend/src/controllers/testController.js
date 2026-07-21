@@ -521,12 +521,13 @@ exports.submitTest = async (req, res) => {
         };
       }));
 
-      const incorrectResponses = attempt.responses.filter(
-        (response) => response.selectedOption && !response.isCorrect && questionMap[response.questionId.toString()]
+      const reviewResponses = attempt.responses.filter(
+        (response) => (!response.isCorrect || !response.selectedOption) && questionMap[response.questionId.toString()]
       );
-      if (incorrectResponses.length) {
-        await MistakeNotebook.bulkWrite(incorrectResponses.map((response) => {
+      if (reviewResponses.length) {
+        await MistakeNotebook.bulkWrite(reviewResponses.map((response) => {
           const question = questionMap[response.questionId.toString()];
+          const isSkipped = !response.selectedOption;
           return {
             updateOne: {
               filter: { student: req.userId, question: question._id },
@@ -541,16 +542,17 @@ exports.submitTest = async (req, res) => {
                     difficulty: question.difficulty
                   },
                   studentResponse: {
-                    selectedOption: response.selectedOption,
-                    isCorrect: false,
-                    timeSpent: response.timeSpent
+                    selectedOption: response.selectedOption || null,
+                    isCorrect: isSkipped ? false : response.isCorrect,
+                    isSkipped: isSkipped,
+                    timeSpent: response.timeSpent || 0
                   },
                   correctAnswer: {
                     option: question.correctAnswer,
                     explanation: question.explanation?.text || '',
                     conceptsInvolved: question.tags || []
                   },
-                  'errorAnalysis.errorType': 'conceptual',
+                  'errorAnalysis.errorType': isSkipped ? 'time_management' : 'conceptual',
                   conceptsToReview: question.tags || [],
                   revisionStatus: 'pending',
                   priority: question.weightage >= 7 ? 'high' : 'medium',

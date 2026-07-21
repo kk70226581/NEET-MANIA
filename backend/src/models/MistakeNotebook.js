@@ -31,9 +31,13 @@ const MistakeNotebookSchema = new mongoose.Schema({
   studentResponse: {
     selectedOption: {
       type: String,
-      enum: ['A', 'B', 'C', 'D']
+      enum: ['A', 'B', 'C', 'D', null, '']
     },
     isCorrect: Boolean,
+    isSkipped: {
+      type: Boolean,
+      default: false
+    },
     timeSpent: Number
   },
 
