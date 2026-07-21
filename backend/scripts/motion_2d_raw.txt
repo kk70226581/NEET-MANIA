@@ -1,0 +1,811 @@
+<USER_REQUEST>
+Motion in Two Dimensions
+100 Numerical-Heavy NEET Questions | NCERT-Aligned | Selected JEE Main Level
+Question mix: Approximately 85% numerical/application-based and 15% conceptual or assertion-reason. Use g = 10 m s⁻² unless stated otherwise.
+Coverage: vectors and components, scalar and vector products, projectile motion, horizontal projection, trajectory equations, relative velocity, river-boat and rain-man problems, vector kinematics and uniform circular motion.
+1. Two perpendicular vectors have magnitudes 3 and 4 units. The magnitude of their resultant is:
+A. 1
+B. 5
+C. 7
+D. 12
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector addition
+Explanation: R = √(3²+4²)=5.
+
+2. Two vectors of magnitudes 5 and 12 units are perpendicular. Their resultant is:
+A. 7
+B. 13
+C. 17
+D. 60
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector addition
+Explanation: R = √(25+144)=13.
+
+3. Two vectors of equal magnitude A act at 60°. Their resultant is:
+A. A
+B. √2A
+C. √3A
+D. 2A
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector addition
+Explanation: R=A√(2+2cos60°)=√3A.
+
+4. Two vectors of equal magnitude A have resultant A. The angle between them is:
+A. 60°
+B. 90°
+C. 120°
+D. 180°
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector addition
+Explanation: A²=2A²(1+cosθ), so cosθ=-1/2.
+
+5. The resultant of vectors 6i + 8j has magnitude:
+A. 7
+B. 10
+C. 12
+D. 14
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector components
+Explanation: Magnitude=√(36+64)=10.
+
+6. A vector of magnitude 10 makes 37° with x-axis. Its x-component is approximately:
+A. 6
+B. 8
+C. 10
+D. 12
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector components
+Explanation: Ax=10cos37°≈8.
+
+7. A vector has components 3i-4j. Its direction with positive x-axis is:
+A. 53° above x-axis
+B. 53° below x-axis
+C. 37° above x-axis
+D. 37° below x-axis
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector direction
+Explanation: tanθ=4/3 and y-component is negative.
+
+8. If A=2i+3j and B=4i-j, then A+B is:
+A. 6i+2j
+B. 2i+4j
+C. 6i+4j
+D. 2i+2j
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector addition
+Explanation: Add corresponding components.
+
+9. If A=5i+2j and B=3i-4j, then A-B is:
+A. 2i+6j
+B. 8i-2j
+C. 2i-2j
+D. 8i+6j
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector subtraction
+Explanation: A-B=(5-3)i+[2-(-4)]j.
+
+10. The unit vector along 3i+4j is:
+A. 3i+4j
+B. (3i+4j)/5
+C. (4i+3j)/5
+D. (3i-4j)/5
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Unit vector
+Explanation: Divide the vector by its magnitude 5.
+
+11. The dot product of 3i+4j and 4i-3j is:
+A. 0
+B. 7
+C. 24
+D. 25
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Dot product
+Explanation: 3×4+4×(-3)=0.
+
+12. Two non-zero vectors have zero dot product. They are:
+A. parallel
+B. antiparallel
+C. perpendicular
+D. equal
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Dot product
+Explanation: A·B=ABcosθ=0 gives θ=90°.
+
+13. The scalar product of vectors of magnitudes 4 and 5 inclined at 60° is:
+A. 5
+B. 10
+C. 20
+D. 40
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Dot product
+Explanation: A·B=4×5×cos60°=10.
+
+14. The magnitude of cross product of vectors 6 and 8 inclined at 30° is:
+A. 12
+B. 24
+C. 48
+D. 96
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Cross product
+Explanation: |A×B|=6×8×sin30°=24.
+
+15. A vector makes equal angles with x and y axes in the first quadrant. Its direction is:
+A. 30°
+B. 45°
+C. 60°
+D. 90°
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector direction
+Explanation: Equal positive components imply θ=45°.
+
+16. The maximum resultant of two vectors 7 and 5 is:
+A. 2
+B. 7
+C. 12
+D. 35
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector addition
+Explanation: Maximum occurs when they are parallel: 7+5=12.
+
+17. The minimum resultant of two vectors 7 and 5 is:
+A. 0
+B. 2
+C. 5
+D. 12
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector addition
+Explanation: Minimum occurs when they are antiparallel: |7-5|=2.
+
+18. A force 10 N acts at 60° to displacement 5 m. Work done is:
+A. 20 J
+B. 25 J
+C. 50 J
+D. 100 J
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Dot product application
+Explanation: W=Fs cos60°=25 J.
+
+19. A particle moves 4 m east and 3 m north. Its displacement magnitude is:
+A. 1 m
+B. 5 m
+C. 7 m
+D. 12 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Two-dimensional displacement
+Explanation: Resultant displacement=5 m.
+
+20. A particle moves 6 m east, 8 m north and 6 m west. Its final displacement is:
+A. 6 m
+B. 8 m
+C. 10 m
+D. 20 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Two-dimensional displacement
+Explanation: East-west components cancel; net is 8 m north.
+
+21. A projectile is launched with speed 20 m/s at 30°. Its time of flight is:
+A. 1 s
+B. 2 s
+C. 3 s
+D. 4 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: T=2u sinθ/g=2×20×0.5/10=2 s.
+
+22. A projectile is launched with speed 20 m/s at 30°. Its maximum height is:
+A. 2.5 m
+B. 5 m
+C. 10 m
+D. 20 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: H=u²sin²θ/(2g)=400×0.25/20=5 m.
+
+23. A projectile is launched with speed 20 m/s at 30°. Its range is:
+A. 10√3 m
+B. 20√3 m
+C. 30√3 m
+D. 40√3 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: R=u²sin60°/g=40×√3/2=20√3 m.
+
+24. A projectile is launched at 45° with speed 20 m/s. Its range is:
+A. 20 m
+B. 30 m
+C. 40 m
+D. 80 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Maximum range
+Explanation: R=u²/g=40 m.
+
+25. For a fixed speed, the projectile range is maximum at:
+A. 30°
+B. 45°
+C. 60°
+D. 90°
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Maximum range
+Explanation: sin2θ is maximum at 2θ=90°.
+
+26. Two angles giving the same range for a fixed speed are:
+A. complementary
+B. supplementary
+C. equal only
+D. differ by 90°
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Complementary angles
+Explanation: sin2θ is same for θ and 90°-θ.
+
+27. A projectile launched at 30° and another at 60° with the same speed have equal:
+A. time of flight
+B. maximum height
+C. range
+D. vertical component
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile comparison
+Explanation: Complementary projection angles give equal range.
+
+28. For the same launch speed, ratio of maximum heights at 30° and 60° is:
+A. 1:2
+B. 1:3
+C. 1:4
+D. 3:1
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile comparison
+Explanation: H∝sin²θ; ratio=(1/2)²:(√3/2)²=1:3.
+
+29. For the same launch speed, ratio of times of flight at 30° and 60° is:
+A. 1:√3
+B. 1:3
+C. √3:1
+D. 1:1
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile comparison
+Explanation: T∝sinθ.
+
+30. A projectile has horizontal speed 15 m/s and vertical speed 20 m/s initially. Its launch speed is:
+A. 20 m/s
+B. 25 m/s
+C. 30 m/s
+D. 35 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile components
+Explanation: u=√(15²+20²)=25 m/s.
+
+31. For the previous projectile, launch angle is approximately:
+A. 37°
+B. 53°
+C. 60°
+D. 67°
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile components
+Explanation: tanθ=20/15=4/3, so θ≈53°.
+
+32. A projectile is launched horizontally at 10 m/s from a height of 45 m. Time to hit ground is:
+A. 1 s
+B. 2 s
+C. 3 s
+D. 4 s
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Horizontal projection
+Explanation: 45=½gt²=5t² gives t=3 s.
+
+33. For the previous projectile, horizontal range is:
+A. 10 m
+B. 20 m
+C. 30 m
+D. 45 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Horizontal projection
+Explanation: Range=ux t=10×3=30 m.
+
+34. A projectile is launched horizontally at 20 m/s from 80 m height. Speed just before impact is:
+A. 20 m/s
+B. 40 m/s
+C. 20√5 m/s
+D. 60 m/s
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Horizontal projection
+Explanation: Vertical speed=gt=40 m/s; resultant=√(20²+40²)=20√5.
+
+35. A projectile is fired horizontally from height h. Its time of flight depends on:
+A. horizontal speed only
+B. height only
+C. mass only
+D. horizontal speed and mass
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Horizontal projection
+Explanation: Vertical motion determines the time.
+
+36. A ball rolls off a table with speed 5 m/s and lands 2 m away. Taking g=10 m/s², table height is:
+A. 0.4 m
+B. 0.8 m
+C. 1.6 m
+D. 2.0 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Horizontal projection
+Explanation: t=2/5=0.4 s; h=5t²=0.8 m.
+
+37. A projectile reaches maximum height after 3 s. Its initial vertical component is:
+A. 10 m/s
+B. 20 m/s
+C. 30 m/s
+D. 40 m/s
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: uy=gt=30 m/s.
+
+38. A projectile remains in air for 6 s. Its initial vertical component is:
+A. 15 m/s
+B. 20 m/s
+C. 30 m/s
+D. 60 m/s
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: T=2uy/g, so uy=30 m/s.
+
+39. A projectile has range 80 m and time of flight 4 s. Its horizontal component of velocity is:
+A. 10 m/s
+B. 20 m/s
+C. 30 m/s
+D. 40 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: ux=R/T=20 m/s.
+
+40. For the previous projectile, its initial vertical component is:
+A. 10 m/s
+B. 20 m/s
+C. 30 m/s
+D. 40 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: uy=gT/2=20 m/s.
+
+41. For the same projectile, initial speed is:
+A. 20 m/s
+B. 20√2 m/s
+C. 40 m/s
+D. 40√2 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: u=√(20²+20²)=20√2 m/s.
+
+42. A projectile is launched at 45° with range 90 m. Taking g=10 m/s², launch speed is:
+A. 15 m/s
+B. 20 m/s
+C. 30 m/s
+D. 45 m/s
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: At 45°, R=u²/g, so u=√900=30 m/s.
+
+43. A projectile has maximum height 20 m. Its initial vertical component is:
+A. 10 m/s
+B. 20 m/s
+C. 30 m/s
+D. 40 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: uy=√(2gH)=20 m/s.
+
+44. A projectile is launched at 60° with speed 20 m/s. Maximum height is:
+A. 5 m
+B. 10 m
+C. 15 m
+D. 20 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: H=400×3/4÷20=15 m.
+
+45. A projectile is launched at 60° with speed 20 m/s. Time of flight is:
+A. √3 s
+B. 2√3 s
+C. 3√3 s
+D. 4√3 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: T=2×20×√3/2÷10=2√3 s.
+
+46. A projectile is launched at 60° with speed 20 m/s. Range is:
+A. 10√3 m
+B. 20√3 m
+C. 30√3 m
+D. 40√3 m
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: R=400sin120°/10=20√3 m.
+
+47. A projectile is at its highest point. Its speed equals:
+A. zero
+B. initial vertical component
+C. initial horizontal component
+D. initial speed
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: Vertical velocity is zero but horizontal velocity remains constant.
+
+48. At the highest point of projectile motion, acceleration is:
+A. zero
+B. g upward
+C. g downward
+D. horizontal
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: Gravity acts downward throughout the flight.
+
+49. The trajectory of a projectile under uniform gravity is:
+A. straight line
+B. circle
+C. parabola
+D. hyperbola
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile trajectory
+Explanation: Eliminating time gives a quadratic y-x relation.
+
+50. A projectile is launched at 45°. At the highest point, its kinetic energy is what fraction of initial kinetic energy?
+A. 1/4
+B. 1/2
+C. 3/4
+D. 1
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Projectile energy
+Explanation: At top, speed=u cos45°=u/√2, so KE halves.
+
+51. A projectile is launched with speed u at angle θ. Its speed at maximum height is:
+A. u sinθ
+B. u cosθ
+C. u
+D. zero
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: Only the horizontal component remains.
+
+52. The horizontal range of a projectile is four times its maximum height. The angle of projection is:
+A. 30°
+B. 45°
+C. 60°
+D. 75°
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Projectile relation
+Explanation: R/H=4cotθ=4, so cotθ=1.
+
+53. The horizontal range of a projectile equals its maximum height. The angle satisfies:
+A. tanθ=1
+B. tanθ=2
+C. tanθ=4
+D. tanθ=1/4
+Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Projectile relation
+Explanation: R/H=4cotθ=1 gives tanθ=4.
+
+54. A projectile is projected with speed u at angle θ. Its velocity after time t has vertical component:
+A. u cosθ-gt
+B. u sinθ-gt
+C. u sinθ+gt
+D. u cosθ+gt
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile components
+Explanation: Vertical acceleration is -g.
+
+55. The equation of trajectory for a projectile is y=x tanθ - gx²/(2u²cos²θ). The coefficient of x² is always:
+A. positive
+B. negative
+C. zero
+D. dependent on mass
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile trajectory
+Explanation: The parabola opens downward.
+
+56. A projectile is launched at 30° with speed 40 m/s. Its horizontal velocity remains:
+A. 10 m/s
+B. 20 m/s
+C. 20√3 m/s
+D. 40 m/s
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile components
+Explanation: ux=u cos30°=20√3 m/s.
+
+57. For the previous projectile, vertical velocity after 1 s is:
+A. 0
+B. 10 m/s
+C. 20 m/s
+D. 30 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile components
+Explanation: uy=20-10=10 m/s.
+
+58. For the same projectile, height after 1 s is:
+A. 5 m
+B. 10 m
+C. 15 m
+D. 20 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: y=20×1-5×1²=15 m.
+
+59. A projectile launched with speed 50 m/s has horizontal component 40 m/s. Its maximum height is:
+A. 20 m
+B. 30 m
+C. 45 m
+D. 80 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile components
+Explanation: Vertical component=30 m/s; H=900/20=45 m.
+
+60. A projectile launched with speed 25 m/s has horizontal component 15 m/s. Its range is:
+A. 30 m
+B. 40 m
+C. 60 m
+D. 80 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile motion
+Explanation: Vertical component=20 m/s; T=4 s and R=15×4=60 m.
+
+61. A projectile passes through the same height at times 1 s and 3 s. Its time of flight is:
+A. 2 s
+B. 3 s
+C. 4 s
+D. 6 s
+Answer: C  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Projectile symmetry
+Explanation: Times at equal height sum to total time of flight.
+
+62. A projectile is at the same height at t=2 s and t=6 s. Time to reach maximum height is:
+A. 2 s
+B. 4 s
+C. 6 s
+D. 8 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile symmetry
+Explanation: The peak occurs midway between equal-height times.
+
+63. A projectile has a time of flight 8 s. It reaches maximum height at:
+A. 2 s
+B. 4 s
+C. 6 s
+D. 8 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile symmetry
+Explanation: For symmetric flight, peak time is T/2.
+
+64. A projectile fired at 30° has range R. If fired at 60° with the same speed, its range is:
+A. R/2
+B. R
+C. 2R
+D. √3R
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile comparison
+Explanation: Complementary angles give equal ranges.
+
+65. A projectile fired at 30° has time of flight T. At 60° with same speed, time is:
+A. T/√3
+B. T
+C. √3T
+D. 3T
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Projectile comparison
+Explanation: Time ratio=sin60°/sin30°=√3.
+
+66. A projectile is launched from ground with speed 10√2 m/s at 45°. Its equation of trajectory is:
+A. y=x-x²/10
+B. y=x-x²/20
+C. y=2x-x²/10
+D. y=x²/20
+Answer: A  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Projectile trajectory
+Explanation: tan45°=1 and 2u²cos²45°=200.
+
+67. A projectile is fired horizontally from a cliff. Its horizontal and vertical motions are:
+A. both uniformly accelerated
+B. horizontal uniform, vertical uniformly accelerated
+C. horizontal accelerated, vertical uniform
+D. both uniform
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Independence of motions
+Explanation: No horizontal acceleration; vertical acceleration is g.
+
+68. A boat moves at 5 m/s in still water across a river flowing at 3 m/s. If directed perpendicular to the current, its ground speed is:
+A. 2 m/s
+B. 4 m/s
+C. √34 m/s
+D. 8 m/s
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: River-boat
+Explanation: Resultant speed=√(5²+3²)=√34.
+
+69. For the previous boat, if river width is 100 m, crossing time is:
+A. 10 s
+B. 20 s
+C. 25 s
+D. 50 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: River-boat
+Explanation: Across-river component is 5 m/s, so time=20 s.
+
+70. For the same crossing, downstream drift is:
+A. 20 m
+B. 40 m
+C. 60 m
+D. 100 m
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: River-boat
+Explanation: Drift=3×20=60 m.
+
+71. A swimmer can swim at 5 m/s in still water; river speed is 3 m/s. To reach directly opposite, the upstream component of swimming velocity must be:
+A. 2 m/s
+B. 3 m/s
+C. 4 m/s
+D. 5 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: River-boat
+Explanation: It must cancel the river speed.
+
+72. For the previous case, effective speed across the river is:
+A. 2 m/s
+B. 3 m/s
+C. 4 m/s
+D. 5 m/s
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: River-boat
+Explanation: Across speed=√(5²-3²)=4 m/s.
+
+73. A river is 120 m wide. A swimmer swims at 5 m/s in still water while river speed is 3 m/s. Minimum time to cross is:
+A. 20 s
+B. 24 s
+C. 30 s
+D. 40 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: River-boat
+Explanation: For minimum time, swim perpendicular; t=120/5=24 s.
+
+74. For the same river, time to reach exactly opposite is:
+A. 24 s
+B. 30 s
+C. 40 s
+D. 60 s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: River-boat
+Explanation: Across speed=4 m/s; time=120/4=30 s.
+
+75. Rain falls vertically at 10 m/s. A man runs horizontally at 10 m/s. Rain appears to make an angle with vertical of:
+A. 30°
+B. 45°
+C. 60°
+D. 90°
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Rain-man relative velocity
+Explanation: tanθ=vman/vrain=1.
+
+76. Rain falls vertically at 12 m/s. A cyclist moves horizontally at 5 m/s. Apparent rain speed is:
+A. 7 m/s
+B. 13 m/s
+C. 17 m/s
+D. 60 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Rain-man relative velocity
+Explanation: Relative speed=√(12²+5²)=13 m/s.
+
+77. A man running east at 6 m/s observes rain falling vertically. If actual rain has downward speed 8 m/s, its horizontal component is:
+A. 0
+B. 6 m/s east
+C. 6 m/s west
+D. 8 m/s east
+Answer: B  |  Type: Single Correct MCQ  |  Level: JEE Main  |  Topic: Rain-man relative velocity
+Explanation: For apparent vertical rain, rain’s horizontal velocity equals the man's eastward velocity.
+
+78. Two cars move at 20 m/s east and 15 m/s north. Speed of one relative to the other is:
+A. 5 m/s
+B. 25 m/s
+C. 35 m/s
+D. √175 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative velocity
+Explanation: Relative speed=√(20²+15²)=25 m/s.
+
+79. Two particles move parallel in the same direction at 12 m/s and 8 m/s. Relative speed is:
+A. 4 m/s
+B. 8 m/s
+C. 12 m/s
+D. 20 m/s
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative velocity
+Explanation: Subtract velocities.
+
+80. Two particles move in opposite directions at 12 m/s and 8 m/s. Relative speed is:
+A. 4 m/s
+B. 8 m/s
+C. 12 m/s
+D. 20 m/s
+Answer: D  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative velocity
+Explanation: Relative speeds add.
+
+81. An aeroplane flies north at 200 km/h in still air. Wind blows east at 150 km/h. Ground speed is:
+A. 50 km/h
+B. 250 km/h
+C. 300 km/h
+D. 350 km/h
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative velocity
+Explanation: Resultant=√(200²+150²)=250 km/h.
+
+82. For the previous aeroplane, its ground direction is:
+A. 36.9° east of north
+B. 53.1° east of north
+C. 36.9° north of east
+D. due north
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative velocity
+Explanation: tanθ=150/200=3/4.
+
+83. A plane must fly due north while wind blows east at 60 km/h. If airspeed is 100 km/h, its northward ground speed is:
+A. 40 km/h
+B. 60 km/h
+C. 80 km/h
+D. 100 km/h
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative velocity
+Explanation: Westward airspeed component cancels wind; north component=√(100²-60²)=80.
+
+84. A person walks north at 4 m/s on a platform moving east at 3 m/s. Speed relative to ground is:
+A. 1 m/s
+B. 5 m/s
+C. 7 m/s
+D. 12 m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Relative velocity
+Explanation: Resultant=√(4²+3²)=5 m/s.
+
+85. A particle has velocity 3i+4j m/s. In 5 s, its displacement is:
+A. 15i+20j m
+B. 3i+4j m
+C. 20i+15j m
+D. 25i+25j m
+Answer: A  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector kinematics
+Explanation: Displacement=velocity×time.
+
+86. A particle has acceleration 2i+3j m/s² and starts from rest. Its velocity after 4 s is:
+A. 2i+3j
+B. 4i+6j
+C. 8i+12j
+D. 16i+24j
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector kinematics
+Explanation: v=at.
+
+87. A particle starts at origin with velocity 4i+3j m/s and acceleration 2i m/s². Its position after 2 s is:
+A. 8i+6j
+B. 10i+6j
+C. 12i+6j
+D. 12i+3j
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Vector kinematics
+Explanation: r=ut+½at²=(8i+6j)+4i.
+
+88. A particle moves in a circle of radius 2 m with speed 4 m/s. Centripetal acceleration is:
+A. 2 m/s²
+B. 4 m/s²
+C. 8 m/s²
+D. 16 m/s²
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Uniform circular motion
+Explanation: ac=v²/r=16/2=8 m/s².
+
+89. A body moves in a circle of radius 5 m with angular speed 2 rad/s. Linear speed is:
+A. 2 m/s
+B. 5 m/s
+C. 10 m/s
+D. 20 m/s
+Answer: C  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Uniform circular motion
+Explanation: v=ωr=10 m/s.
+
+90. A particle makes 5 revolutions per second in a circle of radius 0.2 m. Its speed is:
+A. π m/s
+B. 2π m/s
+C. 5π m/s
+D. 10π m/s
+Answer: B  |  Type: Single Correct MCQ  |  Level: NEET  |  Topic: Uniform circular motion
+Explanation: v=2πfr=2π×5×0.2=2π.
+
+91. Assertion: Horizontal velocity of a projectile remains constant. Reason: Gravity has no horizontal component.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Projectile motion
+Explanation: With air resistance neglected, horizontal acceleration is zero.
+
+92. Assertion: At the highest point of a projectile, acceleration is zero. Reason: Vertical velocity is zero there.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: D  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Projectile motion
+Explanation: Vertical velocity is zero, but acceleration remains g downward.
+
+93. Assertion: Two complementary projection angles give equal ranges for the same speed. Reason: sin2θ has the same value for θ and 90°-θ.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Projectile range
+Explanation: The range formula directly shows this.
+
+94. Assertion: A body in uniform circular motion has acceleration. Reason: Its velocity direction changes continuously.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Uniform circular motion
+Explanation: Acceleration is the rate of change of velocity vector.
+
+95. Assertion: A swimmer takes minimum time by swimming perpendicular to the river current. Reason: This maximizes the velocity component across the river.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: River-boat
+Explanation: Crossing time depends on the across-river component.
+
+96. Assertion: A vector can have zero magnitude only when all its components are zero. Reason: Magnitude is the square root of the sum of squares of components.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Vectors
+Explanation: A sum of squares can be zero only if each component is zero.
+
+97. Assertion: The dot product of two perpendicular vectors is zero. Reason: cos90°=0.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Dot product
+Explanation: This follows directly from A·B=ABcosθ.
+
+98. Assertion: The trajectory of a projectile is parabolic. Reason: Horizontal displacement varies linearly with time while vertical displacement contains a t² term.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Projectile trajectory
+Explanation: Eliminating time produces a quadratic relation.
+
+99. Assertion: Relative velocity depends on the observer. Reason: It is obtained by subtracting the observer’s velocity from the object’s velocity.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Relative velocity
+Explanation: Changing observer velocity changes relative velocity.
+
+100. Assertion: In uniform circular motion, speed is constant but velocity is variable. Reason: Velocity is a vector quantity.
+A. Both Assertion and Reason are true, and Reason is the correct explanation of Assertion
+B. Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion
+C. Assertion is true, but Reason is false
+D. Assertion is false, but Reason is true
+Answer: A  |  Type: Assertion–Reason  |  Level: NEET  |  Topic: Uniform circular motion
+Explanation: The direction changes continuously even though magnitude stays constant.
+
+
+add this also
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-07-21T11:45:31+05:30.
+</ADDITIONAL_METADATA>
