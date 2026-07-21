@@ -21,6 +21,24 @@ const TestsPage = () => {
   const [creating, setCreating] = useState(false);
   const [mockMode, setMockMode] = useState('standard');
   const [customChapters, setCustomChapters] = useState({ physics: [], chemistry: [], biology: [] });
+  const [sharedCode, setSharedCode] = useState('');
+
+  const handleJoinTest = async () => {
+    if (!sharedCode.trim()) {
+      return toast.error('Please enter a valid test code.');
+    }
+    const cleanCode = sharedCode.trim();
+    try {
+      const response = await testsAPI.getTest(cleanCode);
+      if (response.success && response.data) {
+        navigate(`/exam/${cleanCode}`);
+      } else {
+        toast.error('Test not found. Please verify the code.');
+      }
+    } catch (error) {
+      toast.error(error.message || 'Could not find this test.');
+    }
+  };
 
   const daysToExam = Math.max(0, Math.ceil((new Date('2027-05-02') - new Date()) / 86400000));
 
@@ -193,6 +211,38 @@ const TestsPage = () => {
             </button>
           ))}
         </div>
+
+        {/* JOIN TEST BY CODE */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white border border-slate-200 shadow-sm rounded-[2rem] p-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600">
+              <Layers3 size={24} />
+            </div>
+            <div className="text-left">
+              <h3 className="font-extrabold text-slate-800">Have a shared Test Code?</h3>
+              <p className="text-slate-500 text-sm font-medium">Enter the code shared by your teacher or friend to take the exact same test.</p>
+            </div>
+          </div>
+          <div className="flex w-full sm:w-auto items-center gap-2">
+            <input 
+              type="text" 
+              placeholder="e.g. TEST-xxxxx or MongoDB ID" 
+              value={sharedCode}
+              onChange={(e) => setSharedCode(e.target.value)}
+              className="px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 font-bold text-slate-700 w-full sm:w-64"
+            />
+            <button 
+              onClick={handleJoinTest}
+              className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-md transition-colors whitespace-nowrap"
+            >
+              Join Test
+            </button>
+          </div>
+        </motion.div>
 
         {/* PAPER CONFIGURATION BUILDER */}
         <motion.div 

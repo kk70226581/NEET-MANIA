@@ -23,6 +23,7 @@ const ExamPage = () => {
   const [visitedQuestions, setVisitedQuestions] = useState(() => new Set());
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [testCode, setTestCode] = useState('');
 
   const isSubmittingRef = useRef(false);
   const questionStartTimeRef = useRef(Date.now());
@@ -40,6 +41,7 @@ const ExamPage = () => {
         ]);
         if (!isMounted) return;
         setQuestions(questionResponse.data.questions);
+        setTestCode(questionResponse.data.testCode || '');
         const restoredResponses = attemptResponse.data.responses || [];
         const firstUnansweredIndex = questionResponse.data.questions.findIndex((question) => {
           const saved = restoredResponses.find(
@@ -333,6 +335,7 @@ const ExamPage = () => {
         onFullscreen={!isFullscreen ? enterFullscreen : null}
         isLowTime={isLowTime}
         isCriticalTime={isCriticalTime}
+        testCode={testCode}
       />
 
       {subjectSections.length > 1 && (

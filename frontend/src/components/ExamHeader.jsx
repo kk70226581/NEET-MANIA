@@ -1,5 +1,6 @@
 import React from 'react';
 import { Clock, Maximize, AlertCircle } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 const ExamHeader = ({
   timeRemaining,
@@ -8,6 +9,7 @@ const ExamHeader = ({
   onFullscreen,
   isLowTime,
   isCriticalTime,
+  testCode,
 }) => {
   const hours = Math.floor(timeRemaining / 3600);
   const minutes = Math.floor((timeRemaining % 3600) / 60);
@@ -21,7 +23,22 @@ const ExamHeader = ({
       <div className="flex items-center gap-4">
         <div className="text-xl font-black tracking-tight text-white">Medical <span className="text-cyan-300">Mania</span></div>
         <div className="hidden sm:block">
-          <div className="text-sm font-bold">NEET (UG) CBT Mock Test</div>
+          <div className="flex items-center gap-3">
+            <span className="text-sm font-bold">NEET (UG) CBT Mock Test</span>
+            {testCode && (
+              <button
+                type="button"
+                onClick={() => {
+                  navigator.clipboard.writeText(testCode);
+                  toast.success('Test Code copied!');
+                }}
+                className="px-2.5 py-0.5 bg-emerald-600 hover:bg-emerald-700 text-white text-[10px] font-extrabold rounded border border-emerald-500 shadow-sm transition-all hover:scale-105 active:scale-95"
+                title="Copy Test Code to share with others"
+              >
+                Code: {testCode} (Copy)
+              </button>
+            )}
+          </div>
           <div className="text-xs text-slate-400">{totalQuestions} Questions · +4 correct · −1 incorrect</div>
         </div>
       </div>

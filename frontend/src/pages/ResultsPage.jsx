@@ -94,8 +94,9 @@ const ResultsPage = () => {
           <button 
             className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-700 text-white font-bold rounded-lg shadow-sm transition-colors"
             onClick={() => {
-              if (result?.testId) {
-                const shareUrl = `${window.location.origin}/exam/${result.testId}`;
+              const code = result?.testCode || result?.testId;
+              if (code) {
+                const shareUrl = `${window.location.origin}/exam/${code}`;
                 navigator.clipboard.writeText(shareUrl);
                 toast.success('Test link copied to clipboard!');
               } else {
@@ -123,7 +124,7 @@ const ResultsPage = () => {
         >
           <ArrowLeft size={18} /> Back to attempts
         </button>
-
+ 
         <section className="bg-white rounded-3xl shadow-sm border border-slate-200 p-8 md:p-12 overflow-hidden relative">
           <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full blur-3xl -mr-20 -mt-20 opacity-60"></div>
           
@@ -135,11 +136,25 @@ const ResultsPage = () => {
                 <span className="text-sm font-medium text-slate-500 uppercase tracking-wide mt-1">of {result.maxScore ?? 0}</span>
               </div>
             </div>
-
+ 
             <div className="flex-1 text-center md:text-left">
-              <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-bold uppercase tracking-widest rounded-full mb-4">
-                Test Complete
-              </span>
+              <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
+                <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-bold uppercase tracking-widest rounded-full">
+                  Test Complete
+                </span>
+                {result.testCode && (
+                  <button 
+                    onClick={() => {
+                      navigator.clipboard.writeText(result.testCode);
+                      toast.success('Test Code copied!');
+                    }}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 text-xs font-bold rounded-full transition-colors"
+                  >
+                    <span>Test Code: {result.testCode}</span>
+                    <span className="text-[10px] text-emerald-600 bg-white px-1.5 py-0.5 rounded-full border border-emerald-200">Copy</span>
+                  </button>
+                )}
+              </div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-4 tracking-tight">
                 {accuracy >= 75 ? 'Exceptional work. Keep the edge.' : accuracy >= 50 ? 'A solid baseline.' : 'Now we know what to fix.'}
               </h2>

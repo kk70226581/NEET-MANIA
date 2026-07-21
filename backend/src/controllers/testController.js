@@ -10,6 +10,15 @@ const AIAnalyzer = require('../services/aiAnalyzer');
 const MistakeNotebook = require('../models/MistakeNotebook');
 const User = require('../models/User');
 const { MARKING_SCHEME } = require('../config/constants');
+const mongoose = require('mongoose');
+
+const findTestByIdOrCode = async (idOrCode) => {
+  if (mongoose.Types.ObjectId.isValid(idOrCode)) {
+    const test = await Test.findById(idOrCode);
+    if (test) return test;
+  }
+  return await Test.findOne({ testId: idOrCode });
+};
 
 const isAIConfigured = () => {
   const key = String(process.env.GEMINI_API_KEY || '');
@@ -125,8 +134,11 @@ exports.generateTest = async (req, res) => {
 // @access  Private
 exports.getTest = async (req, res) => {
   try {
-    const test = await Test.findById(req.params.testId)
-      .populate('questions', 'questionText difficulty subject chapter -_id');
+    const test = await findTestByIdOrCode(req.params.testId);
+
+    if (test) {
+      await test.populate('questions', 'questionText difficulty subject chapter -_id');
+    }
 
     if (!test) {
       return res.status(404).json({
@@ -153,7 +165,7 @@ exports.getTest = async (req, res) => {
 // @access  Private
 exports.getTestQuestions = async (req, res) => {
   try {
-    const test = await Test.findById(req.params.testId);
+    const test = await findTestByIdOrCode(req.params.testId);
 
     if (!test) {
       return res.status(404).json({
@@ -174,6 +186,7 @@ exports.getTestQuestions = async (req, res) => {
       success: true,
       data: {
         testId: test._id,
+        testCode: test.testId,
         totalQuestions: test.totalQuestions,
         totalTime: test.totalTime,
         questions: orderedQuestions.map(q => ({
@@ -205,7 +218,7 @@ exports.getTestQuestions = async (req, res) => {
 // @access  Private
 exports.startTest = async (req, res) => {
   try {
-    const test = await Test.findById(req.params.testId);
+    const test = await findTestByIdOrCode(req.params.testId);
 
     if (!test) {
       return res.status(404).json({
@@ -652,6 +665,7 @@ exports.getResults = async (req, res) => {
       success: true,
       data: {
         testId: attempt.test?._id || attempt.test,
+        testCode: attempt.test?.testId || null,
         score: attempt.score,
         maxScore: attempt.maxScore,
         accuracy: attempt.analysis.accuracy.toFixed(2),
