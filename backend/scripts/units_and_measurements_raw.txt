@@ -1,0 +1,809 @@
+<USER_REQUEST>
+Physics Question Bank - Units and Measurements
+100 NEET-focused questions | Numerical-heavy | NCERT aligned | Selected JEE Main level
+Distribution: Dimensional analysis and unit conversion, errors and uncertainty, significant figures, least count and instrument readings, followed by mixed higher-level applications. Most questions require calculation or quantitative reasoning.
+Reference: NCERT Class XI Physics, Units and Measurements; aligned with the NEET-UG 2026 Physics and Measurement syllabus. Topic references are used because page numbers vary across NCERT editions.
+1. The dimensional formula of impulse is:
+A. [MLT⁻¹]
+B. [ML²T⁻²]
+C. [MLT⁻²]
+D. [M⁰LT⁻¹]
+Answer: A  |  Level: NEET  |  Topic: Dimensions
+Explanation: Impulse equals force × time, so its dimensions are [MLT⁻¹].
+
+2. The dimensional formula of surface tension is:
+A. [MT⁻²]
+B. [MLT⁻²]
+C. [ML⁻¹T⁻²]
+D. [ML²T⁻²]
+Answer: A  |  Level: NEET  |  Topic: Dimensions
+Explanation: Surface tension is force per unit length.
+
+3. The dimensional formula of coefficient of viscosity is:
+A. [ML⁻¹T⁻¹]
+B. [MLT⁻¹]
+C. [ML⁻¹T⁻²]
+D. [M⁰L²T⁻¹]
+Answer: A  |  Level: NEET  |  Topic: Dimensions
+Explanation: From viscous force = ηA(dv/dx), η has dimensions [ML⁻¹T⁻¹].
+
+4. The dimensional formula of Planck constant is:
+A. [ML²T⁻¹]
+B. [ML²T⁻²]
+C. [MLT⁻¹]
+D. [M⁰L²T⁻¹]
+Answer: A  |  Level: NEET  |  Topic: Dimensions
+Explanation: From E=hν, h=E/ν.
+
+5. The dimensional formula of gravitational constant G is:
+A. [M⁻¹L³T⁻²]
+B. [ML³T⁻²]
+C. [M⁻¹L²T⁻¹]
+D. [ML⁻²T⁻²]
+Answer: A  |  Level: NEET  |  Topic: Dimensions
+Explanation: Using F=Gm₁m₂/r² gives [G]=[M⁻¹L³T⁻²].
+
+6. Which pair has the same dimensions?
+A. Work and torque
+B. Pressure and force
+C. Angular momentum and energy
+D. Impulse and power
+Answer: A  |  Level: NEET  |  Topic: Dimensions
+Explanation: Both work and torque have dimensions [ML²T⁻²], though they are different physical quantities.
+
+7. Which pair does not have the same dimensions?
+A. Stress and pressure
+B. Momentum and impulse
+C. Energy and torque
+D. Power and angular momentum
+Answer: D  |  Level: NEET  |  Topic: Dimensions
+Explanation: Power is [ML²T⁻³], while angular momentum is [ML²T⁻¹].
+
+8. If force F, velocity v and time t are fundamental quantities, the dimensions of mass are:
+A. [Fvt⁻¹]
+B. [Ft v⁻¹]
+C. [Fv⁻¹t]
+D. [Fv t]
+Answer: B  |  Level: JEE Main  |  Topic: Dimensional analysis
+Explanation: F=ma and a=v/t, so m=Ft/v.
+
+9. If density ρ, speed v and area A are fundamental quantities, the dimension of mass is:
+A. [ρA³ᐟ²]
+B. [ρA]
+C. [ρA²]
+D. [ρvA]
+Answer: A  |  Level: JEE Main  |  Topic: Dimensional analysis
+Explanation: Area has dimension L², so volume is A³ᐟ² and mass=ρA³ᐟ².
+
+10. A quantity X is given by X=at²+bt+c, where X is length. Dimensions of b are:
+A. [LT⁻¹]
+B. [LT⁻²]
+C. [L]
+D. [T⁻¹]
+Answer: A  |  Level: NEET  |  Topic: Dimensional homogeneity
+Explanation: Each term must have dimensions of length, so bt has dimension L.
+
+11. In y=A sin(ωt+kx), dimensions of k are:
+A. [L]
+B. [L⁻¹]
+C. [T⁻¹]
+D. dimensionless
+Answer: B  |  Level: NEET  |  Topic: Dimensionless arguments
+Explanation: The sine argument is dimensionless; hence kx is dimensionless.
+
+12. In P=a+bv², where P is pressure and v is speed, dimensions of b are:
+A. [ML⁻³]
+B. [ML⁻¹T⁻²]
+C. [ML⁻²]
+D. [M⁰L⁻¹]
+Answer: A  |  Level: NEET  |  Topic: Dimensional analysis
+Explanation: b=P/v²=[ML⁻¹T⁻²]/[L²T⁻²]=[ML⁻³].
+
+13. If E=A√(x)+B/x, where E and x both have dimensions of energy, dimensions of A are:
+A. [E¹ᐟ²]
+B. [E³ᐟ²]
+C. [E²]
+D. dimensionless
+Answer: A  |  Level: JEE Main  |  Topic: Dimensional homogeneity
+Explanation: A√x must have dimensions E, so A has dimensions E¹ᐟ².
+
+14. Which equation is dimensionally incorrect?
+A. s=ut+½at²
+B. v²=u²+2as
+C. F=mv
+D. P=Fv
+Answer: C  |  Level: NEET  |  Topic: Dimensional checking
+Explanation: mv has dimensions of momentum, not force.
+
+15. Dimensional analysis cannot determine:
+A. dependence on variables
+B. dimensions of a constant
+C. numerical dimensionless constant
+D. unit conversion
+Answer: C  |  Level: NEET  |  Topic: Limits of dimensional analysis
+Explanation: It cannot determine pure numerical constants such as 2 or π.
+
+16. If the unit of length is doubled and the unit of time is halved, the numerical value of acceleration becomes:
+A. one-eighth
+B. one-half
+C. twice
+D. eight times
+Answer: A  |  Level: JEE Main  |  Topic: Change of units
+Explanation: New acceleration unit is 2L/(T/2)²=8 old units, so numerical value becomes 1/8.
+
+17. If the unit of mass is 100 g, length is 10 cm and time is 20 s, one unit of force equals:
+A. 2.5×10⁻⁵ N
+B. 2.5×10⁻⁴ N
+C. 5×10⁻⁵ N
+D. 5×10⁻⁴ N
+Answer: A  |  Level: JEE Main  |  Topic: Change of units
+Explanation: F unit =0.1×0.1/20²=2.5×10⁻⁵ N.
+
+18. A force of 10 N has numerical value in a system with mass unit 2 kg, length unit 5 m and time unit 10 s equal to:
+A. 10
+B. 100
+C. 20
+D. 1
+Answer: B  |  Level: NEET  |  Topic: Change of units
+Explanation: One new force unit=2×5/10²=0.1 N, so 10 N=100 units.
+
+19. One joule equals:
+A. 10⁵ erg
+B. 10⁷ erg
+C. 10⁻⁷ erg
+D. 10² erg
+Answer: B  |  Level: NEET  |  Topic: Unit conversion
+Explanation: 1 J=10⁷ erg.
+
+20. One pascal equals:
+A. 10 dyn cm⁻²
+B. 1 dyn cm⁻²
+C. 0.1 dyn cm⁻²
+D. 10⁵ dyn cm⁻²
+Answer: A  |  Level: NEET  |  Topic: Unit conversion
+Explanation: 1 Pa=1 N m⁻²=10 dyn cm⁻².
+
+21. A length is measured as (5.20±0.02) cm. Percentage error is approximately:
+A. 0.19%
+B. 0.38%
+C. 2.0%
+D. 3.8%
+Answer: B  |  Level: NEET  |  Topic: Errors
+Explanation: Percentage error=(0.02/5.20)×100≈0.38%.
+
+22. If A=(10.0±0.2) and B=(5.0±0.1), maximum percentage error in AB is:
+A. 2%
+B. 4%
+C. 6%
+D. 8%
+Answer: B  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: Relative errors add: 2%+2%=4%.
+
+23. If Q=A²B³/C, the maximum fractional error in Q is:
+A. 2ΔA/A+3ΔB/B+ΔC/C
+B. ΔA/A+ΔB/B+ΔC/C
+C. 2ΔA/A+3ΔB/B−ΔC/C
+D. (ΔAΔB)/C
+Answer: A  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: For products and powers, absolute fractional contributions add.
+
+24. Radius of a sphere is measured with 2% error. Error in its volume is:
+A. 2%
+B. 4%
+C. 6%
+D. 8%
+Answer: C  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: V∝r³, so percentage error is 3×2%=6%.
+
+25. Diameter of a circle has 1% error. Error in area is:
+A. 0.5%
+B. 1%
+C. 2%
+D. 4%
+Answer: C  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: Area∝d², hence percentage error is 2%.
+
+26. Mass and radius of a sphere have errors 2% and 1% respectively. Maximum error in density is:
+A. 1%
+B. 3%
+C. 5%
+D. 7%
+Answer: C  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: ρ∝m/r³, so error=2%+3%=5%.
+
+27. If T=2π√(l/g), errors in l and g are 2% and 4%. Maximum error in T is:
+A. 1%
+B. 2%
+C. 3%
+D. 6%
+Answer: C  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: Fractional error=½(2%)+½(4%)=3%.
+
+28. For R=V/I, errors in V and I are 3% and 2%. Error in R is:
+A. 1%
+B. 2.5%
+C. 5%
+D. 6%
+Answer: C  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: For division, fractional errors add.
+
+29. A quantity x is measured repeatedly as 4.2, 4.4, 4.3, 4.5 and 4.1. Mean value is:
+A. 4.20
+B. 4.25
+C. 4.30
+D. 4.35
+Answer: C  |  Level: NEET  |  Topic: Mean absolute error
+Explanation: The average is 21.5/5=4.30.
+
+30. For readings 4.2, 4.4, 4.3, 4.5 and 4.1, mean absolute error is:
+A. 0.10
+B. 0.12
+C. 0.16
+D. 0.20
+Answer: B  |  Level: NEET  |  Topic: Mean absolute error
+Explanation: Absolute deviations from 4.3 sum to 0.6; mean=0.12.
+
+31. A stopwatch has least count 0.1 s. A measured interval 20.0 s has instrumental percentage uncertainty:
+A. 0.05%
+B. 0.5%
+C. 1%
+D. 5%
+Answer: B  |  Level: NEET  |  Topic: Least count and error
+Explanation: (0.1/20.0)×100=0.5%.
+
+32. Two lengths are (5.0±0.1) cm and (3.0±0.1) cm. Their difference is:
+A. (2.0±0.0) cm
+B. (2.0±0.1) cm
+C. (2.0±0.2) cm
+D. (2.0±0.02) cm
+Answer: C  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: For addition or subtraction, absolute errors add.
+
+33. Two masses are (20.0±0.2) g and (10.0±0.1) g. Their sum is:
+A. (30.0±0.1) g
+B. (30.0±0.2) g
+C. (30.0±0.3) g
+D. (30.0±3.0) g
+Answer: C  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: Absolute uncertainties add to 0.3 g.
+
+34. Side of a cube is (2.00±0.01) cm. Maximum absolute error in volume is approximately:
+A. 0.04 cm³
+B. 0.08 cm³
+C. 0.12 cm³
+D. 0.24 cm³
+Answer: C  |  Level: JEE Main  |  Topic: Propagation of errors
+Explanation: V=8 cm³ and fractional error=3(0.01/2)=0.015, so ΔV=0.12 cm³.
+
+35. If g=4π²l/T², errors in l and T are 1% and 2%. Error in g is:
+A. 3%
+B. 4%
+C. 5%
+D. 6%
+Answer: C  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: Error=1%+2×2%=5%.
+
+36. The measured values are 2.50 cm and 2.5 cm. The first is more:
+A. accurate necessarily
+B. precise
+C. incorrect
+D. dimensionally valid
+Answer: B  |  Level: NEET  |  Topic: Accuracy and precision
+Explanation: More significant figures imply greater stated precision, not necessarily accuracy.
+
+37. A set of readings are very close to each other but far from the true value. They are:
+A. accurate and precise
+B. accurate but not precise
+C. precise but not accurate
+D. neither
+Answer: C  |  Level: NEET  |  Topic: Accuracy and precision
+Explanation: Closeness among readings is precision; closeness to true value is accuracy.
+
+38. Random errors can be reduced primarily by:
+A. changing units
+B. taking many observations and averaging
+C. using dimensional analysis
+D. rounding early
+Answer: B  |  Level: NEET  |  Topic: Types of errors
+Explanation: Averaging repeated readings reduces random fluctuations.
+
+39. A zero error in an instrument is generally a:
+A. random error
+B. systematic error
+C. gross error
+D. statistical error
+Answer: B  |  Level: NEET  |  Topic: Types of errors
+Explanation: It shifts readings consistently in one direction.
+
+40. A screw gauge reads 5 divisions above zero when closed. The zero error is:
+A. positive
+B. negative
+C. zero
+D. indeterminate
+Answer: A  |  Level: NEET  |  Topic: Zero error
+Explanation: A positive reading at closure indicates positive zero error.
+
+41. If a measured quantity is written as 12.4±0.3, its relative error is approximately:
+A. 0.024
+B. 0.24
+C. 2.4
+D. 24
+Answer: A  |  Level: NEET  |  Topic: Relative error
+Explanation: Relative error=0.3/12.4≈0.024.
+
+42. A resistance is calculated from R=ρl/A. Percentage errors in ρ,l and radius r are 1%,2%,1%, respectively. Error in R is:
+A. 3%
+B. 4%
+C. 5%
+D. 6%
+Answer: C  |  Level: JEE Main  |  Topic: Propagation of errors
+Explanation: A∝r², so error=1+2+2=5%.
+
+43. Kinetic energy K=½mv². If m has 1% error and v has 2% error, error in K is:
+A. 2%
+B. 3%
+C. 4%
+D. 5%
+Answer: D  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: Error=1%+2×2%=5%.
+
+44. Momentum p=mv. If p has 3% error and m has 1% error, maximum possible error in v is:
+A. 2%
+B. 3%
+C. 4%
+D. cannot be found
+Answer: C  |  Level: JEE Main  |  Topic: Propagation of errors
+Explanation: In worst-case propagation, error in v can be error in p plus error in m =4%.
+
+45. For y=x/(x+a), with x and a measured independently, dimensional consistency requires:
+A. a dimensionless
+B. a has dimensions of x
+C. x has dimensions of area
+D. y has dimensions of x
+Answer: B  |  Level: NEET  |  Topic: Dimensional homogeneity
+Explanation: Only quantities with identical dimensions can be added.
+
+46. Number of significant figures in 0.005060 is:
+A. 3
+B. 4
+C. 5
+D. 6
+Answer: B  |  Level: NEET  |  Topic: Significant figures
+Explanation: Leading zeros are not significant; internal and trailing decimal zeros are significant.
+
+47. Number of significant figures in 6.020×10²³ is:
+A. 3
+B. 4
+C. 23
+D. 24
+Answer: B  |  Level: NEET  |  Topic: Significant figures
+Explanation: Only digits in the coefficient count.
+
+48. Number of significant figures in 100.0 is:
+A. 1
+B. 2
+C. 3
+D. 4
+Answer: D  |  Level: NEET  |  Topic: Significant figures
+Explanation: The decimal point makes all trailing zeros significant.
+
+49. The result of 2.5×3.42, with correct significant figures, is:
+A. 8.55
+B. 8.6
+C. 8.550
+D. 9
+Answer: B  |  Level: NEET  |  Topic: Significant figures
+Explanation: The answer must have two significant figures.
+
+50. The result of 12.11+0.3+3.006, correctly rounded, is:
+A. 15.416
+B. 15.42
+C. 15.4
+D. 15
+Answer: C  |  Level: NEET  |  Topic: Significant figures
+Explanation: Addition is limited by the least number of decimal places: one.
+
+51. The result of 7.00/2.0, with correct significant figures, is:
+A. 3.5
+B. 3.50
+C. 4
+D. 3.500
+Answer: A  |  Level: NEET  |  Topic: Significant figures
+Explanation: The quotient has two significant figures.
+
+52. 0.01250 written in scientific notation is:
+A. 1.250×10⁻²
+B. 12.50×10⁻³
+C. 0.1250×10⁻¹
+D. all represent same precision
+Answer: D  |  Level: NEET  |  Topic: Scientific notation
+Explanation: All forms shown retain four significant figures.
+
+53. Using the NCERT round-to-even rule, 2.345 rounded to three significant figures is:
+A. 2.34
+B. 2.35
+C. 2.30
+D. 2.36
+Answer: A  |  Level: NEET  |  Topic: Rounding off
+Explanation: The retained digit 4 is even, so it remains unchanged when followed exactly by 5.
+
+54. Using the NCERT round-to-even rule, 2.355 rounded to three significant figures is:
+A. 2.34
+B. 2.35
+C. 2.36
+D. 2.40
+Answer: C  |  Level: NEET  |  Topic: Rounding off
+Explanation: The retained digit 5 is odd, so it is increased to 6.
+
+55. Which value has exactly three significant figures?
+A. 0.0300
+B. 3.00×10²
+C. 300
+D. 0.003
+Answer: B  |  Level: NEET  |  Topic: Significant figures
+Explanation: 3.00×10² has three unambiguous significant figures.
+
+56. The product 0.0032×2.15 is reported as:
+A. 0.00688
+B. 0.0069
+C. 0.007
+D. 6.88
+Answer: B  |  Level: NEET  |  Topic: Significant figures
+Explanation: The first factor has two significant figures.
+
+57. The sum 0.120+1.2+12.34 is:
+A. 13.660
+B. 13.66
+C. 13.7
+D. 14
+Answer: C  |  Level: NEET  |  Topic: Significant figures
+Explanation: The least precise term has one decimal place.
+
+58. If a length is recorded as 5.00 cm, least possible reading precision is approximately:
+A. 1 cm
+B. 0.1 cm
+C. 0.01 cm
+D. 0.001 cm
+Answer: C  |  Level: NEET  |  Topic: Precision
+Explanation: The last recorded decimal place is hundredths of a centimetre.
+
+59. A calculator gives 1/3=0.333333. If input data have two significant figures, the result should be:
+A. 0.3
+B. 0.33
+C. 0.333
+D. 0.333333
+Answer: B  |  Level: NEET  |  Topic: Significant figures
+Explanation: Output precision should not exceed that of input data.
+
+60. The order of magnitude of 7.2×10⁵ is:
+A. 10⁴
+B. 10⁵
+C. 10⁶
+D. 10⁷
+Answer: C  |  Level: JEE Main  |  Topic: Order of magnitude
+Explanation: Since 7.2>√10, the nearest power of ten is 10⁶.
+
+61. The order of magnitude of 2.8×10⁻⁴ is:
+A. 10⁻³
+B. 10⁻⁴
+C. 10⁻⁵
+D. 10⁴
+Answer: B  |  Level: JEE Main  |  Topic: Order of magnitude
+Explanation: 2.8<√10, so the nearest power remains 10⁻⁴.
+
+62. A measured area is obtained from 2.34 cm×1.2 cm. Correctly reported area is:
+A. 2.808 cm²
+B. 2.81 cm²
+C. 2.8 cm²
+D. 3 cm²
+Answer: C  |  Level: NEET  |  Topic: Significant figures
+Explanation: The product must have two significant figures.
+
+63. A measured density is 12.0 g/4.00 cm³. Correct result is:
+A. 3 g cm⁻³
+B. 3.0 g cm⁻³
+C. 3.00 g cm⁻³
+D. 3.000 g cm⁻³
+Answer: C  |  Level: NEET  |  Topic: Significant figures
+Explanation: Both inputs have three significant figures.
+
+64. Which zero is significant?
+A. leading zero in 0.004
+B. zero between non-zero digits in 2.03
+C. all zeros before decimal in 0007
+D. none
+Answer: B  |  Level: NEET  |  Topic: Significant figures
+Explanation: A captive zero between non-zero digits is significant.
+
+65. A physical constant defined exactly, such as the number 2 in diameter=2r, has:
+A. one significant figure
+B. two significant figures
+C. infinite significant figures
+D. zero significant figures
+Answer: C  |  Level: NEET  |  Topic: Significant figures
+Explanation: Exact numerical constants do not limit precision.
+
+66. A metre scale has smallest division 1 mm. Its least count is:
+A. 1 cm
+B. 0.1 cm
+C. 0.01 cm
+D. 0.001 cm
+Answer: B  |  Level: NEET  |  Topic: Least count
+Explanation: 1 mm equals 0.1 cm.
+
+67. A vernier has 10 vernier divisions equal to 9 main-scale divisions, each MSD=1 mm. Least count is:
+A. 1 mm
+B. 0.9 mm
+C. 0.1 mm
+D. 0.01 mm
+Answer: C  |  Level: NEET  |  Topic: Vernier callipers
+Explanation: LC=1 MSD−1 VSD=1−0.9=0.1 mm.
+
+68. A vernier has 20 divisions equal to 19 mm. Least count is:
+A. 1 mm
+B. 0.5 mm
+C. 0.05 mm
+D. 0.01 mm
+Answer: C  |  Level: NEET  |  Topic: Vernier callipers
+Explanation: 1 VSD=19/20 mm, so LC=1/20 mm=0.05 mm.
+
+69. Main-scale reading is 2.3 cm and 6th vernier division coincides. LC=0.01 cm. Reading is:
+A. 2.30 cm
+B. 2.36 cm
+C. 2.60 cm
+D. 2.306 cm
+Answer: B  |  Level: NEET  |  Topic: Vernier callipers
+Explanation: Reading=2.3+6×0.01=2.36 cm.
+
+70. A vernier reading is 1.74 cm and positive zero error is 0.03 cm. Correct reading is:
+A. 1.71 cm
+B. 1.74 cm
+C. 1.77 cm
+D. 1.81 cm
+Answer: A  |  Level: NEET  |  Topic: Zero correction
+Explanation: Positive zero error is subtracted.
+
+71. A vernier reading is 2.15 cm and zero error is −0.02 cm. Correct reading is:
+A. 2.13 cm
+B. 2.15 cm
+C. 2.17 cm
+D. 2.19 cm
+Answer: C  |  Level: NEET  |  Topic: Zero correction
+Explanation: Negative zero error means positive correction of 0.02 cm.
+
+72. Pitch of a screw gauge is 1 mm and circular scale has 100 divisions. Least count is:
+A. 1 mm
+B. 0.1 mm
+C. 0.01 mm
+D. 0.001 mm
+Answer: C  |  Level: NEET  |  Topic: Screw gauge
+Explanation: LC=pitch/divisions=0.01 mm.
+
+73. Pitch is 0.5 mm and circular scale has 50 divisions. Least count is:
+A. 0.1 mm
+B. 0.01 mm
+C. 0.001 mm
+D. 0.5 mm
+Answer: B  |  Level: NEET  |  Topic: Screw gauge
+Explanation: 0.5/50=0.01 mm.
+
+74. A screw gauge shows 5.5 mm on pitch scale and 28 circular divisions. LC=0.01 mm. Reading is:
+A. 5.28 mm
+B. 5.50 mm
+C. 5.78 mm
+D. 8.30 mm
+Answer: C  |  Level: NEET  |  Topic: Screw gauge
+Explanation: Total=5.5+0.28=5.78 mm.
+
+75. Observed screw-gauge reading is 3.26 mm with positive zero error 0.04 mm. Correct value is:
+A. 3.22 mm
+B. 3.26 mm
+C. 3.30 mm
+D. 3.18 mm
+Answer: A  |  Level: NEET  |  Topic: Zero correction
+Explanation: Subtract the positive zero error.
+
+76. A spherometer has pitch 1 mm and 100 circular divisions. Least count is:
+A. 1 cm
+B. 1 mm
+C. 0.1 mm
+D. 0.01 mm
+Answer: D  |  Level: NEET  |  Topic: Spherometer
+Explanation: LC=1/100 mm.
+
+77. To measure the diameter of a thin wire most accurately, one should use:
+A. metre scale
+B. measuring tape
+C. screw gauge
+D. stopwatch
+Answer: C  |  Level: NEET  |  Topic: Measuring instruments
+Explanation: A screw gauge has a much smaller least count.
+
+78. To measure internal diameter of a tube, the suitable part of vernier callipers is:
+A. lower jaws
+B. upper jaws
+C. depth rod
+D. main scale only
+Answer: B  |  Level: NEET  |  Topic: Vernier callipers
+Explanation: The smaller upper jaws measure internal dimensions.
+
+79. A vernier has least count 0.01 cm. Maximum instrumental uncertainty in one reading is commonly taken as:
+A. ±0.1 cm
+B. ±0.01 cm
+C. ±0.001 cm
+D. zero
+Answer: B  |  Level: NEET  |  Topic: Least count
+Explanation: A conservative instrumental uncertainty is one least count.
+
+80. A screw gauge has a backlash error. It can be minimised by:
+A. changing units
+B. rotating in the same direction while taking final reading
+C. using a larger pitch
+D. ignoring zero error
+Answer: B  |  Level: NEET  |  Topic: Instrumental errors
+Explanation: Approaching the final setting from one direction avoids play in threads.
+
+81. A length measured by a scale starts at 1.2 cm and ends at 8.7 cm. Length is:
+A. 7.5 cm
+B. 8.7 cm
+C. 9.9 cm
+D. 6.5 cm
+Answer: A  |  Level: NEET  |  Topic: Scale reading
+Explanation: Length is the difference of end and start readings.
+
+82. A vernier has 50 VSD=49 MSD and 1 MSD=1 mm. Least count is:
+A. 0.5 mm
+B. 0.1 mm
+C. 0.02 mm
+D. 0.01 mm
+Answer: C  |  Level: NEET  |  Topic: Vernier callipers
+Explanation: LC=1−49/50=1/50 mm=0.02 mm.
+
+83. A screw gauge advances 2 mm in four rotations and has 100 circular divisions. Least count is:
+A. 0.5 mm
+B. 0.05 mm
+C. 0.005 mm
+D. 0.002 mm
+Answer: C  |  Level: NEET  |  Topic: Screw gauge
+Explanation: Pitch=0.5 mm; LC=0.5/100=0.005 mm.
+
+84. The thickness of 100 identical sheets measured together is 12.0 mm. Thickness of one sheet is:
+A. 0.12 mm
+B. 1.2 mm
+C. 0.012 mm
+D. 12 mm
+Answer: A  |  Level: NEET  |  Topic: Indirect measurement
+Explanation: Divide the combined thickness by 100.
+
+85. Diameter of a wire is measured at several orientations mainly to reduce error due to:
+A. zero error
+B. non-uniform circular cross-section
+C. unit conversion
+D. parallax only
+Answer: B  |  Level: NEET  |  Topic: Measurement practice
+Explanation: Multiple orientations account for imperfect circularity and non-uniformity.
+
+86. The time period T of a pendulum depends on length l, mass m and g. Dimensional analysis gives:
+A. T∝√(l/g)
+B. T∝√(m/g)
+C. T∝l/g
+D. T∝ml/g
+Answer: A  |  Level: JEE Main  |  Topic: Dimensional analysis
+Explanation: Solving dimensions gives no dependence on mass and T∝l¹ᐟ²g⁻¹ᐟ².
+
+87. Speed v of transverse waves on a stretched string depends on tension F and linear density μ. Dimensional analysis gives:
+A. v∝Fμ
+B. v∝√(F/μ)
+C. v∝F/μ
+D. v∝√(Fμ)
+Answer: B  |  Level: JEE Main  |  Topic: Dimensional analysis
+Explanation: [F/μ]=L²T⁻², whose square root is speed.
+
+88. Energy E of a vibrating string segment depends on mass m, frequency f and amplitude A. The dimensionally possible form is:
+A. E∝mfA
+B. E∝mf²A²
+C. E∝m²fA
+D. E∝mf²A
+Answer: B  |  Level: JEE Main  |  Topic: Dimensional analysis
+Explanation: mf²A² has dimensions ML²T⁻².
+
+89. Drag force F on a small sphere depends on viscosity η, radius r and speed v. The dimensionally correct product is:
+A. ηrv
+B. ηr²v
+C. ηv/r
+D. ηr/v
+Answer: A  |  Level: JEE Main  |  Topic: Dimensional analysis
+Explanation: ηrv has dimensions [MLT⁻²].
+
+90. If pressure P=aρᵇvᶜ, dimensional analysis gives b and c as:
+A. 1,1
+B. 1,2
+C. 2,1
+D. −1,2
+Answer: B  |  Level: JEE Main  |  Topic: Dimensional analysis
+Explanation: Pressure has dimensions ρv².
+
+91. The centripetal force is assumed F=kmᵃvᵇrᶜ. Values of a,b,c are:
+A. 1,1,−1
+B. 1,2,−1
+C. 2,1,1
+D. 1,2,1
+Answer: B  |  Level: JEE Main  |  Topic: Dimensional analysis
+Explanation: Matching dimensions gives F∝mv²/r.
+
+92. If the percentage errors in measuring mass and speed are both 2%, the percentage error in kinetic energy per unit mass is:
+A. 2%
+B. 4%
+C. 6%
+D. 8%
+Answer: B  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: K/m=v²/2, so only speed contributes: 2×2%=4%.
+
+93. A cylinder has r=(2.00±0.02) cm and h=(10.0±0.1) cm. Maximum percentage error in volume is:
+A. 1%
+B. 2%
+C. 3%
+D. 4%
+Answer: C  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: V∝r²h; error=2(1%)+1%=3%.
+
+94. A measured speed is obtained from distance (100.0±0.5) m and time (20.0±0.2) s. Percentage error in speed is:
+A. 0.5%
+B. 1.0%
+C. 1.5%
+D. 2.0%
+Answer: C  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: Errors add: 0.5/100×100 + 0.2/20×100 =1.5%.
+
+95. The value of π obtained experimentally from circumference and diameter has 1% and 2% errors respectively. Maximum error in π is:
+A. 1%
+B. 2%
+C. 3%
+D. 4%
+Answer: C  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: π=C/d, so fractional errors add to 3%.
+
+96. A student measures g using g=2s/t². s has 1% error and t has 0.5% error. Error in g is:
+A. 1%
+B. 1.5%
+C. 2%
+D. 2.5%
+Answer: C  |  Level: NEET  |  Topic: Propagation of errors
+Explanation: Error=1%+2(0.5%)=2%.
+
+97. A unit system has unit of velocity 10 m s⁻¹ and unit of acceleration 20 m s⁻². Its unit of time is:
+A. 0.25 s
+B. 0.5 s
+C. 2 s
+D. 5 s
+Answer: B  |  Level: JEE Main  |  Topic: Change of units
+Explanation: Time unit=velocity unit/acceleration unit=10/20=0.5 s.
+
+98. A unit system has unit of force 100 N, length 10 m and time 2 s. Unit of mass is:
+A. 0.4 kg
+B. 4 kg
+C. 40 kg
+D. 400 kg
+Answer: C  |  Level: JEE Main  |  Topic: Change of units
+Explanation: M=FT²/L=100×4/10=40 kg.
+
+99. The dimensions of A/B in equation v=A+Bx, where v is velocity and x is length, are:
+A. [L]
+B. [T]
+C. [T⁻¹]
+D. [LT⁻¹]
+Answer: A  |  Level: NEET  |  Topic: Dimensional homogeneity
+Explanation: A has velocity dimensions and B has T⁻¹, so A/B has length.
+
+100. A dimensionally correct equation is not necessarily physically correct because:
+A. units may differ
+B. dimensionless numerical constants and functional form may be unknown
+C. dimensions are never conserved
+D. SI units are incomplete
+Answer: B  |  Level: NEET  |  Topic: Limits of dimensional analysis
+Explanation: Dimensional analysis cannot determine constants or distinguish some functions.
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-07-21T11:31:56+05:30.
+</ADDITIONAL_METADATA>
