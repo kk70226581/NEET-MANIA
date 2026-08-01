@@ -17,7 +17,7 @@ const testTypes = [
 const TestsPage = () => {
   const navigate = useNavigate();
   const [metadata, setMetadata] = useState([]);
-  const [config, setConfig] = useState({ testType: 'chapter_test', classLevel: '11', subject: 'biology', chapter: '', topic: '', difficulty: '', questionCount: 5 });
+  const [config, setConfig] = useState({ testType: 'chapter_test', classLevel: '11', subject: 'biology', chapter: '', topic: '', difficulty: '', questionCount: 5, useAI: false });
   const [creating, setCreating] = useState(false);
   const [mockMode, setMockMode] = useState('standard');
   const [customChapters, setCustomChapters] = useState({ physics: [], chemistry: [], biology: [] });
@@ -313,7 +313,7 @@ const TestsPage = () => {
                   <p className="text-sm font-medium text-slate-600 mb-2">Select chapters across subjects. If no chapters are selected for a subject, the full syllabus for that subject will be used.</p>
                   
                   {['physics', 'chemistry', 'biology'].map(sub => (
-                    <div key={sub} className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                     <div key={sub} className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
                       <div className="p-4 bg-slate-100 border-b border-slate-200 flex items-center justify-between">
                         <strong className="text-lg capitalize text-slate-800">{sub}</strong>
                         <span className="text-xs font-bold bg-white px-2 py-1 rounded text-slate-500">{customChapters[sub]?.length || 0} selected</span>
@@ -400,6 +400,29 @@ const TestsPage = () => {
               </div>
             </div>
           )}
+
+          {/* AI Curation Toggle Option */}
+          <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 bg-indigo-50/20 p-6 rounded-2xl border border-indigo-100/40">
+            <div className="text-left">
+              <strong className="text-slate-800 font-extrabold flex items-center gap-1.5 text-base">
+                <Sparkles size={18} className="text-indigo-600 animate-pulse" />
+                GenAI Test Curation (AWS Bedrock)
+              </strong>
+              <p className="text-slate-500 text-sm font-medium mt-1">Uses advanced AI reasoning to select the best, most conceptually diverse, and challenging questions from the database without duplicates.</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setConfig(prev => ({ ...prev, useAI: !prev.useAI }))}
+              className={`px-6 py-3 border-2 rounded-xl flex items-center gap-2 font-bold text-sm transition-all duration-300 w-full sm:w-auto justify-center shadow-sm select-none ${
+                config.useAI 
+                  ? 'border-[#0D47A1] bg-[#0D47A1] text-white hover:bg-blue-700' 
+                  : 'border-slate-200 bg-white text-slate-500 hover:text-slate-700 hover:bg-slate-50'
+              }`}
+            >
+              <Sparkles size={16} className={config.useAI ? "text-emerald-350 fill-emerald-300" : "text-slate-400"} />
+              <span>{config.useAI ? 'Enabled' : 'Disabled'}</span>
+            </button>
+          </div>
 
           <div className="mt-10 pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-slate-500 font-medium flex items-center gap-2">

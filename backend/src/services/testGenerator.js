@@ -1,5 +1,7 @@
+const mongoose = require('mongoose');
 const Question = require('../models/Question');
 const { MARKING_SCHEME, TEST_CONFIG } = require('../config/constants');
+const { getGeminiText, isGeminiConfigured } = require('./geminiClient');
 
 const VERIFIED_QUESTION_FILTER = {
   isPublished: true,
@@ -54,6 +56,17 @@ class TestGenerator {
   static async generateTest(filters) {
     try {
       console.log('🎲 Generating test with filters:', filters);
+
+      if (filters.useAI && isGeminiConfigured()) {
+        try {
+          const curatedIds = await this.generateAICuratedTest(filters);
+          if (curatedIds && curatedIds.length > 0) {
+            return curatedIds;
+          }
+        } catch (err) {
+          console.error('⚠️ AI Curation failed in generateTest, falling back to standard selection:', err.message);
+        }
+      }
 
       const query = this.buildQuery(filters);
 
@@ -120,15 +133,96 @@ class TestGenerator {
   }
 
   /**
+   * Generate test using AI curation
+   */
+  static async generateAICuratedTest(filters) {
+    const count = Number(filters.questionCount) || 30;
+    const query = this.buildQuery(filters);
+    const poolSize = Math.min(count * 2, 100);
+
+    const candidates = await Question.aggregate([
+      { $match: query },
+      { $group: { _id: "$questionText", doc: { $first: "$$ROOT" } } },
+      { $replaceRoot: { newRoot: "$doc" } },
+      { $sample: { size: poolSize } }
+    ]);
+
+    const candidateIds = candidates.map(q => q._id);
+    return await this.curateFromPool(candidateIds, count);
+  }
+
+  /**
+   * Curate exactly 'count' questions from a candidate pool using Bedrock/Gemini
+   */
+  static async curateFromPool(candidateIds, count) {
+    const candidates = await Question.find({ _id: { $in: candidateIds } });
+    if (candidates.length <= count) {
+      return this.shuffleArray(candidates.map(q => q._id));
+    }
+
+    const candidatesData = candidates.map(q => ({
+      id: q._id.toString(),
+      chapter: q.chapter,
+      topic: q.topic,
+      difficulty: q.difficulty,
+      qualityScore: q.qualityScore,
+      text: q.questionText.substring(0, 200)
+    }));
+
+    const prompt = `We have a candidate pool of NEET exam questions. We need to select exactly ${count} questions.
+Choose the best ${count} questions to build a high-quality, challenging exam (make the test paper hard and competitive).
+Avoid selecting questions that have overlapping concepts, repetitive content, or identical structures.
+Ensure a good, balanced distribution across chapters and topics.
+
+Here is the candidate questions pool:
+${JSON.stringify(candidatesData, null, 2)}
+
+Return a JSON object in this exact format:
+{
+  "selectedIds": ["id1", "id2", ...]
+}
+Do not write any explanation or markdown formatting other than the JSON block.`;
+
+    const responseText = await getGeminiText({
+      prompt,
+      systemInstruction: "You are a professional NEET exam developer. Your goal is to curate the highest quality, most challenging, and non-repetitive mock test paper.",
+      responseMimeType: "application/json",
+      maxOutputTokens: 3000,
+      temperature: 0.2
+    });
+
+    const cleanJson = responseText.replace(/```json/i, '').replace(/```/g, '').trim();
+    const result = JSON.parse(cleanJson);
+    if (result && Array.isArray(result.selectedIds) && result.selectedIds.length > 0) {
+      const selectedIds = result.selectedIds
+        .map(id => mongoose.Types.ObjectId.isValid(id) ? new mongoose.Types.ObjectId(id) : null)
+        .filter(Boolean);
+      if (selectedIds.length > 0) {
+        if (selectedIds.length < count) {
+          const added = candidates
+            .filter(c => !selectedIds.some(sid => sid.toString() === c._id.toString()))
+            .slice(0, count - selectedIds.length)
+            .map(c => c._id);
+          return this.shuffleArray([...selectedIds, ...added]);
+        }
+        return this.shuffleArray(selectedIds.slice(0, count));
+      }
+    }
+
+    throw new Error("AI returned invalid selectedIds");
+  }
+
+  /**
    * Generate chapter-wise test
    */
-  static async generateChapterTest(subject, chapter, questionCount = 30, difficulties = ['easy', 'medium', 'hard']) {
+  static async generateChapterTest(subject, chapter, questionCount = 30, difficulties = ['easy', 'medium', 'hard'], useAI = false) {
     const filters = {
       subject,
       chapter,
       questionCount,
       difficulty: difficulties,
-      isPublished: true
+      isPublished: true,
+      useAI
     };
 
     return this.generateTest(filters);
@@ -137,13 +231,14 @@ class TestGenerator {
   /**
    * Generate topic-wise test
    */
-  static async generateTopicTest(subject, topic, questionCount = 15, difficulty) {
+  static async generateTopicTest(subject, topic, questionCount = 15, difficulty, useAI = false) {
     const filters = {
       subject,
       topic,
       questionCount,
       isPublished: true,
-      difficulty
+      difficulty,
+      useAI
     };
 
     return this.generateTest(filters);
@@ -152,12 +247,13 @@ class TestGenerator {
   /**
    * Generate subject-wise test
    */
-  static async generateSubjectTest(subject, questionCount = 60, difficulty) {
+  static async generateSubjectTest(subject, questionCount = 60, difficulty, useAI = false) {
     const filters = {
       subject,
       questionCount,
       isPublished: true,
-      difficulty
+      difficulty,
+      useAI
     };
 
     return this.generateTest(filters);
@@ -324,8 +420,49 @@ class TestGenerator {
             subject: subject === 'biology' ? ['biology', 'botany', 'zoology'] : subject,
             chapter: { $in: customChapters[subject] },
             questionCount: targetCount,
-            isPublished: true
+            isPublished: true,
+            useAI: options.useAI
           });
+        }
+
+        if (options.useAI && isGeminiConfigured()) {
+          console.log(`✨ Performing Bedrock AI Curation for subject: ${subject} (${targetCount} questions)`);
+          let candidateIds = [];
+          
+          for (const chap of distribution) {
+            const qIds = await this.fetchWeightageQuestions(
+              subject, 
+              chap.chapter, 
+              Math.ceil(chap.min * 1.5), 
+              Math.ceil(chap.max * 1.5), 
+              candidateIds
+            );
+            candidateIds = [...candidateIds, ...qIds];
+          }
+
+          if (candidateIds.length < targetCount * 1.5) {
+            const query = {
+              ...VERIFIED_QUESTION_FILTER,
+              subject: subject === 'biology' ? { $in: ['biology', 'botany', 'zoology'] } : subject,
+              _id: { $nin: candidateIds }
+            };
+            const fallback = await Question.aggregate([
+              { $match: query },
+              { $group: { _id: "$questionText", doc: { $first: "$$ROOT" } } },
+              { $replaceRoot: { newRoot: "$doc" } },
+              { $sample: { size: Math.max(0, Math.ceil(targetCount * 1.5) - candidateIds.length) } }
+            ]);
+            candidateIds = [...candidateIds, ...fallback.map(q => q._id)];
+          }
+
+          try {
+            const selectedIds = await this.curateFromPool(candidateIds, targetCount);
+            if (selectedIds && selectedIds.length === targetCount) {
+              return selectedIds;
+            }
+          } catch (err) {
+            console.error(`⚠️ AI Curation failed for ${subject}, falling back to standard selection:`, err.message);
+          }
         }
 
         let selectedQuestions = [];
@@ -394,12 +531,13 @@ class TestGenerator {
   /**
    * Generate previous year questions test
    */
-  static async generatePYQTest(subject, years = 5, questionCount = 30) {
+  static async generatePYQTest(subject, years = 5, questionCount = 30, useAI = false) {
     const filters = {
       subject,
       source: 'pyq',
       questionCount,
-      isPublished: true
+      isPublished: true,
+      useAI
     };
 
     return this.generateTest(filters);

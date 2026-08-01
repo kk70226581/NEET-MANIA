@@ -22,6 +22,138 @@ import toast from 'react-hot-toast';
 import AppShell from '../components/AppShell';
 import { testsAPI } from '../services/api';
 
+const QuestionContentFormatter = ({ text }) => {
+  // 1. Detect Assertion-Reason
+  const arMatch = text.match(/Assertion\s*\(A\):\s*([\s\S]*?)\s*Reason\s*\(R\):\s*([\s\S]*)/i);
+  if (arMatch) {
+    const assertion = arMatch[1].trim();
+    const reason = arMatch[2].trim();
+    return (
+      <div className="space-y-4 my-3 font-sans">
+        <div className="p-4 rounded-xl border border-blue-200 bg-blue-50/50 shadow-sm text-left">
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="px-2 py-0.5 rounded-md bg-blue-600 text-white text-xs font-black uppercase tracking-wider">Assertion (A)</span>
+          </div>
+          <p className="text-[15px] font-semibold text-slate-800 leading-relaxed">{assertion}</p>
+        </div>
+        
+        <div className="flex justify-center select-none">
+          <div className="h-6 w-0.5 bg-slate-300 relative">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-200 border border-slate-300 text-[10px] font-bold text-slate-500 px-1.5 py-0.5 rounded-full uppercase tracking-widest shadow-sm">Because</div>
+          </div>
+        </div>
+
+        <div className="p-4 rounded-xl border border-purple-200 bg-purple-50/50 shadow-sm text-left">
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="px-2 py-0.5 rounded-md bg-purple-600 text-white text-xs font-black uppercase tracking-wider">Reason (R)</span>
+          </div>
+          <p className="text-[15px] font-semibold text-slate-800 leading-relaxed">{reason}</p>
+        </div>
+      </div>
+    );
+  }
+
+  // 2. Detect Match the Following
+  const alphaReg = /([A-E])\.\s+([\s\S]*?)(?=(?:[A-E]\.|I{1,3}\.|IV\.|V\.|List[\s-]*[I]+|Column[\s-]*[I]+|Choose\s*the|$))/gi;
+  const romanReg = /(I{1,3}|IV|V)\.\s+([\s\S]*?)(?=(?:[A-E]\.|I{1,3}\.|IV\.|V\.|List[\s-]*[I]+|Column[\s-]*[I]+|Choose\s*the|$))/gi;
+  
+  const alphas = [];
+  const romans = [];
+  
+  let m;
+  alphaReg.lastIndex = 0;
+  romanReg.lastIndex = 0;
+  while ((m = alphaReg.exec(text))) {
+    alphas.push({ id: m[1].toUpperCase(), text: m[2].replace(/(List|Column)[\s-]*[I]+/gi, '').trim() });
+  }
+  while ((m = romanReg.exec(text))) {
+    romans.push({ id: m[1].toUpperCase(), text: m[2].replace(/(List|Column)[\s-]*[I]+/gi, '').trim() });
+  }
+
+  if (alphas.length === 0 || romans.length === 0) {
+    return <p className="text-base font-bold leading-relaxed whitespace-pre-wrap text-left text-slate-800">{text}</p>;
+  }
+
+  const firstMatchIndex = Math.min(
+    text.search(/[A-E]\.\s+/i) !== -1 ? text.search(/[A-E]\.\s+/i) : Infinity,
+    text.search(/(I{1,3}|IV|V)\.\s+/i) !== -1 ? text.search(/(I{1,3}|IV|V)\.\s+/i) : Infinity
+  );
+  
+  let prefix = '';
+  if (firstMatchIndex !== Infinity && firstMatchIndex > 0) {
+    prefix = text.substring(0, firstMatchIndex).replace(/(List|Column)[\s-]*[I]+/gi, '').trim();
+  }
+
+  let suffix = '';
+  const suffixMatch = text.match(/(Choose the correct|Select the correct|Which of the following)/i);
+  if (suffixMatch) {
+    suffix = text.substring(suffixMatch.index).trim();
+    if (alphas.length > 0) {
+      const last = alphas[alphas.length - 1];
+      const sIdx = last.text.search(/(Choose the correct|Select the correct|Which of the following)/i);
+      if (sIdx !== -1) last.text = last.text.substring(0, sIdx).trim();
+    }
+    if (romans.length > 0) {
+      const last = romans[romans.length - 1];
+      const sIdx = last.text.search(/(Choose the correct|Select the correct|Which of the following)/i);
+      if (sIdx !== -1) last.text = last.text.substring(0, sIdx).trim();
+    }
+  }
+
+  const maxRows = Math.max(alphas.length, romans.length);
+
+  return (
+    <div className="space-y-6 text-slate-800 my-4">
+      {prefix && <p className="text-[15px] font-semibold text-blue-900 leading-relaxed bg-blue-50/60 p-4 rounded-xl border border-blue-100 shadow-sm text-left">{prefix}</p>}
+      
+      <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-lg bg-white">
+        <div className="grid grid-cols-2 bg-gradient-to-r from-blue-600 to-indigo-600 divide-x divide-white/20">
+          <div className="px-5 py-3 text-center font-bold text-white tracking-widest uppercase text-sm shadow-inner">
+            List I
+          </div>
+          <div className="px-5 py-3 text-center font-bold text-white tracking-widest uppercase text-sm shadow-inner">
+            List II
+          </div>
+        </div>
+
+        <div className="divide-y divide-slate-100">
+          {Array.from({ length: maxRows }).map((_, idx) => {
+            const alpha = alphas[idx];
+            const roman = romans[idx];
+            
+            return (
+              <div key={idx} className="grid grid-cols-2 divide-x divide-slate-100 group hover:bg-slate-50/80 transition-all duration-200">
+                <div className="p-5 flex gap-4 items-start text-left">
+                  {alpha ? (
+                    <>
+                      <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold text-sm shadow-sm ring-2 ring-blue-50">
+                        {alpha.id}
+                      </span>
+                      <span className="text-[15px] font-medium text-slate-700 leading-relaxed pt-1">{alpha.text}</span>
+                    </>
+                  ) : <span className="text-slate-400 italic self-center mx-auto">--</span>}
+                </div>
+                <div className="p-5 flex gap-4 items-start text-left">
+                  {roman ? (
+                    <>
+                      <span className="flex-shrink-0 flex items-center justify-center min-w-[32px] h-8 px-2 rounded-lg bg-indigo-100 text-indigo-700 font-bold text-sm shadow-sm ring-2 ring-indigo-50">
+                        {roman.id}
+                      </span>
+                      <span className="text-[15px] font-medium text-slate-700 leading-relaxed pt-1">{roman.text}</span>
+                    </>
+                  ) : <span className="text-slate-400 italic self-center mx-auto">--</span>}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {suffix && <p className="text-[15px] font-bold text-slate-700 leading-relaxed px-4 py-2 border-l-4 border-amber-400 bg-amber-50/50 rounded-r-lg text-left">{suffix}</p>}
+    </div>
+  );
+};
+
 const ResultsPage = () => {
   const { attemptId } = useParams();
   const navigate = useNavigate();
@@ -388,9 +520,9 @@ const ResultsPage = () => {
                     </div>
 
                     {/* Question Text */}
-                    <h4 className="font-bold text-slate-800 leading-relaxed mb-5 whitespace-pre-wrap">
-                      {item.questionText?.replace(/\[[a-f0-9]{8}\]$/i, '').trim()}
-                    </h4>
+                    <div className="mb-5">
+                      <QuestionContentFormatter text={item.questionText?.replace(/\[[a-f0-9]{8}\]$/i, '').trim() || ''} />
+                    </div>
 
                     {/* Options Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">

@@ -30,7 +30,7 @@ const isAIConfigured = () => {
 // @access  Private
 exports.generateTest = async (req, res) => {
   try {
-    const { testType, subject, chapter, questionCount, difficulty, source } = req.body;
+    const { testType, subject, chapter, questionCount, difficulty, source, useAI } = req.body;
     const supportedTypes = ['full_mock', 'chapter_test', 'topic_test', 'subject_test', 'pyq_test', 'dpp_test', 'custom_test'];
     const parsedCount = Number(questionCount);
 
@@ -56,24 +56,26 @@ exports.generateTest = async (req, res) => {
       const mockTest = await TestGenerator.generateFullMockTest({
         subject: req.body.subject,
         chapters: req.body.chapters,
-        customChapters: req.body.customChapters
+        customChapters: req.body.customChapters,
+        useAI
       });
       questionIds = mockTest.questions;
     } else if (testType === 'chapter_test') {
-      questionIds = await TestGenerator.generateChapterTest(subject, chapter, parsedCount, difficulty);
+      questionIds = await TestGenerator.generateChapterTest(subject, chapter, parsedCount, difficulty, useAI);
     } else if (testType === 'topic_test') {
-      questionIds = await TestGenerator.generateTopicTest(subject, req.body.topic, parsedCount, difficulty);
+      questionIds = await TestGenerator.generateTopicTest(subject, req.body.topic, parsedCount, difficulty, useAI);
     } else if (testType === 'subject_test') {
-      questionIds = await TestGenerator.generateSubjectTest(subject, parsedCount, difficulty);
+      questionIds = await TestGenerator.generateSubjectTest(subject, parsedCount, difficulty, useAI);
     } else if (testType === 'pyq_test') {
-      questionIds = await TestGenerator.generatePYQTest(subject, 5, parsedCount);
+      questionIds = await TestGenerator.generatePYQTest(subject, 5, parsedCount, useAI);
     } else if (testType === 'dpp_test') {
       questionIds = await TestGenerator.generateTest({
         subject,
         questionCount: parsedCount,
         difficulty,
         source: 'dpp',
-        isPublished: true
+        isPublished: true,
+        useAI
       });
     } else {
       questionIds = await TestGenerator.generateTest({
@@ -82,7 +84,8 @@ exports.generateTest = async (req, res) => {
         questionCount: parsedCount,
         difficulty,
         source,
-        isPublished: true
+        isPublished: true,
+        useAI
       });
     }
 
@@ -102,7 +105,7 @@ exports.generateTest = async (req, res) => {
       questions: questionIds,
       totalQuestions: questionIds.length,
       totalTime: config.timeLimit,
-      filters: { difficulty, source },
+      filters: { difficulty, source, useAI },
       difficulty: difficulty || 'mixed',
       source: testType === 'pyq_test' ? 'pyq' : testType === 'dpp_test' ? 'dpp' : 'mixed',
       createdBy: req.userId,
