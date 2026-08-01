@@ -32,9 +32,31 @@ const QuestionContentFormatter = ({ text }) => {
   }
 
   // 2. Detect Match the Following
+  const firstItemRegex = /(?:^|\n)\s*([A-Ea-ep-t1-5]|I{1,3}|IV|V)[\.\)]\s+/i;
+  const firstMatch = text.match(firstItemRegex);
+  
+  let prefix = '';
+  if (firstMatch && firstMatch.index > 0) {
+    prefix = text.substring(0, firstMatch.index).trim();
+    prefix = prefix.replace(/\s*(?:Column|List)[\s-]*I+[:\.]?\s*$/i, '');
+  }
+
+  let suffix = '';
+  const suffixMatch = text.match(/(Choose the correct|Select the correct|Which of the following)/i);
+  if (suffixMatch) {
+    suffix = text.substring(suffixMatch.index).trim();
+  }
+
+  let parseText = text;
+  if (suffixMatch) parseText = parseText.substring(0, suffixMatch.index);
+  
+  // Clean headers that might bleed into item text
+  parseText = parseText.replace(/(?:^|\n)\s*(?:Column|List)[\s-]*I+[:\.]?\s*(?=\n|$)/gi, '\n');
+
   // We want to capture two distinct lists. Often List 1 is A,B,C,D or 1,2,3,4 and List 2 is 1,2,3,4 or a,b,c,d or p,q,r,s or I,II,III,IV
-  const alphaReg = /([A-Ea-ep-t])\.\s+([\s\S]*?)(?=(?:[A-Ea-ep-t]\.|[1-5]\.|I{1,3}\.|IV\.|V\.|List[\s-]*[I]+|Column[\s-]*[I]+|Choose\s*the|Select\s*the|Which\s*of|$))/g;
-  const numReg = /([1-5]|I{1,3}|IV|V)\.\s+([\s\S]*?)(?=(?:[A-Ea-ep-t]\.|[1-5]\.|I{1,3}\.|IV\.|V\.|List[\s-]*[I]+|Column[\s-]*[I]+|Choose\s*the|Select\s*the|Which\s*of|$))/gi;
+  // Line anchoring prevents matching 'II' inside 'Column II.'
+  const alphaReg = /(?:^|\n)\s*([A-Ea-ep-t])[\.\)]\s+([\s\S]*?)(?=(?:\n\s*(?:[A-Ea-ep-t1-5]|I{1,3}|IV|V)[\.\)]\s+)|$)/gi;
+  const numReg = /(?:^|\n)\s*([1-5]|I{1,3}|IV|V)[\.\)]\s+([\s\S]*?)(?=(?:\n\s*(?:[A-Ea-ep-t1-5]|I{1,3}|IV|V)[\.\)]\s+)|$)/gi;
   
   const alphas = [];
   const romans = [];
@@ -42,41 +64,15 @@ const QuestionContentFormatter = ({ text }) => {
   let m;
   alphaReg.lastIndex = 0;
   numReg.lastIndex = 0;
-  while ((m = alphaReg.exec(text))) {
-    alphas.push({ id: m[1], text: m[2].replace(/(List|Column)[\s-]*[I]+/gi, '').trim() });
+  while ((m = alphaReg.exec(parseText))) {
+    alphas.push({ id: m[1], text: m[2].replace(/(?:Column|List)[\s-]*I+[:\.]?/gi, '').trim() });
   }
-  while ((m = numReg.exec(text))) {
-    romans.push({ id: m[1], text: m[2].replace(/(List|Column)[\s-]*[I]+/gi, '').trim() });
+  while ((m = numReg.exec(parseText))) {
+    romans.push({ id: m[1], text: m[2].replace(/(?:Column|List)[\s-]*I+[:\.]?/gi, '').trim() });
   }
 
   if (alphas.length === 0 || romans.length === 0) {
     return <p className="text-base font-semibold leading-relaxed whitespace-pre-wrap text-left text-slate-850">{text}</p>;
-  }
-
-  const firstMatchIndex = Math.min(
-    text.search(/[A-Ea-ep-t]\.\s+/) !== -1 ? text.search(/[A-Ea-ep-t]\.\s+/) : Infinity,
-    text.search(/([1-5]|I{1,3}|IV|V)\.\s+/i) !== -1 ? text.search(/([1-5]|I{1,3}|IV|V)\.\s+/i) : Infinity
-  );
-  
-  let prefix = '';
-  if (firstMatchIndex !== Infinity && firstMatchIndex > 0) {
-    prefix = text.substring(0, firstMatchIndex).replace(/(List|Column)[\s-]*[I]+/gi, '').trim();
-  }
-
-  let suffix = '';
-  const suffixMatch = text.match(/(Choose the correct|Select the correct|Which of the following)/i);
-  if (suffixMatch) {
-    suffix = text.substring(suffixMatch.index).trim();
-    if (alphas.length > 0) {
-      const last = alphas[alphas.length - 1];
-      const sIdx = last.text.search(/(Choose the correct|Select the correct|Which of the following)/i);
-      if (sIdx !== -1) last.text = last.text.substring(0, sIdx).trim();
-    }
-    if (romans.length > 0) {
-      const last = romans[romans.length - 1];
-      const sIdx = last.text.search(/(Choose the correct|Select the correct|Which of the following)/i);
-      if (sIdx !== -1) last.text = last.text.substring(0, sIdx).trim();
-    }
   }
 
   const maxRows = Math.max(alphas.length, romans.length);
