@@ -55,7 +55,7 @@ const QuestionContentFormatter = ({ text }) => {
   }
 
   // 2. Detect Match the Following
-  const col2Regex = /(?:^|\n)\s*(?:Column|List)[\s-]*II[:\.]?\s*/i;
+  const col2Regex = /(?:^|\n)\s*(?:Column|List)[\s-]*II[:.]?\s*/i;
   const col2Match = text.match(col2Regex);
   
   if (col2Match) {
@@ -70,7 +70,7 @@ const QuestionContentFormatter = ({ text }) => {
     }
 
     let prefix = '';
-    const col1Regex = /(?:^|\n)\s*(?:Column|List)[\s-]*I[:\.]?\s*/i;
+    const col1Regex = /(?:^|\n)\s*(?:Column|List)[\s-]*I[:.]?\s*/i;
     const col1Match = text1.match(col1Regex);
     let list1Text = text1;
     if (col1Match) {
