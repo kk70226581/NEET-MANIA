@@ -27,6 +27,16 @@ import ForgettingCurvePage from './pages/ForgettingCurvePage';
 import { authAPI } from './services/api';
 import { setUser } from './store/slices/userSlice';
 
+// B.Sc. Nursing Pages
+import NursingDashboardPage from './pages/NursingDashboardPage';
+import NursingPracticePage from './pages/NursingPracticePage';
+import NursingMockTestsPage from './pages/NursingMockTestsPage';
+import NursingExamCBT from './pages/NursingExamCBT';
+import NursingResultsPage from './pages/NursingResultsPage';
+import NursingMistakesPage from './pages/NursingMistakesPage';
+import NursingAdminDashboard from './pages/NursingAdminDashboard';
+import ChapterLearn from './pages/bsc-nursing/ChapterLearn';
+
 // Components
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminRoute from './components/AdminRoute';
@@ -80,11 +90,23 @@ function App() {
           <Route path="/pyq/papers" element={<PyqHubPage view="papers" />} />
           <Route path="/pyq/performance" element={<PyqHubPage view="performance" />} />
           <Route path="/memory-challenge" element={<ForgettingCurvePage />} />
+
+          {/* B.Sc. Nursing Prep Section */}
+          <Route path="/bsc-nursing/dashboard" element={<NursingDashboardPage />} />
+          <Route path="/bsc-nursing/practice" element={<NursingPracticePage />} />
+          <Route path="/bsc-nursing/mock-tests" element={<NursingMockTestsPage />} />
+          <Route path="/bsc-nursing/exam/:testId" element={<NursingExamCBT />} />
+          <Route path="/bsc-nursing/results/:attemptId" element={<NursingResultsPage />} />
+          <Route path="/bsc-nursing/mistake-notebook" element={<NursingMistakesPage />} />
+          <Route path="/bsc-nursing/chapters/:chapterSlug/learn" element={<ChapterLearn />} />
         </Route>
         <Route element={<AdminRoute />}>
           <Route path="/admin/overview" element={<AdminDashboardPage />} />
           <Route path="/admin/questions" element={<AdminQuestionsPage />} />
           <Route path="/admin/pyq" element={<PyqAdminPage />} />
+
+          {/* Nursing Admin */}
+          <Route path="/nursing/admin/overview" element={<NursingAdminDashboard />} />
         </Route>
         <Route path="*" element={<Navigate to={isAuthenticated ? '/dashboard' : '/'} replace />} />
       </Routes>

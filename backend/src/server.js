@@ -68,6 +68,14 @@ app.use('/api/mentor', require('./routes/mentor'));
 app.use('/api/pyq', require('./routes/pyq'));
 app.use('/api/retention', require('./routes/retention'));
 
+// B.Sc. Nursing Prep Routes
+app.use('/api/nursing/exams', require('./routes/nursing/exams'));
+app.use('/api/nursing/practice', require('./routes/nursing/practice'));
+app.use('/api/nursing/tests', require('./routes/nursing/tests'));
+app.use('/api/nursing/admin', require('./routes/nursing/admin'));
+app.use('/api/nursing/syllabus', require('./routes/nursing/syllabus'));
+app.use('/api/nursing/ai', require('./routes/nursing/aiExplainer'));
+
 // Health check
 app.get('/health', (req, res) => {
   res.json({ status: 'Server is running' });
@@ -95,6 +103,14 @@ const server = app.listen(PORT, () => {
   } else {
     console.warn(`⚠️  Unified AI Client is not configured. Add credentials for the active AI_PROVIDER (${activeProvider}) in backend/.env.`);
   }
+
+  // Initialize B.Sc. Nursing Background Schedulers
+  try {
+    const NursingScheduler = require('./services/nursing/nursingScheduler');
+    NursingScheduler.init();
+  } catch (schedulerErr) {
+    console.error('Failed to initialize B.Sc. Nursing background scheduler:', schedulerErr);
+  }
 });
 
 server.on('error', (error) => {
@@ -107,4 +123,3 @@ server.on('error', (error) => {
 });
 
 module.exports = app;
-// Trigger restart

@@ -204,6 +204,7 @@ const getGeminiText = async (options) => {
 
 module.exports = {
   getGeminiText,
+  getBedrockText: callBedrock,
   getGeminiModel: getModelName,
   getGeminiModelCandidates: () => [getModelName()],
   isGeminiConfigured: isAIConfigured,

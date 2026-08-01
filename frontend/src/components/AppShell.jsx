@@ -44,6 +44,13 @@ const primaryNavItems = [
   { to: '/mentor', label: 'AI Mentor', icon: Bot, hint: 'Ask a doubt in Hinglish' },
 ];
 
+const nursingNavItems = [
+  { to: '/bsc-nursing/dashboard', label: 'Dashboard', icon: LayoutDashboard, hint: 'B.Sc. Nursing track overview' },
+  { to: '/bsc-nursing/practice', label: 'Practice & Mastery', icon: BookOpen, hint: 'Syllabus chapter practice & drills' },
+  { to: '/bsc-nursing/mock-tests', label: 'Mock Exam CBT', icon: ClipboardList, hint: 'Take scheduled mock tests' },
+  { to: '/bsc-nursing/mistake-notebook', label: 'Mistake Notebook', icon: BrainCircuit, hint: 'Spaced repetition mistakes revision' },
+];
+
 const utilityItems = [
   { to: '/attempts', label: 'Past Attempts', icon: ClipboardList, hint: 'Open previous test reports' },
   { to: '/settings', label: 'Settings', icon: Settings, hint: 'Manage your profile' },
@@ -62,6 +69,7 @@ const pageVariants = {
 };
 
 const AppShell = ({ children, hideSearch = false }) => {
+  const [selectedTrack, setSelectedTrack] = useState(localStorage.getItem('selectedTrack') || 'neet');
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -74,11 +82,14 @@ const AppShell = ({ children, hideSearch = false }) => {
   const location = useLocation();
 
   const allNavItems = useMemo(() => {
+    const trackingNav = selectedTrack === 'nursing' ? nursingNavItems : primaryNavItems;
     const adminItem = user?.role === 'admin'
-      ? [{ to: '/admin/overview', label: 'Admin Overview', icon: LineChart, hint: 'Monitor Medical Mania' }, { to: '/admin/questions', label: 'Question Import', icon: FileUp, hint: 'Review and publish questions' }, { to: '/admin/pyq', label: 'PYQ Quality', icon: ShieldCheck, hint: 'Validate imports and reports' }]
+      ? selectedTrack === 'nursing'
+        ? [{ to: '/nursing/admin/overview', label: 'Admin Monitoring', icon: ShieldCheck, hint: 'Verify scrapers and content metrics' }]
+        : [{ to: '/admin/overview', label: 'Admin Overview', icon: LineChart, hint: 'Monitor Medical Mania' }, { to: '/admin/questions', label: 'Question Import', icon: FileUp, hint: 'Review and publish questions' }, { to: '/admin/pyq', label: 'PYQ Quality', icon: ShieldCheck, hint: 'Validate imports and reports' }]
       : [];
-    return [...primaryNavItems, ...utilityItems, ...adminItem];
-  }, [user?.role]);
+    return [...trackingNav, ...utilityItems, ...adminItem];
+  }, [user?.role, selectedTrack]);
 
   const filteredItems = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
@@ -166,17 +177,46 @@ const AppShell = ({ children, hideSearch = false }) => {
             </button>
           </div>
 
+          {/* Track Selector Dropdown */}
+          <div className="mb-6 px-3">
+            <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Study Track</label>
+            <div className="grid grid-cols-2 gap-1 rounded-xl bg-slate-900 p-1">
+              <button
+                type="button"
+                className={`rounded-lg py-1.5 text-xs font-bold transition-all ${selectedTrack === 'neet' ? 'bg-blue-500 text-white shadow' : 'text-slate-400 hover:text-slate-200'}`}
+                onClick={() => {
+                  setSelectedTrack('neet');
+                  localStorage.setItem('selectedTrack', 'neet');
+                  navigate('/dashboard');
+                }}
+              >
+                NEET UG
+              </button>
+              <button
+                type="button"
+                className={`rounded-lg py-1.5 text-xs font-bold transition-all ${selectedTrack === 'nursing' ? 'bg-emerald-500 text-white shadow' : 'text-slate-400 hover:text-slate-200'}`}
+                onClick={() => {
+                  setSelectedTrack('nursing');
+                  localStorage.setItem('selectedTrack', 'nursing');
+                  navigate('/bsc-nursing/dashboard');
+                }}
+              >
+                B.Sc. Nursing
+              </button>
+            </div>
+          </div>
+
           <p className="mb-3 px-4 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">Prepare</p>
           <nav className="space-y-1" aria-label="Student navigation">
-            {primaryNavItems.map(({ to, label, icon: Icon }) => (
+            {(selectedTrack === 'nursing' ? nursingNavItems : primaryNavItems).map(({ to, label, icon: Icon }) => (
               <NavLink
                 key={to}
                 to={to}
-                className={({ isActive }) => `group relative flex items-center gap-3 overflow-hidden rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800/80 hover:text-white'}`}
+                className={({ isActive }) => `group relative flex items-center gap-3 overflow-hidden rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? (selectedTrack === 'nursing' ? 'bg-emerald-500/15 text-emerald-300' : 'bg-blue-500/15 text-blue-300') : 'text-slate-400 hover:bg-slate-800/80 hover:text-white'}`}
               >
                 {({ isActive }) => (
                   <>
-                    {isActive && <motion.span layoutId="activeNav" className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-blue-400" />}
+                    {isActive && <motion.span layoutId="activeNav" className={`absolute inset-y-2 left-0 w-1 rounded-r-full ${selectedTrack === 'nursing' ? 'bg-emerald-400' : 'bg-blue-400'}`} />}
                     <Icon size={19} className="transition-transform group-hover:scale-110" />
                     <span>{label}</span>
                   </>
@@ -184,17 +224,23 @@ const AppShell = ({ children, hideSearch = false }) => {
               </NavLink>
             ))}
             {user?.role === 'admin' && (
-              <>
-                <NavLink to="/admin/overview" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
-                  <LineChart size={19} /> Admin Overview
+              selectedTrack === 'nursing' ? (
+                <NavLink to="/nursing/admin/overview" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-emerald-500/15 text-emerald-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
+                  <ShieldCheck size={19} /> Admin Monitoring
                 </NavLink>
-                <NavLink to="/admin/questions" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
-                  <FileUp size={19} /> Question Import
-                </NavLink>
-                <NavLink to="/admin/pyq" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
-                  <ShieldCheck size={19} /> PYQ Quality
-                </NavLink>
-              </>
+              ) : (
+                <>
+                  <NavLink to="/admin/overview" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
+                    <LineChart size={19} /> Admin Overview
+                  </NavLink>
+                  <NavLink to="/admin/questions" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
+                    <FileUp size={19} /> Question Import
+                  </NavLink>
+                  <NavLink to="/admin/pyq" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${isActive ? 'bg-blue-500/15 text-blue-300' : 'text-slate-400 hover:bg-slate-800 hover:text-white'}`}>
+                    <ShieldCheck size={19} /> PYQ Quality
+                  </NavLink>
+                </>
+              )
             )}
           </nav>
 
