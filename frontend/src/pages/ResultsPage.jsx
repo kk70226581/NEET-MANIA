@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, react-hooks/exhaustive-deps */
 import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import {
@@ -76,14 +77,14 @@ const QuestionContentFormatter = ({ text }) => {
       prefix = text1.substring(0, col1Match.index).trim();
       list1Text = text1.substring(col1Match.index + col1Match[0].length);
     } else {
-      const firstItemMatch = text1.match(/(?:^|\n)\s*\(?([A-Za-z0-9]+|I{1,3}|IV|V)[\.\)]\s+/i);
+      const firstItemMatch = text1.match(/(?:^|\n)\s*\(?([A-Za-z0-9]+|I{1,3}|IV|V)[.)]\s+/i);
       if (firstItemMatch) {
         prefix = text1.substring(0, firstItemMatch.index).trim();
         list1Text = text1.substring(firstItemMatch.index);
       }
     }
 
-    const itemRegex = /(?:^|\n)\s*\(?([A-Za-z0-9]+|I{1,3}|IV|V)[\.\)]\s+([\s\S]*?)(?=(?:\n\s*\(?(?:[A-Za-z0-9]+|I{1,3}|IV|V)[\.\)]\s+)|$)/gi;
+    const itemRegex = /(?:^|\n)\s*\(?([A-Za-z0-9]+|I{1,3}|IV|V)[.)]\s+([\s\S]*?)(?=(?:\n\s*\(?(?:[A-Za-z0-9]+|I{1,3}|IV|V)[.)]\s+)|$)/gi;
     
     const extractItems = (t) => {
       const items = [];
