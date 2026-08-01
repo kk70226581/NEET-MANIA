@@ -1,15 +1,14 @@
 const text = `Match Column I with Column II.
 Column I:
-1. Normal on horizontal motion
-2. Centripetal force
-3. Gravity in horizontal motion
-4. Friction during sliding
-Column II.
-a. Zero
-b. Zero
-c. Zero
-d. Negative
-Choose the correct:`;
+1. Acacia
+2. Calotropis
+3. Nicotine
+4. Camouflage
+Column II:
+a. Thorns
+b. Cardiac glycosides
+c. Chemical defence
+d. Cryptic appearance`;
 
 function parseMatchText(text) {
   const firstItemRegex = /(?:^|\n)\s*([A-Ea-ep-t1-5]|I{1,3}|IV|V)[\.\)]\s+/i;
@@ -17,7 +16,8 @@ function parseMatchText(text) {
   
   let prefix = '';
   if (firstMatch && firstMatch.index > 0) {
-    prefix = text.substring(0, firstMatch.index).replace(/(?:Column|List)[\s-]*I+[:\.]?/gi, '').trim();
+    prefix = text.substring(0, firstMatch.index).trim();
+    prefix = prefix.replace(/\s*(?:Column|List)[\s-]*I+[:\.]?\s*$/i, '');
   }
 
   let suffix = '';
