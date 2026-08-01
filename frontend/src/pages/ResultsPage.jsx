@@ -54,20 +54,21 @@ const QuestionContentFormatter = ({ text }) => {
   }
 
   // 2. Detect Match the Following
-  const alphaReg = /([A-E])\.\s+([\s\S]*?)(?=(?:[A-E]\.|I{1,3}\.|IV\.|V\.|List[\s-]*[I]+|Column[\s-]*[I]+|Choose\s*the|$))/gi;
-  const romanReg = /(I{1,3}|IV|V)\.\s+([\s\S]*?)(?=(?:[A-E]\.|I{1,3}\.|IV\.|V\.|List[\s-]*[I]+|Column[\s-]*[I]+|Choose\s*the|$))/gi;
+  // We want to capture two distinct lists. Often List 1 is A,B,C,D or 1,2,3,4 and List 2 is 1,2,3,4 or a,b,c,d or p,q,r,s or I,II,III,IV
+  const alphaReg = /([A-Ea-ep-t])\.\s+([\s\S]*?)(?=(?:[A-Ea-ep-t]\.|[1-5]\.|I{1,3}\.|IV\.|V\.|List[\s-]*[I]+|Column[\s-]*[I]+|Choose\s*the|Select\s*the|Which\s*of|$))/g;
+  const numReg = /([1-5]|I{1,3}|IV|V)\.\s+([\s\S]*?)(?=(?:[A-Ea-ep-t]\.|[1-5]\.|I{1,3}\.|IV\.|V\.|List[\s-]*[I]+|Column[\s-]*[I]+|Choose\s*the|Select\s*the|Which\s*of|$))/gi;
   
   const alphas = [];
   const romans = [];
   
   let m;
   alphaReg.lastIndex = 0;
-  romanReg.lastIndex = 0;
+  numReg.lastIndex = 0;
   while ((m = alphaReg.exec(text))) {
-    alphas.push({ id: m[1].toUpperCase(), text: m[2].replace(/(List|Column)[\s-]*[I]+/gi, '').trim() });
+    alphas.push({ id: m[1], text: m[2].replace(/(List|Column)[\s-]*[I]+/gi, '').trim() });
   }
-  while ((m = romanReg.exec(text))) {
-    romans.push({ id: m[1].toUpperCase(), text: m[2].replace(/(List|Column)[\s-]*[I]+/gi, '').trim() });
+  while ((m = numReg.exec(text))) {
+    romans.push({ id: m[1], text: m[2].replace(/(List|Column)[\s-]*[I]+/gi, '').trim() });
   }
 
   if (alphas.length === 0 || romans.length === 0) {
@@ -75,8 +76,8 @@ const QuestionContentFormatter = ({ text }) => {
   }
 
   const firstMatchIndex = Math.min(
-    text.search(/[A-E]\.\s+/i) !== -1 ? text.search(/[A-E]\.\s+/i) : Infinity,
-    text.search(/(I{1,3}|IV|V)\.\s+/i) !== -1 ? text.search(/(I{1,3}|IV|V)\.\s+/i) : Infinity
+    text.search(/[A-Ea-ep-t]\.\s+/) !== -1 ? text.search(/[A-Ea-ep-t]\.\s+/) : Infinity,
+    text.search(/([1-5]|I{1,3}|IV|V)\.\s+/i) !== -1 ? text.search(/([1-5]|I{1,3}|IV|V)\.\s+/i) : Infinity
   );
   
   let prefix = '';
@@ -103,53 +104,55 @@ const QuestionContentFormatter = ({ text }) => {
   const maxRows = Math.max(alphas.length, romans.length);
 
   return (
-    <div className="space-y-6 text-slate-800 my-4">
-      {prefix && <p className="text-[15px] font-semibold text-blue-900 leading-relaxed bg-blue-50/60 p-4 rounded-xl border border-blue-100 shadow-sm text-left">{prefix}</p>}
+    <div className="space-y-4 sm:space-y-6 text-slate-800 my-4">
+      {prefix && <p className="text-[14px] sm:text-[15px] font-semibold text-blue-900 leading-relaxed bg-blue-50/60 p-3 sm:p-4 rounded-xl border border-blue-100 shadow-sm text-left">{prefix}</p>}
       
-      <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-lg bg-white">
-        <div className="grid grid-cols-2 bg-gradient-to-r from-blue-600 to-indigo-600 divide-x divide-white/20">
-          <div className="px-5 py-3 text-center font-bold text-white tracking-widest uppercase text-sm shadow-inner">
-            List I
+      <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-lg bg-white">
+        <div className="min-w-[300px]">
+          <div className="grid grid-cols-2 bg-gradient-to-r from-blue-600 to-indigo-600 divide-x divide-white/20">
+            <div className="px-3 py-2 sm:px-5 sm:py-3 text-center font-bold text-white tracking-widest uppercase text-xs sm:text-sm shadow-inner">
+              List I
+            </div>
+            <div className="px-3 py-2 sm:px-5 sm:py-3 text-center font-bold text-white tracking-widest uppercase text-xs sm:text-sm shadow-inner">
+              List II
+            </div>
           </div>
-          <div className="px-5 py-3 text-center font-bold text-white tracking-widest uppercase text-sm shadow-inner">
-            List II
-          </div>
-        </div>
 
-        <div className="divide-y divide-slate-100">
-          {Array.from({ length: maxRows }).map((_, idx) => {
-            const alpha = alphas[idx];
-            const roman = romans[idx];
-            
-            return (
-              <div key={idx} className="grid grid-cols-2 divide-x divide-slate-100 group hover:bg-slate-50/80 transition-all duration-200">
-                <div className="p-5 flex gap-4 items-start text-left">
-                  {alpha ? (
-                    <>
-                      <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold text-sm shadow-sm ring-2 ring-blue-50">
-                        {alpha.id}
-                      </span>
-                      <span className="text-[15px] font-medium text-slate-700 leading-relaxed pt-1">{alpha.text}</span>
-                    </>
-                  ) : <span className="text-slate-400 italic self-center mx-auto">--</span>}
+          <div className="divide-y divide-slate-100">
+            {Array.from({ length: maxRows }).map((_, idx) => {
+              const alpha = alphas[idx];
+              const roman = romans[idx];
+              
+              return (
+                <div key={idx} className="grid grid-cols-2 divide-x divide-slate-100 group hover:bg-slate-50/80 transition-all duration-200">
+                  <div className="p-3 sm:p-5 flex gap-2 sm:gap-4 items-start text-left">
+                    {alpha ? (
+                      <>
+                        <span className="flex-shrink-0 flex items-center justify-center min-w-[24px] h-6 sm:w-8 sm:h-8 rounded-full bg-blue-100 text-blue-700 font-bold text-xs sm:text-sm shadow-sm ring-2 ring-blue-50">
+                          {alpha.id}
+                        </span>
+                        <span className="text-[13px] sm:text-[15px] font-medium text-slate-700 leading-relaxed pt-0.5 sm:pt-1">{alpha.text}</span>
+                      </>
+                    ) : <span className="text-slate-400 italic self-center mx-auto">--</span>}
+                  </div>
+                  <div className="p-3 sm:p-5 flex gap-2 sm:gap-4 items-start text-left">
+                    {roman ? (
+                      <>
+                        <span className="flex-shrink-0 flex items-center justify-center min-w-[24px] h-6 px-1 sm:min-w-[32px] sm:h-8 sm:px-2 rounded-lg bg-indigo-100 text-indigo-700 font-bold text-xs sm:text-sm shadow-sm ring-2 ring-indigo-50">
+                          {roman.id}
+                        </span>
+                        <span className="text-[13px] sm:text-[15px] font-medium text-slate-700 leading-relaxed pt-0.5 sm:pt-1">{roman.text}</span>
+                      </>
+                    ) : <span className="text-slate-400 italic self-center mx-auto">--</span>}
+                  </div>
                 </div>
-                <div className="p-5 flex gap-4 items-start text-left">
-                  {roman ? (
-                    <>
-                      <span className="flex-shrink-0 flex items-center justify-center min-w-[32px] h-8 px-2 rounded-lg bg-indigo-100 text-indigo-700 font-bold text-sm shadow-sm ring-2 ring-indigo-50">
-                        {roman.id}
-                      </span>
-                      <span className="text-[15px] font-medium text-slate-700 leading-relaxed pt-1">{roman.text}</span>
-                    </>
-                  ) : <span className="text-slate-400 italic self-center mx-auto">--</span>}
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
 
-      {suffix && <p className="text-[15px] font-bold text-slate-700 leading-relaxed px-4 py-2 border-l-4 border-amber-400 bg-amber-50/50 rounded-r-lg text-left">{suffix}</p>}
+      {suffix && <p className="text-[14px] sm:text-[15px] font-bold text-slate-700 leading-relaxed px-3 py-2 sm:px-4 border-l-4 border-amber-400 bg-amber-50/50 rounded-r-lg text-left">{suffix}</p>}
     </div>
   );
 };
