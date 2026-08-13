@@ -5,6 +5,8 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
 // Generate JWT Token
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -16,7 +18,20 @@ const adminConfigurationIsValid = () => (
   process.env.ADMIN_EMAIL
   && process.env.ADMIN_PASSWORD
   && process.env.ADMIN_PASSWORD !== 'change_me_in_production'
+  && EMAIL_PATTERN.test(String(process.env.ADMIN_EMAIL).trim())
 );
+
+const getAdminConfigurationError = () => {
+  if (!process.env.ADMIN_EMAIL || !process.env.ADMIN_PASSWORD) {
+    return 'Owner admin access is not configured. Set ADMIN_EMAIL and ADMIN_PASSWORD on the server.';
+  }
+
+  if (!EMAIL_PATTERN.test(String(process.env.ADMIN_EMAIL).trim())) {
+    return 'ADMIN_EMAIL must be a valid email address (for example, owner@medicalmania.site).';
+  }
+
+  return 'ADMIN_PASSWORD must be changed from the default value.';
+};
 
 const adminResponse = (res, user, message = 'Admin login successful') => {
   const token = generateToken(user._id);
@@ -186,7 +201,7 @@ exports.adminLogin = async (req, res) => {
     if (!adminConfigurationIsValid()) {
       return res.status(503).json({
         success: false,
-        message: 'Owner admin access is not configured. Set ADMIN_EMAIL and ADMIN_PASSWORD on the server.',
+        message: getAdminConfigurationError(),
       });
     }
 
