@@ -1,10 +1,8 @@
 /* eslint-disable no-unused-vars, react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ChevronRight,
   BookOpen,
   ArrowRight,
   CheckCircle,
@@ -15,6 +13,7 @@ import {
 } from 'lucide-react';
 import AppShell from '../components/AppShell';
 import toast from 'react-hot-toast';
+import { nursingAPI } from '../services/api';
 
 const NursingPracticePage = () => {
   const navigate = useNavigate();
@@ -27,14 +26,12 @@ const NursingPracticePage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
+  const [answerResult, setAnswerResult] = useState(null);
   const [practiceActive, setPracticeActive] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    axios.get('http://localhost:5000/api/nursing/syllabus/subjects', {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(res => setSubjects(res.data.subjects || []))
+    nursingAPI.getSubjects()
+      .then(res => setSubjects(res.subjects || []))
       .catch(err => console.error('Error fetching subjects:', err));
   }, []);
 
@@ -43,23 +40,16 @@ const NursingPracticePage = () => {
     setSelectedChapter(null);
     setChapters([]);
 
-    const token = localStorage.getItem('token');
-    axios.get(`http://localhost:5000/api/nursing/syllabus/chapters?subjectSlug=${sub.subjectSlug}`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(res => setChapters(res.data.chapters || []))
+    nursingAPI.getChapters(sub.subjectSlug)
+      .then(res => setChapters(res.chapters || []))
       .catch(err => console.error('Error fetching chapters:', err));
   };
 
-  const handleStartPractice = (chap) => {
+  const handleStartPractice = (chap, difficulty) => {
     setSelectedChapter(chap);
-    const token = localStorage.getItem('token');
-
-    axios.get(`http://localhost:5000/api/nursing/practice/chapter/${chap._id}`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
+    nursingAPI.getChapterPractice(chap._id, difficulty ? { difficulty } : {})
       .then(res => {
-        const qList = res.data.data || [];
+        const qList = res.data || [];
         if (qList.length === 0) {
           toast.error('No questions available in this chapter yet.');
           return;
@@ -68,6 +58,7 @@ const NursingPracticePage = () => {
         setCurrentIndex(0);
         setSelectedOption(null);
         setIsAnswered(false);
+        setAnswerResult(null);
         setPracticeActive(true);
       })
       .catch(err => {
@@ -81,30 +72,20 @@ const NursingPracticePage = () => {
     setSelectedOption(opt);
   };
 
-  const handleSubmitAnswer = () => {
+  const handleSubmitAnswer = async () => {
     if (!selectedOption || isAnswered) return;
-    setIsAnswered(true);
-
-    const token = localStorage.getItem('token');
     const currentQ = questions[currentIndex];
-    const isCorrect = selectedOption === currentQ.correctAnswer;
-
-    // Send mistake to notebook if wrong
-    if (!isCorrect) {
-      axios.post('http://localhost:5000/api/nursing/practice/mistakes', {
-        questionId: currentQ._id,
-        selectedOption,
-        correctOption: currentQ.correctAnswer,
-        mistakeCategory: 'conceptual'
-      }, {
-        headers: { Authorization: `Bearer ${token}` }
-      }).catch(err => console.error('Mistake logging failed:', err));
-    }
+    try {
+      const response = await nursingAPI.answerQuestion(currentQ._id, { selectedAnswer: selectedOption });
+      setAnswerResult(response.data);
+      setIsAnswered(true);
+    } catch (error) { toast.error(error.message || 'Could not check answer.'); }
   };
 
   const handleNext = () => {
     setSelectedOption(null);
     setIsAnswered(false);
+    setAnswerResult(null);
     if (currentIndex + 1 < questions.length) {
       setCurrentIndex(prev => prev + 1);
     } else {
@@ -153,26 +134,18 @@ const NursingPracticePage = () => {
                       className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:border-emerald-500 transition-all"
                     >
                       <div>
-                        <h4 className="font-bold text-slate-800">{chap.name}</h4>
-                        <span className={`inline-block mt-2 rounded px-2 py-0.5 text-[10px] font-bold uppercase ${chap.importance === 'high' ? 'bg-red-50 text-red-600' : 'bg-slate-100 text-slate-600'}`}>
-                          {chap.importance} Importance
-                        </span>
+                        <h4 className="font-bold text-slate-800">{chap.fullChapterName}</h4>
+                        <span className="mt-2 inline-block text-[11px] text-slate-500">{chap.questionStats?.total || 0} questions · E {chap.questionStats?.easy || 0} · M {chap.questionStats?.medium || 0} · H {chap.questionStats?.hard || 0}</span>
                       </div>
                       <div className="flex gap-2 items-center">
                         <button
                           type="button"
-                          onClick={() => navigate(`/nursing/explainer/${chap._id}`)}
+                          onClick={() => navigate(`/bsc-nursing/chapters/${chap.chapterSlug}/learn`)}
                           className="flex items-center gap-1.5 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-800 font-bold px-3 py-2 text-xs hover:bg-emerald-100 transition shadow-sm"
                         >
                           <Sparkles size={13} className="fill-emerald-800" /> Learn with AI
                         </button>
-                        <button
-                          type="button"
-                          onClick={() => handleStartPractice(chap)}
-                          className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500 text-white shadow-md hover:bg-emerald-600 transition"
-                        >
-                          <ChevronRight size={18} />
-                        </button>
+                        <div className="flex flex-wrap gap-1">{[['All',''],['Easy','easy'],['Medium','medium'],['Hard','hard']].map(([label, level]) => <button key={label} type="button" onClick={() => handleStartPractice(chap, level)} className="rounded-lg bg-emerald-500 px-2 py-2 text-[10px] font-bold text-white hover:bg-emerald-600">{label}</button>)}</div>
                       </div>
                     </div>
                   ))}
@@ -205,7 +178,7 @@ const NursingPracticePage = () => {
               <div className="grid grid-cols-1 gap-3">
                 {['A', 'B', 'C', 'D'].map((opt) => {
                   const optionText = questions[currentIndex]?.options?.[opt]?.text;
-                  const isCorrectAnswer = opt === questions[currentIndex]?.correctAnswer;
+                  const isCorrectAnswer = opt === answerResult?.correctAnswer;
                   const isSelected = opt === selectedOption;
 
                   let optStyle = 'border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/20';
@@ -243,14 +216,14 @@ const NursingPracticePage = () => {
                     className="rounded-xl border border-slate-200 bg-slate-50 p-5 space-y-3"
                   >
                     <div className="flex items-center gap-2">
-                      {selectedOption === questions[currentIndex].correctAnswer ? (
+                      {answerResult?.isCorrect ? (
                         <span className="flex items-center gap-1.5 text-sm font-extrabold text-emerald-600"><CheckCircle size={18} /> Correct Answer!</span>
                       ) : (
                         <span className="flex items-center gap-1.5 text-sm font-extrabold text-red-600"><XCircle size={18} /> Incorrect</span>
                       )}
                     </div>
                     <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                      <strong>Explanation:</strong> {questions[currentIndex].explanation?.text || 'No explanation available.'}
+                      <strong>Explanation:</strong> {answerResult?.explanation?.text || 'No explanation available.'}
                     </p>
                   </motion.div>
                 )}

@@ -2,7 +2,7 @@ const geminiClient = require('../geminiClient');
 const Chapter = require('../../models/nursing/Chapter');
 const Topic = require('../../models/nursing/Topic');
 const Subject = require('../../models/nursing/Subject');
-const Question = require('../../models/Question'); // Storing them in core Question model with subject="Nursing" or chapter metadata
+const Question = require('../../models/nursing/Question');
 
 exports.generateBatch = async ({ chapterId, topicId, count = 10, difficulty = 'medium' }) => {
   const chapter = await Chapter.findById(chapterId).populate('subjectId');

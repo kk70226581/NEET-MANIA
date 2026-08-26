@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Send, Sparkles, AlertCircle, CheckCircle, XCircle } from 'lucide-react';
 import AppShell from '../components/AppShell';
 import toast from 'react-hot-toast';
+import { nursingAPI } from '../services/api';
 
 const NursingChapterExplainer = () => {
   const { chapterId } = useParams();
@@ -26,12 +26,9 @@ const NursingChapterExplainer = () => {
   const [completedCount, setCompletedCount] = useState(0);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    axios.post('http://localhost:5000/api/nursing/practice/explainer/start', { chapterId }, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
+    nursingAPI.startExplainer(chapterId)
       .then(res => {
-        const d = res.data.data;
+        const d = res.data;
         setTopicName(d.topicName);
         setExplanation(d.explanation);
         setQuestionText(d.questionText);
@@ -49,18 +46,15 @@ const NursingChapterExplainer = () => {
     if (!userAnswer || isAnswered || submitting) return;
     setSubmitting(true);
 
-    const token = localStorage.getItem('token');
-    axios.post('http://localhost:5000/api/nursing/practice/explainer/continue', {
+    nursingAPI.continueExplainer({
       chapterId,
       topicName,
       previousQuestion: questionText,
       userAnswer,
       correctAnswer
-    }, {
-      headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => {
-        const d = res.data.data;
+        const d = res.data;
         setFeedback(d.feedback);
         setIsAnswered(true);
 
@@ -98,7 +92,7 @@ const NursingChapterExplainer = () => {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            onClick={() => navigate('/nursing/practice')}
+            onClick={() => navigate('/bsc-nursing/practice')}
             className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 hover:bg-slate-50 transition"
           >
             <ArrowLeft size={18} />

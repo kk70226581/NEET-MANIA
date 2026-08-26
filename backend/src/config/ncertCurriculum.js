@@ -128,6 +128,7 @@ const curriculum = [
 const chapterAliases = {
   'Measurement': 'Units and Measurements',
   'Units and Dimensions': 'Units and Measurements',
+  'Laws of Motion and Friction': 'Laws of Motion',
   'Work Energy and Power': 'Work, Energy and Power',
   'Semiconductor Electronics': 'Semiconductor Electronics: Materials, Devices and Simple Circuits',
   'Organic Compounds Containing Nitrogen': 'Amines',

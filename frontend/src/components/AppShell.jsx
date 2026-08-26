@@ -46,8 +46,12 @@ const primaryNavItems = [
 
 const nursingNavItems = [
   { to: '/bsc-nursing/dashboard', label: 'Dashboard', icon: LayoutDashboard, hint: 'B.Sc. Nursing track overview' },
+  { to: '/bsc-nursing/question-bank', label: 'Question Bank', icon: BookOpen, hint: 'Search by exam, subject, chapter and difficulty' },
   { to: '/bsc-nursing/practice', label: 'Practice & Mastery', icon: BookOpen, hint: 'Syllabus chapter practice & drills' },
   { to: '/bsc-nursing/mock-tests', label: 'Mock Exam CBT', icon: ClipboardList, hint: 'Take scheduled mock tests' },
+  { to: '/bsc-nursing/previous-year', label: 'Previous Year', icon: CalendarCheck2, hint: 'Legally reusable verified questions' },
+  { to: '/bsc-nursing/bookmarks', label: 'Bookmarks', icon: Flame, hint: 'Practice saved questions' },
+  { to: '/bsc-nursing/performance', label: 'Performance', icon: BarChart3, hint: 'Subject and chapter analytics' },
   { to: '/bsc-nursing/mistake-notebook', label: 'Mistake Notebook', icon: BrainCircuit, hint: 'Spaced repetition mistakes revision' },
 ];
 
@@ -85,7 +89,7 @@ const AppShell = ({ children, hideSearch = false }) => {
     const trackingNav = selectedTrack === 'nursing' ? nursingNavItems : primaryNavItems;
     const adminItem = user?.role === 'admin'
       ? selectedTrack === 'nursing'
-        ? [{ to: '/nursing/admin/overview', label: 'Admin Monitoring', icon: ShieldCheck, hint: 'Verify scrapers and content metrics' }]
+        ? [{ to: '/nursing/admin/content', label: 'Content Studio', icon: ShieldCheck, hint: 'Questions, sources, generation and review' }, { to: '/nursing/admin/overview', label: 'Admin Monitoring', icon: LineChart, hint: 'Operational nursing metrics' }]
         : [{ to: '/admin/overview', label: 'Admin Overview', icon: LineChart, hint: 'Monitor Medical Mania' }, { to: '/admin/questions', label: 'Question Import', icon: FileUp, hint: 'Review and publish questions' }, { to: '/admin/pyq', label: 'PYQ Quality', icon: ShieldCheck, hint: 'Validate imports and reports' }]
       : [];
     return [...trackingNav, ...utilityItems, ...adminItem];

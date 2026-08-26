@@ -60,6 +60,7 @@ const ChapterSchema = new mongoose.Schema({
   },
   pyqCount: { type: Number, default: 0 },
   practiceQuestionCount: { type: Number, default: 0 },
+  targetQuestionCount: { type: Number, default: 200 },
   aiQuestionCount: { type: Number, default: 0 },
   testCount: { type: Number, default: 0 },
   status: {

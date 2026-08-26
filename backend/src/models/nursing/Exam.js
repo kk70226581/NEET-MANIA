@@ -16,6 +16,15 @@ const ExamSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  officialWebsite: String,
+  eligibility: String,
+  applicationInformation: String,
+  examDates: [{
+    label: String,
+    date: Date,
+    isTentative: { type: Boolean, default: true },
+    sourceURL: String
+  }],
   subjects: [{
     subjectId: { type: mongoose.Schema.Types.ObjectId, ref: 'NursingSubject' },
     questionCount: Number,
@@ -32,7 +41,8 @@ const ExamSchema = new mongoose.Schema({
   examPattern: {
     mode: { type: String, enum: ['CBT', 'OMR', 'Pen & Paper'], default: 'CBT' },
     questionType: { type: String, default: 'MCQs' },
-    hasNegativeMarking: { type: Boolean, default: true }
+    hasNegativeMarking: { type: Boolean, default: true },
+    status: { type: String, enum: ['verified', 'tentative'], default: 'tentative' }
   },
   questionCount: {
     type: Number,
@@ -56,6 +66,8 @@ const ExamSchema = new mongoose.Schema({
     weightage: Number
   }],
   officialSyllabusSource: String,
+  sourceURL: String,
+  informationStatus: { type: String, enum: ['verified', 'tentative', 'needs-review'], default: 'tentative' },
   lastVerificationDate: Date,
   syllabusVersion: { type: String, default: '1.0' },
   isActive: {

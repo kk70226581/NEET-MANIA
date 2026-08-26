@@ -75,6 +75,7 @@ app.use('/api/nursing/tests', require('./routes/nursing/tests'));
 app.use('/api/nursing/admin', require('./routes/nursing/admin'));
 app.use('/api/nursing/syllabus', require('./routes/nursing/syllabus'));
 app.use('/api/nursing/ai', require('./routes/nursing/aiExplainer'));
+app.use('/api/nursing/content', require('./routes/nursing/content'));
 
 // Health check
 app.get('/health', (req, res) => {

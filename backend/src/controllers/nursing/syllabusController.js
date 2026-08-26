@@ -2,6 +2,7 @@ const Subject = require('../../models/nursing/Subject');
 const Chapter = require('../../models/nursing/Chapter');
 const Topic = require('../../models/nursing/Topic');
 const Exam = require('../../models/nursing/Exam');
+const Question = require('../../models/nursing/Question');
 
 exports.getExams = async (req, res) => {
   try {
@@ -57,6 +58,19 @@ exports.getChapters = async (req, res) => {
     }
 
     const chapters = await Chapter.find(query).sort('displayOrder').lean();
+    const counts = await Question.aggregate([
+      { $match: { chapter: { $in: chapters.map(chapter => chapter._id) }, isPublished: true } },
+      { $group: { _id: { chapter: '$chapter', difficulty: '$difficulty' }, count: { $sum: 1 } } }
+    ]);
+    const stats = new Map();
+    counts.forEach(item => {
+      const key = String(item._id.chapter);
+      const current = stats.get(key) || { total: 0, easy: 0, medium: 0, hard: 0 };
+      current.total += item.count;
+      current[item._id.difficulty] = item.count;
+      stats.set(key, current);
+    });
+    chapters.forEach(chapter => { chapter.questionStats = stats.get(String(chapter._id)) || { total: 0, easy: 0, medium: 0, hard: 0 }; });
 
     // Group by units
     const units = {};

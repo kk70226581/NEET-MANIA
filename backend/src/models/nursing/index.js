@@ -23,5 +23,9 @@ module.exports = {
   ContentCollectionJob: require('./ContentCollectionJob'),
   ContentUpdateLog: require('./ContentUpdateLog'),
   DuplicateQuestionRecord: require('./DuplicateQuestionRecord'),
-  StudentReport: require('./StudentReport')
+  StudentReport: require('./StudentReport'),
+  SourceRegistry: require('./SourceRegistry'),
+  GenerationJob: require('./GenerationJob'),
+  QuestionVersion: require('./QuestionVersion'),
+  ImportBatch: require('./ImportBatch')
 };

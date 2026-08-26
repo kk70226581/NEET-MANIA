@@ -15,6 +15,8 @@ const AIQuestionGenerationSchema = new mongoose.Schema({
     default: 'gemini-2.0-flash'
   },
   promptUsed: String,
+  promptVersion: { type: String, default: 'question_generation_v1' },
+  generationJob: { type: mongoose.Schema.Types.ObjectId, ref: 'NursingGenerationJob' },
   similarityScoreWithOriginal: Number,
   similarityExplanation: String,
   learningObjective: String,

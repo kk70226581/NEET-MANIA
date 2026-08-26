@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars, react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -15,6 +14,7 @@ import {
 } from 'lucide-react';
 import AppShell from '../components/AppShell';
 import toast from 'react-hot-toast';
+import { nursingAPI } from '../services/api';
 
 const NursingResultsPage = () => {
   const { attemptId } = useParams();
@@ -24,12 +24,9 @@ const NursingResultsPage = () => {
   const [results, setResults] = useState(null);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    axios.get(`http://localhost:5000/api/nursing/tests/attempts/${attemptId}/results`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
+    nursingAPI.getTestResults(attemptId)
       .then(res => {
-        setResults(res.data.data);
+        setResults(res.data);
       })
       .catch(err => {
         console.error('Failed to load attempt results:', err);
@@ -158,7 +155,7 @@ const NursingResultsPage = () => {
 
             <button
               type="button"
-              onClick={() => navigate('/nursing/practice')}
+              onClick={() => navigate('/bsc-nursing/practice')}
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-sm font-bold text-white transition hover:bg-slate-950"
             >
               Start Revision Sessions <ArrowRight size={15} />

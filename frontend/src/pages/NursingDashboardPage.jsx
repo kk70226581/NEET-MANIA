@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars, react-hooks/exhaustive-deps */
 import React, { useEffect, useMemo, useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -16,6 +15,7 @@ import {
 } from 'lucide-react';
 import AppShell from '../components/AppShell';
 import toast from 'react-hot-toast';
+import { nursingAPI } from '../services/api';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -34,16 +34,13 @@ const NursingDashboardPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    const headers = { Authorization: `Bearer ${token}` };
-
     Promise.all([
-      axios.get('http://localhost:5000/api/nursing/exams', { headers }),
-      axios.get('http://localhost:5000/api/nursing/tests/attempts', { headers })
+      nursingAPI.getExams(),
+      nursingAPI.getAttempts()
     ])
       .then(([examsRes, attemptsRes]) => {
-        setExams(examsRes.data.data || []);
-        setAttempts(attemptsRes.data.data || []);
+        setExams(examsRes.data || []);
+        setAttempts(attemptsRes.data || []);
       })
       .catch((err) => {
         console.error('Error fetching dashboard metrics:', err);
@@ -63,7 +60,7 @@ const NursingDashboardPage = () => {
       totalAttempted,
       averageAccuracy,
       totalTests: completedAttempts.length,
-      streak: 5 // Static/Simulated streak count
+      streak: new Set(completedAttempts.map(attempt => new Date(attempt.createdAt).toDateString())).size
     };
   }, [attempts]);
 
@@ -91,14 +88,14 @@ const NursingDashboardPage = () => {
                 <div className="mt-5 flex gap-3">
                   <button
                     type="button"
-                    onClick={() => navigate('/nursing/tests')}
+                    onClick={() => navigate('/bsc-nursing/mock-tests')}
                     className="flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-emerald-700 shadow-md transition-all hover:bg-emerald-50 hover:scale-105"
                   >
                     Start CBT Mock Test <Play size={15} className="fill-emerald-700" />
                   </button>
                   <button
                     type="button"
-                    onClick={() => navigate('/nursing/practice')}
+                    onClick={() => navigate('/bsc-nursing/practice')}
                     className="rounded-xl border border-emerald-400 bg-emerald-700/30 px-5 py-2.5 text-sm font-bold text-white transition-all hover:bg-emerald-700/50"
                   >
                     Chapter Practice
@@ -153,7 +150,7 @@ const NursingDashboardPage = () => {
                     <h4 className="mt-3 font-bold text-slate-800 group-hover:text-emerald-700">{exam.examName}</h4>
                     <p className="mt-1 text-xs text-slate-500">Authority: {exam.conductingAuthority}</p>
                     <div className="mt-4 flex items-center justify-between text-xs text-slate-400">
-                      <span>Questions: {exam.totalQuestions}</span>
+                      <span>Questions: {exam.questionCount}</span>
                       <span>Duration: {exam.duration} mins</span>
                     </div>
                   </div>
@@ -187,7 +184,7 @@ const NursingDashboardPage = () => {
 
               <button
                 type="button"
-                onClick={() => navigate('/nursing/practice')}
+                onClick={() => navigate('/bsc-nursing/practice')}
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-100 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-200"
               >
                 Go to Practice Center <ArrowRight size={15} />

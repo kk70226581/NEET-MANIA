@@ -2,6 +2,17 @@ const { MockTest, TestBlueprint, TestAttempt, UserAnswer, Question, Exam, Mistak
 const NursingTestGenerator = require('../../services/nursing/nursingTestGenerator');
 const crypto = require('crypto');
 
+exports.getMockTests = async (req, res) => {
+  try {
+    const query = { isPublished: true };
+    if (req.query.examId && require('mongoose').isValidObjectId(req.query.examId)) query.exam = req.query.examId;
+    const tests = await MockTest.find(query).select('-questions').populate('exam', 'examName examCode').sort({ createdAt: -1 });
+    res.json({ success: true, count: tests.length, data: tests });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
 // Generate mock test or retrieve static scheduled test
 exports.generateMockTest = async (req, res) => {
   try {
@@ -31,9 +42,12 @@ exports.generateMockTest = async (req, res) => {
 
       // Gather random questions
       const questionIds = await NursingTestGenerator.generateTest({
-        questionCount: exam.totalQuestions,
+        questionCount: exam.questionCount,
         isPublished: true
       });
+      if (!questionIds.length) {
+        return res.status(422).json({ success: false, message: 'No published questions are available for this exam yet.' });
+      }
 
       test = await MockTest.create({
         testId: `MOCK-${crypto.randomUUID()}`,
@@ -41,7 +55,7 @@ exports.generateMockTest = async (req, res) => {
         exam: exam._id,
         duration: exam.duration,
         totalQuestions: questionIds.length,
-        totalMarks: questionIds.length * (exam.markingScheme?.correctAnswers || 1),
+        totalMarks: questionIds.length * (exam.negativeMarking?.correctAnswers || 1),
         questions: questionIds,
         testPhase: phase || 'practice',
         isPublished: true
@@ -60,7 +74,7 @@ exports.startTestAttempt = async (req, res) => {
     const { testId } = req.params;
     const student = req.user.id;
 
-    const mockTest = await MockTest.findById(testId).populate('exam');
+    const mockTest = await MockTest.findOne({ _id: testId, isPublished: true }).populate('exam');
     if (!mockTest) return res.status(404).json({ success: false, message: 'Mock test not found' });
 
     // Check if an in-progress attempt already exists to allow resume support
@@ -92,9 +106,20 @@ exports.startTestAttempt = async (req, res) => {
 exports.getTestQuestions = async (req, res) => {
   try {
     const { testId } = req.params;
-    const mockTest = await MockTest.findById(testId).populate('questions');
+    const mockTest = await MockTest.findOne({ _id: testId, isPublished: true }).populate({ path: 'questions', select: '-correctAnswer -explanation' });
     if (!mockTest) return res.status(404).json({ success: false, message: 'Mock test not found' });
-    res.json({ success: true, count: mockTest.questions.length, data: mockTest.questions });
+    res.json({
+      success: true,
+      count: mockTest.questions.length,
+      data: mockTest.questions,
+      test: {
+        _id: mockTest._id,
+        testName: mockTest.testName,
+        duration: mockTest.duration,
+        totalQuestions: mockTest.totalQuestions,
+        totalMarks: mockTest.totalMarks
+      }
+    });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -106,7 +131,7 @@ exports.saveAnswerResponse = async (req, res) => {
     const { attemptId } = req.params;
     const { questionId, selectedOption, timeSpent, markedForReview, timeRemaining } = req.body;
 
-    const attempt = await TestAttempt.findOne({ attemptId });
+    const attempt = await TestAttempt.findOne({ attemptId, student: req.user.id });
     if (!attempt) return res.status(404).json({ success: false, message: 'Attempt not found' });
     if (attempt.status !== 'in_progress') {
       return res.status(400).json({ success: false, message: 'Test already submitted' });
@@ -146,15 +171,15 @@ exports.submitTestAttempt = async (req, res) => {
   try {
     const { attemptId } = req.params;
 
-    const attempt = await TestAttempt.findOne({ attemptId }).populate('mockTest');
+    const attempt = await TestAttempt.findOne({ attemptId, student: req.user.id }).populate('mockTest');
     if (!attempt) return res.status(404).json({ success: false, message: 'Attempt not found' });
     if (attempt.status === 'completed' || attempt.status === 'submitted') {
       return res.status(400).json({ success: false, message: 'Test has already been submitted' });
     }
 
     const exam = await Exam.findById(attempt.mockTest.exam);
-    const correctVal = exam?.markingScheme?.correctAnswers || 1;
-    const incorrectVal = exam?.markingScheme?.incorrectAnswers || 0;
+    const correctVal = exam?.negativeMarking?.correctAnswers || 1;
+    const incorrectVal = exam?.negativeMarking?.incorrectAnswers || 0;
 
     const answers = await UserAnswer.find({ attempt: attempt._id }).populate('question');
 
@@ -188,7 +213,7 @@ exports.submitTestAttempt = async (req, res) => {
         }
 
         // Update student progress statistics per chapter
-        await UserProgress.findOneAndUpdate(
+        const progress = await UserProgress.findOneAndUpdate(
           {
             student: attempt.student,
             subject: ans.question.subject,
@@ -198,8 +223,12 @@ exports.submitTestAttempt = async (req, res) => {
             $inc: { questionsAttempted: 1, questionsCorrect: ans.isCorrect ? 1 : 0 },
             lastStudiedAt: new Date()
           },
-          { upsert: true }
+          { upsert: true, new: true }
         );
+        progress.accuracy = progress.questionsAttempted
+          ? Math.round((progress.questionsCorrect / progress.questionsAttempted) * 1000) / 10
+          : 0;
+        await progress.save();
       }
     }
 
@@ -228,7 +257,7 @@ exports.getAttemptResults = async (req, res) => {
   try {
     const { attemptId } = req.params;
 
-    const attempt = await TestAttempt.findOne({ attemptId })
+    const attempt = await TestAttempt.findOne({ attemptId, student: req.user.id })
       .populate({
         path: 'mockTest',
         populate: { path: 'exam' }

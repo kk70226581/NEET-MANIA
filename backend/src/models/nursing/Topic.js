@@ -31,6 +31,7 @@ const TopicSchema = new mongoose.Schema({
   },
   pyqCount: { type: Number, default: 0 },
   practiceQuestionCount: { type: Number, default: 0 },
+  targetQuestionCount: { type: Number, default: 40 },
   createdAt: {
     type: Date,
     default: Date.now

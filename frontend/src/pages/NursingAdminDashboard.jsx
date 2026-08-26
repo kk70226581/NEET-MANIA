@@ -1,23 +1,20 @@
 /* eslint-disable no-unused-vars, react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { motion } from 'framer-motion';
 import { ShieldCheck, AlertOctagon, RefreshCw, Layers, Check, Trash2, Mail } from 'lucide-react';
 import AppShell from '../components/AppShell';
 import toast from 'react-hot-toast';
+import { nursingAPI } from '../services/api';
 
 const NursingAdminDashboard = () => {
   const [overview, setOverview] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const fetchOverview = () => {
-    const token = localStorage.getItem('token');
     setLoading(true);
 
-    axios.get('http://localhost:5000/api/nursing/admin/overview', {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(res => setOverview(res.data.data))
+    nursingAPI.getOperationalOverview()
+      .then(res => setOverview(res.data))
       .catch(err => {
         console.error('Failed to load admin overview:', err);
         toast.error('Could not load administrative monitoring dashboard.');
@@ -30,10 +27,7 @@ const NursingAdminDashboard = () => {
   }, []);
 
   const handleResolveReport = (reportId) => {
-    const token = localStorage.getItem('token');
-    axios.post(`http://localhost:5000/api/nursing/admin/reports/${reportId}/resolve`, {}, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
+    nursingAPI.resolveReport(reportId)
       .then(() => {
         toast.success('Student report marked as resolved.');
         fetchOverview();

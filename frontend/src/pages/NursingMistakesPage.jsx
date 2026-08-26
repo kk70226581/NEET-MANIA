@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars, react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BrainCircuit, BookOpen, CheckCircle, HelpCircle, Eye } from 'lucide-react';
 import AppShell from '../components/AppShell';
 import toast from 'react-hot-toast';
+import { nursingAPI } from '../services/api';
 
 const NursingMistakesPage = () => {
   const [mistakes, setMistakes] = useState([]);
@@ -13,17 +13,9 @@ const NursingMistakesPage = () => {
   const [activeMistake, setActiveMistake] = useState(null);
 
   const fetchMistakes = () => {
-    const token = localStorage.getItem('token');
-    let url = 'http://localhost:5000/api/nursing/practice/mistakes';
-    if (filterCategory) {
-      url += `?category=${filterCategory}`;
-    }
-
     setLoading(true);
-    axios.get(url, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(res => setMistakes(res.data.data || []))
+    nursingAPI.getMistakes(filterCategory ? { category: filterCategory } : {})
+      .then(res => setMistakes(res.data || []))
       .catch(err => console.error('Error fetching mistakes:', err))
       .finally(() => setLoading(false));
   };
@@ -33,12 +25,7 @@ const NursingMistakesPage = () => {
   }, [filterCategory]);
 
   const handleResolve = (mistakeId) => {
-    const token = localStorage.getItem('token');
-    axios.patch(`http://localhost:5000/api/nursing/practice/mistakes/${mistakeId}`, {
-      status: 'resolved'
-    }, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
+    nursingAPI.updateMistake(mistakeId, { status: 'resolved' })
       .then(() => {
         toast.success('Mistake marked as resolved!');
         setActiveMistake(null);

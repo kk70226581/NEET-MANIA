@@ -10,6 +10,7 @@ const AIAnalyzer = require('../services/aiAnalyzer');
 const MistakeNotebook = require('../models/MistakeNotebook');
 const User = require('../models/User');
 const { MARKING_SCHEME } = require('../config/constants');
+const { isGeminiConfigured: isAIConfigured } = require('../services/geminiClient');
 const mongoose = require('mongoose');
 
 const findTestByIdOrCode = async (idOrCode) => {
@@ -18,11 +19,6 @@ const findTestByIdOrCode = async (idOrCode) => {
     if (test) return test;
   }
   return await Test.findOne({ testId: idOrCode });
-};
-
-const isAIConfigured = () => {
-  const key = String(process.env.GEMINI_API_KEY || '');
-  return key.length >= 20 && !/your|change_me|placeholder/i.test(key);
 };
 
 // @route   POST /api/tests/generate

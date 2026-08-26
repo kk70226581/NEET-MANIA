@@ -36,6 +36,11 @@ import NursingResultsPage from './pages/NursingResultsPage';
 import NursingMistakesPage from './pages/NursingMistakesPage';
 import NursingAdminDashboard from './pages/NursingAdminDashboard';
 import ChapterLearn from './pages/bsc-nursing/ChapterLearn';
+import BscNursingHubPage from './pages/BscNursingHubPage';
+import NursingQuestionBankPage from './pages/NursingQuestionBankPage';
+import NursingPerformancePage from './pages/NursingPerformancePage';
+import NursingContentAdminPage from './pages/NursingContentAdminPage';
+import BscNursingSyllabusPage from './pages/BscNursingSyllabusPage';
 
 // Components
 import ProtectedRoute from './components/ProtectedRoute';
@@ -70,6 +75,9 @@ function App() {
         <Route path="/login" element={isAuthenticated && user ? <Navigate to={isAdmin ? '/admin/overview' : '/dashboard'} /> : <LoginPage />} />
         <Route path="/admin/login" element={isAuthenticated && user ? <Navigate to={isAdmin ? '/admin/overview' : '/dashboard'} /> : <AdminLoginPage />} />
         <Route path="/register" element={isAuthenticated ? <Navigate to="/dashboard" /> : <RegisterPage />} />
+        <Route path="/bsc-nursing" element={<BscNursingHubPage />} />
+        <Route path="/bsc-nursing/:subjectSlug" element={<BscNursingSyllabusPage />} />
+        <Route path="/bsc-nursing/:subjectSlug/:chapterSlug" element={<BscNursingSyllabusPage />} />
 
         {/* Protected Routes */}
         <Route element={<ProtectedRoute />}>
@@ -94,6 +102,10 @@ function App() {
           {/* B.Sc. Nursing Prep Section */}
           <Route path="/bsc-nursing/dashboard" element={<NursingDashboardPage />} />
           <Route path="/bsc-nursing/practice" element={<NursingPracticePage />} />
+          <Route path="/bsc-nursing/question-bank" element={<NursingQuestionBankPage />} />
+          <Route path="/bsc-nursing/bookmarks" element={<NursingQuestionBankPage view="bookmarks" />} />
+          <Route path="/bsc-nursing/previous-year" element={<NursingQuestionBankPage view="previous-year" />} />
+          <Route path="/bsc-nursing/performance" element={<NursingPerformancePage />} />
           <Route path="/bsc-nursing/mock-tests" element={<NursingMockTestsPage />} />
           <Route path="/bsc-nursing/exam/:testId" element={<NursingExamCBT />} />
           <Route path="/bsc-nursing/results/:attemptId" element={<NursingResultsPage />} />
@@ -107,6 +119,7 @@ function App() {
 
           {/* Nursing Admin */}
           <Route path="/nursing/admin/overview" element={<NursingAdminDashboard />} />
+          <Route path="/nursing/admin/content" element={<NursingContentAdminPage />} />
         </Route>
         <Route path="*" element={<Navigate to={isAuthenticated ? '/dashboard' : '/'} replace />} />
       </Routes>

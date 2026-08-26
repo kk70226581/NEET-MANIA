@@ -8,6 +8,8 @@
     "start": "node src/server.js",
     "test": "jest",
     "seed": "node src/scripts/seedDatabase.js",
+    "seed:nursing-platform": "node src/scripts/seedNursingPlatform.js",
+    "seed:nursing-samples": "node src/scripts/seedNursingSamples.js",
     "import-pdf": "node src/scripts/importPdf.js",
     "import-patterns": "node src/scripts/importPattern.js",
     "generate:ncert": "node src/scripts/generateGroundedNcertQuestions.js --apply",

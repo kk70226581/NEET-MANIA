@@ -1,4 +1,4 @@
-const Question = require('../../models/Question');
+const Question = require('../../models/nursing/Question');
 const Chapter = require('../../models/nursing/Chapter');
 
 exports.validateBatch = async (questions) => {

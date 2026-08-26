@@ -10,7 +10,9 @@ const {
   getAttemptResults,
   getStudentAttempts
 } = require('../../controllers/nursing/nursingTestController');
+const { getMockTests } = require('../../controllers/nursing/nursingTestController');
 
+router.get('/', authenticate, getMockTests);
 router.post('/generate', authenticate, generateMockTest);
 router.get('/attempts', authenticate, getStudentAttempts);
 router.post('/:testId/start', authenticate, startTestAttempt);

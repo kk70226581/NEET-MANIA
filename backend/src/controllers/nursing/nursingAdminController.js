@@ -32,19 +32,19 @@ exports.getAdminOverview = async (req, res) => {
       Subject.find()
     ]);
 
-    // Calculate content coverage gaps (chapters with count < 100)
-    const chapters = await Chapter.find().populate('subject');
+    const chapters = await Chapter.find().populate('subjectId');
     const gaps = [];
 
     for (const chap of chapters) {
       const qCount = await Question.countDocuments({ chapter: chap._id });
-      if (qCount < 100) {
+      const targetCount = chap.targetQuestionCount || 200;
+      if (qCount < targetCount) {
         gaps.push({
           chapterId: chap._id,
-          chapterName: chap.name,
-          subjectName: chap.subject?.name,
+          chapterName: chap.fullChapterName,
+          subjectName: chap.subjectId?.name,
           currentCount: qCount,
-          targetCount: 100
+          targetCount
         });
       }
     }

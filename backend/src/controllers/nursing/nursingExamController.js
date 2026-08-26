@@ -57,7 +57,7 @@ exports.getSubjects = async (req, res) => {
 // Get chapters for a subject
 exports.getChaptersBySubject = async (req, res) => {
   try {
-    const chapters = await Chapter.find({ subject: req.params.subjectId });
+    const chapters = await Chapter.find({ subjectId: req.params.subjectId, status: 'active' }).sort({ displayOrder: 1 });
     res.json({ success: true, data: chapters });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
@@ -67,7 +67,7 @@ exports.getChaptersBySubject = async (req, res) => {
 // Get topics for a chapter
 exports.getTopicsByChapter = async (req, res) => {
   try {
-    const topics = await Topic.find({ chapter: req.params.chapterId });
+    const topics = await Topic.find({ chapterId: req.params.chapterId }).sort({ displayOrder: 1 });
     res.json({ success: true, data: topics });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });

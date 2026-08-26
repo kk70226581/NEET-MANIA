@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars, react-hooks/exhaustive-deps */
 import React, { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -12,6 +11,7 @@ import {
   AlertTriangle
 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { nursingAPI } from '../services/api';
 
 const NursingExamCBT = () => {
   const { testId } = useParams();
@@ -34,29 +34,14 @@ const NursingExamCBT = () => {
   const timerRef = useRef(null);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    const headers = { Authorization: `Bearer ${token}` };
-
-    // Fetch test details
-    axios.get(`http://localhost:5000/api/nursing/tests/${testId}/questions`, { headers })
+    nursingAPI.getTestQuestions(testId)
       .then(res => {
-        setQuestions(res.data.data || []);
+        setQuestions(res.data || []);
+        setTest(res.test || null);
       })
       .catch(err => {
         console.error('Failed to load questions:', err);
         toast.error('Could not load test questions.');
-      });
-
-    // We can also fetch the mock test details directly
-    axios.get(`http://localhost:5000/api/nursing/exams`, { headers })
-      .then(res => {
-        // Find standard AIIMS test configuration
-        setTest({
-          testName: 'B.Sc. Nursing Entrance Full Mock Paper',
-          duration: 120,
-          totalQuestions: 100,
-          totalMarks: 100
-        });
       });
 
     // Prevent accidental refresh
@@ -73,13 +58,10 @@ const NursingExamCBT = () => {
   }, [testId]);
 
   const handleStartExam = () => {
-    const token = localStorage.getItem('token');
-    const headers = { Authorization: `Bearer ${token}` };
-
-    axios.post(`http://localhost:5000/api/nursing/tests/${testId}/start`, {}, { headers })
+    nursingAPI.startTest(testId)
       .then(res => {
-        setAttempt(res.data.data);
-        setTimeRemaining(res.data.data.timeRemaining);
+        setAttempt(res.data);
+        setTimeRemaining(res.data.timeRemaining);
         setInstructionsRead(true);
 
         // Start countdown timer
@@ -87,7 +69,7 @@ const NursingExamCBT = () => {
           setTimeRemaining(prev => {
             if (prev <= 1) {
               clearInterval(timerRef.current);
-              handleSubmitTest(); // Auto submit
+              handleSubmitTest(res.data.attemptId); // Auto submit
               return 0;
             }
             return prev - 1;
@@ -117,16 +99,13 @@ const NursingExamCBT = () => {
   };
 
   const saveProgress = (selectedOpt, markReview) => {
-    const token = localStorage.getItem('token');
     const currentQ = questions[currentIndex];
 
-    axios.put(`http://localhost:5000/api/nursing/tests/attempts/${attempt.attemptId}/response`, {
+    nursingAPI.saveTestResponse(attempt.attemptId, {
       questionId: currentQ._id,
       selectedOption: selectedOpt,
       markedForReview: markReview,
       timeRemaining: timeRemaining
-    }, {
-      headers: { Authorization: `Bearer ${token}` }
     }).catch(err => console.error('Auto-save response failed:', err));
   };
 
@@ -153,18 +132,17 @@ const NursingExamCBT = () => {
     }
   };
 
-  const handleSubmitTest = () => {
+  const handleSubmitTest = (attemptIdOverride) => {
     if (submitting) return;
     setSubmitting(true);
 
-    const token = localStorage.getItem('token');
-    axios.put(`http://localhost:5000/api/nursing/tests/attempts/${attempt.attemptId}/submit`, {}, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
+    const activeAttemptId = typeof attemptIdOverride === 'string' ? attemptIdOverride : attempt?.attemptId;
+    if (!activeAttemptId) { setSubmitting(false); return; }
+    nursingAPI.submitTest(activeAttemptId)
       .then(res => {
         toast.success('Exam submitted successfully!');
         if (timerRef.current) clearInterval(timerRef.current);
-        navigate(`/nursing/results/${attempt.attemptId}`);
+        navigate(`/bsc-nursing/results/${activeAttemptId}`);
       })
       .catch(err => {
         console.error('Submission failed:', err);
@@ -197,12 +175,11 @@ const NursingExamCBT = () => {
         <div className="max-w-3xl w-full bg-white rounded-3xl border border-slate-200 p-8 shadow-xl space-y-6">
           <h2 className="text-2xl font-black text-slate-800 border-b pb-4">Computer-Based Examination Instructions</h2>
           <div className="text-slate-600 space-y-3 text-sm leading-relaxed">
-            <p>1. The duration of this exam is 120 minutes (2 Hours).</p>
-            <p>2. The question paper consists of 100 Multiple Choice Questions (MCQs).</p>
+            <p>1. The duration of this exam is {test?.duration || 0} minutes.</p>
+            <p>2. The question paper consists of {test?.totalQuestions || questions.length} Multiple Choice Questions (MCQs).</p>
             <p>3. Dynamic marking schemes are enforced based on the exam selected:</p>
             <ul className="list-disc pl-5">
-              <li><strong>AIIMS B.Sc. Nursing:</strong> +1 for correct answers, -1/3 for incorrect answers.</li>
-              <li><strong>CNET UP:</strong> +1 for correct answers, 0 for incorrect.</li>
+              <li>The selected exam profile determines correct-answer marks and negative marking.</li>
             </ul>
             <p>4. Your session auto-saves periodically. In case of network drops, you can resume seamlessly.</p>
           </div>

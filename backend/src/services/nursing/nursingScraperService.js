@@ -1,124 +1,54 @@
-const axios = require('axios');
-const { ExamSource, ExamEvent, ContentCollectionJob, ContentUpdateLog } = require('../../models/nursing');
+const { ExamSource, ContentCollectionJob, SourceRegistry } = require('../../models/nursing');
+
+const domainFromUrl = value => {
+  try { return new URL(value).hostname.toLowerCase().replace(/^www\./, ''); }
+  catch { return null; }
+};
 
 class NursingScraperService {
   /**
-   * Run content collection job for all active sources
+   * Audit configured sources against the explicit allowlist.
+   * This method intentionally does not fabricate events or scrape page content.
+   * A real fetch/extraction connector can consume only the returned approved sources.
    */
   static async collectOfficialContent() {
     const job = await ContentCollectionJob.create({
-      jobName: 'Official Notification Collector',
+      jobName: 'Approved Source Registry Audit',
       startedAt: new Date(),
       status: 'running'
     });
 
     try {
-      const activeSources = await ExamSource.find({ status: 'active' }).populate('exam');
-      let found = 0;
-      let updated = 0;
+      const [configured, approved] = await Promise.all([
+        ExamSource.find({ status: 'active' }).populate('exam'),
+        SourceRegistry.find({ active: true, permissionStatus: 'APPROVED' }).lean()
+      ]);
+      const allowedDomains = new Set(approved.map(source => source.domain));
+      const eligible = [];
 
-      for (const source of activeSources) {
-        try {
-          // Respect robots.txt and host rules (Mock fetch/parse to simulate crawler safely without legal/network issues)
-          console.log(`🌐 Collecting notifications from official site: ${source.sourceName} (${source.url})`);
-          
-          // Verify URL is official government/academic domain
-          const isOfficialDomain = /gov\.in|edu\.in|ac\.in|org/i.test(source.url);
-          if (!isOfficialDomain) {
-            job.errorLogs.push(`Skipped non-official source: ${source.sourceName}`);
-            continue;
-          }
-
-          // Simulated parsing response logic
-          const mockParsedEvents = [
-            {
-              eventName: 'notification',
-              eventTitle: `${source.exam.examName} Official Notification Released`,
-              eventDescription: `The official application notification for ${source.exam.examName} is out.`,
-              date: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000), // 10 days out
-              isTentative: false
-            },
-            {
-              eventName: 'application_start',
-              eventTitle: 'Online Registration Commences',
-              eventDescription: 'Students can fill out application forms starting today.',
-              date: new Date(),
-              isTentative: false
-            }
-          ];
-
-          for (const rawEvent of mockParsedEvents) {
-            // Check for existing event to avoid duplicates
-            const existingEvent = await ExamEvent.findOne({
-              exam: source.exam._id,
-              eventName: rawEvent.eventName
-            });
-
-            if (!existingEvent) {
-              const newEvent = await ExamEvent.create({
-                exam: source.exam._id,
-                ...rawEvent,
-                sourceUrl: source.url,
-                sourceName: source.sourceName,
-                confidenceScore: 95,
-                dateLastVerified: new Date()
-              });
-
-              await ContentUpdateLog.create({
-                entityType: 'ExamEvent',
-                entityId: newEvent._id,
-                updateType: 'insert',
-                newValue: newEvent,
-                performedBy: 'system_scheduler'
-              });
-
-              found++;
-              updated++;
-            } else if (existingEvent.isTentative && !rawEvent.isTentative) {
-              // Promote tentative to confirmed
-              existingEvent.date = rawEvent.date;
-              existingEvent.isTentative = false;
-              existingEvent.dateLastVerified = new Date();
-              existingEvent.confidenceScore = 98;
-              await existingEvent.save();
-
-              await ContentUpdateLog.create({
-                entityType: 'ExamEvent',
-                entityId: existingEvent._id,
-                updateType: 'update',
-                previousValue: { isTentative: true },
-                newValue: { isTentative: false, date: rawEvent.date },
-                performedBy: 'system_scheduler'
-              });
-
-              updated++;
-            }
-          }
-
-          source.lastChecked = new Date();
-          await source.save();
-
-        } catch (sourceError) {
-          console.error(`Error scraping source ${source.sourceName}:`, sourceError);
-          job.errorLogs.push(`Source ${source.sourceName} failed: ${sourceError.message}`);
-          source.status = 'needs_review';
-          await source.save();
+      for (const source of configured) {
+        const domain = domainFromUrl(source.url);
+        if (!domain || !allowedDomains.has(domain)) {
+          job.errorLogs.push(`Skipped ${source.sourceName}: domain is not APPROVED in the source registry.`);
+          continue;
         }
+        eligible.push(source);
+        source.lastChecked = new Date();
+        await source.save();
       }
 
       job.status = 'completed';
-      job.recordsFound = found;
-      job.recordsUpdated = updated;
+      job.recordsFound = eligible.length;
+      job.recordsUpdated = 0;
       job.completedAt = new Date();
       await job.save();
-
-      return job;
-    } catch (err) {
+      return { job, approvedSources: eligible };
+    } catch (error) {
       job.status = 'failed';
-      job.errorLogs.push(`General Job Failure: ${err.message}`);
+      job.errorLogs.push(error.message);
       job.completedAt = new Date();
       await job.save();
-      throw err;
+      throw error;
     }
   }
 }

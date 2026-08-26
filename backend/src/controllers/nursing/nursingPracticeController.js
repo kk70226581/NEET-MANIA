@@ -38,7 +38,7 @@ exports.getChapterPractice = async (req, res) => {
     if (difficulty) query.difficulty = difficulty;
     if (type) query.type = type;
 
-    const questions = await Question.find(query).limit(50);
+    const questions = await Question.find(query).select('-correctAnswer -explanation').limit(50);
     res.json({ success: true, count: questions.length, data: questions });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
@@ -124,7 +124,7 @@ exports.updateMistakeStatus = async (req, res) => {
     const { id } = req.params;
     const { status, category } = req.body;
 
-    const mistake = await MistakeNotebook.findById(id);
+    const mistake = await MistakeNotebook.findOne({ _id: id, student: req.user.id });
     if (!mistake) return res.status(404).json({ success: false, message: 'Mistake not found' });
 
     if (status) mistake.revisionStatus = status;
@@ -148,7 +148,7 @@ exports.startChapterExplainer = async (req, res) => {
     const prompt = `
 You are an expert tutor preparing a student for a B.Sc. Nursing Entrance Exam.
 The current subject is: ${chapter.subject.name}.
-The chapter to explain is: "${chapter.name}".
+The chapter to explain is: "${chapter.fullChapterName}".
 
 Your task:
 1. Identify and explain the first core topic of this chapter in very simple, easy-to-understand terms.
@@ -193,7 +193,7 @@ exports.continueChapterExplainer = async (req, res) => {
     const prompt = `
 You are an expert tutor preparing a student for a B.Sc. Nursing Entrance Exam.
 Subject: ${chapter.subject.name}
-Chapter: ${chapter.name}
+Chapter: ${chapter.fullChapterName}
 Last Topic Explained: ${topicName}
 Question Asked: "${previousQuestion}"
 Correct Answer: ${correctAnswer}
@@ -201,7 +201,7 @@ Student Selected: ${userAnswer}
 
 Your task:
 1. Provide constructive, friendly feedback on whether the student's answer was correct or incorrect, explaining why.
-2. Introduce the next logical core topic in the chapter "${chapter.name}", explain it simply, and ask exactly one multiple-choice question on it with options A, B, C, D.
+2. Introduce the next logical core topic in the chapter "${chapter.fullChapterName}", explain it simply, and ask exactly one multiple-choice question on it with options A, B, C, D.
 
 Format your response as a JSON object with:
 - feedback: (string) Grade the student's answer and explain why it is correct/incorrect.
