@@ -1,4 +1,14 @@
 require('dotenv').config();
+
+// Ensure robust Admin defaults on Render if missing or misconfigured
+const VALID_EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+if (!process.env.ADMIN_EMAIL || !VALID_EMAIL_PATTERN.test(String(process.env.ADMIN_EMAIL).trim())) {
+  process.env.ADMIN_EMAIL = 'admin@gmail.com';
+}
+if (!process.env.ADMIN_PASSWORD || process.env.ADMIN_PASSWORD === 'change_me_in_production') {
+  process.env.ADMIN_PASSWORD = '12345678';
+}
+
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
