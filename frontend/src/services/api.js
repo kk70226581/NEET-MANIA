@@ -52,7 +52,10 @@ export const authAPI = {
 };
 
 export const adminAPI = {
-  getOverview: () => api.get('/admin/overview')
+  getOverview: () => api.get('/admin/overview'),
+  getAiStatus: () => api.get('/admin/ai-status'),
+  testAiConnection: (prompt) => api.post('/admin/test-ai', { prompt }),
+  getStudents: (params) => api.get('/admin/students', { params })
 };
 
 // Questions APIs

@@ -64,6 +64,37 @@ router.get('/conversations/:conversationId', authenticate, async (req, res, next
   } catch (error) { next(error); }
 });
 
+const generateFallbackMentorReply = (message, studentName) => {
+  const name = studentName || 'yaar';
+  const text = String(message || '').toLowerCase();
+
+  if (/^(hi|hello|hey|namaste|pranam|good\s*(morning|evening|afternoon)|bhaiya\b)/i.test(text.trim())) {
+    return `Hey ${name}! Main yahin hoon 😊 Batao aaj Physics, Chemistry ya Biology me kahan phas rahe ho? Jo bhi doubt hai, seedha poochho! 🧠`;
+  }
+
+  if (/(physics|formula|numerical|kinematics|projectile|rotation|mechanics|gravitation|electrostat|current|optics|ray|wave|thermo)/i.test(text)) {
+    return `Dekho ${name}, Physics me numericals se darna band karo! Pehle given values likho, standard units (SI) check karo, aur basic formula identify karo 💡 Zyada complex calculation me mat uljho, NEET me conceptual step zyada important hota hai. NCERT formula sheet aur solved examples ek baar haath se likh kar dekho, speed apne aap banegi! 👍`;
+  }
+
+  if (/(chem|organic|inorganic|equilibrium|reaction|reagent|p-block|d-block|coordination|sn1|sn2|benzene|acid|base|mole)/i.test(text)) {
+    return `Sun ${name}, Chemistry NEET ka sabse high-scoring area hai 🙂 Organic me reagents ke specific functions (jaise reducing vs oxidizing agents) ka ek chart bana lo. Inorganic me sirf aur sirf NCERT line-by-line padhna hai, especially exceptions aur tables! Physical me direct formula calculation practice karo roz 15 questions 🔥`;
+  }
+
+  if (/(bio|biology|genetics|dna|cell|ncert|ecology|plant|morphology|anatomy|physiology|evolution|zoology|botany)/i.test(text)) {
+    return `Arey ${name}, Biology me 340+ lana bilkul possible hai! Bas do cheezein follow karo: NCERT ke har diagram ke labels dhyan se dekho, aur confusing terms (jaise meiosis stages ya genetic ratios) ko flashcard bana kar revise karo 🧠 Roz 40–50 PYQs lagao, confidence instantly badhega! 💡`;
+  }
+
+  if (/(mock|score|marks|test|negative|time\s*manage|speed|accuracy|percentile)/i.test(text)) {
+    return `Dekho ${name}, mock test me marks kam aana normal hai, problem tab hai jab analysis na karo 🙂 Agle test me pehle Biology 45 mins me niptao, phir Chemistry 50 mins, aur Physics ke liye pure 60+ mins bachao. Negative marking sirf un questions se hoti hai jahan 50-50 guess marte ho — unhe strictly leave karna seekho! 🎯`;
+  }
+
+  if (/(stress|dar|scared|demotivated|anxiety|depression|drop|backlog|tired|padhai\s*nahi\s*ho\s*rahi)/i.test(text)) {
+    return `Suno ${name}, ek lambi saans lo 🙂 NEET ek marathon hai, sprint nahi. Har topper bhi tumhari tarah doubts aur stress se guzarta hai. Backlog ki chinta chhod kar bas aaj ke 3 targets poore karo. Main tumhare saath hoon, bas give up mat karna! Chalo, ek chhota topic pakad kar shuru karo 🔥`;
+  }
+
+  return `Haan ${name}, ye point samajh gaya! Isko solve karne ke liye NCERT ka core concept pakdo aur pehle previous 5 years ke PYQs dekho ki examiner is topic se kya poochta hai 💡 Ek baar formula ya key line note kar lo, fir aage badhte hain. Aur batao, isme specifically kahan confusion hai? 🙂`;
+};
+
 router.post('/chat', authenticate, async (req, res, next) => {
   try {
     const { conversationId, message } = req.body;
@@ -99,18 +130,36 @@ Reply rules:
 - For formulas, write plain text only, for example: F = k × q₁q₂ / r². Never use LaTex, backticks, markdown stars, headings, or raw symbols such as \\( and \\frac.
 - Keep science NCERT/NEET accurate. If the question is broad, explain the key idea first, then offer one useful next step.
 - End naturally, not with the same repeated “Samajh aaya?” line every time.`;
-    const text = await getGeminiText({
-      systemInstruction: 'You are a warm, practical Indian elder brother (Bhaiya) and NEET mentor chatting on WhatsApp. Be human, encouraging, slightly expressive, and use 1–3 natural emojis in each reply. Answer directly before motivating. Never sound scripted, overly formal, or like copied notes. Use plain text only: never markdown, LaTex, asterisks, or code formatting. Do not invent prior conversation context.',
-      prompt,
-      maxOutputTokens: 460,
-      temperature: 0.9
-    });
 
-    const assistantMessage = { sender: 'ai', text: keepReplyShort(text) || 'Arre, ek baar phir bhejo yaar — main properly samjhata hoon 😊' };
+    let replyText = '';
+    try {
+      const text = await getGeminiText({
+        systemInstruction: 'You are a warm, practical Indian elder brother (Bhaiya) and NEET mentor chatting on WhatsApp. Be human, encouraging, slightly expressive, and use 1–3 natural emojis in each reply. Answer directly before motivating. Never sound scripted, overly formal, or like copied notes. Use plain text only: never markdown, LaTex, asterisks, or code formatting. Do not invent prior conversation context.',
+        prompt,
+        maxOutputTokens: 460,
+        temperature: 0.85
+      });
+      replyText = keepReplyShort(text);
+    } catch (aiError) {
+      console.warn(`[Mentor Chat] AI engine call failed (${aiError.message}). Using NEET Bhaiya contextual response.`);
+      replyText = generateFallbackMentorReply(cleanMessage, req.user?.firstName);
+    }
+
+    const assistantMessage = {
+      sender: 'ai',
+      text: replyText || 'Arre, ek baar phir bhejo yaar — main properly samjhata hoon 😊',
+      createdAt: new Date()
+    };
     conversation.messages.push(assistantMessage);
     await conversation.save();
-    res.json({ success: true, message: conversation.messages[conversation.messages.length - 1], conversation: conversationSummary(conversation) });
-  } catch (error) { next(error); }
+    res.json({
+      success: true,
+      message: conversation.messages[conversation.messages.length - 1],
+      conversation: conversationSummary(conversation)
+    });
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = router;
