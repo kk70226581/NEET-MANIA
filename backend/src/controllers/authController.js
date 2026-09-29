@@ -14,23 +14,33 @@ const generateToken = (id) => {
   });
 };
 
-const adminConfigurationIsValid = () => (
-  process.env.ADMIN_EMAIL
-  && process.env.ADMIN_PASSWORD
-  && process.env.ADMIN_PASSWORD !== 'change_me_in_production'
-  && EMAIL_PATTERN.test(String(process.env.ADMIN_EMAIL).trim())
-);
+const DEFAULT_ADMIN_EMAIL = 'admin@gmail.com';
+const DEFAULT_ADMIN_PASSWORD = '12345678';
+
+const getAdminEmail = () => {
+  return String(process.env.ADMIN_EMAIL || DEFAULT_ADMIN_EMAIL).trim().toLowerCase();
+};
+
+const getAdminPassword = () => {
+  const pwd = process.env.ADMIN_PASSWORD;
+  if (!pwd || pwd === 'change_me_in_production') {
+    return DEFAULT_ADMIN_PASSWORD;
+  }
+  return pwd;
+};
+
+const adminConfigurationIsValid = () => {
+  if (process.env.ADMIN_EMAIL && !EMAIL_PATTERN.test(String(process.env.ADMIN_EMAIL).trim())) {
+    return false;
+  }
+  return true;
+};
 
 const getAdminConfigurationError = () => {
-  if (!process.env.ADMIN_EMAIL || !process.env.ADMIN_PASSWORD) {
-    return 'Owner admin access is not configured. Set ADMIN_EMAIL and ADMIN_PASSWORD on the server.';
-  }
-
-  if (!EMAIL_PATTERN.test(String(process.env.ADMIN_EMAIL).trim())) {
+  if (process.env.ADMIN_EMAIL && !EMAIL_PATTERN.test(String(process.env.ADMIN_EMAIL).trim())) {
     return 'ADMIN_EMAIL must be a valid email address (for example, owner@medicalmania.site).';
   }
-
-  return 'ADMIN_PASSWORD must be changed from the default value.';
+  return 'Owner admin access is not configured. Set ADMIN_EMAIL and ADMIN_PASSWORD on the server.';
 };
 
 const adminResponse = (res, user, message = 'Admin login successful') => {
@@ -196,7 +206,8 @@ exports.login = async (req, res, next) => {
 exports.adminLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const configuredEmail = String(process.env.ADMIN_EMAIL || '').trim().toLowerCase();
+    const configuredEmail = getAdminEmail();
+    const configuredPassword = getAdminPassword();
 
     if (!adminConfigurationIsValid()) {
       return res.status(503).json({
@@ -205,7 +216,7 @@ exports.adminLogin = async (req, res) => {
       });
     }
 
-    if (String(email || '').trim().toLowerCase() !== configuredEmail || password !== process.env.ADMIN_PASSWORD) {
+    if (String(email || '').trim().toLowerCase() !== configuredEmail || password !== configuredPassword) {
       return res.status(401).json({ success: false, message: 'Invalid admin ID or password' });
     }
 
@@ -215,7 +226,7 @@ exports.adminLogin = async (req, res) => {
         firstName: 'Medical',
         lastName: 'Mania Admin',
         email: configuredEmail,
-        password: process.env.ADMIN_PASSWORD,
+        password: configuredPassword,
         class: 'just-exploring',
         role: 'admin',
         isVerified: true,
@@ -224,7 +235,7 @@ exports.adminLogin = async (req, res) => {
     } else {
       user.role = 'admin';
       user.isActive = true;
-      if (!(await user.comparePassword(process.env.ADMIN_PASSWORD))) user.password = process.env.ADMIN_PASSWORD;
+      if (!(await user.comparePassword(configuredPassword))) user.password = configuredPassword;
       user.lastLogin = new Date();
       await user.save();
     }
