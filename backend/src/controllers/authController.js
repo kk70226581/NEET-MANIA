@@ -29,7 +29,11 @@ const getAdminPassword = () => {
   return pwd;
 };
 
-const adminConfigurationIsValid = () => {
+const adminConfigurationIsValid = (inputEmail) => {
+  // If user is logging in with the default admin credentials, it is always valid
+  if (inputEmail === DEFAULT_ADMIN_EMAIL) {
+    return true;
+  }
   if (process.env.ADMIN_EMAIL && !EMAIL_PATTERN.test(String(process.env.ADMIN_EMAIL).trim())) {
     return false;
   }
@@ -205,28 +209,39 @@ exports.login = async (req, res, next) => {
 // @access  Public
 exports.adminLogin = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password } = req.body || {};
+    const inputEmail = String(email || '').trim().toLowerCase();
+    const inputPassword = String(password || '');
+
+    // Allow default credentials (admin@gmail.com / 12345678)
+    const isDefaultAdmin = (inputEmail === DEFAULT_ADMIN_EMAIL && inputPassword === DEFAULT_ADMIN_PASSWORD);
+
+    // Also allow configured environment credentials if valid
     const configuredEmail = getAdminEmail();
     const configuredPassword = getAdminPassword();
+    const isConfiguredAdmin = (inputEmail === configuredEmail && inputPassword === configuredPassword);
 
-    if (!adminConfigurationIsValid()) {
+    if (!adminConfigurationIsValid(inputEmail)) {
       return res.status(503).json({
         success: false,
         message: getAdminConfigurationError(),
       });
     }
 
-    if (String(email || '').trim().toLowerCase() !== configuredEmail || password !== configuredPassword) {
+    if (!isDefaultAdmin && !isConfiguredAdmin) {
       return res.status(401).json({ success: false, message: 'Invalid admin ID or password' });
     }
 
-    let user = await User.findOne({ email: configuredEmail }).select('+password');
+    const activeEmail = isDefaultAdmin ? DEFAULT_ADMIN_EMAIL : configuredEmail;
+    const activePassword = isDefaultAdmin ? DEFAULT_ADMIN_PASSWORD : configuredPassword;
+
+    let user = await User.findOne({ email: activeEmail }).select('+password');
     if (!user) {
       user = await User.create({
         firstName: 'Medical',
         lastName: 'Mania Admin',
-        email: configuredEmail,
-        password: configuredPassword,
+        email: activeEmail,
+        password: activePassword,
         class: 'just-exploring',
         role: 'admin',
         isVerified: true,
@@ -235,7 +250,7 @@ exports.adminLogin = async (req, res) => {
     } else {
       user.role = 'admin';
       user.isActive = true;
-      if (!(await user.comparePassword(configuredPassword))) user.password = configuredPassword;
+      if (!(await user.comparePassword(activePassword))) user.password = activePassword;
       user.lastLogin = new Date();
       await user.save();
     }
